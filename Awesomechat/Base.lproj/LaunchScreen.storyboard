@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oTL-4S-psM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="Ost-mu-rP5">
+            <objects>
+                <viewController id="oTL-4S-psM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RiT-jQ-DLt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Awesome chat" translatesAutoresizingMaskIntoConstraints="NO" id="Bcu-bd-KSB">
+                                <rect key="frame" x="57" y="423" width="300" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="7Mf-pd-5nF"/>
+                                    <constraint firstAttribute="width" constant="300" id="ded-br-vqs"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mail (2) " translatesAutoresizingMaskIntoConstraints="NO" id="c0S-Ap-iwL">
+                                <rect key="frame" x="125" y="259" width="164" height="164"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="164" id="2Vl-6g-qtX"/>
+                                    <constraint firstAttribute="height" constant="164" id="fkP-Km-Ld8"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="twf-D3-9kJ"/>
+                        <color key="backgroundColor" red="0.2627450980392157" green="0.33725490196078434" blue="0.70588235294117641" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="c0S-Ap-iwL" firstAttribute="centerX" secondItem="twf-D3-9kJ" secondAttribute="centerX" id="0lL-u9-TrF"/>
+                            <constraint firstItem="Bcu-bd-KSB" firstAttribute="centerX" secondItem="twf-D3-9kJ" secondAttribute="centerX" id="esn-be-soc"/>
+                            <constraint firstItem="Bcu-bd-KSB" firstAttribute="centerY" secondItem="twf-D3-9kJ" secondAttribute="centerY" id="f1e-Tc-k52"/>
+                            <constraint firstItem="Bcu-bd-KSB" firstAttribute="top" secondItem="c0S-Ap-iwL" secondAttribute="bottom" id="tRe-25-5X4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OBb-WW-S0v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="212" y="303"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Awesome chat" width="270" height="32"/>
+        <image name="mail (2) " width="164" height="164"/>
+    </resources>
+</document>

@@ -1,0 +1,6 @@
+framework module Pods_Awesomechat {
+  umbrella header "Pods-Awesomechat-umbrella.h"
+
+  export *
+  module * { export * }
+}
