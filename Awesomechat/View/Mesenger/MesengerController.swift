@@ -89,9 +89,6 @@ class MesengerController: UIViewController {
         })
         
         
-
-        
-        
     }
 }
 
