@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
+
 
 class RegisterController: UIViewController {
     
@@ -39,7 +42,10 @@ class RegisterController: UIViewController {
         imgPassword.image = UIImage(named: "key 1")
         txtPassword.rightViewMode = .always
         txtPassword.rightView = imgPassword
+        txtPassword.isSecureTextEntry = true
+        
         btDangKy.layer.cornerRadius = 20
+        
         
     }
     
@@ -56,12 +62,47 @@ class RegisterController: UIViewController {
     
     @IBAction func btDangKy(_ sender: Any) {
         
-        serverRegister.fireBaseRegister(completion: { (dataSnapshot) in
-            
-            print(dataSnapshot)
-        }, name: txtHoTen.text ?? "", email: txtEmail.text ?? "", passWord: txtPassword.text ?? "")
+        guard let email = txtEmail.text, let passWord = txtPassword.text, email.isEmpty, passWord.isEmpty, passWord.count >= 8 else {
+            print("Create a UIAlear")
+            self.alertUserLoginError()
+            return
+        }
+//
         
-        print("sas")
+        // Func Create User
+        Auth.auth().createUser(withEmail:txtEmail.text ?? "", password: txtPassword.text ?? "", completion: { (dataAuth, error) in
+            
+//            guard let strongSelf = self else {
+//                return
+//            }
+            
+            guard error == nil, dataAuth != nil else {
+                //strongSelf.alertUserLoginError()
+                return
+            }
+            
+            let messengerNavi = UINavigationController(rootViewController: MesengerController())
+            
+            
+            print(dataAuth)
+            
+            
+            
+        })
+    }
+    
+    
+    
+    // hàm nói với người dùng cần phải đăng nhập.
+    func alertUserLoginError(message: String = "Plese enter information to creat a account") {
+        let alear = UIAlertController(title: "Wood",
+                                      message: message,
+                                      preferredStyle: .alert)
+        alear.addAction(UIAlertAction(title: "Dismiss",
+                                      style: .cancel,
+                                      handler: nil))
+        present(alear, animated: true, completion: nil)
+        
     }
     
 }

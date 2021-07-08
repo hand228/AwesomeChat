@@ -15,9 +15,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowscene = (scene as? UIWindowScene) else { return }
         
+        // check email, pass để xem 
+        
+        //UserDefaults
+        
         let window = UIWindow(windowScene: windowscene)
         window.rootViewController = LoginController()
-        
         
         self.window = window
         window.makeKeyAndVisible()

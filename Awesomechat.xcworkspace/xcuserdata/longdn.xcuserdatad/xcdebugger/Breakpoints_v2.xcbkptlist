@@ -167,22 +167,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "EF6863AC-6D7F-4C18-9198-73EC7055511D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Awesomechat/View/LoginScreen/LoginController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "btDangNhap(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "87801E27-7F67-4601-BCD8-93219B07EED8"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -258,102 +242,6 @@
             endingLineNumber = "30"
             landmarkName = "ServerRegister"
             landmarkType = "3">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "ABD9543E-4E4C-4D89-9BA6-F6882B214BCC"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Awesomechat/View/RegisterScreen/RegisterController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "btDangKy(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "ABD9543E-4E4C-4D89-9BA6-F6882B214BCC - c04010f7c9ceac16"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Awesomechat.RegisterController.btDangKy(Any) -&gt; ()"
-                  moduleName = "Awesomechat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/longdn/Desktop/Awesomechat/Awesomechat/View/RegisterScreen/RegisterController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "59"
-                  endingLineNumber = "59"
-                  offsetFromSymbolStart = "116">
-               </Location>
-               <Location
-                  uuid = "ABD9543E-4E4C-4D89-9BA6-F6882B214BCC - e9876c58d8c2c24b"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Awesomechat.RegisterController.btDangKy(Any) -&gt; ()"
-                  moduleName = "Awesomechat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/longdn/Desktop/Awesomechat/Awesomechat/View/RegisterScreen/RegisterController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "61"
-                  endingLineNumber = "61"
-                  offsetFromSymbolStart = "20">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B11DBD44-6D9F-450D-B7DD-E5F8C7C23A69"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Awesomechat/View/RegisterScreen/RegisterController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "btDangKy(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B11DBD44-6D9F-450D-B7DD-E5F8C7C23A69 - c04010f7c9ceac73"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Awesomechat.RegisterController.btDangKy(Any) -&gt; ()"
-                  moduleName = "Awesomechat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/longdn/Desktop/Awesomechat/Awesomechat/View/RegisterScreen/RegisterController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "152">
-               </Location>
-               <Location
-                  uuid = "B11DBD44-6D9F-450D-B7DD-E5F8C7C23A69 - e9876c58d8c2c268"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (__C.FIRDataSnapshot) -&gt; () in Awesomechat.RegisterController.btDangKy(Any) -&gt; ()"
-                  moduleName = "Awesomechat"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/longdn/Desktop/Awesomechat/Awesomechat/View/RegisterScreen/RegisterController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "62"
-                  endingLineNumber = "62"
-                  offsetFromSymbolStart = "180">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -468,14 +356,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "8A53C30D-6FFF-445B-8F16-12FE32EE4E15 - f9ba40db56206f23"
+                  uuid = "8A53C30D-6FFF-445B-8F16-12FE32EE4E15 - 6de59ea7361ba92c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Awesomechat.TableViewController.viewDidLoad() -&gt; ()"
                   moduleName = "Awesomechat"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/longdn/Desktop/Awesomechat/Awesomechat/View/TableViewTest/TableViewController.swift"
+                  urlString = "file:///Users/longdn/Desktop/awesome_chat/Awesomechat/View/TableViewTest/TableViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "23"
@@ -483,14 +371,14 @@
                   offsetFromSymbolStart = "766">
                </Location>
                <Location
-                  uuid = "8A53C30D-6FFF-445B-8F16-12FE32EE4E15 - 9118d3dbca0a7714"
+                  uuid = "8A53C30D-6FFF-445B-8F16-12FE32EE4E15 - 5470da7aa31b127"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Array&lt;Swift.Dictionary&lt;Swift.String, Any&gt;&gt;) -&gt; () in Awesomechat.TableViewController.viewDidLoad() -&gt; ()"
                   moduleName = "Awesomechat"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/longdn/Desktop/Awesomechat/Awesomechat/View/TableViewTest/TableViewController.swift"
+                  urlString = "file:///Users/longdn/Desktop/awesome_chat/Awesomechat/View/TableViewTest/TableViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
@@ -526,8 +414,8 @@
             filePath = "Awesomechat/View/LoginScreen/LoginController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "135"
-            endingLineNumber = "135"
+            startingLineNumber = "164"
+            endingLineNumber = "164"
             landmarkName = "btQuenMatKhau(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -628,14 +516,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "EAA2EF27-1654-4F50-A9B7-0CDF7803ACFB - 306711ca9fb1b85a"
+                  uuid = "EAA2EF27-1654-4F50-A9B7-0CDF7803ACFB - f64b717b4ef50bda"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "Awesomechat.ServerLogin.requestLogin(completionHandle: (Swift.Array&lt;Swift.String&gt;, Swift.Bool) -&gt; (), email: Swift.String, passWord: Swift.String) -&gt; ()"
                   moduleName = "Awesomechat"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/longdn/Desktop/Awesomechat/Awesomechat/Controller/Server/ServerLogin.swift"
+                  urlString = "file:///Users/longdn/Desktop/awesome_chat/Awesomechat/Controller/Server/ServerLogin.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "21"
@@ -643,14 +531,14 @@
                   offsetFromSymbolStart = "731">
                </Location>
                <Location
-                  uuid = "EAA2EF27-1654-4F50-A9B7-0CDF7803ACFB - 9b0fb2b1200fb6f9"
+                  uuid = "EAA2EF27-1654-4F50-A9B7-0CDF7803ACFB - 5d23d200f14b0679"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, __C.FIRDataSnapshot) -&gt; () in Awesomechat.ServerLogin.requestLogin(completionHandle: (Swift.Array&lt;Swift.String&gt;, Swift.Bool) -&gt; (), email: Swift.String, passWord: Swift.String) -&gt; ()"
                   moduleName = "Awesomechat"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/longdn/Desktop/Awesomechat/Awesomechat/Controller/Server/ServerLogin.swift"
+                  urlString = "file:///Users/longdn/Desktop/awesome_chat/Awesomechat/Controller/Server/ServerLogin.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "16"
@@ -658,38 +546,6 @@
                   offsetFromSymbolStart = "376">
                </Location>
             </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8BAD6475-63D3-4AB9-A2B5-A0A75815CE00"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Awesomechat/View/LoginScreen/LoginController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "88"
-            endingLineNumber = "88"
-            landmarkName = "btDangNhap(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "3398058E-8DD8-4697-B74C-6B7AD774282E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Awesomechat/View/LoginScreen/LoginController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "85"
-            endingLineNumber = "85"
-            landmarkName = "btDangNhap(_:)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -766,8 +622,8 @@
             filePath = "Awesomechat/View/LoginScreen/LoginController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "btDangNhap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -782,8 +638,8 @@
             filePath = "Awesomechat/View/LoginScreen/LoginController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "btDangNhap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -798,8 +654,8 @@
             filePath = "Awesomechat/View/LoginScreen/LoginController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "109"
-            endingLineNumber = "109"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
             landmarkName = "btDangNhap(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -814,8 +670,168 @@
             filePath = "Awesomechat/View/LoginScreen/LoginController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "btDangNhap(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C8FF0079-8099-4C82-BAFA-C5254809F412"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/View/RegisterScreen/RegisterController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
+            landmarkName = "btDangKy(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5850A83B-42D5-4B70-B901-66A50B12F5C3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/View/RegisterScreen/RegisterController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "btDangKy(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6774D5CA-21D5-4149-BC18-15BCA65C7A4D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/View/RegisterScreen/RegisterController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "btDangKy(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "979D05C8-2DED-487E-8120-06C4582F03CF"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/View/RegisterScreen/RegisterController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "btDangKy(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D82A0B8E-FADC-4416-8B4F-347AB3C8A6A7"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/View/LoginScreen/LoginController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "btDangNhap(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "D82A0B8E-FADC-4416-8B4F-347AB3C8A6A7 - b030b3f85d65fda2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Awesomechat.LoginController.btDangNhap(Any) -&gt; ()"
+                  moduleName = "Awesomechat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/longdn/Desktop/awesome_chat/Awesomechat/View/LoginScreen/LoginController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "1603">
+               </Location>
+               <Location
+                  uuid = "D82A0B8E-FADC-4416-8B4F-347AB3C8A6A7 - dec7ad1a42cd296b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in Awesomechat.LoginController.btDangNhap(Any) -&gt; ()"
+                  moduleName = "Awesomechat"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/longdn/Desktop/awesome_chat/Awesomechat/View/LoginScreen/LoginController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "114"
+                  endingLineNumber = "114"
+                  offsetFromSymbolStart = "288">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "825CB2AD-4D4B-4632-A636-E688B8C741A8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/View/LoginScreen/LoginController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "134"
+            endingLineNumber = "134"
+            landmarkName = "btDangNhap(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F444B1F5-E39A-4BDC-8B5C-4689C25C6898"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/View/LoginScreen/LoginController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "btDangNhap(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F0A290A3-AAC3-4669-B686-F75908D5C746"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/View/LoginScreen/LoginController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "btDangNhap(_:)"
             landmarkType = "7">
          </BreakpointContent>

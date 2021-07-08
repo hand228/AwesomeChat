@@ -18,10 +18,12 @@ class MesengerController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        customGradient()
-        custom()
+        view.backgroundColor = UIColor.yellow
         
-        //tableView.register(UINib(nibName: "MesengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MesengerTableViewCellID")
+//        customGradient()
+//        custom()
+        
+        tableView.register(UINib(nibName: "MesengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MesengerTableViewCellID")
     }
     
     func custom() {
