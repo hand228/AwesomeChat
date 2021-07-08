@@ -27,6 +27,11 @@
 		D7A155C4268F104100A8E50B /* MesengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A155C2268F104000A8E50B /* MesengerController.swift */; };
 		D7A155C5268F104100A8E50B /* MesengerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A155C3268F104000A8E50B /* MesengerController.xib */; };
 		D7A155C7268F252E00A8E50B /* ServerRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A155C6268F252E00A8E50B /* ServerRegister.swift */; };
+		D7A55E032696D52B000767F8 /* FriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A55E012696D52B000767F8 /* FriendController.swift */; };
+		D7A55E042696D52B000767F8 /* FriendController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A55E022696D52B000767F8 /* FriendController.xib */; };
+		D7A55E082696D574000767F8 /* PersonalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A55E062696D574000767F8 /* PersonalController.swift */; };
+		D7A55E092696D574000767F8 /* PersonalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A55E072696D574000767F8 /* PersonalController.xib */; };
+		D7A55E0D2696DE8E000767F8 /* ServerMesenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A55E0C2696DE8E000767F8 /* ServerMesenger.swift */; };
 		D7A9F19C2692AE48001AE5AB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9F19A2692AE48001AE5AB /* TableViewController.swift */; };
 		D7A9F19D2692AE48001AE5AB /* TableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A9F19B2692AE48001AE5AB /* TableViewController.xib */; };
 		D7A9F1A02692AF0D001AE5AB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9F19E2692AF0D001AE5AB /* TableViewCell.swift */; };
@@ -63,6 +68,11 @@
 		D7A155C2268F104000A8E50B /* MesengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesengerController.swift; sourceTree = "<group>"; };
 		D7A155C3268F104000A8E50B /* MesengerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MesengerController.xib; sourceTree = "<group>"; };
 		D7A155C6268F252E00A8E50B /* ServerRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRegister.swift; sourceTree = "<group>"; };
+		D7A55E012696D52B000767F8 /* FriendController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendController.swift; sourceTree = "<group>"; };
+		D7A55E022696D52B000767F8 /* FriendController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendController.xib; sourceTree = "<group>"; };
+		D7A55E062696D574000767F8 /* PersonalController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalController.swift; sourceTree = "<group>"; };
+		D7A55E072696D574000767F8 /* PersonalController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalController.xib; sourceTree = "<group>"; };
+		D7A55E0C2696DE8E000767F8 /* ServerMesenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerMesenger.swift; sourceTree = "<group>"; };
 		D7A9F19A2692AE48001AE5AB /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		D7A9F19B2692AE48001AE5AB /* TableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewController.xib; sourceTree = "<group>"; };
 		D7A9F19E2692AF0D001AE5AB /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -152,6 +162,8 @@
 		D7A0BC44268D6AE500842C93 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D7A55E052696D52E000767F8 /* PersonalScreen */,
+				D7A55DFC2696D4CB000767F8 /* FriendScreen */,
 				D7A9F1992692AE2F001AE5AB /* TableViewTest */,
 				D7A155C1268F102600A8E50B /* Mesenger */,
 				D7A0BC47268D6B2000842C93 /* RegisterScreen */,
@@ -208,9 +220,8 @@
 		D7A0BC5C268DBCA200842C93 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				D7A0BC5D268DBCC000842C93 /* ServerApiUser.swift */,
-				D7A155C6268F252E00A8E50B /* ServerRegister.swift */,
-				D7A9F1A22692E4AA001AE5AB /* ServerLogin.swift */,
+				D7A55E0B2696DE69000767F8 /* ServerMesenger */,
+				D7A55E0A2696DE5B000767F8 /* ServerUser */,
 			);
 			path = Server;
 			sourceTree = "<group>";
@@ -223,6 +234,42 @@
 				D7A155C3268F104000A8E50B /* MesengerController.xib */,
 			);
 			path = Mesenger;
+			sourceTree = "<group>";
+		};
+		D7A55DFC2696D4CB000767F8 /* FriendScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D7A55E012696D52B000767F8 /* FriendController.swift */,
+				D7A55E022696D52B000767F8 /* FriendController.xib */,
+			);
+			path = FriendScreen;
+			sourceTree = "<group>";
+		};
+		D7A55E052696D52E000767F8 /* PersonalScreen */ = {
+			isa = PBXGroup;
+			children = (
+				D7A55E062696D574000767F8 /* PersonalController.swift */,
+				D7A55E072696D574000767F8 /* PersonalController.xib */,
+			);
+			path = PersonalScreen;
+			sourceTree = "<group>";
+		};
+		D7A55E0A2696DE5B000767F8 /* ServerUser */ = {
+			isa = PBXGroup;
+			children = (
+				D7A0BC5D268DBCC000842C93 /* ServerApiUser.swift */,
+				D7A155C6268F252E00A8E50B /* ServerRegister.swift */,
+				D7A9F1A22692E4AA001AE5AB /* ServerLogin.swift */,
+			);
+			path = ServerUser;
+			sourceTree = "<group>";
+		};
+		D7A55E0B2696DE69000767F8 /* ServerMesenger */ = {
+			isa = PBXGroup;
+			children = (
+				D7A55E0C2696DE8E000767F8 /* ServerMesenger.swift */,
+			);
+			path = ServerMesenger;
 			sourceTree = "<group>";
 		};
 		D7A9F1992692AE2F001AE5AB /* TableViewTest */ = {
@@ -315,12 +362,14 @@
 				D7A0BC3C268D6AC700842C93 /* LaunchScreen.storyboard in Resources */,
 				D7A0BC4F268D6B5000842C93 /* RegisterController.xib in Resources */,
 				D7A0BC4B268D6B4100842C93 /* LoginController.xib in Resources */,
+				D7A55E092696D574000767F8 /* PersonalController.xib in Resources */,
 				D7A155C5268F104100A8E50B /* MesengerController.xib in Resources */,
 				D7A9F1A12692AF0D001AE5AB /* TableViewCell.xib in Resources */,
 				D7A0BC39268D6AC700842C93 /* Assets.xcassets in Resources */,
 				D7A0BC37268D6AC500842C93 /* Main.storyboard in Resources */,
 				D7A155BE268EA8F100A8E50B /* GoogleService-Info.plist in Resources */,
 				D7A9F19D2692AE48001AE5AB /* TableViewController.xib in Resources */,
+				D7A55E042696D52B000767F8 /* FriendController.xib in Resources */,
 				D7A9F1A826930EF5001AE5AB /* MesengerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -375,16 +424,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				D7A0BC55268D704B00842C93 /* ViewControllera.swift in Sources */,
+				D7A55E032696D52B000767F8 /* FriendController.swift in Sources */,
 				D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */,
 				D7A0BC4E268D6B5000842C93 /* RegisterController.swift in Sources */,
 				D7A9F19C2692AE48001AE5AB /* TableViewController.swift in Sources */,
 				D7A9F1A32692E4AA001AE5AB /* ServerLogin.swift in Sources */,
 				D7A0BC5B268DB3F800842C93 /* DataUser.swift in Sources */,
+				D7A55E082696D574000767F8 /* PersonalController.swift in Sources */,
 				D7A0BC58268D7CA800842C93 /* Extension+Color.swift in Sources */,
 				D7A9F1A02692AF0D001AE5AB /* TableViewCell.swift in Sources */,
 				D7A0BC30268D6AC500842C93 /* AppDelegate.swift in Sources */,
 				D7A155C4268F104100A8E50B /* MesengerController.swift in Sources */,
 				D7A0BC53268D6EAF00842C93 /* SplashView.swift in Sources */,
+				D7A55E0D2696DE8E000767F8 /* ServerMesenger.swift in Sources */,
 				D7A155C7268F252E00A8E50B /* ServerRegister.swift in Sources */,
 				D7A0BC4A268D6B4100842C93 /* LoginController.swift in Sources */,
 				D7A0BC5E268DBCC000842C93 /* ServerApiUser.swift in Sources */,

@@ -57,8 +57,8 @@
                                         <constraint firstAttribute="height" constant="32" id="dE1-Ve-Nrl"/>
                                     </constraints>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="Syq-mm-pEz">
-                                    <rect key="frame" x="12" y="196" width="390" height="399"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Syq-mm-pEz">
+                                    <rect key="frame" x="12" y="196" width="390" height="407"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="26" translatesAutoresizingMaskIntoConstraints="NO" id="vMe-PW-Ohu">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="96"/>
@@ -78,7 +78,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="EdU-Xs-kha">
-                                            <rect key="frame" x="0.0" y="110" width="390" height="81.5"/>
+                                            <rect key="frame" x="0.0" y="116" width="390" height="76.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lox-J5-MaM">
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="20.5"/>
@@ -88,9 +88,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="vEE-UT-cP5">
-                                                    <rect key="frame" x="0.0" y="25.5" width="390" height="50"/>
+                                                    <rect key="frame" x="0.0" y="25.5" width="390" height="45"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="vMK-Z5-sZx"/>
+                                                        <constraint firstAttribute="height" constant="45" id="vMK-Z5-sZx"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -99,7 +99,7 @@
                                                     </connections>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ue0-3s-0fI">
-                                                    <rect key="frame" x="0.0" y="80.5" width="390" height="1"/>
+                                                    <rect key="frame" x="0.0" y="75.5" width="390" height="1"/>
                                                     <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="rpw-Cf-EdE"/>
@@ -108,7 +108,7 @@
                                             </subviews>
                                         </stackView>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="rV1-sk-kE4">
-                                            <rect key="frame" x="0.0" y="205.5" width="390" height="129.5"/>
+                                            <rect key="frame" x="0.0" y="212.5" width="390" height="124.5"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MẬT KHẨU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gtq-ar-JFJ">
                                                     <rect key="frame" x="0.0" y="0.0" width="390" height="20.5"/>
@@ -118,9 +118,9 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7nD-e5-ZlD">
-                                                    <rect key="frame" x="0.0" y="26.5" width="390" height="50"/>
+                                                    <rect key="frame" x="0.0" y="26.5" width="390" height="45"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="7FA-ab-CZI"/>
+                                                        <constraint firstAttribute="height" constant="45" id="7FA-ab-CZI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
@@ -129,14 +129,14 @@
                                                     </connections>
                                                 </textField>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="811-sP-HmT">
-                                                    <rect key="frame" x="0.0" y="82.5" width="390" height="1"/>
+                                                    <rect key="frame" x="0.0" y="77.5" width="390" height="1"/>
                                                     <color key="backgroundColor" systemColor="systemGrayColor"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="1" id="9an-kg-WzE"/>
                                                     </constraints>
                                                 </view>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HD2-hg-owx">
-                                                    <rect key="frame" x="0.0" y="89.5" width="390" height="40"/>
+                                                    <rect key="frame" x="0.0" y="84.5" width="390" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="WdE-Z8-lOo"/>
                                                     </constraints>
@@ -149,7 +149,7 @@
                                             </subviews>
                                         </stackView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="24e-e2-R14">
-                                            <rect key="frame" x="0.0" y="349" width="390" height="50"/>
+                                            <rect key="frame" x="0.0" y="357" width="390" height="50"/>
                                             <color key="backgroundColor" red="0.792156862745098" green="0.792156862745098" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="CmF-q2-HXu"/>

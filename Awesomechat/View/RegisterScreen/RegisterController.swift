@@ -62,20 +62,22 @@ class RegisterController: UIViewController {
     
     @IBAction func btDangKy(_ sender: Any) {
         
-        guard let email = txtEmail.text, let passWord = txtPassword.text, email.isEmpty, passWord.isEmpty, passWord.count >= 8 else {
-            print("Create a UIAlear")
-            self.alertUserLoginError()
+        guard let email = txtEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {
             return
         }
-//
+        guard let passWord = txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines), passWord.count >= 8 else {
+            return
+        }
         
-        // Func Create User
-        Auth.auth().createUser(withEmail:txtEmail.text ?? "", password: txtPassword.text ?? "", completion: { (dataAuth, error) in
-            
+        UserDefaults.standard.set(email, forKey: "Email")
+        UserDefaults.standard.set(passWord, forKey: "PassWord")
+        
+        Auth.auth().createUser(withEmail: email, password: passWord, completion: { (dataAuth, error) in
 //            guard let strongSelf = self else {
 //                return
 //            }
             
+            self.usingUserDefaulds()
             guard error == nil, dataAuth != nil else {
                 //strongSelf.alertUserLoginError()
                 return
@@ -92,8 +94,6 @@ class RegisterController: UIViewController {
     }
     
     
-    
-    // hàm nói với người dùng cần phải đăng nhập.
     func alertUserLoginError(message: String = "Plese enter information to creat a account") {
         let alear = UIAlertController(title: "Wood",
                                       message: message,
@@ -104,5 +104,21 @@ class RegisterController: UIViewController {
         present(alear, animated: true, completion: nil)
         
     }
+    
+    func usingUserDefaulds() {
+        
+        UserDefaults.standard.set(txtEmail.text ?? "", forKey: "Email")
+        
+        print(UserDefaults.standard.string(forKey: "Email") as? String)
+        
+        print(UserDefaults.standard.string(forKey: "PassWord"))
+        
+        
+    }
+    
+    @IBAction func backDangNhap(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
 }

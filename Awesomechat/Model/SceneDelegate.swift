@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -14,13 +15,42 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowscene = (scene as? UIWindowScene) else { return }
-        
-        // check email, pass để xem 
-        
-        //UserDefaults
-        
         let window = UIWindow(windowScene: windowscene)
-        window.rootViewController = LoginController()
+        
+        let tabbarController = UITabBarController()
+        
+        print(UserDefaults.standard.string(forKey: "Email") as? String)
+        print(UserDefaults.standard.string(forKey: "PassWord") as? String)
+        
+        // MARK: CUSTOM TABBAR
+        let tabbarMessenger = MesengerController()
+        tabbarMessenger.tabBarItem = UITabBarItem(title: "Tin nhắn", image: UIImage(named: "Vector-1")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Vector (4)")?.withRenderingMode(.alwaysOriginal))
+        
+        let tabbarFriend = FriendController()
+        tabbarFriend.tabBarItem = UITabBarItem(title: "Bạn bè", image: UIImage(named: "Group-1")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Group")?.withRenderingMode(.alwaysOriginal))
+        
+        let tabbarPersonal = PersonalController()
+        tabbarPersonal.tabBarItem = UITabBarItem(title: "Trang cá nhân", image: UIImage(named: "Vector (5)")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Vector")?.withRenderingMode(.alwaysOriginal))
+        // Custom check Email, passWord:
+        
+        Auth.auth().signIn(withEmail: UserDefaults.standard.string(forKey: "Email") ?? "",
+                           password: UserDefaults.standard.string(forKey: "PassWord") ?? "",
+                           completion: { (authData, error) in
+                            guard error == nil else {
+                                
+                                window.rootViewController = LoginController()
+                                
+                                return
+                            }
+                            
+                            let tabbarMessengerController = UINavigationController(rootViewController: MesengerController())
+                            tabbarMessengerController.tabBarItem = UITabBarItem(title: "Delete", image: UIImage(named: "")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "")?.withRenderingMode(.alwaysOriginal))
+                            tabbarController.viewControllers = [tabbarMessenger, tabbarFriend, tabbarPersonal]
+                            window.rootViewController = tabbarController
+                            
+                           // print(authData)
+                
+        })
         
         self.window = window
         window.makeKeyAndVisible()

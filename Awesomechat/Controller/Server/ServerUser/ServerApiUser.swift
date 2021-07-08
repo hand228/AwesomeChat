@@ -140,25 +140,19 @@ class ServerApiUser {
             guard let data = dataSnapshot.value as? [String: Any] else {
                 return
             }
-            print(data)
+            //print(data)
             
             // Node:
             for user in data.keys {
                 // user là ID của 1 người
                 // friends là key-value trong đó key là id của bạn bè, value là object chứa id của bạn bè và kiểu
-                
                 guard let friends: [String: Any] = data[user] as? [String: Any] else {
                     return
                 }
-                
                 //friends = data[user] as? [String: Any] ?? [:]
                 
-                print("Friends of \(user) value: \(friends.values) key friend \(friends.keys.count)")
-                
-//                guard let type: [String: Any] = friends[friends.keys] as? [String: Any] else {
-//                    return
-//                }
-                
+                print("Friends of \(user) value: \(friends.values) key friend \(friends.keys)")
+                print("------------------------")
                 arrayFriends.append(friends)
                 
                 
@@ -166,17 +160,14 @@ class ServerApiUser {
             
             for i in 0..<arrayFriends.count {
                 for idFriend in arrayFriends[i].keys {
-                    
                     guard let type: [String: Any] = arrayFriends[i][idFriend] as? [String : Any] else {
                         return
                     }
                     
-                    print("idFriend \(idFriend) value type \(type.values) key \(type.keys)")
-                    
+                    print("idFriend \(idFriend) value type \(type.values) key \(type.keys.first)")
                 }
+                print("---------------------")
             }
-            
-            
             guard let dataResuld = data["8q9de0KpYlabGDQ9Amw9U7DbQsi2"] else {
                 return
             }
@@ -184,42 +175,7 @@ class ServerApiUser {
             DispatchQueue.main.async {
                 completion(arrayFriends)
             }
-
-            
         })
-        
-    
-        
-        
-        
-//        requestApi.child("friend").observe(.childAdded, with: { (dataSnapshot) in
-//            guard let data = dataSnapshot.value as? String else {
-//                return
-//            }
-//            //arrayData.append(data)
-//            print(data)
-//        })
-        
-        
-        
-//        requestApi.child("dataDemo").getData(completion: {(error,snapShot) in
-//            guard error == nil else {
-//                return
-//            }
-//            guard snapShot.exists() == true else {
-//                return
-//            }
-//            print(snapShot.value)
-//
-//            guard let data = snapShot.value as? [String: Any] else {
-//                return
-//            }
-//            guard let dataResuld = data["data1"] else {
-//                return
-//            }
-//            print(dataResuld)
-//
-//        })
         
     }
     
@@ -242,6 +198,11 @@ class ServerApiUser {
             print("sdfgdfdf")
             
         })
+        
+        request?.child("User").queryEnding(atValue: "xdds", childKey: "dssds")
+        request?.child("user").queryStarting(afterValue: "sdsf", childKey: "sdfsd")
+        
+        
     }
     
     

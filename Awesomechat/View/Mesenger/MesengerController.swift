@@ -6,78 +6,93 @@
 //
 
 import UIKit
+import Firebase
 
 class MesengerController: UIViewController {
     
-    @IBOutlet weak var viewGradient: UIView!
     @IBOutlet weak var lbTinNhan: UILabel!
     @IBOutlet weak var imgIconMessenger: UIImageView!
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
+    let servereMesenger = ServerMesenger()
     
+    let serverApiUser = ServerApiUser()
+    var arrayDictionaryData: [[String: Any]] = [[:]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.yellow
-        
-//        customGradient()
-//        custom()
         
         tableView.register(UINib(nibName: "MesengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MesengerTableViewCellID")
+        customGradients()
+        requestApiMesenger()
+        let tapImage = UITapGestureRecognizer(target: self, action: #selector(tapImageIcon))
+        imgIconMessenger.isUserInteractionEnabled = true
+        imgIconMessenger.addGestureRecognizer(tapImage)
     }
     
-    func custom() {
+    @objc func tapImageIcon() {
+        serverApiUser.requestDataFirebase(completion: { (data) in
+            //print(data)
+        })
         
-        let view = UILabel()
-        view.frame = CGRect(x: 0, y: 0, width: 375, height: 228)
-        view.backgroundColor = .white
-        let layer0 = CAGradientLayer()
-        layer0.colors = [
-          UIColor(red: 0.263, green: 0.337, blue: 0.706, alpha: 1).cgColor,
-          UIColor(red: 0.239, green: 0.812, blue: 0.812, alpha: 1).cgColor
-        ]
-        layer0.locations = [0, 1]
-        layer0.startPoint = CGPoint(x: 0.25, y: 0.5)
-        layer0.endPoint = CGPoint(x: 0.75, y: 0.5)
-        layer0.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0, b: 1, c: -1, d: 0, tx: 1, ty: 0))
-        layer0.bounds = view.bounds.insetBy(dx: -0.5*view.bounds.size.width, dy: -0.5*view.bounds.size.height)
-        layer0.position = view.center
-        view.layer.addSublayer(layer0)
-        var parent = self.view!
-        parent.addSubview(view)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.widthAnchor.constraint(equalToConstant: 375).isActive = true
-        view.heightAnchor.constraint(equalToConstant: 228).isActive = true
-        view.leadingAnchor.constraint(equalTo: parent.leadingAnchor, constant: 0).isActive = true
-        view.topAnchor.constraint(equalTo: parent.topAnchor, constant: 0).isActive = true
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
     }
     
-    func customGradient() {
-        let layer0 = CAGradientLayer()
-        layer0.colors = [
-            UIColor(rgb: 0xff4356B4).cgColor,
-            UIColor(rgb: 0xff3DCFCF).cgColor
-        ]
-        layer0.locations = [0, 0.5]
-        layer0.startPoint = CGPoint(x: 0, y: 0.5)
-        layer0.endPoint = CGPoint(x: 0.25, y: 0.5)
-        
-        //layer0.transform = CATransform3DMakeAffineTransform(CGAffineTransform(a: 0, b: 1, c: -1, d: 0, tx: 1, ty: 0))
-        //layer0.bounds = viewGradient.bounds.insetBy(dx: -0.5*view.bounds.size.width, dy: -0.5*view.bounds.size.height)
-        layer0.position = viewGradient.center
-        viewGradient.layer.addSublayer(layer0)
-        
-        tableView.roundCorners(corners: [.topLeft, .topRight], radius: 20)
-        viewGradient.addSubview(lbTinNhan)
-        viewGradient.addSubview(imgIconMessenger)
-        viewGradient.addSubview(searchBar)
+    // MARK: CUSTOM GRADIEN
+    func customGradients() {
+        let colorTop =  UIColor(rgb: 0xff4356B4).cgColor
+        let colorBottom = UIColor(rgb: 0xff3DCFCF).cgColor
+                    
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.colors = [colorTop, colorBottom]
+        gradientLayer.locations = [0.0, 1.0]
+        gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height / 4)
+                
+        self.view.layer.addSublayer(gradientLayer)
+        view.addSubview(lbTinNhan)
+        view.addSubview(imgIconMessenger)
+        view.addSubview(searchBar)
         view.addSubview(tableView)
-
-        searchBar.backgroundColor = UIColor.clear
-        searchBar.layer.cornerRadius = 20
         
     }
     
+    // MARK: REQUEST API MESSENGER
+    func requestApiMesenger() {
+        servereMesenger.requestMesenger(completionHandle: { (arrayDictionary) in
+            print(arrayDictionary)
+            self.arrayDictionaryData = arrayDictionary
+            
+            // Call Data return in callBack.
+            for i in 0..<self.arrayDictionaryData.count {
+//                print(self.arrayDictionaryData.count)
+//                print(self.arrayDictionaryData[i])
+//                print(self.arrayDictionaryData[i].keys)
+                
+                // lấy ra các key của từng phần tử trong mảng:
+                for dataItems in self.arrayDictionaryData[i].keys {
+                    
+                    // lấy ra từng giá trị thông qua cái key của mảng:
+                    guard let dataDetail = self.arrayDictionaryData[i][dataItems] as? [String: Any] else {
+                        return
+                    }
+                    print(dataItems)
+                    
+                    // lây ra từng giá trị trong một mảng thông qua cái DictionAry nhỏ ben trong của nó:
+                    print(dataDetail["time"] ?? "time")
+                    
+                }
+            }
+            
+        })
+        
+        
+
+        
+        
+    }
 }
 
 
@@ -106,4 +121,7 @@ extension MesengerController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 90
     }
+    
+    
+    
 }
