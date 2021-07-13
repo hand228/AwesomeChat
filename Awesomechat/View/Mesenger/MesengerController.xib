@@ -4,16 +4,12 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MesengerController" customModule="Awesomechat" customModuleProvider="target">
             <connections>
-                <outlet property="imgIconMessenger" destination="zud-1j-cl0" id="gpE-fm-3ZK"/>
-                <outlet property="lbTinNhan" destination="pIw-Dt-W7Q" id="RBi-DD-ecZ"/>
-                <outlet property="searchBar" destination="e5X-ay-yMb" id="xd2-LS-9Ph"/>
-                <outlet property="tableView" destination="fv1-M3-eUX" id="eT2-o4-c3H"/>
+                <outlet property="tableView" destination="tRC-Uj-AkT" id="sXY-fC-KGd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,68 +18,23 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fv1-M3-eUX">
-                    <rect key="frame" x="0.0" y="198" width="414" height="698"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tRC-Uj-AkT">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <connections>
-                        <outlet property="dataSource" destination="-1" id="W1L-A1-VsJ"/>
-                        <outlet property="delegate" destination="-1" id="FDG-5K-IFH"/>
+                        <outlet property="dataSource" destination="-1" id="PoT-5W-UqY"/>
+                        <outlet property="delegate" destination="-1" id="gN1-xP-0jO"/>
                     </connections>
                 </tableView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create new message" translatesAutoresizingMaskIntoConstraints="NO" id="zud-1j-cl0">
-                    <rect key="frame" x="372" y="55" width="30" height="30"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="30" id="SWh-kS-e4f"/>
-                        <constraint firstAttribute="width" constant="30" id="Zd4-VM-iml"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tin Nhắn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pIw-Dt-W7Q">
-                    <rect key="frame" x="12" y="55" width="126" height="40"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="126" id="EDX-De-syx"/>
-                        <constraint firstAttribute="height" constant="40" id="tGg-Wc-Im7"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <searchBar contentMode="redraw" placeholder="Tìm kiếm tin nhắn..." showsSearchResultsButton="YES" translucent="NO" showsScopeBar="YES" translatesAutoresizingMaskIntoConstraints="NO" id="e5X-ay-yMb">
-                    <rect key="frame" x="12" y="125" width="390" height="51"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="51" id="pvX-1u-qJ5"/>
-                    </constraints>
-                    <textInputTraits key="textInputTraits"/>
-                    <scopeButtonTitles>
-                        <string>Title</string>
-                        <string>Title</string>
-                    </scopeButtonTitles>
-                </searchBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBlueColor"/>
+            <color key="backgroundColor" red="0.2627450980392157" green="0.33725490196078434" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstItem="fv1-M3-eUX" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="4nx-au-Dhj"/>
-                <constraint firstItem="fv1-M3-eUX" firstAttribute="top" secondItem="e5X-ay-yMb" secondAttribute="bottom" constant="22" id="5pb-n5-xZM"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="zud-1j-cl0" secondAttribute="trailing" constant="12" id="BTC-VD-5t9"/>
-                <constraint firstItem="pIw-Dt-W7Q" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="55" id="JMG-Qc-Z2d"/>
-                <constraint firstItem="fv1-M3-eUX" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="WSV-7j-o8H"/>
-                <constraint firstAttribute="bottom" secondItem="fv1-M3-eUX" secondAttribute="bottom" id="Zze-JO-Rhc"/>
-                <constraint firstItem="pIw-Dt-W7Q" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="aev-59-PBJ"/>
-                <constraint firstItem="e5X-ay-yMb" firstAttribute="top" secondItem="pIw-Dt-W7Q" secondAttribute="bottom" constant="30" id="cmr-XW-RvU"/>
-                <constraint firstItem="zud-1j-cl0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="55" id="f6G-0J-iXp"/>
-                <constraint firstItem="e5X-ay-yMb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="12" id="o9a-i8-7wc"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="e5X-ay-yMb" secondAttribute="trailing" constant="12" id="zMS-h1-bNR"/>
+                <constraint firstItem="tRC-Uj-AkT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="KFX-Dr-fIu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="tRC-Uj-AkT" secondAttribute="trailing" id="cyY-oW-QNy"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="tRC-Uj-AkT" secondAttribute="bottom" id="rWo-Mu-LbT"/>
+                <constraint firstItem="tRC-Uj-AkT" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="tVJ-MG-gqq"/>
             </constraints>
             <point key="canvasLocation" x="115.94202898550725" y="44.866071428571423"/>
         </view>
     </objects>
-    <resources>
-        <image name="create new message" width="35" height="35"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-    </resources>
 </document>

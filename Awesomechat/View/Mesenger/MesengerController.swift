@@ -10,29 +10,34 @@ import Firebase
 
 class MesengerController: UIViewController {
     
-    @IBOutlet weak var lbTinNhan: UILabel!
-    @IBOutlet weak var imgIconMessenger: UIImageView!
-    @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
-    let servereMesenger = ServerMesenger()
     
+    let servereMesenger = ServerMesenger()
     let serverApiUser = ServerApiUser()
+    
+    var arrayImage: [String] = []
+    var arrayName: [String] = []
+    
+    
+    var arrayKeyReceiver: [String] = []
     var arrayDictionaryData: [[String: Any]] = [[:]]
     
+    var dataChatss: [[DataChats]] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.register(UINib(nibName: "MesengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MesengerTableViewCellID")
-        customGradients()
+        
         requestApiMesenger()
-        let tapImage = UITapGestureRecognizer(target: self, action: #selector(tapImageIcon))
-        imgIconMessenger.isUserInteractionEnabled = true
-        imgIconMessenger.addGestureRecognizer(tapImage)
+        //requestApiUser()
+        //pushDataOnFirebase
+        
+        
+        
     }
     
     @objc func tapImageIcon() {
         serverApiUser.requestDataFirebase(completion: { (data) in
-            //print(data)
+            
         })
         
     }
@@ -40,56 +45,78 @@ class MesengerController: UIViewController {
         super.viewWillAppear(true)
         
     }
+
     
-    // MARK: CUSTOM GRADIEN
-    func customGradients() {
-        let colorTop =  UIColor(rgb: 0xff4356B4).cgColor
-        let colorBottom = UIColor(rgb: 0xff3DCFCF).cgColor
-                    
-        let gradientLayer = CAGradientLayer()
-        gradientLayer.colors = [colorTop, colorBottom]
-        gradientLayer.locations = [0.0, 1.0]
-        gradientLayer.frame = CGRect(x: 0.0, y: 0.0, width: self.view.frame.size.width, height: self.view.frame.size.height / 4)
-                
-        self.view.layer.addSublayer(gradientLayer)
-        view.addSubview(lbTinNhan)
-        view.addSubview(imgIconMessenger)
-        view.addSubview(searchBar)
-        view.addSubview(tableView)
-        
-    }
     
     // MARK: REQUEST API MESSENGER
     func requestApiMesenger() {
-        servereMesenger.requestMesenger(completionHandle: { (arrayDictionary) in
+        servereMesenger.requestMesenger(completionHandle: { (arrayDictionary, arrayKeyReceiver, arrayDataChat) in
             print(arrayDictionary)
-            self.arrayDictionaryData = arrayDictionary
+            print(arrayDataChat)
             
-            // Call Data return in callBack.
-            for i in 0..<self.arrayDictionaryData.count {
-//                print(self.arrayDictionaryData.count)
-//                print(self.arrayDictionaryData[i])
-//                print(self.arrayDictionaryData[i].keys)
-                
-                // lấy ra các key của từng phần tử trong mảng:
-                for dataItems in self.arrayDictionaryData[i].keys {
-                    
-                    // lấy ra từng giá trị thông qua cái key của mảng:
-                    guard let dataDetail = self.arrayDictionaryData[i][dataItems] as? [String: Any] else {
-                        return
-                    }
-                    print(dataItems)
-                    
-                    // lây ra từng giá trị trong một mảng thông qua cái DictionAry nhỏ ben trong của nó:
-                    print(dataDetail["time"] ?? "time")
-                    
-                }
-            }
+            self.dataChatss = arrayDataChat
+            self.arrayDictionaryData = arrayDictionary
+            self.arrayKeyReceiver = arrayKeyReceiver
+            print(arrayKeyReceiver)
+            print(arrayDataChat)
+            
+            
+            // MARK: C1: Khi lấy đc Id rồi request tiếp
+            let ref: DatabaseReference?
+            ref = Database.database().reference()
+            
+//            ref?.child("users").child(arrayDataChat[0].idReceive ?? "").getData(completion: { (error, dataSnap) in
+//                guard error == nil else {
+//                    return
+//                }
+//                let dataUser = DataUser(snapShot: dataSnap)
+//                print(dataUser.userName)
+            
+            
+//            })
+            
+            
+            
+            self.tableView.reloadData()
+            
+            // MARK: C2: Lấy data bằng cách request đến từng phần tử:
+            
+//            // Call Data return in callBack.
+//            for i in 0..<self.arrayDictionaryData.count {
+//                // lấy ra các key của từng phần tử trong mảng:
+//                for dataItems in self.arrayDictionaryData[i].keys {
+//                    // lấy ra từng giá trị thông qua cái key của mảng:
+//                    guard let dataDetail = self.arrayDictionaryData[i][dataItems] as? [String: Any] else {
+//                        return
+//                    }
+//                    print(dataItems)
+//                    // lây ra từng giá trị trong một mảng thông qua cái DictionAry nhỏ ben trong của nó:
+//                    print(dataDetail["time"] ?? "time")
+//                    self.arrayImage.append(dataDetail["userImgUrl"] as? String ?? "defauld" )
+//                    self.arrayName.append(dataDetail["userName"] as? String ?? "NO Name")
+//                }
+//                print(self.arrayName)
+//            }
             
         })
         
         
     }
+    
+    func pushDataOnFirebase(){
+        servereMesenger.pushDataChat(completion: { () in
+            
+        })
+    }
+    
+    
+    
+    func requestApiUser() {
+        serverApiUser.requestApiUser(completionHandle: { [weak self] (dataResuld) in
+            
+        })
+    }
+    
 }
 
 
@@ -99,20 +126,44 @@ extension MesengerController: UITableViewDelegate {
 
 extension MesengerController: UITableViewDataSource {
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+         //print(arrayKeyUser.count)
+        //print(dataChatss.count)
+        return dataChatss.count
+    }
+    
+    // MARK: CUSTOM HEADER MESSENGER
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let viewHeader = MesengerHeader()
+        //viewHeader.lbTest.text = "test"
+        
+        return viewHeader
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 180
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MesengerTableViewCellID", for: indexPath) as! MesengerTableViewCell
         
-        cell.roundCorners(corners: [.topLeft, .topRight], radius: 20)
-        cell.imgAvatar.image = UIImage(named: "random1")
-        cell.lbName.text = "aaaaaa"
-        cell.lbHours.text = "11:33"
-        cell.lbMesenger.text = "Anh đứng đây từ chiều"
+        // cell.roundCorners(corners: [.topLeft, .topRight], radius: 20)
+        
+//        cell.imgAvatar.image = UIImage(named: arrayImage[indexPath.row])
+        //cell.lbName.text = "arrayName[indexPath.row]"
+        
+        cell.lbName.text = dataChatss[indexPath.row][indexPath.row].idReceive
+        cell.lbHours.text = dataChatss[1][indexPath.row].messenger
+        cell.lbMesenger.text = dataChatss[2][indexPath.row].idSender
+        
+        
+        
+        //cell.textLabel?.text = "Anh đứng đây từ chiều"
         
         return cell
+        
+        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -21,8 +21,21 @@ class PersonalController: UIViewController {
     
     @IBAction func LogOut(_ sender: Any) {
         
+        
+        
+        let firebaseAuth = Auth.auth()
         do {
-            try Auth.auth().signOut()
+//            UserDefaults.standard.set("1", forKey: "Email")
+//            UserDefaults.standard.set("1", forKey: "PassWord")
+            
+            try firebaseAuth.signOut()
+            let naviLoginBack = UINavigationController()
+            naviLoginBack.modalPresentationStyle = .fullScreen
+            naviLoginBack.modalTransitionStyle = .crossDissolve
+            self.present(naviLoginBack, animated: true, completion: nil)
+            
+            
+            
         } catch {
             print(error)
         }

@@ -6,14 +6,9 @@
 //
 
 import Foundation
+import Firebase
 
-struct DataUser: Codable {
-    
-    
-    var userIdLocal: DataUserDetail
-    
-}
-struct DataUserDetail: Codable {
+struct DataUser {
     
     var stautus: String
     var userDateOfBirth: String
@@ -23,5 +18,20 @@ struct DataUserDetail: Codable {
     var userName: String
     var userPhone: String
     
+    
+    init(snapShot: DataSnapshot) {
+        
+        let snapShotValue = snapShot.value as? [String: Any]
+        
+        self.stautus = snapShotValue?["stautus"] as! String
+        self.userDateOfBirth = snapShotValue?["userDateOfBirth"] as! String
+        self.userEmail = snapShotValue?["userEmail"] as! String
+        self.userId = snapShotValue?["userId"] as! String
+        self.userImgUrl = snapShotValue?["userImgUrl"] as! String
+        self.userName = snapShotValue?["userName"] as! String
+        self.userPhone = snapShotValue?["userPhone"] as! String
+        
+        
+    }
 }
 

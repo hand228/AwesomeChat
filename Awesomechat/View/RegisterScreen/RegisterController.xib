@@ -26,7 +26,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TfM-hu-zsk">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="1018"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="1022.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="6hO-4O-rL0">
                                     <rect key="frame" x="85.5" y="630.5" width="243.5" height="30"/>
@@ -228,7 +228,7 @@
                         <constraint firstItem="TfM-hu-zsk" firstAttribute="width" secondItem="v3Y-xW-oUQ" secondAttribute="width" id="MDm-Cb-8hZ"/>
                         <constraint firstItem="TfM-hu-zsk" firstAttribute="leading" secondItem="v3Y-xW-oUQ" secondAttribute="leading" id="N8a-hg-ebr"/>
                         <constraint firstAttribute="bottom" secondItem="TfM-hu-zsk" secondAttribute="bottom" id="wSv-a2-LN4"/>
-                        <constraint firstItem="TfM-hu-zsk" firstAttribute="height" secondItem="v3Y-xW-oUQ" secondAttribute="height" constant="200" id="yhz-U9-MpK"/>
+                        <constraint firstItem="TfM-hu-zsk" firstAttribute="height" secondItem="v3Y-xW-oUQ" secondAttribute="height" multiplier="1.25" id="yhz-U9-MpK"/>
                     </constraints>
                 </scrollView>
             </subviews>

@@ -22,7 +22,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     let serverApiUser = ServerApiUser()
     let serverLogin = ServerLogin()
     var arrayData: [String] = []
-    var dataModelUser: DataUserDetail? = nil
+    //var dataModelUser: DataUserDetail? = nil
     
     
     override func viewDidLoad() {
@@ -79,7 +79,8 @@ class LoginController: UIViewController, UITextFieldDelegate {
         txtPassword.rightViewMode = .always
         txtPassword.rightView = imgPasswordRight
         txtPassword.textContentType = UITextContentType.password
-        //txtPassword.isSecureTextEntry = true
+        // txtPassword.isSecureTextEntry = true
+        
         
     }
     // MARK: CHECK ICON KEY PASSWORD
@@ -110,11 +111,13 @@ class LoginController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        UserDefaults.standard.set(email, forKey: "Email")
+        UserDefaults.standard.set(passWord, forKey: "PassWord")
+        
         //var dataAuth = AuthDataResult?.self
         Auth.auth().signIn(withEmail: email, password: passWord, completion: { [weak self ] (dataAuth, error) in
             
             guard error == nil else {
-                
                 return
             }
             guard let strongSelf = self else {
@@ -124,25 +127,34 @@ class LoginController: UIViewController, UITextFieldDelegate {
             guard let dataAuth = dataAuth else {
                 return
             }
-//            guard let aa = dataAuth.credential else {
-//                return
-//            }
             
             print(email + passWord )
             print(dataAuth)
             
-            strongSelf.present(MesengerController(), animated: true, completion: nil)
-            
-            
+            strongSelf.customPushSignIn()
         })
         
-        Auth.auth().addIDTokenDidChangeListener({ (auth, user) in
-            
-        })
+        
         
     }
     
-    
+    func customPushSignIn() {
+        
+        let tabbarController = UITabBarController()
+        let tabbarMessenger = MesengerController()
+        tabbarMessenger.tabBarItem = UITabBarItem(title: "Tin nhắn", image: UIImage(named: "Vector-1")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Vector (4)")?.withRenderingMode(.alwaysOriginal))
+        let tabbarFriend = FriendController()
+        tabbarFriend.tabBarItem = UITabBarItem(title: "Bạn bè", image: UIImage(named: "Group-1")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Group")?.withRenderingMode(.alwaysOriginal))
+        let tabbarPersonal = PersonalController()
+        tabbarPersonal.tabBarItem = UITabBarItem(title: "Trang cá nhân", image: UIImage(named: "Vector (5)")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Vector")?.withRenderingMode(.alwaysOriginal))
+        
+        tabbarController.viewControllers = [tabbarMessenger, tabbarFriend, tabbarPersonal]
+        tabbarController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        tabbarController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        
+        self.present(tabbarController, animated: true, completion: nil)
+        
+    }
     
     func alertUserLoginError() {
         let alear = UIAlertController(title: "Wood",

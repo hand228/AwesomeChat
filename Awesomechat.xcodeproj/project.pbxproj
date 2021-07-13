@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		31BABDED4009E8DCE6ED715C /* Pods_Awesomechat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */; };
+		D78ECD67269BD89A00ACF39D /* MesengerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78ECD66269BD89A00ACF39D /* MesengerHeader.swift */; };
+		D78ECD6B269BDD9600ACF39D /* MesengerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78ECD6A269BDD9600ACF39D /* MesengerHeader.xib */; };
+		D78ECD6D269C330200ACF39D /* Extension+Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78ECD6C269C330200ACF39D /* Extension+Date.swift */; };
+		D78ECD6F269C5B8F00ACF39D /* DataChats.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78ECD6E269C5B8F00ACF39D /* DataChats.swift */; };
 		D7A0BC30268D6AC500842C93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC2F268D6AC500842C93 /* AppDelegate.swift */; };
 		D7A0BC32268D6AC500842C93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC31268D6AC500842C93 /* SceneDelegate.swift */; };
 		D7A0BC37268D6AC500842C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A0BC35268D6AC500842C93 /* Main.storyboard */; };
@@ -40,6 +44,7 @@
 		D7A9F1A726930EF5001AE5AB /* MesengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9F1A526930EF5001AE5AB /* MesengerTableViewCell.swift */; };
 		D7A9F1A826930EF5001AE5AB /* MesengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A9F1A626930EF5001AE5AB /* MesengerTableViewCell.xib */; };
 		D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9F1A926931200001AE5AB /* Extension+UIView.swift */; };
+		D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA5CB026980C84001742DE /* ClassPushTabar.swift */; };
 		D7D06C54269437ED0046A9C3 /* LoginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D06C53269437ED0046A9C3 /* LoginEmail.swift */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +52,10 @@
 		32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Awesomechat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462DAAE6D841AD1FC2EFFD40 /* Pods-Awesomechat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesomechat.release.xcconfig"; path = "Target Support Files/Pods-Awesomechat/Pods-Awesomechat.release.xcconfig"; sourceTree = "<group>"; };
 		B8490B8547768FA02B648C9E /* Pods-Awesomechat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesomechat.debug.xcconfig"; path = "Target Support Files/Pods-Awesomechat/Pods-Awesomechat.debug.xcconfig"; sourceTree = "<group>"; };
+		D78ECD66269BD89A00ACF39D /* MesengerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesengerHeader.swift; sourceTree = "<group>"; };
+		D78ECD6A269BDD9600ACF39D /* MesengerHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MesengerHeader.xib; sourceTree = "<group>"; };
+		D78ECD6C269C330200ACF39D /* Extension+Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Date.swift"; sourceTree = "<group>"; };
+		D78ECD6E269C5B8F00ACF39D /* DataChats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataChats.swift; sourceTree = "<group>"; };
 		D7A0BC2C268D6AC500842C93 /* Awesomechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Awesomechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A0BC2F268D6AC500842C93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7A0BC31268D6AC500842C93 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +90,7 @@
 		D7A9F1A526930EF5001AE5AB /* MesengerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesengerTableViewCell.swift; sourceTree = "<group>"; };
 		D7A9F1A626930EF5001AE5AB /* MesengerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MesengerTableViewCell.xib; sourceTree = "<group>"; };
 		D7A9F1A926931200001AE5AB /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		D7BA5CB026980C84001742DE /* ClassPushTabar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassPushTabar.swift; sourceTree = "<group>"; };
 		D7D06C53269437ED0046A9C3 /* LoginEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -204,6 +214,8 @@
 			children = (
 				D7A0BC57268D7CA800842C93 /* Extension+Color.swift */,
 				D7A9F1A926931200001AE5AB /* Extension+UIView.swift */,
+				D7BA5CB026980C84001742DE /* ClassPushTabar.swift */,
+				D78ECD6C269C330200ACF39D /* Extension+Date.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -213,6 +225,7 @@
 			children = (
 				D7A0BC5A268DB3F800842C93 /* DataUser.swift */,
 				D7A155BF268ECEA000A8E50B /* DataFriend.swift */,
+				D78ECD6E269C5B8F00ACF39D /* DataChats.swift */,
 			);
 			path = ModelApi;
 			sourceTree = "<group>";
@@ -288,6 +301,8 @@
 			children = (
 				D7A9F1A526930EF5001AE5AB /* MesengerTableViewCell.swift */,
 				D7A9F1A626930EF5001AE5AB /* MesengerTableViewCell.xib */,
+				D78ECD66269BD89A00ACF39D /* MesengerHeader.swift */,
+				D78ECD6A269BDD9600ACF39D /* MesengerHeader.xib */,
 			);
 			path = MesengerTableCell;
 			sourceTree = "<group>";
@@ -371,6 +386,7 @@
 				D7A9F19D2692AE48001AE5AB /* TableViewController.xib in Resources */,
 				D7A55E042696D52B000767F8 /* FriendController.xib in Resources */,
 				D7A9F1A826930EF5001AE5AB /* MesengerTableViewCell.xib in Resources */,
+				D78ECD6B269BDD9600ACF39D /* MesengerHeader.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +442,7 @@
 				D7A0BC55268D704B00842C93 /* ViewControllera.swift in Sources */,
 				D7A55E032696D52B000767F8 /* FriendController.swift in Sources */,
 				D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */,
+				D78ECD67269BD89A00ACF39D /* MesengerHeader.swift in Sources */,
 				D7A0BC4E268D6B5000842C93 /* RegisterController.swift in Sources */,
 				D7A9F19C2692AE48001AE5AB /* TableViewController.swift in Sources */,
 				D7A9F1A32692E4AA001AE5AB /* ServerLogin.swift in Sources */,
@@ -440,8 +457,11 @@
 				D7A155C7268F252E00A8E50B /* ServerRegister.swift in Sources */,
 				D7A0BC4A268D6B4100842C93 /* LoginController.swift in Sources */,
 				D7A0BC5E268DBCC000842C93 /* ServerApiUser.swift in Sources */,
+				D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */,
 				D7D06C54269437ED0046A9C3 /* LoginEmail.swift in Sources */,
+				D78ECD6F269C5B8F00ACF39D /* DataChats.swift in Sources */,
 				D7A0BC32268D6AC500842C93 /* SceneDelegate.swift in Sources */,
+				D78ECD6D269C330200ACF39D /* Extension+Date.swift in Sources */,
 				D7A155C0268ECEA000A8E50B /* DataFriend.swift in Sources */,
 				D7A9F1A726930EF5001AE5AB /* MesengerTableViewCell.swift in Sources */,
 			);

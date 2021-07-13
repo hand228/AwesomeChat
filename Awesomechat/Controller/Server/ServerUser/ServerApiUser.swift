@@ -19,108 +19,52 @@ class ServerApiUser {
     var url = "https://awesomechat-5de51-default-rtdb.asia-southeast1.firebasedatabase.app/"
     var user = "user"
     var username: String = ""
-    let auth = Auth.auth()
+    let auth = Auth.auth().currentUser
     
-    func requestApiUser(completionHandle: @escaping (DataSnapshot) -> Void) {
-        guard let urlUser = URL(string: url+user+".json") else {
-            return
-        }
-        let urlRequest = URLRequest(url: urlUser)
+   
+    func requestApiUser(completionHandle: @escaping ([String]) -> Void) {
         
-        let task = URLSession.shared.dataTask(with: urlRequest, completionHandler: { (data, reponse, error) in
-            guard error == nil else {
-                return
-            }
-            guard let data = data else {
-                return
-            }
-            print(data)
-            
-            do {
-                try JSONDecoder().decode(DataUserDetail.self, from: data)
-                
-            } catch let error {
-                print(error)
-            }
-            guard let dataDecoder = try? JSONDecoder().decode(DataUser.self, from: data) else {
-                
-                return
-                
-            }
-           // print(dataDecoder.userDateOfBirth)
-            
-            DispatchQueue.main.async {
-                //completionHandle(dataDecoder)
-            }
-            
-        })
-        task.resume()
-    }
-    
-    
-    
-    func getData(completion: @escaping (DataUserDetail) -> Void) {
-        
-        var ref: DatabaseReference
+        var arrayKeyUser: [String] = []
+        let ref: DatabaseReference?
         ref = Database.database().reference()
-        // Cusstom kieu data tra ve:
-        var dataRequest: DatabaseReference
-        dataRequest = Database.database().reference()
         
+        print(auth?.uid)
         
-        
-        dataRequest.child("user").updateChildValues(["userId": "1112234334"])
-        dataRequest.child("user").updateChildValues(["username": "aasdfdss"], withCompletionBlock: { (error, dataReferent) in
+        ref?.child("users").getData(completion: { [weak self] (error, dataSnapshot) in
+            
             guard error == nil else {
                 return
             }
-            print(dataRequest)
-        })
-        let data: Any = ["userSetValue": "setValue"]
-        dataRequest.child("user").setValue(data, withCompletionBlock: { (error, reponse) in
-            guard error == nil else {
+            
+            
+            guard let StrongSelf = self else {
                 return
             }
-            print(reponse)
-           // let b = reponse.value(forKey: "userId") // bug
-          
-        })
-        
-        dataRequest.child("user").observe(DataEventType.childChanged, with: {(dataSnapshot) in
-            print(dataSnapshot)
-        })
-        
-        dataRequest.child("user").observeSingleEvent(of: .childAdded, with: { (dataAdd) in
-            print(dataAdd)
-        })
-        
-        
-        
-        dataRequest.child("user").onDisconnectRemoveValue(completionBlock: { (error, dataReferent) in
-            print(dataReferent)
-        })
-        
-        dataRequest.child("user").removeValue(completionBlock: { (eror, completion ) in
-            print(completion)
-        })
-        
-        dataRequest.child("user").childByAutoId().getData(completion: { (data, reponse) in
+            
+            guard let dataSnapshot = dataSnapshot.value as? [String: Any] else {
+                return
+            }
+            for dataSnapshotKey in dataSnapshot.keys {
+                print(dataSnapshotKey)
+                
+                guard let dataSnapshotValue = dataSnapshot[dataSnapshotKey] as? [String: Any] else {
+                    return
+                }
+                print(dataSnapshotValue)
+                arrayKeyUser.append(dataSnapshotKey)
+                
+                
+                
+            }
+            DispatchQueue.main.async {
+                completionHandle(arrayKeyUser)
+            }
             
         })
         
-        dataRequest.child("user").observeSingleEvent(of: .value, with: { (datasnapshot) in
-            guard let dataSnapshot = datasnapshot.value as? NSDictionary else {
-                return
-            }
-            let dataResuld = dataSnapshot["userId"] as? String
-            print(dataResuld ?? "bbbb")
-            
-        })
-        
-        //dataRequest.child("user").queryEqual(toValue: DataUser.self)
-        //dataRequest.child("user").queryEnding(atValue: DataUser.self)
-        //dataRequest.child("user").queryLimited(toLast: 2)
+       
     }
+    
     
     
     
@@ -128,8 +72,13 @@ class ServerApiUser {
         var requestApi: DatabaseReference
         var arrayFriends: [[String: Any]] = [[:]]
         
+        let auth = Auth.auth().currentUser
         requestApi = Database.database().reference()
         //print(requestApi.key)
+        
+        
+        // Check method push mesenger:
+        //requestApi.child("chats").child(auth!.uid).queryEnding(atValue: <#T##Any?#>, childKey: <#T##String?#>)
         
         requestApi.child("friend").getData(completion: { (error, dataSnapshot) in
             guard error == nil else {
