@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		31BABDED4009E8DCE6ED715C /* Pods_Awesomechat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */; };
+		AB2358B8269E72F3001EDCCF /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2358B6269E72F3001EDCCF /* TabBarViewController.swift */; };
+		AB2358B9269E72F3001EDCCF /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2358B7269E72F3001EDCCF /* TabBarViewController.xib */; };
+		AB2358BF269E79CC001EDCCF /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2358BD269E79CC001EDCCF /* GroupViewController.swift */; };
+		AB2358C0269E79CC001EDCCF /* GroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2358BE269E79CC001EDCCF /* GroupViewController.xib */; };
+		AB2358C3269E79DA001EDCCF /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2358C1269E79DA001EDCCF /* HomeViewController.swift */; };
+		AB2358C4269E79DA001EDCCF /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2358C2269E79DA001EDCCF /* HomeViewController.xib */; };
+		AB2358C8269E7A4E001EDCCF /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB2358C6269E7A4E001EDCCF /* MessengerViewController.swift */; };
+		AB2358C9269E7A4E001EDCCF /* MessengerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB2358C7269E7A4E001EDCCF /* MessengerViewController.xib */; };
 		D7A0BC30268D6AC500842C93 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC2F268D6AC500842C93 /* AppDelegate.swift */; };
 		D7A0BC32268D6AC500842C93 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC31268D6AC500842C93 /* SceneDelegate.swift */; };
 		D7A0BC37268D6AC500842C93 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7A0BC35268D6AC500842C93 /* Main.storyboard */; };
@@ -41,6 +49,14 @@
 /* Begin PBXFileReference section */
 		32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Awesomechat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462DAAE6D841AD1FC2EFFD40 /* Pods-Awesomechat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesomechat.release.xcconfig"; path = "Target Support Files/Pods-Awesomechat/Pods-Awesomechat.release.xcconfig"; sourceTree = "<group>"; };
+		AB2358B6269E72F3001EDCCF /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		AB2358B7269E72F3001EDCCF /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
+		AB2358BD269E79CC001EDCCF /* GroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
+		AB2358BE269E79CC001EDCCF /* GroupViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GroupViewController.xib; sourceTree = "<group>"; };
+		AB2358C1269E79DA001EDCCF /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		AB2358C2269E79DA001EDCCF /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
+		AB2358C6269E7A4E001EDCCF /* MessengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerViewController.swift; sourceTree = "<group>"; };
+		AB2358C7269E7A4E001EDCCF /* MessengerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerViewController.xib; sourceTree = "<group>"; };
 		B8490B8547768FA02B648C9E /* Pods-Awesomechat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesomechat.debug.xcconfig"; path = "Target Support Files/Pods-Awesomechat/Pods-Awesomechat.debug.xcconfig"; sourceTree = "<group>"; };
 		D7A0BC2C268D6AC500842C93 /* Awesomechat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Awesomechat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7A0BC2F268D6AC500842C93 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +119,42 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AB2358BA269E72F9001EDCCF /* TabBarScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB2358B6269E72F3001EDCCF /* TabBarViewController.swift */,
+				AB2358B7269E72F3001EDCCF /* TabBarViewController.xib */,
+			);
+			path = TabBarScreen;
+			sourceTree = "<group>";
+		};
+		AB2358BB269E79AE001EDCCF /* GroupScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB2358BD269E79CC001EDCCF /* GroupViewController.swift */,
+				AB2358BE269E79CC001EDCCF /* GroupViewController.xib */,
+			);
+			path = GroupScreen;
+			sourceTree = "<group>";
+		};
+		AB2358BC269E79BA001EDCCF /* HomeScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB2358C1269E79DA001EDCCF /* HomeViewController.swift */,
+				AB2358C2269E79DA001EDCCF /* HomeViewController.xib */,
+			);
+			path = HomeScreen;
+			sourceTree = "<group>";
+		};
+		AB2358C5269E7A30001EDCCF /* MessengerScreen */ = {
+			isa = PBXGroup;
+			children = (
+				AB2358C6269E7A4E001EDCCF /* MessengerViewController.swift */,
+				AB2358C7269E7A4E001EDCCF /* MessengerViewController.xib */,
+			);
+			path = MessengerScreen;
+			sourceTree = "<group>";
+		};
 		D7A0BC23268D6AC500842C93 = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +204,10 @@
 		D7A0BC44268D6AE500842C93 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB2358C5269E7A30001EDCCF /* MessengerScreen */,
+				AB2358BC269E79BA001EDCCF /* HomeScreen */,
+				AB2358BB269E79AE001EDCCF /* GroupScreen */,
+				AB2358BA269E72F9001EDCCF /* TabBarScreen */,
 				D7A9F1992692AE2F001AE5AB /* TableViewTest */,
 				D7A155C1268F102600A8E50B /* Mesenger */,
 				D7A0BC47268D6B2000842C93 /* RegisterScreen */,
@@ -312,15 +368,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB2358C0269E79CC001EDCCF /* GroupViewController.xib in Resources */,
 				D7A0BC3C268D6AC700842C93 /* LaunchScreen.storyboard in Resources */,
+				AB2358C4269E79DA001EDCCF /* HomeViewController.xib in Resources */,
 				D7A0BC4F268D6B5000842C93 /* RegisterController.xib in Resources */,
 				D7A0BC4B268D6B4100842C93 /* LoginController.xib in Resources */,
 				D7A155C5268F104100A8E50B /* MesengerController.xib in Resources */,
+				AB2358B9269E72F3001EDCCF /* TabBarViewController.xib in Resources */,
 				D7A9F1A12692AF0D001AE5AB /* TableViewCell.xib in Resources */,
 				D7A0BC39268D6AC700842C93 /* Assets.xcassets in Resources */,
 				D7A0BC37268D6AC500842C93 /* Main.storyboard in Resources */,
 				D7A155BE268EA8F100A8E50B /* GoogleService-Info.plist in Resources */,
 				D7A9F19D2692AE48001AE5AB /* TableViewController.xib in Resources */,
+				AB2358C9269E7A4E001EDCCF /* MessengerViewController.xib in Resources */,
 				D7A9F1A826930EF5001AE5AB /* MesengerTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,10 +434,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB2358C8269E7A4E001EDCCF /* MessengerViewController.swift in Sources */,
 				D7A0BC55268D704B00842C93 /* ViewControllera.swift in Sources */,
 				D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */,
 				D7A0BC4E268D6B5000842C93 /* RegisterController.swift in Sources */,
 				D7A9F19C2692AE48001AE5AB /* TableViewController.swift in Sources */,
+				AB2358BF269E79CC001EDCCF /* GroupViewController.swift in Sources */,
+				AB2358C3269E79DA001EDCCF /* HomeViewController.swift in Sources */,
 				D7A9F1A32692E4AA001AE5AB /* ServerLogin.swift in Sources */,
 				D7A0BC5B268DB3F800842C93 /* DataUser.swift in Sources */,
 				D7A0BC58268D7CA800842C93 /* Extension+Color.swift in Sources */,
@@ -387,6 +450,7 @@
 				D7A0BC53268D6EAF00842C93 /* SplashView.swift in Sources */,
 				D7A155C7268F252E00A8E50B /* ServerRegister.swift in Sources */,
 				D7A0BC4A268D6B4100842C93 /* LoginController.swift in Sources */,
+				AB2358B8269E72F3001EDCCF /* TabBarViewController.swift in Sources */,
 				D7A0BC5E268DBCC000842C93 /* ServerApiUser.swift in Sources */,
 				D7D06C54269437ED0046A9C3 /* LoginEmail.swift in Sources */,
 				D7A0BC32268D6AC500842C93 /* SceneDelegate.swift in Sources */,
@@ -541,6 +605,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Awesomechat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -560,6 +625,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Awesomechat/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
