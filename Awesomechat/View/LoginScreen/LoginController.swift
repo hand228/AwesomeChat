@@ -95,10 +95,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
             guard error == nil else {
                 return
             }
-            guard let strongSelf = self else {
-                return
-            }
-            
             guard let dataAuth = dataAuth else {
                 return
             }
@@ -106,8 +102,12 @@ class LoginController: UIViewController, UITextFieldDelegate {
             print(email + passWord )
             print(dataAuth)
             
-            strongSelf.customPushSignIn()
         })
+        
+        
+        DispatchQueue.main.async {
+            self.customPushSignIn()
+        }
         
     }
     

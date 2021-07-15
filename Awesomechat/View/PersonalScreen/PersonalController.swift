@@ -8,11 +8,7 @@
 import UIKit
 import FirebaseAuth
 
-
-
 class PersonalController: UIViewController {
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.yellow
@@ -21,19 +17,19 @@ class PersonalController: UIViewController {
     
     @IBAction func LogOut(_ sender: Any) {
         
-        
-        
         let firebaseAuth = Auth.auth()
         do {
-//            UserDefaults.standard.set("1", forKey: "Email")
-//            UserDefaults.standard.set("1", forKey: "PassWord")
+            
+            
+            UserDefaults.standard.removeObject(forKey: "Email")
+            UserDefaults.standard.removeObject(forKey: "PassWord")
             
             try firebaseAuth.signOut()
-            let naviLoginBack = UINavigationController()
+            
+            let naviLoginBack = LoginController()
             naviLoginBack.modalPresentationStyle = .fullScreen
             naviLoginBack.modalTransitionStyle = .crossDissolve
             self.present(naviLoginBack, animated: true, completion: nil)
-            
             
             
         } catch {
@@ -41,7 +37,5 @@ class PersonalController: UIViewController {
         }
         
     }
-    
-    
     
 }
