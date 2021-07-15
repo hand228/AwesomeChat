@@ -16,9 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowscene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowscene)
-        
         let tabbarController = UITabBarController()
-        
         // MARK: CUSTOM TABBAR
         let tabbarMessenger = MesengerController()
         tabbarMessenger.tabBarItem = UITabBarItem(title: "Tin nhắn", image: UIImage(named: "Vector-1")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Vector (4)")?.withRenderingMode(.alwaysOriginal))
@@ -28,8 +26,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let tabbarPersonal = PersonalController()
         tabbarPersonal.tabBarItem = UITabBarItem(title: "Trang cá nhân", image: UIImage(named: "Vector (5)")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Vector")?.withRenderingMode(.alwaysOriginal))
         // Custom check Email, passWord:
-        
-        
         
         Auth.auth().signIn(withEmail: UserDefaults.standard.string(forKey: "Email") ?? "",
                            password: UserDefaults.standard.string(forKey: "PassWord") ?? "",
@@ -42,8 +38,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                                 window.rootViewController = LoginController()
                                 return
                             }
-                            
-                            
                             tabbarController.viewControllers = [tabbarMessenger, tabbarFriend, tabbarPersonal]
                             window.rootViewController = tabbarController
                             

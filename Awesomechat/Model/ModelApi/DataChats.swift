@@ -9,15 +9,6 @@ import Foundation
 import Firebase
 
 
-struct DataChat {
-    var idDataChat: String
-    
-    init(snapshot: DataSnapshot) {
-        let snapShotValue = snapshot.value as? [String: Any]
-        self.idDataChat = snapShotValue?[""] as? String ?? ""
-        
-    }
-}
 struct DataChats {
     var date: String?
     var idReceiver: String?

@@ -14,11 +14,9 @@ class PushDataMesenger {
     let currenTime = DateComponents()
     let dateFormater = DateFormatter()
     
-    
     func pushDataChat(completion: @escaping () -> Void ) {
         let push: DatabaseReference?
         push = Database.database().reference()
-        
         guard let auth = Auth.auth().currentUser else {
             return
         }
@@ -30,14 +28,11 @@ class PushDataMesenger {
             guard error == nil else {
                 return
             }
-            
             guard let dataValue = snaShot.value as? [String: Any] else {
                 return
             }
             dataName = dataValue["userName"] as! String
             dataImgUrl = dataValue["userImgUrl"] as! String
-            
-            
             
         })
         
@@ -60,7 +55,6 @@ class PushDataMesenger {
         ]
         
         push?.child("chats").child(auth.uid + "8O8hSnKCo9gQEBX0YP5S6w0Kpht2").updateChildValues(postName)
-        
         push?.child("chats").child(auth.uid + "8O8hSnKCo9gQEBX0YP5S6w0Kpht2").child((push?.childByAutoId().key)!).updateChildValues(post)
         push?.child("chats").child(auth.uid + "WlEkV4tu2YMsMv6ZDVeulbbokS73").child((push?.childByAutoId().key)!).updateChildValues(post)
         push?.child("chats").child(auth.uid + "pyu5EQyuQvVr6ke0oFwow1a1SHG2").child((push?.childByAutoId().key)!).updateChildValues(post)

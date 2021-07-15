@@ -19,7 +19,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
     let serverLogin = ServerLogin()
     var arrayData: [String] = []
     var checkDisplayPassWord = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         customStoryboard()
@@ -77,8 +76,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBAction func btDangNhap(_ sender: Any) {
         
         // MARK: Login Email
-        
-        
         guard let email = txtEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {
             return
         }
@@ -88,8 +85,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
         guard let passWord = txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines), passWord.count >= 8 else {
             return
         }
+        
+        // MARK: SET USERDEFAULD:
         UserDefaults.standard.set(email, forKey: "Email")
         UserDefaults.standard.set(passWord, forKey: "PassWord")
+        
         Auth.auth().signIn(withEmail: email, password: passWord, completion: { [weak self ] (dataAuth, error) in
             
             guard error == nil else {
@@ -108,8 +108,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
             
             strongSelf.customPushSignIn()
         })
-        
-        
         
     }
     
@@ -151,9 +149,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBAction func btQuenMatKhau(_ sender: Any) {
         let naviTableView = UINavigationController(rootViewController: TableViewController())
         self.present(naviTableView, animated: true, completion: nil)
-//        self.serverLogin.fireBaseRegister(completion: { (data) in
-//            print(data)
-//        })
         
     }
     

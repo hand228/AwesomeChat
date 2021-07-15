@@ -14,10 +14,8 @@ class ServerLogin {
         let request: DatabaseReference?
         request = Database.database().reference()
         var dataDiction: [String: Any] = [:]
-        
         var array: [String] = []
         var checkLogin: Bool = false
-        
         request?.child("user").getData(completion: { (error, dataSnapshot) in
             
             guard error == nil else {
@@ -31,15 +29,10 @@ class ServerLogin {
             
             for items in dataValue.keys {
                 print(items)
-                
                 dataDiction = dataValue[items] as? [String: Any] ?? [:]
                 print(dataDiction["userEmail"] ?? "")
                 print(dataDiction["userName"] ?? "")
-                
-                //print("value \(dataDiction.values) and key \(dataDiction.keys)")
-                
                 if ((dataDiction["userEmail"] as? String == email) && dataDiction["userName"] as? String == passWord)  {
-                    
                     array.append(dataDiction["userEmail"] as! String )
                     array.append(dataDiction["userName"] as! String )
                     array.append(dataDiction["status"] as! String )
@@ -54,11 +47,6 @@ class ServerLogin {
                 completionHandle(array, checkLogin)
             }
         })
-        
-//        request?.child("Register").removeValue(completionBlock: { (error, dataReference) in
-//
-//            print(dataReference)
-//        })
         
     }
 }

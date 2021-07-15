@@ -9,7 +9,6 @@ import Foundation
 import Firebase
 
 struct DataUser {
-    
     var stautus: String
     var userDateOfBirth: String
     var userEmail: String
@@ -18,11 +17,9 @@ struct DataUser {
     var userName: String
     var userPhone: String
     
-    
     init(snapShot: DataSnapshot) {
         
         let snapShotValue = snapShot.value as? [String: Any]
-        
         self.stautus = snapShotValue?["stautus"] as! String
         self.userDateOfBirth = snapShotValue?["userDateOfBirth"] as! String
         self.userEmail = snapShotValue?["userEmail"] as! String

@@ -42,7 +42,6 @@ class LoginEmail {
         
         // sau khi đã gửi link về:
         if(Auth.auth().isSignIn(withEmailLink: "link da gui ve") == true) {
-            
             // thực thi việc người dùng đã chọn vào link:
             Auth.auth().signIn(withEmail: "email for me", link: "link da gui ve", completion: { (dataAuth, error) in
                 // handle code khi dã login đc
@@ -55,11 +54,9 @@ class LoginEmail {
             guard error == nil else {
                 return
             }
-            // handle code no error:
+            
             
         })
-        
-        //
         
     }
     

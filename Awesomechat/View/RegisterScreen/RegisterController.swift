@@ -18,8 +18,6 @@ class RegisterController: UIViewController {
     @IBOutlet weak var btDangKy: UIButton!
     
     var serverRegister = ServerRegister()
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         customStoryboard()
@@ -75,19 +73,18 @@ class RegisterController: UIViewController {
             return
         }
         
-       
-        
         Auth.auth().createUser(withEmail: email, password: passWord, completion: { (dataAuth, error) in
-            
             guard error == nil else {
                 return
             }
+            
+            // MARK: Set UserDefauld:
             UserDefaults.standard.set(email, forKey: "Email")
             UserDefaults.standard.set(passWord, forKey: "PassWord")
+            
             // MARK: PUSH DATA ON DATABASE
             let pushData: DatabaseReference?
             pushData = Database.database().reference()
-           
             let currentUser = Auth.auth().currentUser
             pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["email": email])
             pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userName": name])
@@ -98,8 +95,9 @@ class RegisterController: UIViewController {
             pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userDateOfBirth": "defauld"])
             self.customPushMesenger()
             
-            
         })
+        
+        
         
     }
     
@@ -111,9 +109,6 @@ class RegisterController: UIViewController {
     
     // MARK: CUSTOM PUSH SCREEN MESSENGER
     func customPushMesenger() {
-        
-       // let pushTabbar = PushTabbar()
-        
         let tabbarController = UITabBarController()
         let tabbarMessenger = MesengerController()
         tabbarMessenger.tabBarItem = UITabBarItem(title: "Tin nhắn", image: UIImage(named: "Vector-1")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Vector (4)")?.withRenderingMode(.alwaysOriginal))
