@@ -13,42 +13,27 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btDangNhap: UIButton!
-    
     @IBOutlet weak var scrollView: UIScrollView!
-    
-    
-    
     var arrayDiction: [[String : Any]] = [[:]]
     let serverApiUser = ServerApiUser()
     let serverLogin = ServerLogin()
     var arrayData: [String] = []
-    //var dataModelUser: DataUserDetail? = nil
-    
+    var checkDisplayPassWord = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         customStoryboard()
-        //scrollView.adjustedContentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         scrollView.alwaysBounceVertical = true
         scrollView.clipsToBounds = true
-        
-        //NotificationCenter.default.addObserver(self, selector: #selector(keboard), name: Notification.Name.UI, object: <#T##Any?#>)
         
     }
     
     @objc func keboard() {
         
     }
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        scrollView.frame = view.bounds
-        
-    }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        
         Auth.auth().addStateDidChangeListener({ (auth , user) in
             
         })
@@ -59,62 +44,52 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
     
     func customStoryboard() {
-        
         btDangNhap.layer.cornerRadius = 20
         let imgEmailRight = UIImageView()
         imgEmailRight.image = UIImage(named: "mail (3) 1")
         txtEmail.rightViewMode = .always
         txtEmail.rightView = imgEmailRight
         txtEmail.textContentType = UITextContentType.emailAddress
-        
-        
-        
         let imgPasswordRight = UIImageView()
         imgPasswordRight.image = UIImage(named: "key 1")
-        
         let tapImageRight = UITapGestureRecognizer(target: self, action: #selector(tapImageRight))
         imgPasswordRight.isUserInteractionEnabled = true
         imgPasswordRight.addGestureRecognizer(tapImageRight)
-        
         txtPassword.rightViewMode = .always
         txtPassword.rightView = imgPasswordRight
         txtPassword.textContentType = UITextContentType.password
         // txtPassword.isSecureTextEntry = true
         
-        
     }
+    
     // MARK: CHECK ICON KEY PASSWORD
-    var i = 0
     @objc func tapImageRight() {
         
-        if (i == 0) {
+        if (checkDisplayPassWord == 0) {
             txtPassword.isSecureTextEntry = false
-            i = 1
+            checkDisplayPassWord = 1
         } else {
             txtPassword.isSecureTextEntry = true
-            i = 0
+            checkDisplayPassWord = 0
         }
     }
     
     @IBAction func btDangNhap(_ sender: Any) {
         
         // MARK: Login Email
-//        guard let email = txtEmail.text, let passWord = txtPassword.text, passWord.count >= 8 else {
-//            alertUserLoginError()
-//            return
-//        }
+        
         
         guard let email = txtEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {
+            return
+        }
+        guard isValidEmail(email) == true else {
             return
         }
         guard let passWord = txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines), passWord.count >= 8 else {
             return
         }
-        
         UserDefaults.standard.set(email, forKey: "Email")
         UserDefaults.standard.set(passWord, forKey: "PassWord")
-        
-        //var dataAuth = AuthDataResult?.self
         Auth.auth().signIn(withEmail: email, password: passWord, completion: { [weak self ] (dataAuth, error) in
             
             guard error == nil else {
@@ -138,6 +113,12 @@ class LoginController: UIViewController, UITextFieldDelegate {
         
     }
     
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
+    }
+    
     func customPushSignIn() {
         
         let tabbarController = UITabBarController()
@@ -147,11 +128,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
         tabbarFriend.tabBarItem = UITabBarItem(title: "Bạn bè", image: UIImage(named: "Group-1")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Group")?.withRenderingMode(.alwaysOriginal))
         let tabbarPersonal = PersonalController()
         tabbarPersonal.tabBarItem = UITabBarItem(title: "Trang cá nhân", image: UIImage(named: "Vector (5)")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Vector")?.withRenderingMode(.alwaysOriginal))
-        
         tabbarController.viewControllers = [tabbarMessenger, tabbarFriend, tabbarPersonal]
         tabbarController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         tabbarController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        
         self.present(tabbarController, animated: true, completion: nil)
         
     }
@@ -163,7 +142,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
         alear.addAction(UIAlertAction(title: "Dismiss",
                                       style: .cancel,
                                       handler: nil))
-        
         present(alear, animated: true, completion: nil)
         
     }

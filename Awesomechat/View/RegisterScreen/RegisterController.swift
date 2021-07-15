@@ -65,6 +65,9 @@ class RegisterController: UIViewController {
         guard let email = txtEmail.text?.trimmingCharacters(in: .whitespacesAndNewlines) else {
             return
         }
+        guard isValidEmail(email) == true else {
+            return
+        }
         guard let passWord = txtPassword.text?.trimmingCharacters(in: .whitespacesAndNewlines), passWord.count >= 8 else {
             return
         }
@@ -76,40 +79,34 @@ class RegisterController: UIViewController {
         
         Auth.auth().createUser(withEmail: email, password: passWord, completion: { (dataAuth, error) in
             
-            //self.usingUserDefaulds()
-            guard error == nil, dataAuth != nil else {
-                //strongSelf.alertUserLoginError()
+            guard error == nil else {
                 return
             }
-            
-//            if ((UserDefaults.standard.string(forKey: "Email") == "1") && UserDefaults.standard.string(forKey: "PassWord") == "1") {
-//                
-//            } else {
-//                UserDefaults.standard.set(email, forKey: "Email")
-//                UserDefaults.standard.set(passWord, forKey: "PassWord")
-//            }
-            
             UserDefaults.standard.set(email, forKey: "Email")
             UserDefaults.standard.set(passWord, forKey: "PassWord")
-            
             // MARK: PUSH DATA ON DATABASE
             let pushData: DatabaseReference?
             pushData = Database.database().reference()
-            print(Auth.auth().currentUser?.uid ?? "555")
-            
+           
+            let currentUser = Auth.auth().currentUser
             pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["email": email])
             pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userName": name])
-            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userId": Auth.auth().currentUser?.uid ?? ""])
+            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userId": currentUser?.uid ?? ""])
             pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userStatus": "offline"])
-            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userPhone": Auth.auth().currentUser?.phoneNumber ?? "defauld"])
-            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userImgUrl": Auth.auth().currentUser?.photoURL ?? "defauld"])
+            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userPhone": currentUser?.phoneNumber ?? "defauld"])
+            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userImgUrl": currentUser?.photoURL ?? "defauld"])
             pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userDateOfBirth": "defauld"])
-            
             self.customPushMesenger()
             
             
         })
         
+    }
+    
+    func isValidEmail(_ email: String) -> Bool {
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
+        return emailPred.evaluate(with: email)
     }
     
     // MARK: CUSTOM PUSH SCREEN MESSENGER

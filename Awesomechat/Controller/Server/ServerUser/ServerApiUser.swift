@@ -52,9 +52,6 @@ class ServerApiUser {
                 }
                 print(dataSnapshotValue)
                 arrayKeyUser.append(dataSnapshotKey)
-                
-                
-                
             }
             DispatchQueue.main.async {
                 completionHandle(arrayKeyUser)
@@ -71,12 +68,9 @@ class ServerApiUser {
     func requestDataFirebase(completion: @escaping ([[String: Any]]) -> Void ) {
         var requestApi: DatabaseReference
         var arrayFriends: [[String: Any]] = [[:]]
-        
         let auth = Auth.auth().currentUser
         requestApi = Database.database().reference()
         //print(requestApi.key)
-        
-        
         // Check method push mesenger:
         //requestApi.child("chats").child(auth!.uid).queryEnding(atValue: <#T##Any?#>, childKey: <#T##String?#>)
         

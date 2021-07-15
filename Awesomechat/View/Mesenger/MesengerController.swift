@@ -14,6 +14,7 @@ class MesengerController: UIViewController {
     
     let servereMesenger = ServerMesenger()
     let serverApiUser = ServerApiUser()
+    let pushDataMesenger = PushDataMesenger()
     
     var arrayImage: [String] = []
     var arrayName: [String] = []
@@ -22,7 +23,7 @@ class MesengerController: UIViewController {
     var arrayKeyReceiver: [String] = []
     var arrayDictionaryData: [[String: Any]] = [[:]]
     
-    var dataChatss: [[DataChats]] = []
+    var dataChatss: [DataChats] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MesengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MesengerTableViewCellID")
@@ -71,8 +72,6 @@ class MesengerController: UIViewController {
 //                }
 //                let dataUser = DataUser(snapShot: dataSnap)
 //                print(dataUser.userName)
-            
-            
 //            })
             
             
@@ -103,8 +102,8 @@ class MesengerController: UIViewController {
         
     }
     
-    func pushDataOnFirebase(){
-        servereMesenger.pushDataChat(completion: { () in
+    func pushDataOnFirebase() {
+        pushDataMesenger.pushDataChat(completion: { () in
             
         })
     }
@@ -153,9 +152,11 @@ extension MesengerController: UITableViewDataSource {
 //        cell.imgAvatar.image = UIImage(named: arrayImage[indexPath.row])
         //cell.lbName.text = "arrayName[indexPath.row]"
         
-        cell.lbName.text = dataChatss[indexPath.row][indexPath.row].idReceive
-        cell.lbHours.text = dataChatss[1][indexPath.row].messenger
-        cell.lbMesenger.text = dataChatss[2][indexPath.row].idSender
+        
+        
+        cell.lbName.text = dataChatss[indexPath.row].idReceiver
+        cell.lbHours.text = dataChatss[indexPath.row].messenger
+        cell.lbMesenger.text = dataChatss[indexPath.row].idSender
         
         
         
