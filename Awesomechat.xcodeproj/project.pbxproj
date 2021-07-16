@@ -48,6 +48,7 @@
 		D7A9F1A826930EF5001AE5AB /* MesengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A9F1A626930EF5001AE5AB /* MesengerTableViewCell.xib */; };
 		D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9F1A926931200001AE5AB /* Extension+UIView.swift */; };
 		D7AC16A126A140F80082FF94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7AC16A026A140F80082FF94 /* GoogleService-Info.plist */; };
+		D7AC16A326A1913E0082FF94 /* CallMethodRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */; };
 		D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA5CB026980C84001742DE /* ClassPushTabar.swift */; };
 		D7D06C54269437ED0046A9C3 /* LoginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D06C53269437ED0046A9C3 /* LoginEmail.swift */; };
 /* End PBXBuildFile section */
@@ -98,6 +99,7 @@
 		D7A9F1A626930EF5001AE5AB /* MesengerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MesengerTableViewCell.xib; sourceTree = "<group>"; };
 		D7A9F1A926931200001AE5AB /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		D7AC16A026A140F80082FF94 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallMethodRequest.swift; sourceTree = "<group>"; };
 		D7BA5CB026980C84001742DE /* ClassPushTabar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassPushTabar.swift; sourceTree = "<group>"; };
 		D7D06C53269437ED0046A9C3 /* LoginEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -225,6 +227,7 @@
 				D7BA5CB026980C84001742DE /* ClassPushTabar.swift */,
 				D78ECD6C269C330200ACF39D /* Extension+Date.swift */,
 				D78E610E269EEFA100D8FB96 /* Extension+Snapshot.swift */,
+				D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 			files = (
 				D7A0BC55268D704B00842C93 /* ViewControllera.swift in Sources */,
 				D7A55E032696D52B000767F8 /* FriendController.swift in Sources */,
+				D7AC16A326A1913E0082FF94 /* CallMethodRequest.swift in Sources */,
 				D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */,
 				D78ECD67269BD89A00ACF39D /* MesengerHeader.swift in Sources */,
 				D7A0BC4E268D6B5000842C93 /* RegisterController.swift in Sources */,

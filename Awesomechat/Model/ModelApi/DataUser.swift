@@ -19,14 +19,13 @@ struct DataUser {
     
     init(snapShot: DataSnapshot) {
         
-        let snapShotValue = snapShot.value as? [String: Any]
-        self.stautus = snapShotValue?["stautus"] as! String
-        self.userDateOfBirth = snapShotValue?["userDateOfBirth"] as! String
-        self.userEmail = snapShotValue?["userEmail"] as! String
-        self.userId = snapShotValue?["userId"] as! String
-        self.userImgUrl = snapShotValue?["userImgUrl"] as! String
-        self.userName = snapShotValue?["userName"] as! String
-        self.userPhone = snapShotValue?["userPhone"] as! String
+        self.stautus = snapShot.childSnapshot(forPath: "userStatus").value as? String ?? ""
+        self.userDateOfBirth = snapShot.childSnapshot(forPath: "userDateOfBirth").value as? String ?? ""
+        self.userEmail = snapShot.childSnapshot(forPath: "email").value as? String ?? ""
+        self.userId = snapShot.childSnapshot(forPath: "userId").value as? String ?? ""
+        self.userImgUrl = snapShot.childSnapshot(forPath: "userImgUrl").value as? String ?? ""
+        self.userName = snapShot.childSnapshot(forPath: "userName").value as? String ?? ""
+        self.userPhone = snapShot.childSnapshot(forPath: "userPhone").value as? String ?? ""
         
         
     }
