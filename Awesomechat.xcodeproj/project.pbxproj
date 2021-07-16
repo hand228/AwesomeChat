@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		31BABDED4009E8DCE6ED715C /* Pods_Awesomechat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */; };
+		B2C73F8426A114E700346314 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C73F8326A114E700346314 /* ChatRoom.swift */; };
+		B2C73F8626A1174700346314 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C73F8526A1174700346314 /* ChatMessage.swift */; };
 		D78E610D269ECCFA00D8FB96 /* PushDataMesenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E610C269ECCFA00D8FB96 /* PushDataMesenger.swift */; };
 		D78E610F269EEFA100D8FB96 /* Extension+Snapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E610E269EEFA100D8FB96 /* Extension+Snapshot.swift */; };
 		D78ECD67269BD89A00ACF39D /* MesengerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78ECD66269BD89A00ACF39D /* MesengerHeader.swift */; };
@@ -53,6 +55,8 @@
 /* Begin PBXFileReference section */
 		32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Awesomechat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462DAAE6D841AD1FC2EFFD40 /* Pods-Awesomechat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesomechat.release.xcconfig"; path = "Target Support Files/Pods-Awesomechat/Pods-Awesomechat.release.xcconfig"; sourceTree = "<group>"; };
+		B2C73F8326A114E700346314 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
+		B2C73F8526A1174700346314 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		B8490B8547768FA02B648C9E /* Pods-Awesomechat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesomechat.debug.xcconfig"; path = "Target Support Files/Pods-Awesomechat/Pods-Awesomechat.debug.xcconfig"; sourceTree = "<group>"; };
 		D78E610C269ECCFA00D8FB96 /* PushDataMesenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushDataMesenger.swift; sourceTree = "<group>"; };
 		D78E610E269EEFA100D8FB96 /* Extension+Snapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Snapshot.swift"; sourceTree = "<group>"; };
@@ -231,6 +235,8 @@
 				D7A0BC5A268DB3F800842C93 /* DataUser.swift */,
 				D7A155BF268ECEA000A8E50B /* DataFriend.swift */,
 				D78ECD6E269C5B8F00ACF39D /* DataChats.swift */,
+				B2C73F8326A114E700346314 /* ChatRoom.swift */,
+				B2C73F8526A1174700346314 /* ChatMessage.swift */,
 			);
 			path = ModelApi;
 			sourceTree = "<group>";
@@ -463,7 +469,9 @@
 				D7A0BC53268D6EAF00842C93 /* SplashView.swift in Sources */,
 				D7A55E0D2696DE8E000767F8 /* ServerMesenger.swift in Sources */,
 				D7A155C7268F252E00A8E50B /* ServerRegister.swift in Sources */,
+				B2C73F8426A114E700346314 /* ChatRoom.swift in Sources */,
 				D7A0BC4A268D6B4100842C93 /* LoginController.swift in Sources */,
+				B2C73F8626A1174700346314 /* ChatMessage.swift in Sources */,
 				D7A0BC5E268DBCC000842C93 /* ServerApiUser.swift in Sources */,
 				D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */,
 				D7D06C54269437ED0046A9C3 /* LoginEmail.swift in Sources */,
