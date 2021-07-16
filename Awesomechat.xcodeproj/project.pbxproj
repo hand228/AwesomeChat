@@ -30,7 +30,6 @@
 		D7A0BC58268D7CA800842C93 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC57268D7CA800842C93 /* Extension+Color.swift */; };
 		D7A0BC5B268DB3F800842C93 /* DataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC5A268DB3F800842C93 /* DataUser.swift */; };
 		D7A0BC5E268DBCC000842C93 /* ServerApiUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC5D268DBCC000842C93 /* ServerApiUser.swift */; };
-		D7A155BE268EA8F100A8E50B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7A155BD268EA8F100A8E50B /* GoogleService-Info.plist */; };
 		D7A155C0268ECEA000A8E50B /* DataFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A155BF268ECEA000A8E50B /* DataFriend.swift */; };
 		D7A155C4268F104100A8E50B /* MesengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A155C2268F104000A8E50B /* MesengerController.swift */; };
 		D7A155C5268F104100A8E50B /* MesengerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A155C3268F104000A8E50B /* MesengerController.xib */; };
@@ -48,6 +47,7 @@
 		D7A9F1A726930EF5001AE5AB /* MesengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9F1A526930EF5001AE5AB /* MesengerTableViewCell.swift */; };
 		D7A9F1A826930EF5001AE5AB /* MesengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A9F1A626930EF5001AE5AB /* MesengerTableViewCell.xib */; };
 		D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9F1A926931200001AE5AB /* Extension+UIView.swift */; };
+		D7AC16A126A140F80082FF94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7AC16A026A140F80082FF94 /* GoogleService-Info.plist */; };
 		D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA5CB026980C84001742DE /* ClassPushTabar.swift */; };
 		D7D06C54269437ED0046A9C3 /* LoginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D06C53269437ED0046A9C3 /* LoginEmail.swift */; };
 /* End PBXBuildFile section */
@@ -80,7 +80,6 @@
 		D7A0BC57268D7CA800842C93 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		D7A0BC5A268DB3F800842C93 /* DataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUser.swift; sourceTree = "<group>"; };
 		D7A0BC5D268DBCC000842C93 /* ServerApiUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApiUser.swift; sourceTree = "<group>"; };
-		D7A155BD268EA8F100A8E50B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D7A155BF268ECEA000A8E50B /* DataFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFriend.swift; sourceTree = "<group>"; };
 		D7A155C2268F104000A8E50B /* MesengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesengerController.swift; sourceTree = "<group>"; };
 		D7A155C3268F104000A8E50B /* MesengerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MesengerController.xib; sourceTree = "<group>"; };
@@ -98,6 +97,7 @@
 		D7A9F1A526930EF5001AE5AB /* MesengerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MesengerTableViewCell.swift; sourceTree = "<group>"; };
 		D7A9F1A626930EF5001AE5AB /* MesengerTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MesengerTableViewCell.xib; sourceTree = "<group>"; };
 		D7A9F1A926931200001AE5AB /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
+		D7AC16A026A140F80082FF94 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D7BA5CB026980C84001742DE /* ClassPushTabar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassPushTabar.swift; sourceTree = "<group>"; };
 		D7D06C53269437ED0046A9C3 /* LoginEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -160,8 +160,8 @@
 				D7A0BC38268D6AC700842C93 /* Assets.xcassets */,
 				D7A0BC3A268D6AC700842C93 /* LaunchScreen.storyboard */,
 				D7A0BC54268D704B00842C93 /* ViewControllera.swift */,
+				D7AC16A026A140F80082FF94 /* GoogleService-Info.plist */,
 				D7A0BC3D268D6AC700842C93 /* Info.plist */,
-				D7A155BD268EA8F100A8E50B /* GoogleService-Info.plist */,
 				D7A0BC52268D6EAF00842C93 /* SplashView.swift */,
 			);
 			path = Awesomechat;
@@ -386,6 +386,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7AC16A126A140F80082FF94 /* GoogleService-Info.plist in Resources */,
 				D7A0BC3C268D6AC700842C93 /* LaunchScreen.storyboard in Resources */,
 				D7A0BC4F268D6B5000842C93 /* RegisterController.xib in Resources */,
 				D7A0BC4B268D6B4100842C93 /* LoginController.xib in Resources */,
@@ -394,7 +395,6 @@
 				D7A9F1A12692AF0D001AE5AB /* TableViewCell.xib in Resources */,
 				D7A0BC39268D6AC700842C93 /* Assets.xcassets in Resources */,
 				D7A0BC37268D6AC500842C93 /* Main.storyboard in Resources */,
-				D7A155BE268EA8F100A8E50B /* GoogleService-Info.plist in Resources */,
 				D7A9F19D2692AE48001AE5AB /* TableViewController.xib in Resources */,
 				D7A55E042696D52B000767F8 /* FriendController.xib in Resources */,
 				D7A9F1A826930EF5001AE5AB /* MesengerTableViewCell.xib in Resources */,

@@ -12,9 +12,14 @@ struct ChatMessage {
     var messageId: String
     var idSender: String
     var idReceiver: String
+    
     init(snapshot: DataSnapshot) {
-        messageId = snapshot.key
-        idSender = snapshot.childSnapshot(forPath: "idSender").value as? String ?? ""
-        idReceiver = snapshot.childSnapshot(forPath: "idReceiver").value as? String ?? ""
+        self.messageId = snapshot.key
+        self.idSender = snapshot.childSnapshot(forPath: "idSender").value as? String ?? ""
+        self.idReceiver = snapshot.childSnapshot(forPath: "idReceiver").value as? String ?? ""
+        
+//        let snapShotData = snapshot.value as? [String: Any]
+//        self.idSender = snapShotData?["idSender"] as? String ?? ""
+//        self.idReceiver = snapShotData?["idReceiver"] as? String ?? ""
     }
 }

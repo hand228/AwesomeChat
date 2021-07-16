@@ -20,6 +20,8 @@ class MesengerController: UIViewController {
     var arrayDictionaryData: [[String: Any]] = [[:]]
     
     var dataChatss: [DataChats] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MesengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MesengerTableViewCellID")
@@ -43,7 +45,7 @@ class MesengerController: UIViewController {
         servereMesenger.requestMesenger(completionHandle: {(arrayKeyReceiver, arrayDataChat) in
             
             print(arrayDataChat)
-            self.dataChatss = arrayDataChat
+            //self.dataChatss = arrayDataChat
             self.arrayKeyReceiver = arrayKeyReceiver
             print(arrayKeyReceiver)
             print(arrayDataChat)

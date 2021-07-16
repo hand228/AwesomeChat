@@ -701,13 +701,13 @@
             filePath = "Awesomechat/View/Mesenger/MesengerController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "tapImageIcon()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "273BF005-AEC4-4952-A115-922A52E7E39D - 4947051413f4cce5"
+                  uuid = "273BF005-AEC4-4952-A115-922A52E7E39D - 4947051413f4cf27"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -717,12 +717,12 @@
                   urlString = "file:///Users/longdn/Desktop/awesome_chat/Awesomechat/View/Mesenger/MesengerController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "32"
-                  endingLineNumber = "32"
+                  startingLineNumber = "34"
+                  endingLineNumber = "34"
                   offsetFromSymbolStart = "22">
                </Location>
                <Location
-                  uuid = "273BF005-AEC4-4952-A115-922A52E7E39D - 583f2e5e8d99d37b"
+                  uuid = "273BF005-AEC4-4952-A115-922A52E7E39D - 583f2e5e8d99d33d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -732,8 +732,8 @@
                   urlString = "file:///Users/longdn/Desktop/awesome_chat/Awesomechat/View/Mesenger/MesengerController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "34"
-                  endingLineNumber = "34"
+                  startingLineNumber = "36"
+                  endingLineNumber = "36"
                   offsetFromSymbolStart = "16">
                </Location>
             </Locations>
@@ -989,8 +989,8 @@
             filePath = "Awesomechat/View/Mesenger/MesengerController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
             landmarkName = "requestApiMesenger()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1005,8 +1005,8 @@
             filePath = "Awesomechat/View/Mesenger/MesengerController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "requestApiMesenger()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1021,32 +1021,32 @@
             filePath = "Awesomechat/Controller/Server/ServerMesenger/ServerMesenger.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "19"
-            endingLineNumber = "19"
+            startingLineNumber = "18"
+            endingLineNumber = "18"
             landmarkName = "requestMesenger(completionHandle:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "78EF14B1-75EE-4DE2-BF62-C42B07D16C42 - 45a6008a57473ddd"
+                  uuid = "78EF14B1-75EE-4DE2-BF62-C42B07D16C42 - b1a0fe5ff34975e"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Awesomechat.ServerMesenger.requestMesenger(completionHandle: (Swift.Array&lt;Swift.String&gt;, Swift.Array&lt;Awesomechat.DataChats&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "Awesomechat.ServerMesenger.requestMesenger(completionHandle: (Swift.Array&lt;Swift.String&gt;, Swift.Array&lt;Awesomechat.ChatRoom&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Awesomechat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/longdn/Desktop/awesome_chat/Awesomechat/Controller/Server/ServerMesenger/ServerMesenger.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "19"
-                  endingLineNumber = "19"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
                   offsetFromSymbolStart = "357">
                </Location>
                <Location
-                  uuid = "78EF14B1-75EE-4DE2-BF62-C42B07D16C42 - 8a82af6577b20f52"
+                  uuid = "78EF14B1-75EE-4DE2-BF62-C42B07D16C42 - 64ce290ed5501f70"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, __C.FIRDataSnapshot) -&gt; () in Awesomechat.ServerMesenger.requestMesenger(completionHandle: (Swift.Array&lt;Swift.String&gt;, Swift.Array&lt;Awesomechat.DataChats&gt;) -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.Error&gt;, __C.FIRDataSnapshot) -&gt; () in Awesomechat.ServerMesenger.requestMesenger(completionHandle: (Swift.Array&lt;Swift.String&gt;, Swift.Array&lt;Awesomechat.ChatRoom&gt;) -&gt; ()) -&gt; ()"
                   moduleName = "Awesomechat"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/longdn/Desktop/awesome_chat/Awesomechat/Controller/Server/ServerMesenger/ServerMesenger.swift"
@@ -1054,7 +1054,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "20"
                   endingLineNumber = "20"
-                  offsetFromSymbolStart = "269">
+                  offsetFromSymbolStart = "195">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -1101,8 +1101,8 @@
             filePath = "Awesomechat/Controller/Server/ServerMesenger/ServerMesenger.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "requestMesenger(completionHandle:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1233,6 +1233,166 @@
                   offsetFromSymbolStart = "19">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "060176A7-E5CD-4C9B-9B44-6071EBD04138"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/Model/ModelApi/ChatRoom.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "init(snapShot:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "610370B4-C0EB-4E83-BBC3-76ADBCEB58D9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/Controller/Server/ServerMesenger/ServerMesenger.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "requestMesenger(completionHandle:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED6C73E6-19E3-4ABA-8D07-BD35E504747F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/Controller/Server/ServerMesenger/ServerMesenger.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "requestMesenger(completionHandle:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3BB47B2A-3359-4AE4-B322-593F53EC4192"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/Model/ModelApi/ChatRoom.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "init(snapShot:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3AECA6E-E687-4D7B-870D-81B66B2E8375"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/Controller/Server/ServerMesenger/ServerMesenger.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "requestMesenger(completionHandle:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B056921F-52FB-498E-BEE5-393EBC36F3D8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/Model/ModelApi/ChatRoom.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "init(snapShot:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8EF141B1-9B34-47D1-B23D-005B8131A3D3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/Controller/Server/ServerMesenger/ServerMesenger.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "requestMesenger(completionHandle:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6F6B3BD3-AD81-4768-AE6A-98AA717DF707"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/Model/ModelApi/ChatMessage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "init(snapshot:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5CC083B9-D611-47A3-BF6D-77F767821898"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/Model/ModelApi/ChatMessage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "ChatMessage"
+            landmarkType = "14">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3EDE7A52-1A8B-4CF1-9B97-5FBF6F9AF091"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Awesomechat/Model/ModelApi/ChatRoom.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "31"
+            endingLineNumber = "31"
+            landmarkName = "init(snapShot:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
