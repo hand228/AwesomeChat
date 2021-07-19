@@ -2,7 +2,7 @@
 //  TableViewCell.swift
 //  Awesomechat
 //
-//  Created by LongDN on 05/07/2021.
+//  Created by MaiNQ on 16/07/2021.
 //
 
 import UIKit

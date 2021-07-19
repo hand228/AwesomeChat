@@ -9,6 +9,5 @@ import Foundation
 
 struct DataFriend {
     var friendId: String
-    var type:  String
-    
+    var type: String
 }

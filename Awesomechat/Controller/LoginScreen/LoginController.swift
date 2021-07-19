@@ -147,8 +147,9 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     
     @IBAction func btQuenMatKhau(_ sender: Any) {
-        let naviTableView = UINavigationController(rootViewController: TableViewController())
-        self.present(naviTableView, animated: true, completion: nil)
+        // TODO: Quên mật khẩu
+//        let naviTableView = UINavigationController(rootViewController: TableViewController())
+//        self.present(naviTableView, animated: true, completion: nil)
         
     }
     

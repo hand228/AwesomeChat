@@ -51,8 +51,6 @@ class MesengerController: UIViewController {
             let ref: DatabaseReference?
             ref = Database.database().reference()
             self.tableView.reloadData()
-            
-            
         })
     }
     
