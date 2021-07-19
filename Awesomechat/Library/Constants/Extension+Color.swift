@@ -24,6 +24,8 @@ extension UIColor {
             blue: rgb & 0xFF
         )
     }
+    
+    static var myBlue = UIColor(red: 67.0/255.0, green: 86.0/255.0, blue: 180.0/255.0, alpha: 1)
 }
 
 class Colors {

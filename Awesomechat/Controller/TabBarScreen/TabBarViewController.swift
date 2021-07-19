@@ -54,7 +54,7 @@ class TabBarViewController: UIViewController {
         groupImg.image = UIImage(named: "g")
         homeImg.image = UIImage(named: "h")
         
-        mesLbl.textColor = UIColor(red: 67.0/255.0, green: 86.0/255.0, blue: 180.0/255.0, alpha: 1)
+        mesLbl.textColor = UIColor.myBlue
         groupLbl.textColor = .lightGray
         homeLbl.textColor = .lightGray
         
@@ -78,7 +78,7 @@ class TabBarViewController: UIViewController {
             mesImg.image = UIImage(named: "m")
             homeImg.image = UIImage(named: "h")
             
-            groupLbl.textColor = UIColor(red: 67.0/255.0, green: 86.0/255.0, blue: 180.0/255.0, alpha: 1)
+            groupLbl.textColor = UIColor.myBlue
             mesLbl.textColor = .lightGray
             homeLbl.textColor = .lightGray
             
@@ -95,7 +95,7 @@ class TabBarViewController: UIViewController {
             
             mesLbl.textColor = .lightGray
             groupLbl.textColor = .lightGray
-            homeLbl.textColor = UIColor(red: 67.0/255.0, green: 86.0/255.0, blue: 180.0/255.0, alpha: 1)
+            homeLbl.textColor = UIColor.myBlue
             
             mesDot.image = UIImage(named: "")
             groupDot.image = UIImage(named: "")
