@@ -20,11 +20,6 @@ class TableViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: .camera, target: self, action: #selector(tapBack))
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "TableViewCellID")
         
-        serverTableView.requestDataFirebase(completion: { (dataSnapshot)  in
-            
-            self.arrayDiction = dataSnapshot
-            
-        })
     }
     
     @objc func tapBack() {

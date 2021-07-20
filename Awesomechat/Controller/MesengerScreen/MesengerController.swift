@@ -18,25 +18,23 @@ class MesengerController: UIViewController {
     var arrayName: [String] = []
     var arrayKeyReceiver: [String] = []
     var arrayDictionaryData: [[String: Any]] = [[:]]
-    
     var dataChatss: [DataChats] = []
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MesengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MesengerTableViewCellID")
+        
+        requestApiUser()
         requestApiMesenger()
-        //requestApiUser()
-        //pushDataOnFirebase
+        
     }
     
     @objc func tapImageIcon() {
-        serverApiUser.requestDataFirebase(completion: { (data) in
-            
-        })
+        
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
         
     }
     
@@ -45,10 +43,11 @@ class MesengerController: UIViewController {
         servereMesenger.requestMesenger(completionHandle: {(arrayKeyReceiver, arrayDataChat) in
             
             print(arrayDataChat)
-            //self.dataChatss = arrayDataChat
             self.arrayKeyReceiver = arrayKeyReceiver
             print(arrayKeyReceiver)
             print(arrayDataChat)
+            
+            
             let ref: DatabaseReference?
             ref = Database.database().reference()
             self.tableView.reloadData()
@@ -64,8 +63,10 @@ class MesengerController: UIViewController {
         })
     }
     
+    
+    // MARK: REQUEST API USER:
     func requestApiUser() {
-        serverApiUser.requestApiUser(completionHandle: { [weak self] (dataResuld) in
+        serverApiUser.requestApiUser(completionHandle: { (dataResuld) in
             
         })
     }

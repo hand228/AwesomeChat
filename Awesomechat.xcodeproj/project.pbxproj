@@ -25,8 +25,6 @@
 		D7A0BC4B268D6B4100842C93 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A0BC49268D6B4100842C93 /* LoginController.xib */; };
 		D7A0BC4E268D6B5000842C93 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC4C268D6B5000842C93 /* RegisterController.swift */; };
 		D7A0BC4F268D6B5000842C93 /* RegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7A0BC4D268D6B5000842C93 /* RegisterController.xib */; };
-		D7A0BC53268D6EAF00842C93 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC52268D6EAF00842C93 /* SplashView.swift */; };
-		D7A0BC55268D704B00842C93 /* ViewControllera.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC54268D704B00842C93 /* ViewControllera.swift */; };
 		D7A0BC58268D7CA800842C93 /* Extension+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC57268D7CA800842C93 /* Extension+Color.swift */; };
 		D7A0BC5B268DB3F800842C93 /* DataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC5A268DB3F800842C93 /* DataUser.swift */; };
 		D7A0BC5E268DBCC000842C93 /* ServerApiUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC5D268DBCC000842C93 /* ServerApiUser.swift */; };
@@ -50,7 +48,6 @@
 		D7AC16A126A140F80082FF94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7AC16A026A140F80082FF94 /* GoogleService-Info.plist */; };
 		D7AC16A326A1913E0082FF94 /* CallMethodRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */; };
 		D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA5CB026980C84001742DE /* ClassPushTabar.swift */; };
-		D7D06C54269437ED0046A9C3 /* LoginEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D06C53269437ED0046A9C3 /* LoginEmail.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,8 +73,6 @@
 		D7A0BC49268D6B4100842C93 /* LoginController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		D7A0BC4C268D6B5000842C93 /* RegisterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		D7A0BC4D268D6B5000842C93 /* RegisterController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterController.xib; sourceTree = "<group>"; };
-		D7A0BC52268D6EAF00842C93 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		D7A0BC54268D704B00842C93 /* ViewControllera.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllera.swift; sourceTree = "<group>"; };
 		D7A0BC57268D7CA800842C93 /* Extension+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+Color.swift"; sourceTree = "<group>"; };
 		D7A0BC5A268DB3F800842C93 /* DataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUser.swift; sourceTree = "<group>"; };
 		D7A0BC5D268DBCC000842C93 /* ServerApiUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApiUser.swift; sourceTree = "<group>"; };
@@ -101,7 +96,6 @@
 		D7AC16A026A140F80082FF94 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallMethodRequest.swift; sourceTree = "<group>"; };
 		D7BA5CB026980C84001742DE /* ClassPushTabar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassPushTabar.swift; sourceTree = "<group>"; };
-		D7D06C53269437ED0046A9C3 /* LoginEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginEmail.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,17 +148,17 @@
 		D7A0BC2E268D6AC500842C93 /* Awesomechat */ = {
 			isa = PBXGroup;
 			children = (
-				D7A0BC56268D7C9300842C93 /* Extension */,
+				D7AC16A026A140F80082FF94 /* GoogleService-Info.plist */,
+				D7A0BC38268D6AC700842C93 /* Assets.xcassets */,
+				D7A0BC3D268D6AC700842C93 /* Info.plist */,
+				D7B0F17926A56DFB00D13C45 /* Resources */,
+				D7B0F17826A56DD000D13C45 /* Networking */,
+				D7B0F17526A56C6C00D13C45 /* Library */,
+				D7B0F17326A56B6B00D13C45 /* Application */,
+				D7A0BC5C268DBCA200842C93 /* Server */,
 				D7A0BC45268D6AEA00842C93 /* Controller */,
 				D7A0BC44268D6AE500842C93 /* View */,
 				D7A0BC43268D6AD600842C93 /* Model */,
-				D7A0BC35268D6AC500842C93 /* Main.storyboard */,
-				D7A0BC38268D6AC700842C93 /* Assets.xcassets */,
-				D7A0BC3A268D6AC700842C93 /* LaunchScreen.storyboard */,
-				D7A0BC54268D704B00842C93 /* ViewControllera.swift */,
-				D7AC16A026A140F80082FF94 /* GoogleService-Info.plist */,
-				D7A0BC3D268D6AC700842C93 /* Info.plist */,
-				D7A0BC52268D6EAF00842C93 /* SplashView.swift */,
 			);
 			path = Awesomechat;
 			sourceTree = "<group>";
@@ -173,8 +167,6 @@
 			isa = PBXGroup;
 			children = (
 				D7A0BC59268DB3DC00842C93 /* ModelApi */,
-				D7A0BC2F268D6AC500842C93 /* AppDelegate.swift */,
-				D7A0BC31268D6AC500842C93 /* SceneDelegate.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,12 +174,6 @@
 		D7A0BC44268D6AE500842C93 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D7A55E052696D52E000767F8 /* PersonalScreen */,
-				D7A55DFC2696D4CB000767F8 /* FriendScreen */,
-				D7A9F1992692AE2F001AE5AB /* TableViewTest */,
-				D7A155C1268F102600A8E50B /* Mesenger */,
-				D7A0BC47268D6B2000842C93 /* RegisterScreen */,
-				D7A0BC46268D6B1200842C93 /* LoginScreen */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -195,8 +181,12 @@
 		D7A0BC45268D6AEA00842C93 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				D7D06C52269437D50046A9C3 /* LoginEmail */,
-				D7A0BC5C268DBCA200842C93 /* Server */,
+				D7A9F1992692AE2F001AE5AB /* TableViewTest */,
+				D7A55E052696D52E000767F8 /* PersonalScreen */,
+				D7A55DFC2696D4CB000767F8 /* FriendScreen */,
+				D7A155C1268F102600A8E50B /* MesengerScreen */,
+				D7A0BC47268D6B2000842C93 /* RegisterScreen */,
+				D7A0BC46268D6B1200842C93 /* LoginScreen */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -222,10 +212,8 @@
 		D7A0BC56268D7C9300842C93 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				D7A0BC57268D7CA800842C93 /* Extension+Color.swift */,
 				D7A9F1A926931200001AE5AB /* Extension+UIView.swift */,
 				D7BA5CB026980C84001742DE /* ClassPushTabar.swift */,
-				D78ECD6C269C330200ACF39D /* Extension+Date.swift */,
 				D78E610E269EEFA100D8FB96 /* Extension+Snapshot.swift */,
 				D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */,
 			);
@@ -247,20 +235,19 @@
 		D7A0BC5C268DBCA200842C93 /* Server */ = {
 			isa = PBXGroup;
 			children = (
-				D7A55E0B2696DE69000767F8 /* ServerMesenger */,
-				D7A55E0A2696DE5B000767F8 /* ServerUser */,
+				D7B0F17426A56C4300D13C45 /* Notification */,
 			);
 			path = Server;
 			sourceTree = "<group>";
 		};
-		D7A155C1268F102600A8E50B /* Mesenger */ = {
+		D7A155C1268F102600A8E50B /* MesengerScreen */ = {
 			isa = PBXGroup;
 			children = (
 				D7A9F1A426930ECE001AE5AB /* MesengerTableCell */,
 				D7A155C2268F104000A8E50B /* MesengerController.swift */,
 				D7A155C3268F104000A8E50B /* MesengerController.xib */,
 			);
-			path = Mesenger;
+			path = MesengerScreen;
 			sourceTree = "<group>";
 		};
 		D7A55DFC2696D4CB000767F8 /* FriendScreen */ = {
@@ -322,12 +309,64 @@
 			path = MesengerTableCell;
 			sourceTree = "<group>";
 		};
-		D7D06C52269437D50046A9C3 /* LoginEmail */ = {
+		D7B0F17326A56B6B00D13C45 /* Application */ = {
 			isa = PBXGroup;
 			children = (
-				D7D06C53269437ED0046A9C3 /* LoginEmail.swift */,
+				D7A0BC35268D6AC500842C93 /* Main.storyboard */,
+				D7A0BC3A268D6AC700842C93 /* LaunchScreen.storyboard */,
+				D7A0BC2F268D6AC500842C93 /* AppDelegate.swift */,
+				D7A0BC31268D6AC500842C93 /* SceneDelegate.swift */,
 			);
-			path = LoginEmail;
+			path = Application;
+			sourceTree = "<group>";
+		};
+		D7B0F17426A56C4300D13C45 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				D7A55E0B2696DE69000767F8 /* ServerMesenger */,
+				D7A55E0A2696DE5B000767F8 /* ServerUser */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
+		D7B0F17526A56C6C00D13C45 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				D7B0F17726A56CEF00D13C45 /* Constants */,
+				D7B0F17626A56CBC00D13C45 /* Utils */,
+				D7A0BC56268D7C9300842C93 /* Extension */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		D7B0F17626A56CBC00D13C45 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D78ECD6C269C330200ACF39D /* Extension+Date.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D7B0F17726A56CEF00D13C45 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				D7A0BC57268D7CA800842C93 /* Extension+Color.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		D7B0F17826A56DD000D13C45 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		D7B0F17926A56DFB00D13C45 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -454,7 +493,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D7A0BC55268D704B00842C93 /* ViewControllera.swift in Sources */,
 				D7A55E032696D52B000767F8 /* FriendController.swift in Sources */,
 				D7AC16A326A1913E0082FF94 /* CallMethodRequest.swift in Sources */,
 				D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */,
@@ -470,7 +508,6 @@
 				D78E610F269EEFA100D8FB96 /* Extension+Snapshot.swift in Sources */,
 				D7A0BC30268D6AC500842C93 /* AppDelegate.swift in Sources */,
 				D7A155C4268F104100A8E50B /* MesengerController.swift in Sources */,
-				D7A0BC53268D6EAF00842C93 /* SplashView.swift in Sources */,
 				D7A55E0D2696DE8E000767F8 /* ServerMesenger.swift in Sources */,
 				D7A155C7268F252E00A8E50B /* ServerRegister.swift in Sources */,
 				B2C73F8426A114E700346314 /* ChatRoom.swift in Sources */,
@@ -478,7 +515,6 @@
 				B2C73F8626A1174700346314 /* ChatMessage.swift in Sources */,
 				D7A0BC5E268DBCC000842C93 /* ServerApiUser.swift in Sources */,
 				D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */,
-				D7D06C54269437ED0046A9C3 /* LoginEmail.swift in Sources */,
 				D78ECD6F269C5B8F00ACF39D /* DataChats.swift in Sources */,
 				D7A0BC32268D6AC500842C93 /* SceneDelegate.swift in Sources */,
 				D78ECD6D269C330200ACF39D /* Extension+Date.swift in Sources */,

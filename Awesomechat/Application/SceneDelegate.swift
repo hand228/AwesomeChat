@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 
+
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -17,6 +18,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowscene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowscene)
         let tabbarController = UITabBarController()
+        
         // MARK: CUSTOM TABBAR
         let tabbarMessenger = MesengerController()
         tabbarMessenger.tabBarItem = UITabBarItem(title: "Tin nhắn", image: UIImage(named: "Vector-1")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "Vector (4)")?.withRenderingMode(.alwaysOriginal))

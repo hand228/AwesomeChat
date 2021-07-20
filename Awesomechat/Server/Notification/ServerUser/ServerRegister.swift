@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class ServerRegister {
     
+    
     func fireBaseRegister(completion: @escaping(DataSnapshot) -> Void, name: String, email: String, passWord: String ) {
         var request: DatabaseReference?
         request = Database.database().reference()
