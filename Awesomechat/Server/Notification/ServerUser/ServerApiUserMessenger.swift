@@ -10,13 +10,14 @@ import Firebase
 import FirebaseAuth
 
 class ServerApiUserMessenger {
-    static let shared = ServerApiUserMessenger()
     
+    static let shared = ServerApiUserMessenger()
+    let serverMessenger = ServerMesenger()
     var arrayLocalUser: [DataUser] = []
+    var lastMessengers: [String] = []
     let auth = Auth.auth().currentUser
     
-    func requestApiUserMessenger(completionHandle: @escaping ([String]) -> Void) {
-        var arrayKeyUser: [String] = []
+    func requestApiUserMessenger(completionHandle: @escaping ([String] ,[DataUser]) -> Void) {
         
         let ref: DatabaseReference?
         ref = Database.database().reference()
@@ -30,41 +31,27 @@ class ServerApiUserMessenger {
                 DataUser(snapShot: $0)
                 
             }
+            
             self.arrayLocalUser = listUser ?? []
             print(self.arrayLocalUser)
                 
-            self.requestMesengerss(completionHandle: { (dataArray, dataa) in
+            self.serverMessenger.requestMesenger(completionHandle: { (lastMessenger, dataUsers) in
+                self.lastMessengers = lastMessenger
+                self.arrayLocalUser = dataUsers
+                
+                DispatchQueue.main.async {
+                    
+                    completionHandle(lastMessenger , dataUsers)
+                }
                 
             })
-      
+            
+            
             
         })
     }
     
-    func requestMesengerss(completionHandle: @escaping ( [String], [ChatRoom] ) -> Void ) {
-        let ref: DatabaseReference!
-        ref = Database.database().reference()
-        ref.child("chats").getData(completion: { (error, snapShot) in
-            
-            guard error == nil else {
-                return
-            }
-            
-            
-            // khi gọi như này thì luồng code sẽ chạy vào messenge trước và set data cho nó rồi mới gọi đến chatRoom:
-            let chatRooms = (snapShot.children.allObjects as? [DataSnapshot])?.map {
-                ChatRoom(snapShot: $0)
-                
-            }
-            
-            //print(chatRooms?.count)
-            DispatchQueue.main.async {
-                
-            }
-            
-            
-        })
-    }
+    
     
     
 }

@@ -51,6 +51,7 @@
 		D7AC16A126A140F80082FF94 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7AC16A026A140F80082FF94 /* GoogleService-Info.plist */; };
 		D7AC16A326A1913E0082FF94 /* CallMethodRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */; };
 		D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA5CB026980C84001742DE /* ClassPushTabar.swift */; };
+		D7C699B526AA5ECC0082AF3B /* PassDataDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C699B426AA5ECC0082AF3B /* PassDataDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -102,6 +103,7 @@
 		D7AC16A026A140F80082FF94 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallMethodRequest.swift; sourceTree = "<group>"; };
 		D7BA5CB026980C84001742DE /* ClassPushTabar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassPushTabar.swift; sourceTree = "<group>"; };
+		D7C699B426AA5ECC0082AF3B /* PassDataDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassDataDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -254,6 +256,7 @@
 		D7A0BC45268D6AEA00842C93 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				D7C699B326AA5EAE0082AF3B /* PassDataDelegate */,
 				AB78A9DC26A6B4580024E439 /* FriendScreen */,
 				AB78A9F226A6B4590024E439 /* HomeScreen */,
 				AB78A9F726A6B4590024E439 /* LoginScreen */,
@@ -360,6 +363,14 @@
 				D7A0BC57268D7CA800842C93 /* Extension+Color.swift */,
 			);
 			path = Constants;
+			sourceTree = "<group>";
+		};
+		D7C699B326AA5EAE0082AF3B /* PassDataDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				D7C699B426AA5ECC0082AF3B /* PassDataDelegate.swift */,
+			);
+			path = PassDataDelegate;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -508,6 +519,7 @@
 				AB78AA0B26A6B4590024E439 /* MesengerHeader.swift in Sources */,
 				AB78AA0226A6B4590024E439 /* FriendController.swift in Sources */,
 				B2C73F8626A1174700346314 /* ChatMessage.swift in Sources */,
+				D7C699B526AA5ECC0082AF3B /* PassDataDelegate.swift in Sources */,
 				D7A0BC5E268DBCC000842C93 /* ServerApiUserMessenger.swift in Sources */,
 				AB78AA0026A6B4590024E439 /* PersonalController.swift in Sources */,
 				D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */,
