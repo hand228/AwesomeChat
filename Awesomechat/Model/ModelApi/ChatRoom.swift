@@ -13,79 +13,75 @@ class ChatRoom {
     var roomId: String
     var participant: DataUser?
     var chatMessages: [ChatMessage]
-    
-    let serverUser = ServerApiUser()
-    
+    let serverUserMessenger = ServerApiUserMessenger.shared
+    var arrayResuldListUser: [[String]] = [[]]
     
     init(snapShot: DataSnapshot ) {
+        
         var chatMessenger: [String] = []
         self.roomId = snapShot.key
         self.chatMessages = (snapShot.children.allObjects as? [DataSnapshot])?.map { ChatMessage(snapshot: $0) } ?? []
-        
         print(snapShot.children.allObjects)
         print(roomId)
         
         // Dùng Mảng Chats .first để chạy vào cái mảng đấy 1 lần để lây đc IDReceiver và request đến User
         // MARK: Request tới node User qua IdReceiver:
-       
-        
         if let firstMessage = self.chatMessages.last {
             
             print(firstMessage.idReceiver)
             print(firstMessage.idSender)
             print(firstMessage.messageId)
             print(firstMessage.date)
-            print(firstMessage.messenger) // lấy cái mesenger cuối cùng
+            print(firstMessage.messenger)
             
             
-            self.requestToUser(completion: { (dataUser) in
-                print(dataUser)
-                
-                DispatchQueue.main.async {
-                    chatMessenger = dataUser
-                    print(chatMessenger.append(firstMessage.date))
-                    print(chatMessenger.append(firstMessage.messenger))
+            for i in 0..<serverUserMessenger.arrayLocalUser.count {
+                if (firstMessage.idReceiver == self.serverUserMessenger.arrayLocalUser[i].userId) {
+                    print(serverUserMessenger.arrayLocalUser[i].userId)
                     
-                    print(chatMessenger)
+                    self.participant = serverUserMessenger.arrayLocalUser[i]
+                    
+                    chatMessenger.append(serverUserMessenger.arrayLocalUser[i].userName)
+                    chatMessenger.append(serverUserMessenger.arrayLocalUser[i].userImgUrl)
+                    chatMessenger.append(firstMessage.date)
+                    chatMessenger.append(firstMessage.messenger)
+                    chatMessenger.append(firstMessage.idReceiver)
+                    
+                    
+                    print(participant)
+                    
+//                    participant[i].userId = firstMessage.idReceiver
+//                    participant[i].userName = self.serverUserMessenger.arrayLocalUser[i].userName
+//                    participant[i].userImgUrl = serverUserMessenger.arrayLocalUser[i].userImgUrl
+                    
+//                    print(self.participant[i].userId)
+                    
+                    
                 }
-                
-            }, idReceiver: firstMessage.idReceiver)
+            }
             
-            // Lấy id của người chat cùng mình bằng cách so sánh idSender và idReceiver với id của mình
-//            let participantId = firstMessage?.idSender == myId ? firstMessage?.idReceiver : firstMessage?.idSender
-            // Khởi tạo participant từ id
+//            print(participant[2].userName)
+//            print(participant[2].userImgUrl)
+//            print(participant[2].userEmail)
+            
+            print(chatMessenger)
+            
         }
         
+        self.arrayResuldListUser.append(chatMessenger)
+        
+        
+        //print(arrayResuldListUser)
+        
+        
     }
     
     
-    func requestToUser(completion: @escaping ([String]) -> Void, idReceiver: String) {
-        let refUser: DatabaseReference!
-        var arrayListUser: [String] = []
-        
-        
-        refUser = Database.database().reference()
-        
-        refUser.child("users/\(idReceiver)").getData(completion: { (error, snapShot) in
-            guard error == nil else {
-                return
-            }
-            
-            print(snapShot.children.allObjects)
-            print(snapShot.value)
-            
-            print(self.serverUser.arrayLocalUser)
-           
-            let dataSnapsotUser = DataUser(snapShot: snapShot)
-            print(dataSnapsotUser.userName)
-            print(dataSnapsotUser.userImgUrl)
-            arrayListUser.append(dataSnapsotUser.userName)
-            arrayListUser.append(dataSnapsotUser.userImgUrl)
-            
-            DispatchQueue.main.async {
-                completion(arrayListUser)
-            }
-        })
-       
-    }
+    
 }
+
+
+
+
+
+

@@ -19,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P55-66-VWk">
-                    <rect key="frame" x="100" y="807" width="214" height="30"/>
+                    <rect key="frame" x="100" y="144" width="214" height="30"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="30" id="Tnz-kO-8P3"/>
                     </constraints>
@@ -34,7 +34,7 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="P55-66-VWk" secondAttribute="bottom" constant="25" id="LEs-ee-8AO"/>
+                <constraint firstItem="P55-66-VWk" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="100" id="3Pk-cr-H5U"/>
                 <constraint firstItem="P55-66-VWk" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="100" id="byB-3p-8Dc"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P55-66-VWk" secondAttribute="trailing" constant="100" id="iod-zK-xm3"/>
             </constraints>

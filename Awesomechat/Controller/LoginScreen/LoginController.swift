@@ -15,7 +15,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var btDangNhap: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     var arrayDiction: [[String : Any]] = [[:]]
-    let serverApiUser = ServerApiUser()
+    let serverApiUser = ServerApiUserMessenger()
     let serverLogin = ServerLogin()
     var arrayData: [String] = []
     var checkDisplayPassWord = 0

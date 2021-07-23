@@ -12,7 +12,7 @@ class MesengerController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let servereMesenger = ServerMesenger()
-    let serverApiUser = ServerApiUser()
+    let serverApiUserMessenger = ServerApiUserMessenger.shared
     let pushDataMesenger = PushDataMesenger()
     var arrayImage: [String] = []
     var arrayName: [String] = []
@@ -24,8 +24,9 @@ class MesengerController: UIViewController {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MesengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MesengerTableViewCellID")
         
-        requestApiUser()
-        requestApiMesenger()
+        requestApiUserMessenger()
+        
+        //requestApiMesenger()
         
     }
     
@@ -63,8 +64,11 @@ class MesengerController: UIViewController {
     
     
     // MARK: REQUEST API USER:
-    func requestApiUser() {
-        serverApiUser.requestApiUser(completionHandle: { (dataResuld) in
+    func requestApiUserMessenger() {
+        
+        serverApiUserMessenger.requestApiUserMessenger(completionHandle: { (arrayString) in
+            print(arrayString)
+            
             
         })
     }

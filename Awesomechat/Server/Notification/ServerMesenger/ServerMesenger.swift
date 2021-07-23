@@ -9,10 +9,13 @@ import Foundation
 import Firebase
 
 class ServerMesenger {
+    
     func requestMesenger(completionHandle: @escaping ( [String], [ChatRoom] ) -> Void ) {
         let ref: DatabaseReference!
         ref = Database.database().reference()
         ref.child("chats").getData(completion: { (error, snapShot) in
+            
+            
 
             guard error == nil else {
                 return
@@ -22,7 +25,6 @@ class ServerMesenger {
             let chatRooms = (snapShot.children.allObjects as? [DataSnapshot])?.map {
                 ChatRoom(snapShot: $0)
                 
-                
             }
             
             print(chatRooms?.count)
@@ -31,6 +33,7 @@ class ServerMesenger {
             }
         })
     }
+    
 }
 
 

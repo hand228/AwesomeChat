@@ -10,9 +10,10 @@ import UIKit
 class TabBarViewController: UIViewController {
 
     // Khởi tạo file nib
-    let mesVC = MessengerViewController(nibName: "MessengerViewController", bundle: nil)
-    let groupVC = GroupViewController(nibName: "GroupViewController", bundle: nil)
-    let homeVC = HomeViewController(nibName: "HomeViewController", bundle: nil)
+    let mesVC = MesengerController(nibName: "MesengerController", bundle: nil)
+    let groupVC = FriendController(nibName: "FriendController", bundle: nil)
+    let homeVC = PersonalController(nibName: "PersonalController", bundle: nil)
+    // let serverApiUser = ServerApiUserMessenger()
     
     // Outlets
     @IBOutlet weak var layerInside: UIView!
@@ -30,17 +31,20 @@ class TabBarViewController: UIViewController {
     @IBOutlet weak var groupDot: UIImageView!
     @IBOutlet weak var homeDot: UIImageView!
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-        borderLayer()
         
+        borderLayer()
         mesImg.image = UIImage(named: "m")
         groupImg.image = UIImage(named: "g")
         homeImg.image = UIImage(named: "h")
-        
         initScreen()
     }
+    
+    
+    
 
     // Bo tròn tab bar
     func borderLayer() {
@@ -64,6 +68,15 @@ class TabBarViewController: UIViewController {
         
         contentView.addSubview(mesVC.view)
         mesVC.didMove(toParent: self)
+        
+        groupVC.willMove(toParent: nil)
+        groupVC.removeFromParent()
+        groupVC.view.removeFromSuperview()
+        
+        homeVC.willMove(toParent: nil)
+        homeVC.removeFromParent()
+        homeVC.view.removeFromSuperview()
+        
     }
     
     @IBAction func clickTabBar(_ sender: UIButton) {
@@ -88,7 +101,17 @@ class TabBarViewController: UIViewController {
 
             contentView.addSubview(groupVC.view)
             groupVC.didMove(toParent: self)
+            
+            mesVC.willMove(toParent: nil)
+            mesVC.removeFromParent()
+            mesVC.view.removeFromSuperview()
+            
+            homeVC.willMove(toParent: nil)
+            homeVC.removeFromParent()
+            homeVC.view.removeFromSuperview()
+            
         } else {
+            
             homeImg.image = UIImage(named: "h_selected")
             mesImg.image = UIImage(named: "m")
             groupImg.image = UIImage(named: "g")
@@ -103,6 +126,14 @@ class TabBarViewController: UIViewController {
         
             contentView.addSubview(homeVC.view)
             homeVC.didMove(toParent: self)
+            
+            mesVC.willMove(toParent: nil)
+            mesVC.removeFromParent()
+            mesVC.view.removeFromSuperview()
+            
+            groupVC.willMove(toParent: nil)
+            groupVC.removeFromParent()
+            groupVC.view.removeFromSuperview()
         }
     }
 }
