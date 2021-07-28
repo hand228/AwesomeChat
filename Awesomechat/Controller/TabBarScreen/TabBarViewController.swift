@@ -10,7 +10,7 @@ import UIKit
 class TabBarViewController: UIViewController {
 
     // Khởi tạo file nib
-    let mesVC = MessengerViewController(nibName: "MessengerViewController", bundle: nil)
+    let mesVC = MesengerController(nibName: "MesengerController", bundle: nil)
     let groupVC = GroupViewController(nibName: "GroupViewController", bundle: nil)
     let homeVC = HomeViewController(nibName: "HomeViewController", bundle: nil)
     

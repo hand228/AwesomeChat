@@ -51,7 +51,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         txtEmail.textContentType = UITextContentType.emailAddress
         let imgPasswordRight = UIImageView()
         imgPasswordRight.image = UIImage(named: "key 1")
-        let tapImageRight = UITapGestureRecognizer(target: self, action: #selector(tapImageRight))
+        let tapImageRight = UITapGestureRecognizer(target: self, action: #selector(tapImageRights))
         imgPasswordRight.isUserInteractionEnabled = true
         imgPasswordRight.addGestureRecognizer(tapImageRight)
         txtPassword.rightViewMode = .always
@@ -62,7 +62,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     }
     
     // MARK: CHECK ICON KEY PASSWORD
-    @objc func tapImageRight() {
+    @objc func tapImageRights() {
         
         if (checkDisplayPassWord == 0) {
             txtPassword.isSecureTextEntry = false

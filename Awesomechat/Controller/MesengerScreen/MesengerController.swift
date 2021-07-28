@@ -12,20 +12,17 @@ class MesengerController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let servereMesenger = ServerMesenger()
-    let serverApiUser = ServerApiUser()
-    let pushDataMesenger = PushDataMesenger()
-    var arrayImage: [String] = []
-    var arrayName: [String] = []
-    var arrayKeyReceiver: [String] = []
-    var arrayDictionaryData: [[String: Any]] = [[:]]
-    var dataChatss: [DataChats] = []
+    let serverApiUser = ServerApiUser.shared
+    //let pushDataMesenger = PushDataMesenger()
+    
+    var arrayUser: [DataUser] = []
+    var arrayMessengerLast: [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MesengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MesengerTableViewCellID")
         
-        requestApiUser()
-        requestApiMesenger()
+        requestApiMesengerAndUser()
         
     }
     
@@ -39,34 +36,29 @@ class MesengerController: UIViewController {
     }
     
     // MARK: REQUEST API MESSENGER
-    func requestApiMesenger() {
-        servereMesenger.requestMesenger(completionHandle: {(arrayKeyReceiver, arrayDataChat) in
+    func requestApiMesengerAndUser() {
+        serverApiUser.requestApiUser(completionHandle: { (dataResuld) in
             
-            print(arrayDataChat)
-            self.arrayKeyReceiver = arrayKeyReceiver
-            print(arrayKeyReceiver)
-            print(arrayDataChat)
+            self.servereMesenger.requestMesenger(completionHandle: {(arrayMessengerLast, arrayUser) in
+                self.arrayUser = arrayUser
+                self.arrayMessengerLast = arrayMessengerLast
+                
+                self.tableView.reloadData()
+            })
             
-            
-            let ref: DatabaseReference?
-            ref = Database.database().reference()
-            self.tableView.reloadData()
+             self.tableView.reloadData()
         })
+        
+        
+        
+        
     }
     
     // MARK: PUSH DATA FAKE:
     func pushDataOnFirebase() {
-        pushDataMesenger.pushDataChat(completion: { () in
-            
-        })
-    }
-    
-    
-    // MARK: REQUEST API USER:
-    func requestApiUser() {
-        serverApiUser.requestApiUser(completionHandle: { (dataResuld) in
-            
-        })
+//        pushDataMesenger.pushDataChat(completion: { () in
+//
+//        })
     }
     
 }
@@ -80,7 +72,7 @@ extension MesengerController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataChatss.count
+        return arrayUser.count
     }
     
     // MARK: CUSTOM HEADER MESSENGER
@@ -96,9 +88,9 @@ extension MesengerController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MesengerTableViewCellID", for: indexPath) as! MesengerTableViewCell
-        cell.lbName.text = dataChatss[indexPath.row].idReceiver
-        cell.lbHours.text = dataChatss[indexPath.row].messenger
-        cell.lbMesenger.text = dataChatss[indexPath.row].idSender
+        cell.lbName.text = arrayUser[indexPath.row].userName
+        cell.lbHours.text = arrayUser[indexPath.row].userId
+        cell.lbMesenger.text = arrayMessengerLast[indexPath.row]
         return cell
         
     }
