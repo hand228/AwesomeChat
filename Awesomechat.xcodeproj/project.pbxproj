@@ -8,12 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		31BABDED4009E8DCE6ED715C /* Pods_Awesomechat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */; };
+		84298F0A26B1B512000ECC67 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84298F0826B1B511000ECC67 /* TabBarViewController.xib */; };
+		84298F0B26B1B512000ECC67 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84298F0926B1B511000ECC67 /* TabBarViewController.swift */; };
 		AB78AA0026A6B4590024E439 /* PersonalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9DA26A6B4580024E439 /* PersonalController.swift */; };
 		AB78AA0126A6B4590024E439 /* PersonalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9DB26A6B4580024E439 /* PersonalController.xib */; };
 		AB78AA0226A6B4590024E439 /* FriendController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9DD26A6B4580024E439 /* FriendController.swift */; };
 		AB78AA0326A6B4590024E439 /* FriendController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9DE26A6B4580024E439 /* FriendController.xib */; };
-		AB78AA0426A6B4590024E439 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9E026A6B4580024E439 /* MessengerViewController.swift */; };
-		AB78AA0526A6B4590024E439 /* MessengerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9E126A6B4580024E439 /* MessengerViewController.xib */; };
 		AB78AA0626A6B4590024E439 /* MesengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9E326A6B4590024E439 /* MesengerController.swift */; };
 		AB78AA0726A6B4590024E439 /* MesengerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9E426A6B4590024E439 /* MesengerController.xib */; };
 		AB78AA0826A6B4590024E439 /* MesengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9E626A6B4590024E439 /* MesengerTableViewCell.xib */; };
@@ -30,8 +30,6 @@
 		AB78AA1726A6B4590024E439 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9F926A6B4590024E439 /* LoginController.swift */; };
 		AB78AA1826A6B4590024E439 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9FB26A6B4590024E439 /* GroupViewController.swift */; };
 		AB78AA1926A6B4590024E439 /* GroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9FC26A6B4590024E439 /* GroupViewController.xib */; };
-		AB78AA1A26A6B4590024E439 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9FE26A6B4590024E439 /* TabBarViewController.xib */; };
-		AB78AA1B26A6B4590024E439 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9FF26A6B4590024E439 /* TabBarViewController.swift */; };
 		AB9CA22F26A14287004AAA4D /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9CA22E26A14287004AAA4D /* Extension+UIViewController.swift */; };
 		B2C73F8426A114E700346314 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C73F8326A114E700346314 /* ChatRoom.swift */; };
 		B2C73F8626A1174700346314 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C73F8526A1174700346314 /* ChatMessage.swift */; };
@@ -60,12 +58,12 @@
 /* Begin PBXFileReference section */
 		32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Awesomechat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462DAAE6D841AD1FC2EFFD40 /* Pods-Awesomechat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesomechat.release.xcconfig"; path = "Target Support Files/Pods-Awesomechat/Pods-Awesomechat.release.xcconfig"; sourceTree = "<group>"; };
+		84298F0826B1B511000ECC67 /* TabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
+		84298F0926B1B511000ECC67 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		AB78A9DA26A6B4580024E439 /* PersonalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalController.swift; sourceTree = "<group>"; };
 		AB78A9DB26A6B4580024E439 /* PersonalController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalController.xib; sourceTree = "<group>"; };
 		AB78A9DD26A6B4580024E439 /* FriendController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendController.swift; sourceTree = "<group>"; };
 		AB78A9DE26A6B4580024E439 /* FriendController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendController.xib; sourceTree = "<group>"; };
-		AB78A9E026A6B4580024E439 /* MessengerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerViewController.swift; sourceTree = "<group>"; };
-		AB78A9E126A6B4580024E439 /* MessengerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessengerViewController.xib; sourceTree = "<group>"; };
 		AB78A9E326A6B4590024E439 /* MesengerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MesengerController.swift; sourceTree = "<group>"; };
 		AB78A9E426A6B4590024E439 /* MesengerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MesengerController.xib; sourceTree = "<group>"; };
 		AB78A9E626A6B4590024E439 /* MesengerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MesengerTableViewCell.xib; sourceTree = "<group>"; };
@@ -82,8 +80,6 @@
 		AB78A9F926A6B4590024E439 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		AB78A9FB26A6B4590024E439 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		AB78A9FC26A6B4590024E439 /* GroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupViewController.xib; sourceTree = "<group>"; };
-		AB78A9FE26A6B4590024E439 /* TabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
-		AB78A9FF26A6B4590024E439 /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		AB9CA22E26A14287004AAA4D /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		B2C73F8326A114E700346314 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		B2C73F8526A1174700346314 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
@@ -159,15 +155,6 @@
 			path = FriendScreen;
 			sourceTree = "<group>";
 		};
-		AB78A9DF26A6B4580024E439 /* MessengerScreen */ = {
-			isa = PBXGroup;
-			children = (
-				AB78A9E026A6B4580024E439 /* MessengerViewController.swift */,
-				AB78A9E126A6B4580024E439 /* MessengerViewController.xib */,
-			);
-			path = MessengerScreen;
-			sourceTree = "<group>";
-		};
 		AB78A9E226A6B4590024E439 /* MesengerScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,8 +217,8 @@
 		AB78A9FD26A6B4590024E439 /* TabBarScreen */ = {
 			isa = PBXGroup;
 			children = (
-				AB78A9FE26A6B4590024E439 /* TabBarViewController.xib */,
-				AB78A9FF26A6B4590024E439 /* TabBarViewController.swift */,
+				84298F0926B1B511000ECC67 /* TabBarViewController.swift */,
+				84298F0826B1B511000ECC67 /* TabBarViewController.xib */,
 			);
 			path = TabBarScreen;
 			sourceTree = "<group>";
@@ -285,7 +272,6 @@
 				AB78A9F226A6B4590024E439 /* HomeScreen */,
 				AB78A9F726A6B4590024E439 /* LoginScreen */,
 				AB78A9E226A6B4590024E439 /* MesengerScreen */,
-				AB78A9DF26A6B4580024E439 /* MessengerScreen */,
 				AB78A9D926A6B4580024E439 /* PersonalScreen */,
 				AB78A9EA26A6B4590024E439 /* RegisterScreen */,
 				AB78A9FD26A6B4590024E439 /* TabBarScreen */,
@@ -459,10 +445,9 @@
 				AB78AA1626A6B4590024E439 /* LoginController.xib in Resources */,
 				AB78AA0826A6B4590024E439 /* MesengerTableViewCell.xib in Resources */,
 				D7A0BC37268D6AC500842C93 /* Main.storyboard in Resources */,
-				AB78AA0526A6B4590024E439 /* MessengerViewController.xib in Resources */,
+				84298F0A26B1B512000ECC67 /* TabBarViewController.xib in Resources */,
 				AB78AA0D26A6B4590024E439 /* RegisterController.xib in Resources */,
 				AB78AA1526A6B4590024E439 /* TableViewCell.xib in Resources */,
-				AB78AA1A26A6B4590024E439 /* TabBarViewController.xib in Resources */,
 				AB78AA1226A6B4590024E439 /* HomeViewController.xib in Resources */,
 				AB78AA0326A6B4590024E439 /* FriendController.xib in Resources */,
 			);
@@ -518,7 +503,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB78AA0626A6B4590024E439 /* MesengerController.swift in Sources */,
-				AB78AA1B26A6B4590024E439 /* TabBarViewController.swift in Sources */,
 				D7AC16A326A1913E0082FF94 /* CallMethodRequest.swift in Sources */,
 				AB78AA1726A6B4590024E439 /* LoginController.swift in Sources */,
 				D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */,
@@ -527,7 +511,6 @@
 				D7A9F1A32692E4AA001AE5AB /* ServerLogin.swift in Sources */,
 				D7A0BC5B268DB3F800842C93 /* DataUser.swift in Sources */,
 				AB9CA22F26A14287004AAA4D /* Extension+UIViewController.swift in Sources */,
-				AB78AA0426A6B4590024E439 /* MessengerViewController.swift in Sources */,
 				D7A0BC58268D7CA800842C93 /* Extension+Color.swift in Sources */,
 				D78E610D269ECCFA00D8FB96 /* PushDataMesenger.swift in Sources */,
 				D78E610F269EEFA100D8FB96 /* Extension+Snapshot.swift in Sources */,
@@ -547,6 +530,7 @@
 				D7A0BC32268D6AC500842C93 /* SceneDelegate.swift in Sources */,
 				D78ECD6D269C330200ACF39D /* Extension+Date.swift in Sources */,
 				D7A155C0268ECEA000A8E50B /* DataFriend.swift in Sources */,
+				84298F0B26B1B512000ECC67 /* TabBarViewController.swift in Sources */,
 				AB78AA0926A6B4590024E439 /* MesengerTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

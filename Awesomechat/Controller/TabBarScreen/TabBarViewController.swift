@@ -6,13 +6,14 @@
 //
 
 import UIKit
+import Firebase
 
 class TabBarViewController: UIViewController {
 
     // Khởi tạo file nib
     let mesVC = MesengerController(nibName: "MesengerController", bundle: nil)
-    let groupVC = GroupViewController(nibName: "GroupViewController", bundle: nil)
-    let homeVC = HomeViewController(nibName: "HomeViewController", bundle: nil)
+    let groupVC = FriendController(nibName: "FriendController", bundle: nil)
+    let homeVC = PersonalController(nibName: "PersonalController", bundle: nil)
     
     // Outlets
     @IBOutlet weak var layerInside: UIView!
@@ -26,12 +27,21 @@ class TabBarViewController: UIViewController {
     @IBOutlet weak var groupLbl: UILabel!
     @IBOutlet weak var homeLbl: UILabel!
     
-    @IBOutlet weak var mesDot: UIImageView!
-    @IBOutlet weak var groupDot: UIImageView!
-    @IBOutlet weak var homeDot: UIImageView!
+    @IBOutlet weak var mesDot: UIView!
+    @IBOutlet weak var groupDot: UIView!
+    @IBOutlet weak var homeDot: UIView!
+    
+    var ref: DatabaseReference!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        ref = Database.database().reference()
+        let childRef = ref.child("friend")
+        childRef.observe(.value, with: { snapshot in
+            print(snapshot.value as Any)
+        })
+        
         // Do any additional setup after loading the view.
         borderLayer()
         
@@ -42,14 +52,22 @@ class TabBarViewController: UIViewController {
         initScreen()
     }
 
-    // Bo tròn tab bar
-    func borderLayer() {
+    // Bo tròn tab bar và chấm
+    private func borderLayer() {
         layerInside.layer.cornerRadius = layerInside.frame.size.height / 5
         layerInside.clipsToBounds = true
+        
+        mesDot.layer.cornerRadius = mesDot.frame.size.width/2
+        groupDot.layer.cornerRadius = groupDot.frame.size.width/2
+        homeDot.layer.cornerRadius = homeDot.frame.size.width/2
+
+        mesDot.clipsToBounds = true
+        groupDot.clipsToBounds = true
+        homeDot.clipsToBounds = true
     }
     
     // Tab tin nhắn
-    func initScreen() {
+    private func initScreen() {
         mesImg.image = UIImage(named: "m_selected")
         groupImg.image = UIImage(named: "g")
         homeImg.image = UIImage(named: "h")
@@ -58,12 +76,21 @@ class TabBarViewController: UIViewController {
         groupLbl.textColor = .lightGray
         homeLbl.textColor = .lightGray
         
-        mesDot.image = UIImage(named: "dot")
-        groupDot.image = UIImage(named: "")
-        homeDot.image = UIImage(named: "")
+        mesDot.backgroundColor = UIColor.myBlue
+        mesDot.isHidden = false
+        groupDot.isHidden = true
+        homeDot.isHidden = true
         
         contentView.addSubview(mesVC.view)
         mesVC.didMove(toParent: self)
+        
+        groupVC.willMove(toParent: nil)
+        groupVC.removeFromParent()
+        groupVC.view.removeFromSuperview()
+        
+        homeVC.willMove(toParent: nil)
+        homeVC.removeFromParent()
+        homeVC.view.removeFromSuperview()
     }
     
     @IBAction func clickTabBar(_ sender: UIButton) {
@@ -82,12 +109,21 @@ class TabBarViewController: UIViewController {
             mesLbl.textColor = .lightGray
             homeLbl.textColor = .lightGray
             
-            mesDot.image = UIImage(named: "")
-            groupDot.image = UIImage(named: "dot")
-            homeDot.image = UIImage(named: "")
+            groupDot.backgroundColor = UIColor.myBlue
+            groupDot.isHidden = false
+            mesDot.isHidden = true
+            homeDot.isHidden = true
 
             contentView.addSubview(groupVC.view)
             groupVC.didMove(toParent: self)
+            
+            mesVC.willMove(toParent: nil)
+            mesVC.removeFromParent()
+            mesVC.view.removeFromSuperview()
+            
+            homeVC.willMove(toParent: nil)
+            homeVC.removeFromParent()
+            homeVC.view.removeFromSuperview()
         } else {
             homeImg.image = UIImage(named: "h_selected")
             mesImg.image = UIImage(named: "m")
@@ -97,12 +133,21 @@ class TabBarViewController: UIViewController {
             groupLbl.textColor = .lightGray
             homeLbl.textColor = UIColor.myBlue
             
-            mesDot.image = UIImage(named: "")
-            groupDot.image = UIImage(named: "")
-            homeDot.image = UIImage(named: "dot")
+            homeDot.backgroundColor = UIColor.myBlue
+            homeDot.isHidden = false
+            mesDot.isHidden = true
+            groupDot.isHidden = true
         
             contentView.addSubview(homeVC.view)
             homeVC.didMove(toParent: self)
+            
+            mesVC.willMove(toParent: nil)
+            mesVC.removeFromParent()
+            mesVC.view.removeFromSuperview()
+            
+            groupVC.willMove(toParent: nil)
+            groupVC.removeFromParent()
+            groupVC.view.removeFromSuperview()
         }
     }
 }
