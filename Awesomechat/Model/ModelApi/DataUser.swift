@@ -26,8 +26,6 @@ struct DataUser {
         self.userImgUrl = snapShot.childSnapshot(forPath: "userImgUrl").value as? String ?? ""
         self.userName = snapShot.childSnapshot(forPath: "userName").value as? String ?? ""
         self.userPhone = snapShot.childSnapshot(forPath: "userPhone").value as? String ?? ""
-        
-        
     }
 }
 

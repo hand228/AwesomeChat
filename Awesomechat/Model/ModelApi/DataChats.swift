@@ -30,7 +30,6 @@ struct DataChats {
     init(snapshot: DataSnapshot) {
         
         let snapShotValue = snapshot.value as? [String: Any]
-        
         self.date = snapShotValue?["date"] as? String
         self.idReceiver = snapShotValue?["idReceiver"] as? String
         self.idSender = snapShotValue?["idSender"] as? String
@@ -38,7 +37,5 @@ struct DataChats {
         self.time = snapShotValue?["time"] as? String
         self.timeLong = snapShotValue?["timeLong"] as? String
     }
-    
-    
     
 }

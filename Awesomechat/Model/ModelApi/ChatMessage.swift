@@ -26,9 +26,5 @@ struct ChatMessage {
         self.time = snapshot.childSnapshot(forPath: "time").value as? String ?? ""
         self.timeLong = snapshot.childSnapshot(forPath: "timeLong").value as? String ?? ""
         
-        
-//        let snapShotData = snapshot.value as? [String: Any]
-//        self.idSender = snapShotData?["idSender"] as? String ?? ""
-//        self.idReceiver = snapShotData?["idReceiver"] as? String ?? ""
     }
 }
