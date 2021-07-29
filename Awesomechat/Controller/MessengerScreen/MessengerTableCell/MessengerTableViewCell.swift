@@ -1,5 +1,5 @@
 //
-//  MesengerTableViewCell.swift
+//  MessengerTableViewCell.swift
 //  Awesomechat
 //
 //  Created by LongDN on 05/07/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MesengerTableViewCell: UITableViewCell {
+class MessengerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var imgAvatar: UIImageView!
     @IBOutlet weak var lbName: UILabel!
