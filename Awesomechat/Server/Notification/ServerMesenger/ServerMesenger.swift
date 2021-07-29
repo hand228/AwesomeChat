@@ -23,10 +23,10 @@ class ServerMesenger {
             
             // khi gọi như này thì luồng code sẽ chạy vào messenge trước và set data cho nó rồi mới gọi đến chatRoom:
             let chatRooms = (snapShot.children.allObjects as? [DataSnapshot])?.map {
-                ChatRoom(snapShot: $0, completionHandle: { (messengerLast, arrayDataUser) in
+                ChatRoom(snapShot: $0, completionHandle: { (messengerLast, dataUser) in
                     
-                    messengerLasts = messengerLast
-                    arrayUser = arrayDataUser
+                    messengerLasts.append(messengerLast)
+                    arrayUser.append(dataUser)
                 })
                 
                 

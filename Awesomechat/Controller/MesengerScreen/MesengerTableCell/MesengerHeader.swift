@@ -40,6 +40,12 @@ class MesengerHeader: UIView {
         
         imgIconChat.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapGesture)))
         imgIconChat.isUserInteractionEnabled = true
+        
+        // CustomSearchBar:
+        searchBar.layer.cornerRadius = CGFloat(20)
+        searchBar.clipsToBounds = true
+        searchBar.setImage(UIImage(named: "Group (2)"), for: .search, state: .normal)
+        
         customGradients()
         
     }

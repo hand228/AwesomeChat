@@ -18,12 +18,17 @@ class MesengerController: UIViewController {
     var arrayUser: [DataUser] = []
     var arrayMessengerLast: [String] = []
     
+    @IBOutlet weak var headerView: MesengerHeader!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MesengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MesengerTableViewCellID")
-        
+       
+        // headerView?.imgIconChat.image = UIImage(named: "aa")
         requestApiMesengerAndUser()
         
+        tableView.layer.cornerRadius = CGFloat(30)
+        //view.addSubview(headerView)
     }
     
     @objc func tapImageIcon() {
@@ -48,10 +53,7 @@ class MesengerController: UIViewController {
             
              self.tableView.reloadData()
         })
-        
-        
-        
-        
+         
     }
     
     // MARK: PUSH DATA FAKE:
@@ -70,21 +72,20 @@ extension MesengerController: UITableViewDelegate {
 
 extension MesengerController: UITableViewDataSource {
     
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrayUser.count
     }
     
     // MARK: CUSTOM HEADER MESSENGER
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let viewHeader = MesengerHeader()
-        return viewHeader
-        
-    }
+//    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let viewHeader = UIView()
+//        return viewHeader
+//
+//    }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 180
-    }
+//    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+//        return 180
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MesengerTableViewCellID", for: indexPath) as! MesengerTableViewCell
