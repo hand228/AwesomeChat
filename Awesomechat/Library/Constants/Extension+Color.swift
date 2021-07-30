@@ -26,6 +26,9 @@ extension UIColor {
     }
     
     static var myBlue = UIColor(red: 67.0/255.0, green: 86.0/255.0, blue: 180.0/255.0, alpha: 1)
+    static var colorTop = UIColor(red: 67.0 / 255.0, green: 86.0 / 255.0, blue: 180.0 / 255.0, alpha: 1.0).cgColor
+    
+    static var colorBottom = UIColor(red: 61.0 / 255.0, green: 207.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0).cgColor
 }
 
 class Colors {

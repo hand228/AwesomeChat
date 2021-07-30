@@ -1,5 +1,5 @@
 //
-//  MesengerController.swift
+//  MessengerController.swift
 //  Awesomechat
 //
 //  Created by LongDN on 02/07/2021.
@@ -8,7 +8,7 @@
 import UIKit
 import Firebase
 
-class MesengerController: UIViewController {
+class MessengerController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     let servereMesenger = ServerMesenger()
@@ -22,7 +22,7 @@ class MesengerController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(UINib(nibName: "MesengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MesengerTableViewCellID")
+        tableView.register(UINib(nibName: "MessengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MessengerTableViewCellID")
         
         requestApiUser()
         requestApiMesenger()
@@ -72,11 +72,11 @@ class MesengerController: UIViewController {
 }
 
 
-extension MesengerController: UITableViewDelegate {
+extension MessengerController: UITableViewDelegate {
     
 }
 
-extension MesengerController: UITableViewDataSource {
+extension MessengerController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -85,7 +85,7 @@ extension MesengerController: UITableViewDataSource {
     
     // MARK: CUSTOM HEADER MESSENGER
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let viewHeader = MesengerHeader()
+        let viewHeader = MessengerHeader()
         return viewHeader
         
     }
@@ -95,7 +95,7 @@ extension MesengerController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MesengerTableViewCellID", for: indexPath) as! MesengerTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerTableViewCellID", for: indexPath) as! MessengerTableViewCell
         cell.lbName.text = dataChatss[indexPath.row].idReceiver
         cell.lbHours.text = dataChatss[indexPath.row].messenger
         cell.lbMesenger.text = dataChatss[indexPath.row].idSender

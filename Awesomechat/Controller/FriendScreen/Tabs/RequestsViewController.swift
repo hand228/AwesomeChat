@@ -1,13 +1,13 @@
 //
-//  MessengerViewController.swift
+//  RequestsViewController.swift
 //  Awesomechat
 //
-//  Created by MaiNQ on 14/07/2021.
+//  Created by MaiNQ on 21/07/2021.
 //
 
 import UIKit
 
-class MessengerViewController: UIViewController {
+class RequestsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

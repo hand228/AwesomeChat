@@ -1,5 +1,5 @@
 //
-//  MesengerHeader.swift
+//  MessengerHeader.swift
 //  Awesomechat
 //
 //  Created by LongDN on 12/07/2021.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MesengerHeader: UIView {
+class MessengerHeader: UIView {
 
     @IBOutlet var contenView: UIView!
     @IBOutlet weak var lbTest: UILabel!
@@ -27,7 +27,7 @@ class MesengerHeader: UIView {
     }
     
     func setupFileXib() {
-        Bundle.main.loadNibNamed("MesengerHeader", owner: self, options: nil)
+        Bundle.main.loadNibNamed("MessengerHeader", owner: self, options: nil)
         self.addSubview(contenView)
         
         contenView.backgroundColor = UIColor(rgb: 0xff4356B4)

@@ -8,6 +8,7 @@
 import Foundation
 
 struct DataFriend {
-    var friendId: String
-    var type: String
+    let friendId: String
+    let type: String
+    let info: DataUser
 }
