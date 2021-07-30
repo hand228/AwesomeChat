@@ -19,14 +19,12 @@ class ServerApiUser {
         let ref: DatabaseReference?
         ref = Database.database().reference()
         ref?.child("users").getData(completion: { (error, dataSnapshot) in
-            
             guard error == nil else {
                 return
             }
             
             let listUser = (dataSnapshot.children.allObjects as? [DataSnapshot])?.map {
                 DataUser(snapShot: $0)
-                
                 
             }
             self.arrayLocalUser = listUser ?? []

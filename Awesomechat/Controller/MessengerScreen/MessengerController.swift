@@ -2,31 +2,28 @@
 //  MessengerController.swift
 //  Awesomechat
 //
-//  Created by LongDN on 02/07/2021.
+//  Created by admin on 7/30/21.
 //
 
 import UIKit
-import Firebase
 
 class MessengerController: UIViewController {
-    
+
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var viewHeader: MessengerHeader!
+    
     let servereMesenger = ServerMesenger()
-    let serverApiUser = ServerApiUser()
-    let pushDataMesenger = PushDataMesenger()
-    var arrayImage: [String] = []
-    var arrayName: [String] = []
-    var arrayKeyReceiver: [String] = []
-    var arrayDictionaryData: [[String: Any]] = [[:]]
-    var dataChatss: [DataChats] = []
+    let serverApiUser = ServerApiUser.shared
+    // let pushDataMesenger = PushDataMesenger()
+    var arrayUser: [DataUser] = []
+    var arrayMessengerLast: [String] = []
+    var arrayChatMessenger: [[ChatMessage]] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MessengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MessengerTableViewCellID")
-        
-        requestApiUser()
-        requestApiMesenger()
-        
+        tableView.layer.cornerRadius = CGFloat(30)
+        requestApiMesengerUser()
     }
     
     @objc func tapImageIcon() {
@@ -35,39 +32,33 @@ class MessengerController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        
     }
     
     // MARK: REQUEST API MESSENGER
-    func requestApiMesenger() {
-        servereMesenger.requestMesenger(completionHandle: {(arrayKeyReceiver, arrayDataChat) in
+    func requestApiMesengerUser() {
+        
+        serverApiUser.requestApiUser(completionHandle: { (dataResuld) in
             
-            print(arrayDataChat)
-            self.arrayKeyReceiver = arrayKeyReceiver
-            print(arrayKeyReceiver)
-            print(arrayDataChat)
+            self.servereMesenger.requestMesenger(completionHandle: { (arrayMessengerLast, arrayUser, arrayChatMessenger)  in
+                self.arrayUser = arrayUser
+                self.arrayMessengerLast = arrayMessengerLast
+                self.arrayChatMessenger = arrayChatMessenger
+                
+                self.tableView.reloadData()
+            })
             
             
-            let ref: DatabaseReference?
-            ref = Database.database().reference()
             self.tableView.reloadData()
         })
     }
     
     // MARK: PUSH DATA FAKE:
-    func pushDataOnFirebase() {
-        pushDataMesenger.pushDataChat(completion: { () in
-            
-        })
-    }
+//    func pushDataOnFirebase() {
+//        pushDataMesenger.pushDataChat(completion: { () in
+//
+//        })
+//    }
     
-    
-    // MARK: REQUEST API USER:
-    func requestApiUser() {
-        serverApiUser.requestApiUser(completionHandle: { (dataResuld) in
-            
-        })
-    }
     
 }
 
@@ -80,30 +71,32 @@ extension MessengerController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return dataChatss.count
-    }
-    
-    // MARK: CUSTOM HEADER MESSENGER
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let viewHeader = MessengerHeader()
-        return viewHeader
-        
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 180
+        return arrayUser.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let stringImg = URL(string: arrayUser[indexPath.row].userImgUrl)
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerTableViewCellID", for: indexPath) as! MessengerTableViewCell
-        cell.lbName.text = dataChatss[indexPath.row].idReceiver
-        cell.lbHours.text = dataChatss[indexPath.row].messenger
-        cell.lbMesenger.text = dataChatss[indexPath.row].idSender
+        cell.lbName.text = arrayUser[indexPath.row].userName
+        cell.lbHours.text = arrayChatMessenger[indexPath.row].last?.date
+        cell.lbMesenger.text = arrayMessengerLast[indexPath.row]
+        do {
+               let dataImg = try Data(contentsOf: stringImg!)
+               cell.imgAvatar.image = UIImage(data: dataImg)
+           } catch {
+               cell.imgAvatar.image = UIImage(named: "defauld")
+           }
+        
         return cell
         
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+         if (indexPath.section == 0 && indexPath.row == 0) {
+              return 104
+         }
+         return 92
     }
+
 }
