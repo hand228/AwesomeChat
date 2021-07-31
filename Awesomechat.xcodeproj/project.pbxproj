@@ -49,6 +49,7 @@
 		AB78AA1826A6B4590024E439 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9FB26A6B4590024E439 /* GroupViewController.swift */; };
 		AB78AA1926A6B4590024E439 /* GroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9FC26A6B4590024E439 /* GroupViewController.xib */; };
 		AB9CA22F26A14287004AAA4D /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9CA22E26A14287004AAA4D /* Extension+UIViewController.swift */; };
+		B210D3F726B599630083A6B8 /* FriendAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B210D3F626B599630083A6B8 /* FriendAPI.swift */; };
 		B2C73F8426A114E700346314 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C73F8326A114E700346314 /* ChatRoom.swift */; };
 		B2C73F8626A1174700346314 /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C73F8526A1174700346314 /* ChatMessage.swift */; };
 		D78E610D269ECCFA00D8FB96 /* PushDataMesenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78E610C269ECCFA00D8FB96 /* PushDataMesenger.swift */; };
@@ -116,6 +117,7 @@
 		AB78A9FB26A6B4590024E439 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
 		AB78A9FC26A6B4590024E439 /* GroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupViewController.xib; sourceTree = "<group>"; };
 		AB9CA22E26A14287004AAA4D /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
+		B210D3F626B599630083A6B8 /* FriendAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendAPI.swift; sourceTree = "<group>"; };
 		B2C73F8326A114E700346314 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
 		B2C73F8526A1174700346314 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
 		B8490B8547768FA02B648C9E /* Pods-Awesomechat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesomechat.debug.xcconfig"; path = "Target Support Files/Pods-Awesomechat/Pods-Awesomechat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -412,6 +414,7 @@
 			children = (
 				D7A55E0B2696DE69000767F8 /* ServerMesenger */,
 				D7A55E0A2696DE5B000767F8 /* ServerUser */,
+				B210D3F626B599630083A6B8 /* FriendAPI.swift */,
 			);
 			path = Notification;
 			sourceTree = "<group>";
@@ -594,6 +597,7 @@
 				AB9CA22F26A14287004AAA4D /* Extension+UIViewController.swift in Sources */,
 				D7A0BC58268D7CA800842C93 /* Extension+Color.swift in Sources */,
 				D78E610D269ECCFA00D8FB96 /* PushDataMesenger.swift in Sources */,
+				B210D3F726B599630083A6B8 /* FriendAPI.swift in Sources */,
 				D78E610F269EEFA100D8FB96 /* Extension+Snapshot.swift in Sources */,
 				D7A0BC30268D6AC500842C93 /* AppDelegate.swift in Sources */,
 				AB78AA1326A6B4590024E439 /* TableViewCell.swift in Sources */,

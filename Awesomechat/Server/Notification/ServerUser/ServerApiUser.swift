@@ -10,13 +10,12 @@ import Firebase
 import FirebaseAuth
 
 class ServerApiUser {
+    static let shared = ServerApiUser()
     
     var arrayLocalUser: [DataUser] = []
     let auth = Auth.auth().currentUser
     
-    func requestApiUser(completionHandle: @escaping ([String]) -> Void) {
-        var arrayKeyUser: [String] = []
-        
+    func requestApiUser(completionHandle: @escaping ([DataUser]) -> Void) {
         let ref: DatabaseReference?
         ref = Database.database().reference()
         ref?.child("users").getData(completion: { (error, dataSnapshot) in
@@ -37,7 +36,7 @@ class ServerApiUser {
             
             
             DispatchQueue.main.async {
-                completionHandle(arrayKeyUser)
+                completionHandle(self.arrayLocalUser)
             }
             
         })

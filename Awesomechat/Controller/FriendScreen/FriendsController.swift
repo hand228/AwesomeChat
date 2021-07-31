@@ -34,6 +34,7 @@ class FriendsController: UIViewController {
     let requestsTab = RequestsViewController(nibName: "RequestsViewController", bundle: nil)
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         // Đổi màu cho header
         gradient.frame = headerLayer.bounds
         gradient.colors = [UIColor.colorTop, UIColor.colorBottom]
@@ -46,8 +47,7 @@ class FriendsController: UIViewController {
         
         // Tab bạn bè
         initTab()
-
-        super.viewDidLoad()
+        initData()
     }
     
     private func initTab() {
@@ -70,6 +70,15 @@ class FriendsController: UIViewController {
         requestsTab.willMove(toParent: nil)
         requestsTab.removeFromParent()
         requestsTab.view.removeFromSuperview()
+    }
+    
+    private func initData() {
+        ServerApiUser.shared.requestApiUser { _ in
+            FriendAPI().getMyFriends { friends in
+                print(friends)
+                // Lấy được danh sách friends thì phân bổ vào từng tab theo type để hiển thị
+            }
+        }
     }
 
     @IBAction func clickBtn(_ sender: UIButton) {
