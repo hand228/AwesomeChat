@@ -18,7 +18,7 @@ class MessengerController: UIViewController {
     var arrayUser: [DataUser] = []
     var arrayMessengerLast: [String] = []
     var arrayChatMessenger: [[ChatMessage]] = []
-    
+    var arrayChatRoom: [ChatRoom] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: "MessengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MessengerTableViewCellID")
@@ -36,18 +36,12 @@ class MessengerController: UIViewController {
     
     // MARK: REQUEST API MESSENGER
     func requestApiMesengerUser() {
-        
         serverApiUser.requestApiUser(completionHandle: { (dataResuld) in
-            
-            self.servereMesenger.requestMesenger(completionHandle: { (arrayMessengerLast, arrayUser, arrayChatMessenger)  in
-                self.arrayUser = arrayUser
-                self.arrayMessengerLast = arrayMessengerLast
-                self.arrayChatMessenger = arrayChatMessenger
+            self.servereMesenger.requestMesenger(completionHandle: {(arrayChatRoom)  in
+                self.arrayChatRoom = arrayChatRoom
                 
                 self.tableView.reloadData()
             })
-            
-            
             self.tableView.reloadData()
         })
     }
@@ -68,19 +62,18 @@ extension MessengerController: UITableViewDelegate {
 }
 
 extension MessengerController: UITableViewDataSource {
-    
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrayUser.count
+        return arrayChatRoom.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let stringImg = URL(string: arrayUser[indexPath.row].userImgUrl)
+        let stringImg = URL(string: arrayChatRoom[indexPath.row].participant?.userImgUrl ?? "")
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerTableViewCellID", for: indexPath) as! MessengerTableViewCell
-        cell.lbName.text = arrayUser[indexPath.row].userName
-        cell.lbHours.text = arrayChatMessenger[indexPath.row].last?.date
-        cell.lbMesenger.text = arrayMessengerLast[indexPath.row]
+        cell.lbName.text = arrayChatRoom[indexPath.row].participant?.userName
+        cell.lbMesenger.text = arrayChatRoom[indexPath.row].chatMessages.last?.messenger
+        cell.lbHours.text = arrayChatRoom[indexPath.row].chatMessages.first?.date
+        
         do {
                let dataImg = try Data(contentsOf: stringImg!)
                cell.imgAvatar.image = UIImage(data: dataImg)
@@ -89,7 +82,6 @@ extension MessengerController: UITableViewDataSource {
            }
         
         return cell
-        
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

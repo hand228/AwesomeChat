@@ -11,7 +11,6 @@ import FirebaseAuth
 
 class ServerApiUser {
     static let shared = ServerApiUser()
-    
     var arrayLocalUser: [DataUser] = []
     let auth = Auth.auth().currentUser
     
@@ -28,17 +27,10 @@ class ServerApiUser {
                 
             }
             self.arrayLocalUser = listUser ?? []
-            
-            print(listUser)
-            print(self.arrayLocalUser)
-            
-            
             DispatchQueue.main.async {
                 completionHandle(self.arrayLocalUser)
             }
             
         })
-        
-       
     }
 }
