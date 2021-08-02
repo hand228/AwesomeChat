@@ -30,14 +30,14 @@
 		1835436C26B0FAA700DA51ED /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835436126B0FAA700DA51ED /* Lato-Light.ttf */; };
 		1835436D26B0FAA700DA51ED /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835436226B0FAA700DA51ED /* Lato-ThinItalic.ttf */; };
 		31BABDED4009E8DCE6ED715C /* Pods_Awesomechat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */; };
+		8480EF4626B404B300C51870 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480EF4426B404B300C51870 /* MessengerController.swift */; };
+		8480EF4726B404B300C51870 /* MessengerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8480EF4526B404B300C51870 /* MessengerController.xib */; };
+		8480EF4926B4059500C51870 /* MessengerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480EF4826B4059500C51870 /* MessengerHeader.swift */; };
+		8480EF4B26B405A400C51870 /* MessengerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8480EF4A26B405A400C51870 /* MessengerHeader.xib */; };
 		AB78AA0026A6B4590024E439 /* PersonalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9DA26A6B4580024E439 /* PersonalController.swift */; };
 		AB78AA0126A6B4590024E439 /* PersonalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9DB26A6B4580024E439 /* PersonalController.xib */; };
-		AB78AA0626A6B4590024E439 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9E326A6B4590024E439 /* MessengerController.swift */; };
-		AB78AA0726A6B4590024E439 /* MessengerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9E426A6B4590024E439 /* MessengerController.xib */; };
 		AB78AA0826A6B4590024E439 /* MessengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9E626A6B4590024E439 /* MessengerTableViewCell.xib */; };
 		AB78AA0926A6B4590024E439 /* MessengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9E726A6B4590024E439 /* MessengerTableViewCell.swift */; };
-		AB78AA0A26A6B4590024E439 /* MessengerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9E826A6B4590024E439 /* MessengerHeader.xib */; };
-		AB78AA0B26A6B4590024E439 /* MessengerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9E926A6B4590024E439 /* MessengerHeader.swift */; };
 		AB78AA0C26A6B4590024E439 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9EB26A6B4590024E439 /* RegisterController.swift */; };
 		AB78AA0D26A6B4590024E439 /* RegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9EC26A6B4590024E439 /* RegisterController.xib */; };
 		AB78AA1226A6B4590024E439 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9F326A6B4590024E439 /* HomeViewController.xib */; };
@@ -98,14 +98,14 @@
 		1835436226B0FAA700DA51ED /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
 		32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Awesomechat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462DAAE6D841AD1FC2EFFD40 /* Pods-Awesomechat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesomechat.release.xcconfig"; path = "Target Support Files/Pods-Awesomechat/Pods-Awesomechat.release.xcconfig"; sourceTree = "<group>"; };
+		8480EF4426B404B300C51870 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
+		8480EF4526B404B300C51870 /* MessengerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerController.xib; sourceTree = "<group>"; };
+		8480EF4826B4059500C51870 /* MessengerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerHeader.swift; sourceTree = "<group>"; };
+		8480EF4A26B405A400C51870 /* MessengerHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerHeader.xib; sourceTree = "<group>"; };
 		AB78A9DA26A6B4580024E439 /* PersonalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalController.swift; sourceTree = "<group>"; };
 		AB78A9DB26A6B4580024E439 /* PersonalController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalController.xib; sourceTree = "<group>"; };
-		AB78A9E326A6B4590024E439 /* MessengerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
-		AB78A9E426A6B4590024E439 /* MessengerController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessengerController.xib; sourceTree = "<group>"; };
 		AB78A9E626A6B4590024E439 /* MessengerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessengerTableViewCell.xib; sourceTree = "<group>"; };
 		AB78A9E726A6B4590024E439 /* MessengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerTableViewCell.swift; sourceTree = "<group>"; };
-		AB78A9E826A6B4590024E439 /* MessengerHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessengerHeader.xib; sourceTree = "<group>"; };
-		AB78A9E926A6B4590024E439 /* MessengerHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerHeader.swift; sourceTree = "<group>"; };
 		AB78A9EB26A6B4590024E439 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		AB78A9EC26A6B4590024E439 /* RegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterController.xib; sourceTree = "<group>"; };
 		AB78A9F326A6B4590024E439 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
@@ -243,9 +243,9 @@
 		AB78A9E226A6B4590024E439 /* MessengerScreen */ = {
 			isa = PBXGroup;
 			children = (
-				AB78A9E326A6B4590024E439 /* MessengerController.swift */,
-				AB78A9E426A6B4590024E439 /* MessengerController.xib */,
 				AB78A9E526A6B4590024E439 /* MessengerTableCell */,
+				8480EF4426B404B300C51870 /* MessengerController.swift */,
+				8480EF4526B404B300C51870 /* MessengerController.xib */,
 			);
 			path = MessengerScreen;
 			sourceTree = "<group>";
@@ -255,8 +255,8 @@
 			children = (
 				AB78A9E626A6B4590024E439 /* MessengerTableViewCell.xib */,
 				AB78A9E726A6B4590024E439 /* MessengerTableViewCell.swift */,
-				AB78A9E826A6B4590024E439 /* MessengerHeader.xib */,
-				AB78A9E926A6B4590024E439 /* MessengerHeader.swift */,
+				8480EF4826B4059500C51870 /* MessengerHeader.swift */,
+				8480EF4A26B405A400C51870 /* MessengerHeader.xib */,
 			);
 			path = MessengerTableCell;
 			sourceTree = "<group>";
@@ -508,10 +508,8 @@
 				AB78AA1926A6B4590024E439 /* GroupViewController.xib in Resources */,
 				1835434E26B0F2F900DA51ED /* FriendsListViewController.xib in Resources */,
 				D7A0BC3C268D6AC700842C93 /* LaunchScreen.storyboard in Resources */,
-				AB78AA0726A6B4590024E439 /* MessengerController.xib in Resources */,
 				AB78AA0126A6B4590024E439 /* PersonalController.xib in Resources */,
 				1835435526B0F2F900DA51ED /* FriendsController.xib in Resources */,
-				AB78AA0A26A6B4590024E439 /* MessengerHeader.xib in Resources */,
 				1835434F26B0F2F900DA51ED /* RequestsViewController.xib in Resources */,
 				1835436A26B0FAA700DA51ED /* OFL.txt in Resources */,
 				180A9BF026B0EDDD0097008D /* GoogleService-Info.plist in Resources */,
@@ -525,9 +523,11 @@
 				1835436D26B0FAA700DA51ED /* Lato-ThinItalic.ttf in Resources */,
 				1835436326B0FAA700DA51ED /* Lato-Italic.ttf in Resources */,
 				AB78AA0826A6B4590024E439 /* MessengerTableViewCell.xib in Resources */,
+				8480EF4726B404B300C51870 /* MessengerController.xib in Resources */,
 				D7A0BC37268D6AC500842C93 /* Main.storyboard in Resources */,
 				1835434226B0F2D400DA51ED /* TabBarViewController.xib in Resources */,
 				1835436526B0FAA700DA51ED /* Lato-Thin.ttf in Resources */,
+				8480EF4B26B405A400C51870 /* MessengerHeader.xib in Resources */,
 				1835436826B0FAA700DA51ED /* Lato-Regular.ttf in Resources */,
 				1835435326B0F2F900DA51ED /* AllViewController.xib in Resources */,
 				AB78AA0D26A6B4590024E439 /* RegisterController.xib in Resources */,
@@ -586,7 +586,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB78AA0626A6B4590024E439 /* MessengerController.swift in Sources */,
 				D7AC16A326A1913E0082FF94 /* CallMethodRequest.swift in Sources */,
 				AB78AA1726A6B4590024E439 /* LoginController.swift in Sources */,
 				D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */,
@@ -607,8 +606,9 @@
 				D7A155C7268F252E00A8E50B /* ServerRegister.swift in Sources */,
 				B2C73F8426A114E700346314 /* ChatRoom.swift in Sources */,
 				1835435226B0F2F900DA51ED /* RequestsViewController.swift in Sources */,
-				AB78AA0B26A6B4590024E439 /* MessengerHeader.swift in Sources */,
 				B2C73F8626A1174700346314 /* ChatMessage.swift in Sources */,
+				8480EF4626B404B300C51870 /* MessengerController.swift in Sources */,
+				8480EF4926B4059500C51870 /* MessengerHeader.swift in Sources */,
 				D7A0BC5E268DBCC000842C93 /* ServerApiUser.swift in Sources */,
 				AB78AA0026A6B4590024E439 /* PersonalController.swift in Sources */,
 				1835435026B0F2F900DA51ED /* FriendsListViewController.swift in Sources */,
