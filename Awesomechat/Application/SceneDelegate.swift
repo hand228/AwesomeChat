@@ -19,9 +19,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowscene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowscene)
-        window.rootViewController = TabBarViewController()
+       // window.rootViewController = TabBarViewController()
         
-        
+        window.rootViewController = MessengerDetail()
         self.window = window
         window.makeKeyAndVisible()
     }

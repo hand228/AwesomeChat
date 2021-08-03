@@ -59,6 +59,16 @@ class MessengerController: UIViewController {
 
 extension MessengerController: UITableViewDelegate {
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        
+        let messengerDetail = MessengerDetail()
+        
+        messengerDetail.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        messengerDetail.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(messengerDetail, animated: true, completion: nil)
+        
+    }
 }
 
 extension MessengerController: UITableViewDataSource {

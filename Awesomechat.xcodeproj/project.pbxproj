@@ -30,6 +30,10 @@
 		1835436C26B0FAA700DA51ED /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835436126B0FAA700DA51ED /* Lato-Light.ttf */; };
 		1835436D26B0FAA700DA51ED /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835436226B0FAA700DA51ED /* Lato-ThinItalic.ttf */; };
 		31BABDED4009E8DCE6ED715C /* Pods_Awesomechat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */; };
+		8403D3D626B797DD00609CB9 /* MessengerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403D3D426B797DD00609CB9 /* MessengerDetail.swift */; };
+		8403D3D726B797DD00609CB9 /* MessengerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403D3D526B797DD00609CB9 /* MessengerDetail.xib */; };
+		8403D3DB26B7A6C600609CB9 /* MessengerDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403D3D926B7A6C600609CB9 /* MessengerDetailCell.swift */; };
+		8403D3DC26B7A6C600609CB9 /* MessengerDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403D3DA26B7A6C600609CB9 /* MessengerDetailCell.xib */; };
 		8480EF4626B404B300C51870 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480EF4426B404B300C51870 /* MessengerController.swift */; };
 		8480EF4726B404B300C51870 /* MessengerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8480EF4526B404B300C51870 /* MessengerController.xib */; };
 		8480EF4926B4059500C51870 /* MessengerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480EF4826B4059500C51870 /* MessengerHeader.swift */; };
@@ -98,6 +102,10 @@
 		1835436226B0FAA700DA51ED /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
 		32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Awesomechat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462DAAE6D841AD1FC2EFFD40 /* Pods-Awesomechat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesomechat.release.xcconfig"; path = "Target Support Files/Pods-Awesomechat/Pods-Awesomechat.release.xcconfig"; sourceTree = "<group>"; };
+		8403D3D426B797DD00609CB9 /* MessengerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerDetail.swift; sourceTree = "<group>"; };
+		8403D3D526B797DD00609CB9 /* MessengerDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerDetail.xib; sourceTree = "<group>"; };
+		8403D3D926B7A6C600609CB9 /* MessengerDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerDetailCell.swift; sourceTree = "<group>"; };
+		8403D3DA26B7A6C600609CB9 /* MessengerDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerDetailCell.xib; sourceTree = "<group>"; };
 		8480EF4426B404B300C51870 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
 		8480EF4526B404B300C51870 /* MessengerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerController.xib; sourceTree = "<group>"; };
 		8480EF4826B4059500C51870 /* MessengerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerHeader.swift; sourceTree = "<group>"; };
@@ -223,6 +231,35 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8403D3D326B797AE00609CB9 /* MessengerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8403D3D826B7A6A100609CB9 /* MessengerDetailCell */,
+				8403D3D426B797DD00609CB9 /* MessengerDetail.swift */,
+				8403D3D526B797DD00609CB9 /* MessengerDetail.xib */,
+			);
+			path = MessengerDetail;
+			sourceTree = "<group>";
+		};
+		8403D3D826B7A6A100609CB9 /* MessengerDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				8403D3D926B7A6C600609CB9 /* MessengerDetailCell.swift */,
+				8403D3DA26B7A6C600609CB9 /* MessengerDetailCell.xib */,
+			);
+			path = MessengerDetailCell;
+			sourceTree = "<group>";
+		};
+		8403D3DD26B841F400609CB9 /* MessengerList */ = {
+			isa = PBXGroup;
+			children = (
+				AB78A9E526A6B4590024E439 /* MessengerTableCell */,
+				8480EF4426B404B300C51870 /* MessengerController.swift */,
+				8480EF4526B404B300C51870 /* MessengerController.xib */,
+			);
+			path = MessengerList;
+			sourceTree = "<group>";
+		};
 		9FB58D69EDA6780F9A8FCBD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -243,9 +280,8 @@
 		AB78A9E226A6B4590024E439 /* MessengerScreen */ = {
 			isa = PBXGroup;
 			children = (
-				AB78A9E526A6B4590024E439 /* MessengerTableCell */,
-				8480EF4426B404B300C51870 /* MessengerController.swift */,
-				8480EF4526B404B300C51870 /* MessengerController.xib */,
+				8403D3DD26B841F400609CB9 /* MessengerList */,
+				8403D3D326B797AE00609CB9 /* MessengerDetail */,
 			);
 			path = MessengerScreen;
 			sourceTree = "<group>";
@@ -533,6 +569,8 @@
 				AB78AA0D26A6B4590024E439 /* RegisterController.xib in Resources */,
 				AB78AA1526A6B4590024E439 /* TableViewCell.xib in Resources */,
 				AB78AA1226A6B4590024E439 /* HomeViewController.xib in Resources */,
+				8403D3D726B797DD00609CB9 /* MessengerDetail.xib in Resources */,
+				8403D3DC26B7A6C600609CB9 /* MessengerDetailCell.xib in Resources */,
 				1835436C26B0FAA700DA51ED /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,7 +652,9 @@
 				1835435026B0F2F900DA51ED /* FriendsListViewController.swift in Sources */,
 				D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */,
 				D78ECD6F269C5B8F00ACF39D /* DataChats.swift in Sources */,
+				8403D3DB26B7A6C600609CB9 /* MessengerDetailCell.swift in Sources */,
 				D7A0BC32268D6AC500842C93 /* SceneDelegate.swift in Sources */,
+				8403D3D626B797DD00609CB9 /* MessengerDetail.swift in Sources */,
 				D78ECD6D269C330200ACF39D /* Extension+Date.swift in Sources */,
 				1835435126B0F2F900DA51ED /* AllViewController.swift in Sources */,
 				D7A155C0268ECEA000A8E50B /* DataFriend.swift in Sources */,
