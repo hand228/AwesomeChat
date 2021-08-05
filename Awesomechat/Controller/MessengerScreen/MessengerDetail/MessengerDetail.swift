@@ -7,105 +7,101 @@
 
 import UIKit
 
+struct Demodata {
+    let name: String
+    let isInComing: Bool
+    
+}
+
 class MessengerDetail: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet var viewHeader: UIView!
     @IBOutlet weak var viewContentChat: UIView!
 
-    lazy var imgSelecter = UIImageView()
+    var imgSelecter = UIImageView()
     let txtInputChat = UITextField()
-    lazy var imgSenderMessenger = UIImageView()
-    var arrayData: [String] = ["sdfsdf","fsdfsdfsd","dsffsdfds","dsffsdfs",
-                               "sasdsdsads","sdfsdfsdfs","dfsdfsdfsdf","sdfsdfwrwerw"]
-    var bottomContraint: NSLayoutConstraint?
+    var imgSenderMessenger = UIImageView()
+    let imgSticker = UIImageView()
+    var arrayData: [Demodata] = [
+        Demodata(name: "aaaaaabbbbbbbbbeeeeee vjdjdddddddddd ddoofffffff", isInComing: true),
+        Demodata(name: "kkkkkkkkhdddd ddddddddd", isInComing: false),
+        Demodata(name: "jjjjjjjjjjjjj    jjjjjjjj  jjjjjjj", isInComing: false),
+        Demodata(name: "jjjjjjjjjjjjj uyuyiyuiyiyiy  uiiyyuiyi", isInComing: true),
+        Demodata(name: "jjjjjjjjjjjjj MMMMMdhssssss ssssufffff fffff", isInComing: false),
+        Demodata(name: "yyyyyyyyy eeeeeeee jjjjjjj jjjjjjj", isInComing: true),
+    
+    ]
+    
+    var arrayDataDate: [String] = ["33:11","33:11","33:11","33:11","33:11","33:11","33:11","33:11"]
+    
     var bottomContraintTable: NSLayoutConstraint?
     var trailingContraintInputChat: NSLayoutConstraint?
-    
-   // let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapSelecterImg))
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(viewContentChat)
         tableView.keyboardDismissMode = .onDrag
-        
+        tableView.separatorStyle = .none
         tableView.register(UINib(nibName: "MessengerDetailCell", bundle: nil), forCellReuseIdentifier: "MessengerDetailCellID")
         
         setupInputComponents()
         setupKeyboardObserver()
         view.addConstraint(bottomContraintTable!)
-        view.addConstraints([bottomContraint!])
+        //view.addConstraints([bottomContraint!])
         
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        
         //NotificationCenter.default.removeObserver(self)
     }
      
     func setupKeyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
-        
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         
-        bottomContraint = NSLayoutConstraint(item: viewContentChat!, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
-        bottomContraintTable = NSLayoutConstraint(item: tableView!, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 75)
-        
+//        bottomContraint = NSLayoutConstraint(item: viewContentChat!, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
+        bottomContraintTable = NSLayoutConstraint(item: tableView!, attribute: .bottom, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1, constant: 75)
         
     }
     
-    // MARK: HANDLE KEYBOARD SHOW
+    // MARK: HANDLE KEYBOARD WILL SHOW
     @objc func handleKeyboardWillShow(notification: Notification) {
         guard let keyboardValue = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
-        bottomContraint!.constant = -keyboardValue.height - view.safeAreaInsets.bottom - 50
-        bottomContraintTable?.constant = -keyboardValue.height - 60
-        
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapSelecterImg))
-        imgSelecter.isUserInteractionEnabled = true
-        imgSelecter.addGestureRecognizer(tapGestureRecognizer)
-        
+        //bottomContraint?.constant = -keyboardValue.height
+        bottomContraintTable?.constant = -keyboardValue.height - 40
         UIView.animate(withDuration: 0, delay: 0, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
         }, completion: { (completion) in
             self.tableView.scrollToRow(at: IndexPath(row: self.arrayData.count - 1, section: 0), at: .bottom, animated: true)
         })
-    }
-    
-    // MARK: HANDLE KEYBOARD HIDE
-    @objc func handleKeyboardWillHide() {
-        bottomContraint!.constant = 0
-        bottomContraintTable?.constant = 75
-          
-    }
-    
-    @objc func handleKeyboardDidShow() {
         
+    }
+    
+    // MARK: HANDLE KEYBOARD DID SHOW
+    @objc func handleKeyboardDidShow() {
         self.viewContentChat.addSubview(self.imgSenderMessenger)
         self.viewContentChat.addSubview(self.imgSelecter)
         txtInputChat.translatesAutoresizingMaskIntoConstraints = false
         trailingContraintInputChat = txtInputChat.trailingAnchor.constraint(equalTo: viewContentChat.trailingAnchor, constant: -60)
         viewContentChat.addConstraints([trailingContraintInputChat!])
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapSelecterImgs))
-        imgSelecter.isUserInteractionEnabled = true
-        imgSelecter.addGestureRecognizer(tapGestureRecognizer)
-        
-        let tapSenderMessenger  = UITapGestureRecognizer(target: self, action: #selector(tapImgSenderMessenger))
+        let tapSenderMessenger = UITapGestureRecognizer(target: self, action: #selector(tapImgSenderMessenger))
         imgSenderMessenger.isUserInteractionEnabled = true
         imgSenderMessenger.addGestureRecognizer(tapSenderMessenger)
-        
-        imgSenderMessenger.accessibilityActivate()
-        imgSenderMessenger.adjustsImageSizeForAccessibilityContentSizeCategory = true
-        imgSenderMessenger.accessibilityElementIsFocused()
-        
+
+        let tapImgSticker = UITapGestureRecognizer(target: self, action: #selector(tapImgStickerRights))
+        imgSticker.isUserInteractionEnabled = true
+        imgSticker.addGestureRecognizer(tapImgSticker)
         
         imgSenderMessenger.translatesAutoresizingMaskIntoConstraints = false
         imgSenderMessenger.trailingAnchor.constraint(equalTo: viewContentChat.trailingAnchor, constant: -12).isActive = true
@@ -116,11 +112,15 @@ class MessengerDetail: UIViewController {
         
     }
     
+    // MARK: HANDLE KEYBOARD HIDE
+    @objc func handleKeyboardWillHide() {
+        //bottomContraint!.constant = 0
+        bottomContraintTable?.constant = 75
+    }
+    
     @objc func handleKeyboardDidHide() {
         viewContentChat.translatesAutoresizingMaskIntoConstraints = false
-        txtInputChat.translatesAutoresizingMaskIntoConstraints = false
-        viewContentChat.removeConstraints([trailingContraintInputChat!])
-        //txtInputChat.removeFromSuperview()
+        viewContentChat.removeConstraint(trailingContraintInputChat!)
         imgSenderMessenger.removeFromSuperview()
     }
     
@@ -135,9 +135,9 @@ class MessengerDetail: UIViewController {
         imgSelecter.heightAnchor.constraint(equalToConstant: 52).isActive = true
         imgSelecter.widthAnchor.constraint(equalToConstant: 52).isActive = true
         
-        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.tapSelecterImg))
+        let tapImgSeclecter = UITapGestureRecognizer(target: self, action: #selector(self.tapImgSelecter))
         imgSelecter.isUserInteractionEnabled = true
-        imgSelecter.addGestureRecognizer(tapGestureRecognizer)
+        imgSelecter.addGestureRecognizer(tapImgSeclecter)
         
         txtInputChat.translatesAutoresizingMaskIntoConstraints = false
         txtInputChat.topAnchor.constraint(equalTo: viewContentChat.topAnchor, constant: 10).isActive = true
@@ -147,23 +147,18 @@ class MessengerDetail: UIViewController {
         txtInputChat.backgroundColor = UIColor(rgb: 0xffF6F6F6)
         txtInputChat.layer.cornerRadius = CGFloat(25)
         txtInputChat.clipsToBounds = true
-        txtInputChat.placeholder = "Nhập tin nhắn..."
+        txtInputChat.placeholder = "  Nhập tin nhắn..."
         txtInputChat.font = UIFont(name: "Lato", size: 16)
         
         // IMGSTICKER
-        let imgSticker = UIImageView()
         imgSticker.image = UIImage(named: "smile 1")
-        let tapImageRight = UITapGestureRecognizer(target: self, action: #selector(tapImgStickerRights))
+        let tapImgSticker = UITapGestureRecognizer(target: self, action: #selector(tapImgStickerRights))
         imgSticker.isUserInteractionEnabled = true
-        imgSticker.addGestureRecognizer(tapImageRight)
+        imgSticker.addGestureRecognizer(tapImgSticker)
         txtInputChat.addSubview(imgSticker)
-        txtInputChat.frame(forAlignmentRect: .infinite)
-        
         imgSticker.translatesAutoresizingMaskIntoConstraints = false
-        imgSticker.rightAnchor.constraint(equalTo: txtInputChat.rightAnchor, constant: -14).isActive = true
-        imgSticker.heightAnchor.constraint(equalToConstant: 24).isActive = true
-        imgSticker.widthAnchor.constraint(equalToConstant: 24).isActive = true
-        imgSticker.topAnchor.constraint(equalTo: txtInputChat.topAnchor, constant: 14).isActive = true
+        txtInputChat.rightView = imgSticker
+        txtInputChat.rightViewMode = .always
     }
     
     
@@ -177,20 +172,18 @@ class MessengerDetail: UIViewController {
         
     }
 
-    @objc func tapSelecterImg() {
+    @objc func tapImgSelecter() {
         print("sdsdfdfd")
         self.dismiss(animated: true, completion: nil)
         
     }
-    @objc func tapSelecterImgs() {
-        print("dfjdjfjd")
-    }
+    
 }
 
 extension MessengerDetail: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90
+        return UITableView.automaticDimension
     }
     
 }
@@ -203,7 +196,10 @@ extension MessengerDetail: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerDetailCellID", for: indexPath) as! MessengerDetailCell
         
-        cell.textLabel?.text = arrayData[indexPath.row]
+        cell.lbContentMessenger.text = arrayData[indexPath.row].name
+        //cell.lbDateMessenger.text = arrayDataDate[indexPath.row]
+        cell.imgAvartarCell.image = UIImage(named: "defauld")
+        cell.isInComing = arrayData[indexPath.row].isInComing
         return cell
     }
     
