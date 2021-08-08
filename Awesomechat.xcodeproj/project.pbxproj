@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180A9BF026B0EDDD0097008D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 180A9BEF26B0EDDD0097008D /* GoogleService-Info.plist */; };
 		1835434226B0F2D400DA51ED /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835434026B0F2D400DA51ED /* TabBarViewController.xib */; };
 		1835434326B0F2D400DA51ED /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835434126B0F2D400DA51ED /* TabBarViewController.swift */; };
 		1835434E26B0F2F900DA51ED /* FriendsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835434626B0F2F900DA51ED /* FriendsListViewController.xib */; };
@@ -34,6 +33,7 @@
 		8403D3D726B797DD00609CB9 /* MessengerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403D3D526B797DD00609CB9 /* MessengerDetail.xib */; };
 		8403D3DB26B7A6C600609CB9 /* MessengerDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403D3D926B7A6C600609CB9 /* MessengerDetailCell.swift */; };
 		8403D3DC26B7A6C600609CB9 /* MessengerDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403D3DA26B7A6C600609CB9 /* MessengerDetailCell.xib */; };
+		84689C1A26BD750400902783 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84689C1926BD750400902783 /* GoogleService-Info.plist */; };
 		8480EF4626B404B300C51870 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480EF4426B404B300C51870 /* MessengerController.swift */; };
 		8480EF4726B404B300C51870 /* MessengerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8480EF4526B404B300C51870 /* MessengerController.xib */; };
 		8480EF4926B4059500C51870 /* MessengerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480EF4826B4059500C51870 /* MessengerHeader.swift */; };
@@ -78,7 +78,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		180A9BEF26B0EDDD0097008D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1835434026B0F2D400DA51ED /* TabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		1835434126B0F2D400DA51ED /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1835434626B0F2F900DA51ED /* FriendsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsListViewController.xib; sourceTree = "<group>"; };
@@ -106,6 +105,7 @@
 		8403D3D526B797DD00609CB9 /* MessengerDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerDetail.xib; sourceTree = "<group>"; };
 		8403D3D926B7A6C600609CB9 /* MessengerDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerDetailCell.swift; sourceTree = "<group>"; };
 		8403D3DA26B7A6C600609CB9 /* MessengerDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerDetailCell.xib; sourceTree = "<group>"; };
+		84689C1926BD750400902783 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8480EF4426B404B300C51870 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
 		8480EF4526B404B300C51870 /* MessengerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerController.xib; sourceTree = "<group>"; };
 		8480EF4826B4059500C51870 /* MessengerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerHeader.swift; sourceTree = "<group>"; };
@@ -357,8 +357,8 @@
 			isa = PBXGroup;
 			children = (
 				D7A0BC38268D6AC700842C93 /* Assets.xcassets */,
-				180A9BEF26B0EDDD0097008D /* GoogleService-Info.plist */,
 				D7A0BC3D268D6AC700842C93 /* Info.plist */,
+				84689C1926BD750400902783 /* GoogleService-Info.plist */,
 				D7B0F17526A56C6C00D13C45 /* Library */,
 				D7B0F17326A56B6B00D13C45 /* Application */,
 				D7A0BC5C268DBCA200842C93 /* Server */,
@@ -548,11 +548,11 @@
 				1835435526B0F2F900DA51ED /* FriendsController.xib in Resources */,
 				1835434F26B0F2F900DA51ED /* RequestsViewController.xib in Resources */,
 				1835436A26B0FAA700DA51ED /* OFL.txt in Resources */,
-				180A9BF026B0EDDD0097008D /* GoogleService-Info.plist in Resources */,
 				D7A0BC39268D6AC700842C93 /* Assets.xcassets in Resources */,
 				AB78AA1626A6B4590024E439 /* LoginController.xib in Resources */,
 				1835436B26B0FAA700DA51ED /* Lato-BoldItalic.ttf in Resources */,
 				1835436726B0FAA700DA51ED /* Lato-Black.ttf in Resources */,
+				84689C1A26BD750400902783 /* GoogleService-Info.plist in Resources */,
 				1835436926B0FAA700DA51ED /* Lato-BlackItalic.ttf in Resources */,
 				1835436626B0FAA700DA51ED /* Lato-Bold.ttf in Resources */,
 				1835436426B0FAA700DA51ED /* Lato-LightItalic.ttf in Resources */,

@@ -20,7 +20,6 @@ class PersonalController: UIViewController {
         let firebaseAuth = Auth.auth()
         do {
             
-            
             UserDefaults.standard.removeObject(forKey: "Email")
             UserDefaults.standard.removeObject(forKey: "PassWord")
             

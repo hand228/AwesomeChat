@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>9769821725-1q2k2l53akcns5idrsa86c983g9tf2kr.apps.googleusercontent.com</string>
+	<string>677717797094-o3eehmuh4587m43p0lkb77lsiefkv8nh.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.9769821725-1q2k2l53akcns5idrsa86c983g9tf2kr</string>
+	<string>com.googleusercontent.apps.677717797094-o3eehmuh4587m43p0lkb77lsiefkv8nh</string>
 	<key>API_KEY</key>
-	<string>AIzaSyC6kmBZapTLypvmrryY2zXPngTUZ8ki8PY</string>
+	<string>AIzaSyDAHJae1KRF5WVVcp4CUuX6iPVMxtKNp0Q</string>
 	<key>GCM_SENDER_ID</key>
-	<string>9769821725</string>
+	<string>677717797094</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>danglong.Awesomechat</string>
 	<key>PROJECT_ID</key>
-	<string>awesomechat-1d6d0</string>
+	<string>awesomechat-5de51</string>
 	<key>STORAGE_BUCKET</key>
-	<string>awesomechat-1d6d0.appspot.com</string>
+	<string>awesomechat-5de51.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:9769821725:ios:5c17385afa768da63ec8f4</string>
+	<string>1:677717797094:ios:fc6ebbed3d6922b1b1f327</string>
+	<key>DATABASE_URL</key>
+	<string>https://awesomechat-5de51-default-rtdb.asia-southeast1.firebasedatabase.app</string>
 </dict>
 </plist>

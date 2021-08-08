@@ -14,13 +14,17 @@ class MessengerController: UIViewController {
     
     let servereMesenger = ServerMesenger()
     let serverApiUser = ServerApiUser.shared
-    // let pushDataMesenger = PushDataMesenger()
+    
+    let pushDataMesenger = PushDataMesenger()
     var arrayUser: [DataUser] = []
     var arrayMessengerLast: [String] = []
     var arrayChatMessenger: [[ChatMessage]] = []
     var arrayChatRoom: [ChatRoom] = []
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       
+        
         tableView.register(UINib(nibName: "MessengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MessengerTableViewCellID")
         tableView.layer.cornerRadius = CGFloat(30)
         requestApiMesengerUser()
@@ -46,11 +50,12 @@ class MessengerController: UIViewController {
         })
     }
     
-    // MARK: PUSH DATA FAKE:
+//     // MARK: PUSH DATA FAKE:
 //    func pushDataOnFirebase() {
 //        pushDataMesenger.pushDataChat(completion: { () in
 //
-//        })
+//        }, messenger: "")
+//
 //    }
     
     
@@ -61,14 +66,27 @@ extension MessengerController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        
         let messengerDetail = MessengerDetail()
+        messengerDetail.arrayDataDate = ["11:55", "11:44","77:55","11:44","11:44","11:44","11:44","11:44"]
+        messengerDetail.dataChatRoom = arrayChatRoom[indexPath.row]
         
         messengerDetail.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         messengerDetail.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         self.present(messengerDetail, animated: true, completion: nil)
         
     }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.destination is MessengerDetail {
+//
+//            let messemgerDetail = segue.destination as? MessengerDetail
+////            messemgerDetail?.arrayDataDate = ["11:55", "11:44","77:55","11:44","11:44","11:44","11:44","11:44"]
+//        }
+//
+//
+//    }
+    
+    
 }
 
 extension MessengerController: UITableViewDataSource {

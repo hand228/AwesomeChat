@@ -93,6 +93,7 @@ class RegisterController: UIViewController {
             pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userPhone": currentUser?.phoneNumber ?? "defauld"])
             pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userImgUrl": currentUser?.photoURL ?? "defauld"])
             pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userDateOfBirth": "defauld"])
+            
             self.customPushMesenger()
             
         })

@@ -19,13 +19,13 @@ class FriendAPI {
         // currentUser đang bị trống. Sau này phải lấy thông tin từ đây
 //        let myId = Auth.auth().currentUser?.uid ?? ""
         let myId = "8q9de0KpYlabGDQ9Amw9U7DbQsi2"
-        ref.child("friend").getData { error, snapshot in
-            let friends = (snapshot.childSnapshot(forPath: myId).children.allObjects as? [DataSnapshot])?.map {
-                DataFriend(snapshot: $0)
-            } ?? []
-            DispatchQueue.main.async {
-                completion(friends)
-            }
-        }
+//        ref.child("friend").getData { error, snapshot in
+//            let friends = (snapshot.childSnapshot(forPath: myId).children.allObjects as? [DataSnapshot])?.map {
+//                DataFriend(snapshot: $0)
+//            } ?? []
+//            DispatchQueue.main.async {
+//                completion(friends)
+//            }
+//        }
     }
 }

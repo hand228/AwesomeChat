@@ -8,7 +8,6 @@
 import UIKit
 import FirebaseAuth
 
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -19,9 +18,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowscene = (scene as? UIWindowScene) else { return }
         
         let window = UIWindow(windowScene: windowscene)
-       // window.rootViewController = TabBarViewController()
-        
-        window.rootViewController = MessengerDetail()
+        Auth.auth().signIn(withEmail: UserDefaults.standard.string(forKey: "Email") ?? "", password: UserDefaults.standard.string(forKey: "PassWord") ?? "", completion: { (dataAuth, error) in
+            
+            guard error == nil else {
+                return
+            }
+            window.rootViewController = TabBarViewController()
+        })
+        window.rootViewController = LoginController()
         self.window = window
         window.makeKeyAndVisible()
     }
