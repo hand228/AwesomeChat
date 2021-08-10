@@ -27,13 +27,15 @@ class MessengerDetailCell: UITableViewCell {
             if (isInComing == true) {
                 leadingDateMessenger.isActive = true
                 leadingLabelMessenger.isActive = true
-                
+                trailingDateMessenger.isActive = false
+                trailingLabelMessenger.isActive = false
                 viewContentMessenger.backgroundColor = UIColor(rgb: 0xffE5E5E5)
                 lbContentMessenger.textColor = UIColor.black
                 
                 
             } else {
-                
+                leadingDateMessenger.isActive = false
+                leadingLabelMessenger.isActive = false
                 trailingDateMessenger.isActive = true
                 trailingLabelMessenger.isActive = true
                 

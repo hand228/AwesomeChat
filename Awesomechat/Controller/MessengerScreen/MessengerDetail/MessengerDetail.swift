@@ -23,7 +23,7 @@ class MessengerDetail: UIViewController {
     
     let pushDataMessenger = PushDataMesenger()
     
-    let currentUser = Auth.auth().currentUser?.uid
+    
     var imgSelecter = UIImageView()
     let txtInputChat = UITextField()
     var imgSenderMessenger = UIImageView()
@@ -43,7 +43,7 @@ class MessengerDetail: UIViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.separatorStyle = .none
         tableView.layer.cornerRadius = 30
-        // print(currentUser)
+        
         
         //MessengerDetailCellID
         tableView.register(MessengerDetailCell.self, forCellReuseIdentifier: "MessengerDetailCellID")
@@ -190,13 +190,32 @@ class MessengerDetail: UIViewController {
     @objc func tapImgSenderMessenger() {
         print("TAp Sender Messenger")
         
-        guard let textInput = txtInputChat.text else { return }
-        pushDataMessenger.pushDataChat(completion: { () in
-            
-            self.tableView.reloadData()
-        }, messenger: textInput, idReceiver: dataChatRoom?.participant?.userId ?? "")
+        print(dataChatRoom?.participant?.userId)
+        print(dataChatRoom?.roomId)
+        print(dataChatRoom?.chatMessages[0].messageId)
         
+//        let delegate = UIApplication.shared.applicationState
+//        let context = delegate?.undoManager
+        
+        guard let textInput = txtInputChat.text else { return }
+        
+        pushDataMessenger.pushDataChat(completion: { (dataChatMessage) in
+            print("Completion")
+            print(textInput)
+            let inserIndexChatMessage = self.dataChatRoom?.chatMessages.count
+            self.dataChatRoom?.chatMessages.append(dataChatMessage)
+            
+            self.tableView.insertRows(at: [IndexPath(item: (inserIndexChatMessage)! - 1, section: 0)], with: .bottom)
+            self.tableView.scrollToRow(at: IndexPath(item: (inserIndexChatMessage)! - 1, section: 0), at: .bottom, animated: true)
+            self.txtInputChat.text = nil
+            self.tableView.reloadData()
+            
+            
+            
+        }, messenger: textInput, idReceiver: dataChatRoom?.participant?.userId ?? "", idSender: Auth.auth().currentUser?.uid ?? "", idChatRoom: dataChatRoom?.roomId ?? "")
         tableView.reloadData()
+        
+        
         print(dataChatRoom?.participant?.userId ?? "")
         
         
@@ -212,19 +231,6 @@ class MessengerDetail: UIViewController {
         self.dismiss(animated: true, completion: nil)
         
     }
-    
-//    func checkMessengerContinue() {
-//
-//        for i in 0..<arrayData.count {
-//
-//            if (arrayData[i].isInComing == true) {
-//
-//            } else {
-//
-//            }
-//        }
-//    }
-    
 }
 
 extension MessengerDetail: UITableViewDelegate {
@@ -255,8 +261,10 @@ extension MessengerDetail: UITableViewDataSource {
             cell.imgAvatarCell.image = UIImage(named: "defauld")
         }
         
-        cell.isInComing = dataChatRoom?.chatMessages[indexPath.row].idSender == currentUser
+        cell.isInComing = dataChatRoom?.chatMessages[indexPath.row].idSender != Auth.auth().currentUser?.uid
         cell.lbDateMessenger.text = dataChatRoom?.chatMessages[indexPath.row].date
+        //cell.textLabel?.text = dataChatRoom?.chatMessages[indexPath.row].messageId
+        
         return cell
     }
     

@@ -20,16 +20,9 @@ class ServerApiUser {
         print(auth?.uid)
         
         ref?.child("users").getData(completion: { (error, dataSnapshot) in
-            do {
-                try error == nil
-            } catch let error {
-                
-                print(error)
-            }
             guard error == nil else {
                 return
-            }
-//            
+            }          
             let listUser = (dataSnapshot.children.allObjects as? [DataSnapshot])?.map {
                 DataUser(snapShot: $0)
                 

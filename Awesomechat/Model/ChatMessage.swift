@@ -27,4 +27,14 @@ struct ChatMessage {
         self.timeLong = snapshot.childSnapshot(forPath: "timeLong").value as? String ?? ""
         
     }
+    
+    init(messageId: String, idSender: String, idReceiver: String, messenger: String, date: String, time: String, timeLong: String) {
+        self.messageId = messageId
+        self.idSender = idSender
+        self.idReceiver = idReceiver
+        self.messenger = messenger
+        self.date = date
+        self.time = time
+        self.timeLong = timeLong
+    }
 }

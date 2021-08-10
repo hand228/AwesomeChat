@@ -23,8 +23,6 @@ class MessengerController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-        
         tableView.register(UINib(nibName: "MessengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MessengerTableViewCellID")
         tableView.layer.cornerRadius = CGFloat(30)
         requestApiMesengerUser()
@@ -75,18 +73,6 @@ extension MessengerController: UITableViewDelegate {
         self.present(messengerDetail, animated: true, completion: nil)
         
     }
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.destination is MessengerDetail {
-//
-//            let messemgerDetail = segue.destination as? MessengerDetail
-////            messemgerDetail?.arrayDataDate = ["11:55", "11:44","77:55","11:44","11:44","11:44","11:44","11:44"]
-//        }
-//
-//
-//    }
-    
-    
 }
 
 extension MessengerController: UITableViewDataSource {
@@ -100,8 +86,8 @@ extension MessengerController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerTableViewCellID", for: indexPath) as! MessengerTableViewCell
         cell.lbName.text = arrayChatRoom[indexPath.row].participant?.userName
         cell.lbMesenger.text = arrayChatRoom[indexPath.row].chatMessages.last?.messenger
-        cell.lbHours.text = arrayChatRoom[indexPath.row].chatMessages.first?.date
-        
+        cell.lbHours.text = arrayChatRoom[indexPath.row].chatMessages.last?.date
+        //cell.textLabel?.text = arrayChatRoom[indexPath.row].chatMessages.last?.idReceiver
         do {
                let dataImg = try Data(contentsOf: stringImg!)
                cell.imgAvatar.image = UIImage(data: dataImg)
