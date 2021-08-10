@@ -86,7 +86,7 @@ extension MessengerController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerTableViewCellID", for: indexPath) as! MessengerTableViewCell
         cell.lbName.text = arrayChatRoom[indexPath.row].participant?.userName
         cell.lbMesenger.text = arrayChatRoom[indexPath.row].chatMessages.last?.messenger
-        cell.lbHours.text = arrayChatRoom[indexPath.row].chatMessages.last?.date
+        cell.lbHours.text = arrayChatRoom[indexPath.row].chatMessages.last?.time
         //cell.textLabel?.text = arrayChatRoom[indexPath.row].chatMessages.last?.idReceiver
         do {
                let dataImg = try Data(contentsOf: stringImg!)

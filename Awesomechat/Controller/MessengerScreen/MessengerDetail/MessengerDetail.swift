@@ -22,7 +22,7 @@ class MessengerDetail: UIViewController {
     @IBOutlet weak var viewContentLbDateStarMessenger: UIView!
     
     let pushDataMessenger = PushDataMesenger()
-    
+    var currentTime: Int = Int(Date().timeIntervalSince1970)
     
     var imgSelecter = UIImageView()
     let txtInputChat = UITextField()
@@ -175,8 +175,22 @@ class MessengerDetail: UIViewController {
         
         viewContentLbDateStarMessenger.layer.cornerRadius = 20
         viewContentLbDateStarMessenger.backgroundColor = UIColor(rgb: 0xffE5E5E5)
-        lbDateStarMessenger.text = "Hôm qua"
+        
         viewHeaderDetaild.backgroundColor = UIColor(rgb: 0xffE5E5E5)
+        
+        // MARK: CHECK CURRENT TIME
+        
+        if (currentTime - (dataChatRoom?.chatMessages.last!.timeLong)!) > 86400 {
+            lbDateStarMessenger.text = "Hôm qua"
+        } else if (currentTime - ((dataChatRoom?.chatMessages.last!.timeLong)!) <= 86400 ) {
+            lbDateStarMessenger.text = "Hôm nay"
+        } else {
+            print(dataChatRoom?.chatMessages.last?.date)
+            lbDateStarMessenger.text = dataChatRoom?.chatMessages.last?.date
+        }
+        
+        // MARK: TABBLE VIEW SCROLL BOTTOM:
+        self.tableView.scrollToRow(at: IndexPath(row: (dataChatRoom?.chatMessages.count)! - 1, section: 0), at: .bottom, animated: true)
         
     }
     
@@ -260,8 +274,12 @@ extension MessengerDetail: UITableViewDataSource {
         
         cell.isInComing = dataChatRoom?.chatMessages[indexPath.row].idSender != Auth.auth().currentUser?.uid
         
+        if (currentTime - (dataChatRoom?.chatMessages[indexPath.row].timeLong)!) <= 86400 {
+            cell.lbDateMessenger.text = dataChatRoom?.chatMessages[indexPath.row].time
+        } else  {
+            cell.lbDateMessenger.text = (dataChatRoom?.chatMessages[indexPath.row].date)! + " " + (dataChatRoom?.chatMessages[indexPath.row].time)!
+        }
         
-        cell.lbDateMessenger.text = dataChatRoom?.chatMessages[indexPath.row].time
         //cell.textLabel?.text = String(dataChatRoom?.chatMessages[indexPath.row].timeLong)
         
         return cell

@@ -38,9 +38,10 @@ class MessengerDetailCell: UITableViewCell {
                 leadingLabelMessenger.isActive = false
                 trailingDateMessenger.isActive = true
                 trailingLabelMessenger.isActive = true
-                
                 viewContentMessenger.backgroundColor = UIColor(rgb: 0xff4356B4)
                 lbContentMessenger.textColor = UIColor.white
+                imgAvatarCell.image = UIImage(named: "")
+                
             }
         }
     }
@@ -98,7 +99,7 @@ class MessengerDetailCell: UITableViewCell {
             lbContentMessenger.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40),
             lbContentMessenger.widthAnchor.constraint(lessThanOrEqualToConstant: 285),
              
-            lbDateMessenger.widthAnchor.constraint(equalToConstant: 60),
+           // lbDateMessenger.widthAnchor.constraint(equalToConstant: 60),
             lbDateMessenger.topAnchor.constraint(equalTo: viewContentMessenger.bottomAnchor, constant: 5),
             lbDateMessenger.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
             lbDateMessenger.heightAnchor.constraint(equalToConstant: 20),
@@ -108,7 +109,6 @@ class MessengerDetailCell: UITableViewCell {
         NSLayoutConstraint.activate(activate)
         leadingLabelMessenger = lbContentMessenger.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 70)
         trailingLabelMessenger = lbContentMessenger.trailingAnchor.constraint(equalTo: trailingAnchor , constant: -30)
-        
         leadingDateMessenger = lbDateMessenger.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 56)
         trailingDateMessenger = lbDateMessenger.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
         
@@ -117,7 +117,8 @@ class MessengerDetailCell: UITableViewCell {
         lbContentMessenger.font = UIFont(name: "Lato", size: 16)
         viewContentMessenger.layer.cornerRadius = 20
         viewContentMessenger.clipsToBounds = true
-        lbDateMessenger.backgroundColor = UIColor.cyan
+        lbDateMessenger.textColor = UIColor(rgb: 0xff999999)
+        
         
     }
     
