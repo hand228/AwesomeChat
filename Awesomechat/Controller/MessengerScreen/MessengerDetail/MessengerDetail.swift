@@ -210,14 +210,12 @@ class MessengerDetail: UIViewController {
         }
          print(self.dataChatRoom?.chatMessages.last?.timeLong)
         pushDataMessenger.pushDataChat(completion: { (dataChatMessage) in
-            print("Completion")
-            print(textInput)
-           
             let inserIndexChatMessage = self.dataChatRoom?.chatMessages.count
             self.dataChatRoom?.chatMessages.append(dataChatMessage)
             
             self.tableView.insertRows(at: [IndexPath(item: (inserIndexChatMessage)! - 1, section: 0)], with: .bottom)
-            self.tableView.scrollToRow(at: IndexPath(item: (inserIndexChatMessage)! - 1, section: 0), at: .bottom, animated: true)
+            self.tableView.scrollToRow(at: IndexPath(item: (inserIndexChatMessage)! , section: 0), at: .bottom, animated: true)
+            
             self.txtInputChat.text = nil
             self.tableView.reloadData()
 //            print(self.dataChatRoom?.chatMessages[count].timeLong )
@@ -260,10 +258,11 @@ extension MessengerDetail: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        let dataChatRow = dataChatRoom?.chatMessages[indexPath.row]
+        let count = (dataChatRoom?.chatMessages.count)!
         let stringImg = URL(string: dataChatRoom?.participant?.userImgUrl ?? "")
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerDetailCellID") as! MessengerDetailCell
-        cell.lbContentMessenger.text = dataChatRoom?.chatMessages[indexPath.row].messenger
+        cell.lbContentMessenger.text = dataChatRow?.messenger
         
         do {
             let dataImg = try Data(contentsOf: stringImg!)
@@ -272,15 +271,25 @@ extension MessengerDetail: UITableViewDataSource {
             cell.imgAvatarCell.image = UIImage(named: "defauld")
         }
         
-        cell.isInComing = dataChatRoom?.chatMessages[indexPath.row].idSender != Auth.auth().currentUser?.uid
+        cell.isInComing = dataChatRow?.idSender != Auth.auth().currentUser?.uid
         
-        if (currentTime - (dataChatRoom?.chatMessages[indexPath.row].timeLong)!) <= 86400 {
-            cell.lbDateMessenger.text = dataChatRoom?.chatMessages[indexPath.row].time
+        if (currentTime - (dataChatRow?.timeLong)!) <= 86400 {
+            cell.lbDateMessenger.text = dataChatRow?.time
         } else  {
-            cell.lbDateMessenger.text = (dataChatRoom?.chatMessages[indexPath.row].date)! + " " + (dataChatRoom?.chatMessages[indexPath.row].time)!
+            cell.lbDateMessenger.text = (dataChatRow?.date)! + " " + (dataChatRow?.time)!
         }
         
-        //cell.textLabel?.text = String(dataChatRoom?.chatMessages[indexPath.row].timeLong)
+        // MARK: CHECK MESSENGER CONTINUE
+        
+//        if (indexPath.row > 1) {
+//            if (dataChatRoom?.chatMessages[indexPath.row - 1].idSender == dataChatRoom?.chatMessages[indexPath.row].idSender ) {
+//                
+//                //cell.lbDateMessenger.removeFromSuperview()
+//                cell.lbDateMessenger.backgroundColor = UIColor.blue
+//            } else {
+//                 cell.lbDateMessenger.backgroundColor = UIColor.yellow
+//            }
+//        }
         
         return cell
     }
