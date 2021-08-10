@@ -15,7 +15,7 @@ struct ChatMessage {
     var messenger: String
     var date: String
     var time: String
-    var timeLong: String
+    var timeLong: Int
     
     init(snapshot: DataSnapshot) {
         self.messageId = snapshot.key
@@ -24,11 +24,11 @@ struct ChatMessage {
         self.messenger = snapshot.childSnapshot(forPath: "messenger").value as? String ?? ""
         self.date = snapshot.childSnapshot(forPath: "date").value as? String ?? ""
         self.time = snapshot.childSnapshot(forPath: "time").value as? String ?? ""
-        self.timeLong = snapshot.childSnapshot(forPath: "timeLong").value as? String ?? ""
+        self.timeLong = snapshot.childSnapshot(forPath: "timeLong").value as? Int ?? 0
         
     }
     
-    init(messageId: String, idSender: String, idReceiver: String, messenger: String, date: String, time: String, timeLong: String) {
+    init(messageId: String, idSender: String, idReceiver: String, messenger: String, date: String, time: String, timeLong: Int) {
         self.messageId = messageId
         self.idSender = idSender
         self.idReceiver = idReceiver

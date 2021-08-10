@@ -188,20 +188,17 @@ class MessengerDetail: UIViewController {
     
     // MARK: PUSH DATA MESSENGER:
     @objc func tapImgSenderMessenger() {
-        print("TAp Sender Messenger")
-        
-        print(dataChatRoom?.participant?.userId)
-        print(dataChatRoom?.roomId)
-        print(dataChatRoom?.chatMessages[0].messageId)
-        
-//        let delegate = UIApplication.shared.applicationState
-//        let context = delegate?.undoManager
-        
-        guard let textInput = txtInputChat.text else { return }
-        
+        guard let textInput = txtInputChat.text else {
+            return
+        }
+        if textInput.isEmpty {
+            return
+        }
+         print(self.dataChatRoom?.chatMessages.last?.timeLong)
         pushDataMessenger.pushDataChat(completion: { (dataChatMessage) in
             print("Completion")
             print(textInput)
+           
             let inserIndexChatMessage = self.dataChatRoom?.chatMessages.count
             self.dataChatRoom?.chatMessages.append(dataChatMessage)
             
@@ -209,12 +206,12 @@ class MessengerDetail: UIViewController {
             self.tableView.scrollToRow(at: IndexPath(item: (inserIndexChatMessage)! - 1, section: 0), at: .bottom, animated: true)
             self.txtInputChat.text = nil
             self.tableView.reloadData()
-            
+//            print(self.dataChatRoom?.chatMessages[count].timeLong )
+//            print(self.dataChatRoom?.chatMessages[count - 1].timeLong )
             
             
         }, messenger: textInput, idReceiver: dataChatRoom?.participant?.userId ?? "", idSender: Auth.auth().currentUser?.uid ?? "", idChatRoom: dataChatRoom?.roomId ?? "")
         tableView.reloadData()
-        
         
         print(dataChatRoom?.participant?.userId ?? "")
         
@@ -262,8 +259,10 @@ extension MessengerDetail: UITableViewDataSource {
         }
         
         cell.isInComing = dataChatRoom?.chatMessages[indexPath.row].idSender != Auth.auth().currentUser?.uid
-        cell.lbDateMessenger.text = dataChatRoom?.chatMessages[indexPath.row].date
-        //cell.textLabel?.text = dataChatRoom?.chatMessages[indexPath.row].messageId
+        
+        
+        cell.lbDateMessenger.text = dataChatRoom?.chatMessages[indexPath.row].time
+        //cell.textLabel?.text = String(dataChatRoom?.chatMessages[indexPath.row].timeLong)
         
         return cell
     }

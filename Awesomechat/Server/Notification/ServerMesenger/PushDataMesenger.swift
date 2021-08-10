@@ -27,8 +27,11 @@ class PushDataMesenger {
         timeFormatter.timeZone = .current
         timeFormatter.locale = .current
         timeFormatter.dateFormat = "HH:mm"
-        let timeInterver = date.timeIntervalSince1970
+        let timeInterverData = date.timeIntervalSince1970
+        let timeInterver: Int = Int(timeInterverData)
         
+        
+        print(timeInterver)
         //let auth = Auth.auth().currentUser
         
         let post = [
@@ -43,7 +46,7 @@ class PushDataMesenger {
        push?.child("chats").child(idChatRoom).child((push?.childByAutoId().key)!).updateChildValues(post)
         
         
-        let chatMessager = ChatMessage(messageId: "", idSender: idSender, idReceiver: idReceiver, messenger: messenger, date: dateFormatter.string(for: date) ?? "", time: timeFormatter.string(from: date), timeLong: "timeInterver")
+        let chatMessager = ChatMessage(messageId: "", idSender: idSender, idReceiver: idReceiver, messenger: messenger, date: dateFormatter.string(for: date) ?? "", time: timeFormatter.string(from: date), timeLong: timeInterver)
         
         DispatchQueue.main.async {
             completion(chatMessager)
