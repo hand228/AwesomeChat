@@ -183,9 +183,8 @@ class MessengerDetail: UIViewController {
             lbDateStarMessenger.text = dataChatRoom?.chatMessages.last?.date
         }
         
-//        // MARK: TABBLE VIEW SCROLL BOTTOM:
-//        self.tableView.scrollToRow(at: IndexPath(row: (dataChatRoom?.chatMessages.count)!, section: 0), at: .bottom, animated: true)
-//
+        // MARK: TABBLE VIEW SCROLL BOTTOM:
+        self.tableView.scrollToRow(at: IndexPath(row: (dataChatRoom?.chatMessages.count)! - 1, section: 0), at: .bottom, animated: true)
     }
     
     @IBAction func btBackToListMessenger(_ sender: Any) {

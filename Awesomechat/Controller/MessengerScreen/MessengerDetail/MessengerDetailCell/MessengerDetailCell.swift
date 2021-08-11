@@ -103,7 +103,9 @@ class MessengerDetailCell: UITableViewCell {
         NSLayoutConstraint.activate(activate)
         leadingLabelMessenger = lbContentMessenger.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 70)
         trailingLabelMessenger = lbContentMessenger.trailingAnchor.constraint(equalTo: trailingAnchor , constant: -30)
-
+        leadingDateMessenger = lbDateMessenger.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 56)
+        trailingDateMessenger = lbDateMessenger.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
+        
         lbContentMessenger.numberOfLines = 0
         lbContentMessenger.font = UIFont(name: "Lato", size: 16)
         viewContentMessenger.layer.cornerRadius = 20
