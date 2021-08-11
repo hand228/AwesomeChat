@@ -8,11 +8,11 @@
 import UIKit
 
 class MessengerDetailCell: UITableViewCell {
-
-
+    
     let imgAvatarCell = UIImageView()
     let lbDateMessenger = UILabel()
     let viewContentMessenger = UIView()
+
     let lbContentMessenger = UILabel()
     
     var leadingLabelMessenger = NSLayoutConstraint()
@@ -23,24 +23,30 @@ class MessengerDetailCell: UITableViewCell {
     var isInComing: Bool! {
         
         didSet {
+            print("aaaaa")
             
+             
             if (isInComing == true) {
+                
                 leadingDateMessenger.isActive = true
                 leadingLabelMessenger.isActive = true
                 trailingDateMessenger.isActive = false
                 trailingLabelMessenger.isActive = false
+                
                 viewContentMessenger.backgroundColor = UIColor(rgb: 0xffE5E5E5)
                 lbContentMessenger.textColor = UIColor.black
                 
-                
             } else {
+                
+                
                 leadingDateMessenger.isActive = false
                 leadingLabelMessenger.isActive = false
                 trailingDateMessenger.isActive = true
                 trailingLabelMessenger.isActive = true
+                
                 viewContentMessenger.backgroundColor = UIColor(rgb: 0xff4356B4)
                 lbContentMessenger.textColor = UIColor.white
-                imgAvatarCell.image = UIImage(named: "")
+
                 
             }
         }
@@ -48,7 +54,7 @@ class MessengerDetailCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
+        //customCellCode()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -70,10 +76,11 @@ class MessengerDetailCell: UITableViewCell {
     }
     
    
+            
+            
+    
+   
     func customCellCode() {
-        
-        //viewContentMessenger.addSubview(lbContentMessenger)
-       
         addSubview(viewContentMessenger)
         addSubview(lbContentMessenger)
         addSubview(lbDateMessenger)
@@ -109,15 +116,15 @@ class MessengerDetailCell: UITableViewCell {
         NSLayoutConstraint.activate(activate)
         leadingLabelMessenger = lbContentMessenger.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 70)
         trailingLabelMessenger = lbContentMessenger.trailingAnchor.constraint(equalTo: trailingAnchor , constant: -30)
-        leadingDateMessenger = lbDateMessenger.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 56)
-        trailingDateMessenger = lbDateMessenger.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
-        
+
+
         
         lbContentMessenger.numberOfLines = 0
         lbContentMessenger.font = UIFont(name: "Lato", size: 16)
         viewContentMessenger.layer.cornerRadius = 20
         viewContentMessenger.clipsToBounds = true
         lbDateMessenger.textColor = UIColor(rgb: 0xff999999)
+
         
         
     }

@@ -8,6 +8,12 @@
 import UIKit
 import FirebaseAuth
 
+struct Demodata {
+    let name: String
+    let isInComing: Bool
+    
+}
+
 class MessengerDetail: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
@@ -28,9 +34,7 @@ class MessengerDetail: UIViewController {
     let txtInputChat = UITextField()
     var imgSenderMessenger = UIImageView()
     let imgSticker = UIImageView()
-    
     var dataChatRoom: ChatRoom?
-    
     var arrayDataDate: [String] = []
     
     var bottomContraintTable: NSLayoutConstraint?
@@ -43,17 +47,10 @@ class MessengerDetail: UIViewController {
         tableView.keyboardDismissMode = .onDrag
         tableView.separatorStyle = .none
         tableView.layer.cornerRadius = 30
-        
-        
-        //MessengerDetailCellID
         tableView.register(MessengerDetailCell.self, forCellReuseIdentifier: "MessengerDetailCellID")
-        
-        // checkMessengerContinue()
         setupInputComponents()
         setupKeyboardObserver()
-        handleDisplayData()
         view.addConstraint(bottomContraintTable!)
-        //view.addConstraints([bottomContraint!])
         
     }
     
@@ -77,10 +74,9 @@ class MessengerDetail: UIViewController {
         
     }
     
-    // MARK: HANDLE DISPLAY DATA
     func handleDisplayData() {
         lbNameFriend.text = dataChatRoom?.participant?.userName
-        
+
     }
     
     // MARK: HANDLE KEYBOARD WILL SHOW
@@ -290,6 +286,11 @@ extension MessengerDetail: UITableViewDataSource {
 //                 cell.lbDateMessenger.backgroundColor = UIColor.yellow
 //            }
 //        }
+        
+//        cell.lbContentMessenger.text = arrayData[indexPath.row].name
+//        //cell.lbDateMessenger.text = arrayDataDate[indexPath.row]
+//        cell.imgAvatarCell.image = UIImage(named: "defauld")
+//        cell.isInComing = arrayData[indexPath.row].isInComing
         
         return cell
     }
