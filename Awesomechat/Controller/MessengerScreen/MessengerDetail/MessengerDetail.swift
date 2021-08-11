@@ -35,8 +35,6 @@ class MessengerDetail: UIViewController {
     var imgSenderMessenger = UIImageView()
     let imgSticker = UIImageView()
     var dataChatRoom: ChatRoom?
-    var arrayDataDate: [String] = []
-    
     var bottomContraintTable: NSLayoutConstraint?
     var trailingContraintInputChat: NSLayoutConstraint?
     
@@ -185,9 +183,9 @@ class MessengerDetail: UIViewController {
             lbDateStarMessenger.text = dataChatRoom?.chatMessages.last?.date
         }
         
-        // MARK: TABBLE VIEW SCROLL BOTTOM:
-        self.tableView.scrollToRow(at: IndexPath(row: (dataChatRoom?.chatMessages.count)! - 1, section: 0), at: .bottom, animated: true)
-        
+//        // MARK: TABBLE VIEW SCROLL BOTTOM:
+//        self.tableView.scrollToRow(at: IndexPath(row: (dataChatRoom?.chatMessages.count)!, section: 0), at: .bottom, animated: true)
+//
     }
     
     @IBAction func btBackToListMessenger(_ sender: Any) {
@@ -255,7 +253,7 @@ extension MessengerDetail: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let dataChatRow = dataChatRoom?.chatMessages[indexPath.row]
-        let count = (dataChatRoom?.chatMessages.count)!
+        //let count = (dataChatRoom?.chatMessages.count)!
         let stringImg = URL(string: dataChatRoom?.participant?.userImgUrl ?? "")
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerDetailCellID") as! MessengerDetailCell
         cell.lbContentMessenger.text = dataChatRow?.messenger
@@ -286,11 +284,6 @@ extension MessengerDetail: UITableViewDataSource {
 //                 cell.lbDateMessenger.backgroundColor = UIColor.yellow
 //            }
 //        }
-        
-//        cell.lbContentMessenger.text = arrayData[indexPath.row].name
-//        //cell.lbDateMessenger.text = arrayDataDate[indexPath.row]
-//        cell.imgAvatarCell.image = UIImage(named: "defauld")
-//        cell.isInComing = arrayData[indexPath.row].isInComing
         
         return cell
     }

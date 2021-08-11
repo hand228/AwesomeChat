@@ -12,20 +12,14 @@ class MessengerDetailCell: UITableViewCell {
     let imgAvatarCell = UIImageView()
     let lbDateMessenger = UILabel()
     let viewContentMessenger = UIView()
-
     let lbContentMessenger = UILabel()
-    
     var leadingLabelMessenger = NSLayoutConstraint()
     var trailingLabelMessenger = NSLayoutConstraint()
     var leadingDateMessenger = NSLayoutConstraint()
     var trailingDateMessenger = NSLayoutConstraint()
     
     var isInComing: Bool! {
-        
         didSet {
-            print("aaaaa")
-            
-             
             if (isInComing == true) {
                 
                 leadingDateMessenger.isActive = true
@@ -64,9 +58,7 @@ class MessengerDetailCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        
         customCellCode()
-        
         
     }
 
@@ -75,11 +67,6 @@ class MessengerDetailCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-   
-            
-            
-    
-   
     func customCellCode() {
         addSubview(viewContentMessenger)
         addSubview(lbContentMessenger)
@@ -117,18 +104,13 @@ class MessengerDetailCell: UITableViewCell {
         leadingLabelMessenger = lbContentMessenger.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 70)
         trailingLabelMessenger = lbContentMessenger.trailingAnchor.constraint(equalTo: trailingAnchor , constant: -30)
 
-
-        
         lbContentMessenger.numberOfLines = 0
         lbContentMessenger.font = UIFont(name: "Lato", size: 16)
         viewContentMessenger.layer.cornerRadius = 20
         viewContentMessenger.clipsToBounds = true
         lbDateMessenger.textColor = UIColor(rgb: 0xff999999)
 
-        
-        
     }
-    
 }
 
 

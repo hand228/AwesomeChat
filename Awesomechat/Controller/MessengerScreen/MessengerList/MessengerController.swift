@@ -65,7 +65,6 @@ extension MessengerController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let messengerDetail = MessengerDetail()
-        messengerDetail.arrayDataDate = ["11:55", "11:44","77:55","11:44","11:44","11:44","11:44","11:44"]
         messengerDetail.dataChatRoom = arrayChatRoom[indexPath.row]
         
         messengerDetail.modalPresentationStyle = UIModalPresentationStyle.fullScreen
