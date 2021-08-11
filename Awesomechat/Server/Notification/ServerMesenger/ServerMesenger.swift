@@ -31,7 +31,7 @@ class ServerMesenger {
                     
                 })
             }
-            print(arrayChatMessenger)
+//            print(arrayChatMessenger)
             DispatchQueue.main.async {
                 completionHandle(messengerLasts, arrayUser, arrayChatMessenger)
             }

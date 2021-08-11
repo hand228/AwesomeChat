@@ -1,13 +1,13 @@
 //
-//  HomeViewController.swift
+//  SearchingViewController.swift
 //  Awesomechat
 //
-//  Created by MaiNQ on 14/07/2021.
+//  Created by Apple on 2021/8/10.
 //
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class SearchingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

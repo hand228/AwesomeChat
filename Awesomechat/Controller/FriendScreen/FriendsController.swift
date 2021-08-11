@@ -8,6 +8,7 @@
 import UIKit
 
 class FriendsController: UIViewController {
+    
 
     // Outlets
     @IBOutlet weak var headerLayer: UIView!
@@ -27,29 +28,53 @@ class FriendsController: UIViewController {
     
     // Thanh tìm kiếm
     @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var separator: UIView!
+    
+    @IBOutlet weak var requestsCounter: UILabel!
     
     let gradient = CAGradientLayer()
     let friendsTab = FriendsListViewController(nibName: "FriendsListViewController", bundle: nil)
     let allTab = AllViewController(nibName: "AllViewController", bundle: nil)
-    let requestsTab = RequestsViewController(nibName: "RequestsViewController", bundle: nil)
+    let requestsTab = RequestViewController(nibName: "RequestViewController", bundle: nil)
+    var requestGroup: [DataFriend] = []
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        configureUI()
+        initTab()
+        countFriendRequest()
+        
+//        searchBar.setupSearchBar()
+    }
+    
+    // MARK: - Chỉnh sửa giao diện
+    private func configureUI() {
+        
         // Đổi màu cho header
         gradient.frame = headerLayer.bounds
         gradient.colors = [UIColor.colorTop, UIColor.colorBottom]
         headerLayer.layer.insertSublayer(gradient, at: 0)
+        separator.backgroundColor = UIColor.viewBackground
         
         // Bo góc body layer
         bodyLayer.clipsToBounds = true
-        bodyLayer.layer.cornerRadius = 20
+        bodyLayer.layer.cornerRadius = 35
         bodyLayer.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner] // Top right corner, Top left corner respectively
         
-        // Tab bạn bè
-        initTab()
-        initData()
+        // Chỉnh sửa phần hiển thị số yêu cầu kết bạn
+        requestsCounter.backgroundColor = UIColor.counterBackground
+        requestsCounter.text = ""
+        requestsCounter.isHidden = true
+        requestsCounter.textColor = UIColor.white
+        requestsCounter.textAlignment = .center
+        requestsCounter.font = UIFont(name: "Lato-Bold", size: 12)
+        requestsCounter.layer.cornerRadius = requestsCounter.frame.size.width/2
+        requestsCounter.clipsToBounds = true
     }
     
+    // MARK: - Khởi tạo tab ban đầu
     private func initTab() {
         friend.textColor = UIColor.myBlue
         friendView.backgroundColor = UIColor.myBlue
@@ -72,15 +97,27 @@ class FriendsController: UIViewController {
         requestsTab.view.removeFromSuperview()
     }
     
-    private func initData() {
+    // MARK: - Lấy dữ liệu hiển thị số yêu cầu kết bạn
+    private func countFriendRequest() {
         ServerApiUser.shared.requestApiUser { _ in
             FriendAPI().getMyFriends { friends in
-                print(friends)
-                // Lấy được danh sách friends thì phân bổ vào từng tab theo type để hiển thị
+                self.requestGroup.removeAll()
+                for friend in friends {
+                    if friend.type == FriendType.friendRequest {
+                        self.requestGroup.append(friend)
+                    }
+                }
+                if self.requestGroup.isEmpty {
+                    self.requestsCounter.isHidden = true
+                } else {
+                    self.requestsCounter.isHidden = false
+                    self.requestsCounter.text = String(self.requestGroup.count)
+                }
             }
         }
     }
 
+    // MARK: - Thêm action để di chuyển qua lại các tab
     @IBAction func clickBtn(_ sender: UIButton) {
         let tag = sender.tag
         

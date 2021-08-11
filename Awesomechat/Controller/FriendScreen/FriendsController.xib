@@ -22,13 +22,15 @@
                 <outlet property="all" destination="un7-ve-Ow7" id="h5A-1b-aOP"/>
                 <outlet property="allView" destination="pDC-9c-rD5" id="qhW-ov-MyA"/>
                 <outlet property="bodyLayer" destination="3uP-fZ-WUY" id="0Ri-Z4-X7B"/>
-                <outlet property="contentView" destination="R4t-5C-065" id="4wy-Ac-hqH"/>
+                <outlet property="contentView" destination="OQ9-ZV-mzf" id="rGW-dl-ks6"/>
                 <outlet property="friend" destination="68L-I7-Wtp" id="FpY-1N-uHD"/>
                 <outlet property="friendView" destination="9hg-SE-bnD" id="Itg-1w-uxb"/>
                 <outlet property="headerLayer" destination="axA-tf-usz" id="G7D-p8-jgK"/>
                 <outlet property="request" destination="eky-Fl-5Va" id="wF5-0p-wD0"/>
                 <outlet property="requestView" destination="3Sn-GY-h9x" id="I2h-dE-bc8"/>
+                <outlet property="requestsCounter" destination="eSX-F7-NsB" id="MTy-yd-AO5"/>
                 <outlet property="searchBar" destination="IeK-wT-lGI" id="jnU-xB-04l"/>
+                <outlet property="separator" destination="FlI-CO-Hy9" id="a4A-x9-P1y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -51,11 +53,13 @@
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivb-na-v4e">
                             <rect key="frame" x="348" y="55" width="35" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" image="add "/>
+                            <state key="normal" image="add new friend"/>
                         </button>
-                        <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Tìm kiếm bạn bè..." translatesAutoresizingMaskIntoConstraints="NO" id="IeK-wT-lGI">
-                            <rect key="frame" x="8" y="105" width="398" height="44"/>
+                        <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="Tìm kiếm bạn bè..." translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeK-wT-lGI">
+                            <rect key="frame" x="8" y="105" width="398" height="51"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="tintColor" red="0.3089073993" green="0.30328902120000001" blue="0.94742486589999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <textInputTraits key="textInputTraits"/>
                         </searchBar>
@@ -89,7 +93,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9hg-SE-bnD">
-                                            <rect key="frame" x="20" y="51" width="94" height="3"/>
+                                            <rect key="frame" x="20" y="51" width="94" height="4"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
@@ -115,7 +119,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pDC-9c-rD5">
-                                            <rect key="frame" x="21" y="51" width="94" height="3"/>
+                                            <rect key="frame" x="21" y="51" width="94" height="4"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
@@ -133,6 +137,13 @@
                                                 <action selector="clickBtn:" destination="-1" eventType="touchUpInside" id="SFs-Nl-YZD"/>
                                             </connections>
                                         </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eSX-F7-NsB">
+                                            <rect key="frame" x="107" y="12" width="23" height="23"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="YÊU CẦU" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eky-Fl-5Va">
                                             <rect key="frame" x="43" y="23" width="60" height="17"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -141,7 +152,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3Sn-GY-h9x">
-                                            <rect key="frame" x="26" y="51" width="94" height="3"/>
+                                            <rect key="frame" x="26" y="51" width="94" height="4"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </view>
@@ -151,9 +162,14 @@
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </view>
-                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R4t-5C-065">
-                            <rect key="frame" x="0.0" y="79" width="426" height="660"/>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FlI-CO-Hy9">
+                            <rect key="frame" x="0.0" y="52" width="414" height="1"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                        </view>
+                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQ9-ZV-mzf">
+                            <rect key="frame" x="0.0" y="75" width="414" height="652"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                     </subviews>
@@ -162,16 +178,19 @@
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="24.637681159420293" y="71.651785714285708"/>
+            <point key="canvasLocation" x="-20.289855072463769" y="63.616071428571423"/>
         </view>
     </objects>
     <resources>
-        <image name="add " width="35" height="35"/>
+        <image name="add new friend" width="35" height="35"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
         <systemColor name="systemBlueColor">
             <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
