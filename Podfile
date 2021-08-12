@@ -6,6 +6,7 @@ target 'Awesomechat' do
   use_frameworks!
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'Firebase/Storage'
   pod 'MessageKit' 
   # Pods for Awesomechat
 

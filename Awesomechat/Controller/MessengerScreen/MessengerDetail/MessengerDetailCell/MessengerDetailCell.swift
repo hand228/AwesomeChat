@@ -37,10 +37,9 @@ class MessengerDetailCell: UITableViewCell {
                 leadingLabelMessenger.isActive = false
                 trailingDateMessenger.isActive = true
                 trailingLabelMessenger.isActive = true
-                
                 viewContentMessenger.backgroundColor = UIColor(rgb: 0xff4356B4)
                 lbContentMessenger.textColor = UIColor.white
-
+                imgAvatarCell.image = UIImage(named: "")
                 
             }
         }

@@ -7,14 +7,9 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseStorage
 
-struct Demodata {
-    let name: String
-    let isInComing: Bool
-    
-}
-
-class MessengerDetail: UIViewController {
+class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var viewHeader: UIView!
@@ -27,6 +22,7 @@ class MessengerDetail: UIViewController {
     @IBOutlet weak var lbDateStarMessenger: UILabel!
     @IBOutlet weak var viewContentLbDateStarMessenger: UIView!
     
+    let storage = Storage.storage().reference()
     let pushDataMessenger = PushDataMesenger()
     var currentTime: Int = Int(Date().timeIntervalSince1970)
     
@@ -169,8 +165,23 @@ class MessengerDetail: UIViewController {
         
         viewContentLbDateStarMessenger.layer.cornerRadius = 20
         viewContentLbDateStarMessenger.backgroundColor = UIColor(rgb: 0xffE5E5E5)
-        
         viewHeaderDetaild.backgroundColor = UIColor(rgb: 0xffE5E5E5)
+        
+        //MARK: Hiên thị tên người dùng, hiển thị Image
+        lbNameFriend.text = dataChatRoom?.participant?.userName
+        lbNameFriend.font = UIFont(name: "Lato", size: 18)
+        lbNameFriend.textColor = UIColor.black
+        lbNameFriend.backgroundColor = UIColor(rgb: 0xffE5E5E5)
+        
+        //imgAvatarDetail.image = UIImage(named: "defauld")
+        let stringImg = URL(string: dataChatRoom?.participant?.userImgUrl ?? "")
+        do {
+            let dataImg = try Data(contentsOf: stringImg!)
+            imgAvatarDetail.image = UIImage(data: dataImg)
+        } catch {
+             imgAvatarDetail.image = UIImage(named: "defauld")
+        }
+        
         
         // MARK: CHECK CURRENT TIME
         
@@ -201,7 +212,7 @@ class MessengerDetail: UIViewController {
         if textInput.isEmpty {
             return
         }
-         print(self.dataChatRoom?.chatMessages.last?.timeLong)
+        print(self.dataChatRoom?.chatMessages.last?.timeLong)
         pushDataMessenger.pushDataChat(completion: { (dataChatMessage) in
             let inserIndexChatMessage = self.dataChatRoom?.chatMessages.count
             self.dataChatRoom?.chatMessages.append(dataChatMessage)
@@ -211,11 +222,9 @@ class MessengerDetail: UIViewController {
             
             self.txtInputChat.text = nil
             self.tableView.reloadData()
-//            print(self.dataChatRoom?.chatMessages[count].timeLong )
-//            print(self.dataChatRoom?.chatMessages[count - 1].timeLong )
             
             
-        }, messenger: textInput, idReceiver: dataChatRoom?.participant?.userId ?? "", idSender: Auth.auth().currentUser?.uid ?? "", idChatRoom: dataChatRoom?.roomId ?? "")
+        }, messenger: textInput, idReceiver: dataChatRoom?.participant?.userId ?? "", idSender: Auth.auth().currentUser?.uid ?? "", idChatRoom: dataChatRoom?.roomId ?? "", type: "text")
         tableView.reloadData()
         
         print(dataChatRoom?.participant?.userId ?? "")
@@ -228,11 +237,69 @@ class MessengerDetail: UIViewController {
         
     }
 
+    // MARK: SECLECT IMAGE FROM PICKER
     @objc func tapImgSelecter() {
-        print("sdsdfdfd")
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.allowsEditing = true
+        self.present(imagePicker, animated: true, completion: nil)
+        
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        print("selected image ")
+        var selectedImageFromPicker: UIImage?
+        if let editingImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            selectedImageFromPicker = editingImage
+        } else if let originImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
+            selectedImageFromPicker = originImage
+        }
+        guard let imageData = selectedImageFromPicker?.pngData() else { return }
+        uploadImageToFirebaseFireStore(imageData: imageData)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    // MARK: PUSH IMAGE TO FIRE STORAGE
+    func uploadImageToFirebaseFireStore(imageData: Data) {
+        let ref = storage.child("message_image").child(dataChatRoom?.roomId ?? "").child(NSUUID().uuidString)
+        ref.putData(imageData, metadata: nil, completion: { (strongMeta, error) in
+            guard error == nil else {
+                return
+            }
+            ref.downloadURL { (url, error) in
+                guard error == nil else {
+                    return
+                }
+                guard let urlString = url?.absoluteString else {
+                    return
+                }
+                print(urlString)
+                // ADD Push Data to day:
+                self.pushDataMessenger.pushDataChat(completion: { (dataChatMessage) in
+                    let inserIndexChatMessage = self.dataChatRoom?.chatMessages.count
+                    self.dataChatRoom?.chatMessages.append(dataChatMessage)
+                    
+                    self.tableView.insertRows(at: [IndexPath(item: (inserIndexChatMessage)! - 1, section: 0)], with: .bottom)
+                    self.tableView.scrollToRow(at: IndexPath(item: (inserIndexChatMessage)! , section: 0), at: .bottom, animated: true)
+                    self.txtInputChat.text = nil
+                    //self.tableView.reloadData()
+                    
+                    
+                }, messenger: urlString, idReceiver: self.dataChatRoom?.participant?.userId ?? "", idSender: Auth.auth().currentUser?.uid ?? "", idChatRoom: self.dataChatRoom?.roomId ?? "", type: "image")
+                self.tableView.reloadData()
+                
+            }
+        })
+        
+    }
+
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
         
     }
+    
+    
 }
 
 extension MessengerDetail: UITableViewDelegate {
@@ -255,7 +322,15 @@ extension MessengerDetail: UITableViewDataSource {
         //let count = (dataChatRoom?.chatMessages.count)!
         let stringImg = URL(string: dataChatRoom?.participant?.userImgUrl ?? "")
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerDetailCellID") as! MessengerDetailCell
-        cell.lbContentMessenger.text = dataChatRow?.messenger
+        
+        if (dataChatRow?.type == "text") {
+            cell.lbContentMessenger.text = dataChatRow?.messenger
+        } else if (dataChatRow?.type == "image") {
+            cell.lbContentMessenger.text = "DissPlay Image"
+        } else {
+            cell.lbContentMessenger.text = dataChatRow?.messenger
+        }
+        
         
         do {
             let dataImg = try Data(contentsOf: stringImg!)

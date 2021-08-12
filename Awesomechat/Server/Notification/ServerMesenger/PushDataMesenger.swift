@@ -11,7 +11,7 @@ import FirebaseAuth
 
 class PushDataMesenger {
     
-    func pushDataChat(completion: @escaping (_ chatMessagas: ChatMessage) -> Void, messenger: String, idReceiver: String, idSender: String, idChatRoom: String) {
+    func pushDataChat(completion: @escaping (_ chatMessagas: ChatMessage) -> Void, messenger: String, idReceiver: String, idSender: String, idChatRoom: String, type: String) {
         let push: DatabaseReference?
         push = Database.database().reference()
         
@@ -40,13 +40,13 @@ class PushDataMesenger {
             "idSender": idSender,
             "messenger": messenger,
             "time": timeFormatter.string(from: date),
-            "timeLong": timeInterver
-            
+            "timeLong": timeInterver,
+            "type": type
         ] as [String : Any]
        push?.child("chats").child(idChatRoom).child((push?.childByAutoId().key)!).updateChildValues(post)
         
         
-        let chatMessager = ChatMessage(messageId: "", idSender: idSender, idReceiver: idReceiver, messenger: messenger, date: dateFormatter.string(for: date) ?? "", time: timeFormatter.string(from: date), timeLong: timeInterver)
+        let chatMessager = ChatMessage(messageId: "", idSender: idSender, idReceiver: idReceiver, messenger: messenger, date: dateFormatter.string(for: date) ?? "", time: timeFormatter.string(from: date), timeLong: timeInterver, type: type)
         
         DispatchQueue.main.async {
             completion(chatMessager)
