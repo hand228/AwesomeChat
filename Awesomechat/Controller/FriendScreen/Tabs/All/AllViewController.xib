@@ -20,14 +20,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ex2-Dd-40y">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ex2-Dd-40y">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Ex2-Dd-40y" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="3QF-f6-Cfg"/>
+                <constraint firstItem="Ex2-Dd-40y" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="OqV-Rw-wCG"/>
+                <constraint firstAttribute="bottom" secondItem="Ex2-Dd-40y" secondAttribute="bottom" id="dAW-e5-eJb"/>
+                <constraint firstItem="Ex2-Dd-40y" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="fRL-Sq-3bO"/>
+            </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="69.642857142857139"/>
         </view>
     </objects>

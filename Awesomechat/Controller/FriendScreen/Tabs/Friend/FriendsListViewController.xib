@@ -20,14 +20,19 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2hP-yx-ktb">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2hP-yx-ktb">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="2hP-yx-ktb" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="5LK-Gw-GN4"/>
+                <constraint firstAttribute="bottom" secondItem="2hP-yx-ktb" secondAttribute="bottom" id="6hy-Uq-ehn"/>
+                <constraint firstItem="2hP-yx-ktb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="CPd-qm-bAn"/>
+                <constraint firstItem="2hP-yx-ktb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="tp9-H1-5CY"/>
+            </constraints>
             <point key="canvasLocation" x="131.8840579710145" y="70.982142857142847"/>
         </view>
     </objects>

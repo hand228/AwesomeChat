@@ -29,8 +29,6 @@
 		1835436D26B0FAA700DA51ED /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835436226B0FAA700DA51ED /* Lato-ThinItalic.ttf */; };
 		1850C12D26C214B3007B012D /* EXtension+UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850C12C26C214B3007B012D /* EXtension+UISearchBar.swift */; };
 		1850C13126C22EB3007B012D /* Extension+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850C13026C22EB3007B012D /* Extension+TableView.swift */; };
-		18A57DDF26C28FB700973C4C /* SearchingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A57DDD26C28FB700973C4C /* SearchingViewController.swift */; };
-		18A57DE026C28FB700973C4C /* SearchingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A57DDE26C28FB700973C4C /* SearchingViewController.xib */; };
 		18AB2A8926B802AF00FFB28D /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AB2A8726B802AF00FFB28D /* FriendsTableViewCell.swift */; };
 		18AB2A8A26B802AF00FFB28D /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18AB2A8826B802AF00FFB28D /* FriendsTableViewCell.xib */; };
 		18BC45AB26C0DE2A00B040BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18BC45AA26C0DE2A00B040BD /* GoogleService-Info.plist */; };
@@ -99,8 +97,6 @@
 		1835436226B0FAA700DA51ED /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
 		1850C12C26C214B3007B012D /* EXtension+UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EXtension+UISearchBar.swift"; sourceTree = "<group>"; };
 		1850C13026C22EB3007B012D /* Extension+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TableView.swift"; sourceTree = "<group>"; };
-		18A57DDD26C28FB700973C4C /* SearchingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchingViewController.swift; sourceTree = "<group>"; };
-		18A57DDE26C28FB700973C4C /* SearchingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchingViewController.xib; sourceTree = "<group>"; };
 		18AB2A8726B802AF00FFB28D /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		18AB2A8826B802AF00FFB28D /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
 		18BC45AA26C0DE2A00B040BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -195,7 +191,6 @@
 		1835434526B0F2F900DA51ED /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				18A57DDC26C28F7300973C4C /* Searching */,
 				1809973826BB1751003030B9 /* All */,
 				18AB2A8426B8026500FFB28D /* Friend */,
 				18AB2A8526B8026C00FFB28D /* Request */,
@@ -226,15 +221,6 @@
 				1835436226B0FAA700DA51ED /* Lato-ThinItalic.ttf */,
 			);
 			path = Lato;
-			sourceTree = "<group>";
-		};
-		18A57DDC26C28F7300973C4C /* Searching */ = {
-			isa = PBXGroup;
-			children = (
-				18A57DDD26C28FB700973C4C /* SearchingViewController.swift */,
-				18A57DDE26C28FB700973C4C /* SearchingViewController.xib */,
-			);
-			path = Searching;
 			sourceTree = "<group>";
 		};
 		18AB2A8426B8026500FFB28D /* Friend */ = {
@@ -554,7 +540,6 @@
 				1835434226B0F2D400DA51ED /* TabBarViewController.xib in Resources */,
 				1835436526B0FAA700DA51ED /* Lato-Thin.ttf in Resources */,
 				8480EF4B26B405A400C51870 /* MessengerHeader.xib in Resources */,
-				18A57DE026C28FB700973C4C /* SearchingViewController.xib in Resources */,
 				1835436826B0FAA700DA51ED /* Lato-Regular.ttf in Resources */,
 				18E12E0E26C052FB0079DE4D /* AllTableViewCell.xib in Resources */,
 				AB78AA0D26A6B4590024E439 /* RegisterController.xib in Resources */,
@@ -613,7 +598,6 @@
 			files = (
 				D7AC16A326A1913E0082FF94 /* CallMethodRequest.swift in Sources */,
 				AB78AA1726A6B4590024E439 /* LoginController.swift in Sources */,
-				18A57DDF26C28FB700973C4C /* SearchingViewController.swift in Sources */,
 				D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */,
 				18AB2A8926B802AF00FFB28D /* FriendsTableViewCell.swift in Sources */,
 				D7A9F1A32692E4AA001AE5AB /* ServerLogin.swift in Sources */,

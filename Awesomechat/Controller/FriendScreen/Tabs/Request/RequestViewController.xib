@@ -28,7 +28,11 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="IYB-Ci-4S0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="1qE-Se-yQY"/>
+                <constraint firstItem="IYB-Ci-4S0" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Dfg-kc-4ph"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IYB-Ci-4S0" secondAttribute="bottom" id="HC6-YJ-vg9"/>
+                <constraint firstItem="IYB-Ci-4S0" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="Yu2-hP-7xh"/>
+                <constraint firstItem="IYB-Ci-4S0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cNH-nP-9JP"/>
+                <constraint firstItem="IYB-Ci-4S0" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="gP2-id-hM0"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IYB-Ci-4S0" secondAttribute="trailing" id="isb-gz-Nj7"/>
                 <constraint firstItem="IYB-Ci-4S0" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="r0L-ov-deT"/>
             </constraints>

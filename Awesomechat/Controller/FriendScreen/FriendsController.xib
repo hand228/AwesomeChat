@@ -25,11 +25,13 @@
                 <outlet property="contentView" destination="OQ9-ZV-mzf" id="rGW-dl-ks6"/>
                 <outlet property="friend" destination="68L-I7-Wtp" id="FpY-1N-uHD"/>
                 <outlet property="friendView" destination="9hg-SE-bnD" id="Itg-1w-uxb"/>
+                <outlet property="header" destination="Sf2-IQ-RXY" id="wUN-j5-pIV"/>
                 <outlet property="headerLayer" destination="axA-tf-usz" id="G7D-p8-jgK"/>
                 <outlet property="request" destination="eky-Fl-5Va" id="wF5-0p-wD0"/>
                 <outlet property="requestView" destination="3Sn-GY-h9x" id="I2h-dE-bc8"/>
                 <outlet property="requestsCounter" destination="eSX-F7-NsB" id="MTy-yd-AO5"/>
-                <outlet property="searchBar" destination="IeK-wT-lGI" id="jnU-xB-04l"/>
+                <outlet property="searchResultTable" destination="Sxf-xr-Ow1" id="Np4-vL-NGq"/>
+                <outlet property="searchText" destination="ffm-Ml-b0i" id="P1b-tR-9dn"/>
                 <outlet property="separator" destination="FlI-CO-Hy9" id="a4A-x9-P1y"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -44,25 +46,24 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bạn bè" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6do-0e-b0P">
-                            <rect key="frame" x="15" y="52" width="93" height="36"/>
+                            <rect key="frame" x="32" y="53" width="93" height="36"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="30"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Tìm kiếm bạn bè..." textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ffm-Ml-b0i">
+                            <rect key="frame" x="30" y="107" width="353" height="42"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" returnKeyType="search"/>
+                        </textField>
                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ivb-na-v4e">
-                            <rect key="frame" x="348" y="55" width="35" height="35"/>
+                            <rect key="frame" x="348" y="53" width="35" height="35"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <state key="normal" image="add new friend"/>
                         </button>
-                        <searchBar contentMode="redraw" fixedFrame="YES" searchBarStyle="minimal" placeholder="Tìm kiếm bạn bè..." translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IeK-wT-lGI">
-                            <rect key="frame" x="8" y="105" width="398" height="51"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="tintColor" red="0.3089073993" green="0.30328902120000001" blue="0.94742486589999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBlueColor"/>
                 </view>
@@ -70,6 +71,11 @@
                     <rect key="frame" x="0.0" y="172" width="414" height="634"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sxf-xr-Ow1">
+                            <rect key="frame" x="0.0" y="30" width="414" height="574"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sf2-IQ-RXY" userLabel="Header">
                             <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -168,8 +174,8 @@
                             <color key="backgroundColor" systemColor="systemPurpleColor"/>
                         </view>
                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQ9-ZV-mzf">
-                            <rect key="frame" x="0.0" y="75" width="414" height="652"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            <rect key="frame" x="0.0" y="75" width="414" height="559"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
                     </subviews>

@@ -10,6 +10,7 @@ import UIKit
 class AllViewController: UIViewController {
 
     @IBOutlet weak var allTable: UITableView!
+    
     let label: UILabel = {
         let lbl = UILabel()
         lbl.text = "Không có dữ liệu"
@@ -24,9 +25,7 @@ class AllViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        allTable.scrollToBottom(animated: true)
-        
+                
         allTable.register(UINib(nibName: "AllTableViewCell", bundle: nil), forCellReuseIdentifier: "AllTableViewCellID")
         allTable.delegate = self
         allTable.dataSource = self
@@ -85,6 +84,7 @@ extension AllViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return userSectionTitles.count
     }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let userKey = userSectionTitles[section]
         if let userValues = userDict[userKey] {
