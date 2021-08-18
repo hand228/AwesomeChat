@@ -9,45 +9,153 @@ import UIKit
 
 class MessengerDetailCell: UITableViewCell {
     
+   
     let imgAvatarCell = UIImageView()
     let lbDateMessenger = UILabel()
     let viewContentMessenger = UIView()
     let lbContentMessenger = UILabel()
+    let imgMessenger = UIImageView()
+    let contentViews = UIView()
+    
     var leadingLabelMessenger = NSLayoutConstraint()
     var trailingLabelMessenger = NSLayoutConstraint()
+    var topLabelMessenger = NSLayoutConstraint()
+    var bottomLabelMessenger = NSLayoutConstraint()
+    
+//    var leadingViewContentMessenger = NSLayoutConstraint()
+//    var trailingViewContentMessenger = NSLayoutConstraint()
+//    var topViewContentMessenger = NSLayoutConstraint()
+//    var bottomViewContentMessenger = NSLayoutConstraint()
+    
     var leadingDateMessenger = NSLayoutConstraint()
     var trailingDateMessenger = NSLayoutConstraint()
+
+    var leadingDateImgMessenger = NSLayoutConstraint()
+    var trailingDateImgMessenger = NSLayoutConstraint()
+
+    var leadingImgMessenger = NSLayoutConstraint()
+    var trailingImgMessenger = NSLayoutConstraint()
+    var type: String! {
+        didSet {
+            if (type == "image") {
+                
+            } else if (type == "text") {
+            
+            }
+        }
+    }
     
     var isInComing: Bool! {
         didSet {
             if (isInComing == true) {
-                
-                leadingDateMessenger.isActive = true
-                leadingLabelMessenger.isActive = true
-                trailingDateMessenger.isActive = false
-                trailingLabelMessenger.isActive = false
-                
-                viewContentMessenger.backgroundColor = UIColor(rgb: 0xffE5E5E5)
-                lbContentMessenger.textColor = UIColor.black
-                
+
+                if (type == "image") {
+
+                    leadingImgMessenger.isActive = true
+                    leadingDateImgMessenger.isActive = true
+                    trailingImgMessenger.isActive = false
+                    trailingDateImgMessenger.isActive = false
+
+                    leadingDateMessenger.isActive = false
+                    leadingLabelMessenger.isActive = false
+                    trailingDateMessenger.isActive = false
+                    trailingLabelMessenger.isActive = false
+                    topLabelMessenger.isActive = false
+                    bottomLabelMessenger.isActive = false
+                    
+//                    leadingViewContentMessenger.isActive = false
+//                    trailingViewContentMessenger.isActive = false
+//                    topViewContentMessenger.isActive = false
+//                    bottomViewContentMessenger.isActive = false
+
+                    //imgAvatarCell.image = UIImage(named: "")
+
+                } else if (type == "text") {
+                    leadingDateMessenger.isActive = true
+                    leadingLabelMessenger.isActive = true
+                    trailingDateMessenger.isActive = false
+                    trailingLabelMessenger.isActive = false
+                    topLabelMessenger.isActive = false
+                    bottomLabelMessenger.isActive = true
+                    
+//                    leadingViewContentMessenger.isActive = true
+//                    trailingViewContentMessenger.isActive = true
+//                    topViewContentMessenger.isActive = true
+//                    bottomViewContentMessenger.isActive = true
+
+                    leadingImgMessenger.isActive = false
+                    trailingImgMessenger.isActive = false
+                    leadingDateImgMessenger.isActive = false
+                    leadingDateImgMessenger.isActive = false
+
+                    viewContentMessenger.backgroundColor = UIColor(rgb: 0xffE5E5E5)
+                    lbContentMessenger.textColor = UIColor.black
+                }
+
             } else {
-                
-                
-                leadingDateMessenger.isActive = false
-                leadingLabelMessenger.isActive = false
-                trailingDateMessenger.isActive = true
-                trailingLabelMessenger.isActive = true
-                viewContentMessenger.backgroundColor = UIColor(rgb: 0xff4356B4)
-                lbContentMessenger.textColor = UIColor.white
-                imgAvatarCell.image = UIImage(named: "")
-                
+
+                if (type == "image") {
+                    leadingImgMessenger.isActive = false
+                    leadingDateImgMessenger.isActive = false
+                    trailingImgMessenger.isActive = true
+                    trailingDateImgMessenger.isActive = true
+
+                    leadingDateMessenger.isActive = false
+                    leadingLabelMessenger.isActive = false
+                    trailingDateMessenger.isActive = false
+                    trailingLabelMessenger.isActive = false
+                    topLabelMessenger.isActive = false
+                    bottomLabelMessenger.isActive = false
+                    
+//                    leadingViewContentMessenger.isActive = false
+//                    trailingViewContentMessenger.isActive = false
+//                    topViewContentMessenger.isActive = false
+//                    bottomViewContentMessenger.isActive = false
+                    
+                    imgAvatarCell.image = UIImage(named: "")
+                } else if (type == "text") {
+
+                    leadingDateMessenger.isActive = false
+                    leadingLabelMessenger.isActive = false
+                    trailingDateMessenger.isActive = true
+                    trailingLabelMessenger.isActive = true
+                    topLabelMessenger.isActive = true
+                    bottomLabelMessenger.isActive = false
+                    
+//                    leadingViewContentMessenger.isActive = true
+//                    trailingViewContentMessenger.isActive = true
+//                    topViewContentMessenger.isActive = true
+//                    bottomViewContentMessenger.isActive = true
+                    
+                    leadingImgMessenger.isActive = false
+                    trailingImgMessenger.isActive = false
+                    leadingDateImgMessenger.isActive = false
+                    leadingDateImgMessenger.isActive = false
+
+                    viewContentMessenger.backgroundColor = UIColor(rgb: 0xff4356B4)
+                    lbContentMessenger.textColor = UIColor.white
+                    imgAvatarCell.image = UIImage(named: "")
+                }
             }
+        }
+    }
+    
+    // MARK: REUSE CELL
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        if (type == "image") {
+            imgMessenger.image = nil
+            lbContentMessenger.text = nil
+            
+        } else if (type == "text") {
+            lbContentMessenger.text = nil
         }
     }
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        //customCellCode()
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -56,7 +164,7 @@ class MessengerDetailCell: UITableViewCell {
     }
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: .subtitle, reuseIdentifier: reuseIdentifier)
         customCellCode()
         
     }
@@ -66,20 +174,32 @@ class MessengerDetailCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
     func customCellCode() {
-        addSubview(viewContentMessenger)
-        addSubview(lbContentMessenger)
-        addSubview(lbDateMessenger)
-        addSubview(imgAvatarCell)
+        addSubview(contentViews)
+        contentViews.addSubview(viewContentMessenger)
+        contentViews.addSubview(lbContentMessenger)
+        contentViews.addSubview(lbDateMessenger)
+        contentViews.addSubview(imgAvatarCell)
+        contentViews.addSubview(imgMessenger)
+        
+        // MARK: CHECK MESSENGER:
+        contentViews.translatesAutoresizingMaskIntoConstraints = false
         lbContentMessenger.translatesAutoresizingMaskIntoConstraints = false
         viewContentMessenger.translatesAutoresizingMaskIntoConstraints = false
         lbDateMessenger.translatesAutoresizingMaskIntoConstraints = false
         imgAvatarCell.translatesAutoresizingMaskIntoConstraints = false
+        imgMessenger.translatesAutoresizingMaskIntoConstraints = false
         
         let activate = [
             
-            imgAvatarCell.topAnchor.constraint(equalTo: topAnchor, constant: 12),
-            imgAvatarCell.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 12),
+            contentViews.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            contentViews.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
+            contentViews.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
+            contentViews.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            
+            imgAvatarCell.topAnchor.constraint(equalTo: contentViews.topAnchor, constant: 12),
+            imgAvatarCell.leadingAnchor.constraint(equalTo: contentViews.leadingAnchor, constant: 12),
             imgAvatarCell.heightAnchor.constraint(equalToConstant: 35),
             imgAvatarCell.widthAnchor.constraint(equalToConstant: 35),
             
@@ -87,30 +207,58 @@ class MessengerDetailCell: UITableViewCell {
             viewContentMessenger.bottomAnchor.constraint(equalTo: lbContentMessenger.bottomAnchor, constant: 15),
             viewContentMessenger.leadingAnchor.constraint(equalTo: lbContentMessenger.leadingAnchor, constant: -15),
             viewContentMessenger.trailingAnchor.constraint(equalTo: lbContentMessenger.trailingAnchor, constant: 20),
-            
-            lbContentMessenger.topAnchor.constraint(equalTo: topAnchor, constant: 30),
-            lbContentMessenger.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -40),
-            lbContentMessenger.widthAnchor.constraint(lessThanOrEqualToConstant: 285),
-             
-           // lbDateMessenger.widthAnchor.constraint(equalToConstant: 60),
+
+//            lbContentMessenger.topAnchor.constraint(equalTo: contentViews.topAnchor, constant: 30),
+//            lbContentMessenger.bottomAnchor.constraint(equalTo: contentViews.bottomAnchor, constant: -40),
+//            lbContentMessenger.widthAnchor.constraint(lessThanOrEqualToConstant: 285),
+
+
             lbDateMessenger.topAnchor.constraint(equalTo: viewContentMessenger.bottomAnchor, constant: 5),
-            lbDateMessenger.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            lbDateMessenger.bottomAnchor.constraint(equalTo: contentViews.bottomAnchor, constant: 0),
             lbDateMessenger.heightAnchor.constraint(equalToConstant: 20),
+
+            imgMessenger.topAnchor.constraint(equalTo: contentViews.topAnchor, constant: 15),
+            imgMessenger.widthAnchor.constraint(lessThanOrEqualToConstant: 200),
+            imgMessenger.heightAnchor.constraint(lessThanOrEqualToConstant: 200),
+            
+           //// imgMessenger.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             
         ]
-        
         NSLayoutConstraint.activate(activate)
-        leadingLabelMessenger = lbContentMessenger.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 70)
-        trailingLabelMessenger = lbContentMessenger.trailingAnchor.constraint(equalTo: trailingAnchor , constant: -30)
-        leadingDateMessenger = lbDateMessenger.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 56)
-        trailingDateMessenger = lbDateMessenger.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
+        
+//        leadingViewContentMessenger = viewContentMessenger.leadingAnchor.constraint(equalTo: lbContentMessenger.leadingAnchor, constant: -15)
+//        trailingViewContentMessenger = viewContentMessenger.trailingAnchor.constraint(equalTo: lbContentMessenger.trailingAnchor, constant: 20)
+//        topViewContentMessenger = viewContentMessenger.topAnchor.constraint(equalTo: lbContentMessenger.topAnchor, constant: -15)
+//        bottomViewContentMessenger = viewContentMessenger.bottomAnchor.constraint(equalTo: lbContentMessenger.bottomAnchor, constant: 15)
+        
+        
+        leadingLabelMessenger = lbContentMessenger.leadingAnchor.constraint(equalTo: contentViews.leadingAnchor, constant: 70)
+        trailingLabelMessenger = lbContentMessenger.trailingAnchor.constraint(equalTo: contentViews.trailingAnchor , constant: -30)
+        topLabelMessenger = lbContentMessenger.topAnchor.constraint(equalTo: contentViews.topAnchor, constant: 5)
+        bottomLabelMessenger = lbContentMessenger.bottomAnchor.constraint(equalTo: contentViews.bottomAnchor, constant: 0)
+        
+
+        leadingDateMessenger = lbDateMessenger.leadingAnchor.constraint(equalTo: contentViews.leadingAnchor, constant: 56)
+        trailingDateMessenger = lbDateMessenger.trailingAnchor.constraint(equalTo: contentViews.trailingAnchor, constant: -12)
+
+        leadingDateImgMessenger = lbDateMessenger.leadingAnchor.constraint(equalTo: imgMessenger.trailingAnchor, constant: 20)
+        trailingDateImgMessenger = lbDateMessenger.trailingAnchor.constraint(equalTo: imgMessenger.leadingAnchor, constant: -20)
+
+        leadingImgMessenger = imgMessenger.leadingAnchor.constraint(equalTo: contentViews.leadingAnchor, constant: 56)
+        trailingImgMessenger = imgMessenger.trailingAnchor.constraint(equalTo: contentViews.trailingAnchor , constant: -12)
         
         lbContentMessenger.numberOfLines = 0
         lbContentMessenger.font = UIFont(name: "Lato", size: 16)
         viewContentMessenger.layer.cornerRadius = 20
         viewContentMessenger.clipsToBounds = true
         lbDateMessenger.textColor = UIColor(rgb: 0xff999999)
-
+        
+        
+        imgMessenger.layer.cornerRadius = 20
+        imgMessenger.clipsToBounds = true
+        imgMessenger.contentMode = .scaleToFill
+//        contentView.backgroundColor = UIColor.yellow
+//        contentViews.backgroundColor = UIColor.blue
     }
 }
 

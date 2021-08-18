@@ -50,6 +50,7 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.reloadData()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -277,36 +278,39 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
                 print(urlString)
                 // ADD Push Data to day:
                 self.pushDataMessenger.pushDataChat(completion: { (dataChatMessage) in
-                    let inserIndexChatMessage = self.dataChatRoom?.chatMessages.count
+                    
                     self.dataChatRoom?.chatMessages.append(dataChatMessage)
+                    //self.dataChatRoom?.chatMessages.append(dataChatMessage)
+                    
+                    let inserIndexChatMessage = self.dataChatRoom?.chatMessages.count
                     
                     self.tableView.insertRows(at: [IndexPath(item: (inserIndexChatMessage)! - 1, section: 0)], with: .bottom)
-                    self.tableView.scrollToRow(at: IndexPath(item: (inserIndexChatMessage)! , section: 0), at: .bottom, animated: true)
+                    self.tableView.scrollToRow(at: IndexPath(item: (inserIndexChatMessage)! - 1 , section: 0), at: .bottom, animated: true)
                     self.txtInputChat.text = nil
-                    //self.tableView.reloadData()
                     
-                    
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
                 }, messenger: urlString, idReceiver: self.dataChatRoom?.participant?.userId ?? "", idSender: Auth.auth().currentUser?.uid ?? "", idChatRoom: self.dataChatRoom?.roomId ?? "", type: "image")
-                self.tableView.reloadData()
+               //  self.tableView.reloadData()
                 
             }
         })
-        
     }
 
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         self.dismiss(animated: true, completion: nil)
-        
     }
-    
-    
 }
 
 extension MessengerDetail: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if (dataChatRoom?.chatMessages[indexPath.row].type == "image") {
+            return 230
+        }
         return UITableView.automaticDimension
     }
+    
     
 }
 
@@ -316,21 +320,41 @@ extension MessengerDetail: UITableViewDataSource {
         return dataChatRoom?.chatMessages.count ?? 1
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let dataChatRow = dataChatRoom?.chatMessages[indexPath.row]
-        //let count = (dataChatRoom?.chatMessages.count)!
         let stringImg = URL(string: dataChatRoom?.participant?.userImgUrl ?? "")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerDetailCellID") as! MessengerDetailCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerDetailCellID", for: indexPath) as! MessengerDetailCell
+        cell.type = dataChatRow?.type ?? ""
         
         if (dataChatRow?.type == "text") {
             cell.lbContentMessenger.text = dataChatRow?.messenger
-        } else if (dataChatRow?.type == "image") {
-            cell.lbContentMessenger.text = "DissPlay Image"
-        } else {
-            cell.lbContentMessenger.text = dataChatRow?.messenger
-        }
         
+        } else if (dataChatRow?.type == "image") {
+            let urlString = URL(string: dataChatRow?.messenger ?? "")
+            
+            let task = URLSession.shared.dataTask(with: urlString!, completionHandler: { (data, reponse, error) in
+                guard error == nil else {
+                    return
+                }
+                guard let dataResuld = data else {
+                    return
+                }
+                DispatchQueue.main.async {
+                    
+                    cell.imgMessenger.image = UIImage(data: dataResuld)
+                }
+                
+            })
+            task.resume()
+            
+//            cell.imgMessenger.loadImageWidthUrlString(completion: { (dataResuld) in
+//                cell.imgMessenger.image = UIImage(data: dataResuld)
+//
+//            }, url: dataChatRow?.messenger ?? "")
+            
+        }
         
         do {
             let dataImg = try Data(contentsOf: stringImg!)
@@ -339,28 +363,20 @@ extension MessengerDetail: UITableViewDataSource {
             cell.imgAvatarCell.image = UIImage(named: "defauld")
         }
         
-        cell.isInComing = dataChatRow?.idSender != Auth.auth().currentUser?.uid
-        
         if (currentTime - (dataChatRow?.timeLong)!) <= 86400 {
             cell.lbDateMessenger.text = dataChatRow?.time
+           
         } else  {
             cell.lbDateMessenger.text = (dataChatRow?.date)! + " " + (dataChatRow?.time)!
+           
         }
-        
-        // MARK: CHECK MESSENGER CONTINUE
-        
-//        if (indexPath.row > 1) {
-//            if (dataChatRoom?.chatMessages[indexPath.row - 1].idSender == dataChatRoom?.chatMessages[indexPath.row].idSender ) {
-//                
-//                //cell.lbDateMessenger.removeFromSuperview()
-//                cell.lbDateMessenger.backgroundColor = UIColor.blue
-//            } else {
-//                 cell.lbDateMessenger.backgroundColor = UIColor.yellow
-//            }
-//        }
-        
+        cell.isInComing = dataChatRow?.idSender != Auth.auth().currentUser?.uid
         return cell
     }
     
-    
+//    func handleReloadTable() {
+//        self.dataChatRoom?.chatMessages.sort(by: { (message1 , message2) in
+//            return message1.timeLong > message2.timeLong
+//        })
+//    }
 }
