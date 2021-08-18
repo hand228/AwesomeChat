@@ -22,14 +22,15 @@ class MessengerDetailCell: UITableViewCell {
     var topLabelMessenger = NSLayoutConstraint()
     var bottomLabelMessenger = NSLayoutConstraint()
     
-//    var leadingViewContentMessenger = NSLayoutConstraint()
-//    var trailingViewContentMessenger = NSLayoutConstraint()
-//    var topViewContentMessenger = NSLayoutConstraint()
-//    var bottomViewContentMessenger = NSLayoutConstraint()
+    var leadingViewContentMessenger = NSLayoutConstraint()
+    var trailingViewContentMessenger = NSLayoutConstraint()
+    var topViewContentMessenger = NSLayoutConstraint()
+    var bottomViewContentMessenger = NSLayoutConstraint()
     
     var leadingDateMessenger = NSLayoutConstraint()
     var trailingDateMessenger = NSLayoutConstraint()
-
+    var topDateMessenger = NSLayoutConstraint()
+    
     var leadingDateImgMessenger = NSLayoutConstraint()
     var trailingDateImgMessenger = NSLayoutConstraint()
 
@@ -63,10 +64,10 @@ class MessengerDetailCell: UITableViewCell {
                     topLabelMessenger.isActive = false
                     bottomLabelMessenger.isActive = false
                     
-//                    leadingViewContentMessenger.isActive = false
-//                    trailingViewContentMessenger.isActive = false
-//                    topViewContentMessenger.isActive = false
-//                    bottomViewContentMessenger.isActive = false
+                    leadingViewContentMessenger.isActive = false
+                    trailingViewContentMessenger.isActive = false
+                    topViewContentMessenger.isActive = false
+                    bottomViewContentMessenger.isActive = false
 
                     //imgAvatarCell.image = UIImage(named: "")
 
@@ -77,11 +78,12 @@ class MessengerDetailCell: UITableViewCell {
                     trailingLabelMessenger.isActive = false
                     topLabelMessenger.isActive = false
                     bottomLabelMessenger.isActive = true
+                    topDateMessenger.isActive = true
                     
-//                    leadingViewContentMessenger.isActive = true
-//                    trailingViewContentMessenger.isActive = true
-//                    topViewContentMessenger.isActive = true
-//                    bottomViewContentMessenger.isActive = true
+                    leadingViewContentMessenger.isActive = true
+                    trailingViewContentMessenger.isActive = true
+                    topViewContentMessenger.isActive = true
+                    bottomViewContentMessenger.isActive = true
 
                     leadingImgMessenger.isActive = false
                     trailingImgMessenger.isActive = false
@@ -107,10 +109,10 @@ class MessengerDetailCell: UITableViewCell {
                     topLabelMessenger.isActive = false
                     bottomLabelMessenger.isActive = false
                     
-//                    leadingViewContentMessenger.isActive = false
-//                    trailingViewContentMessenger.isActive = false
-//                    topViewContentMessenger.isActive = false
-//                    bottomViewContentMessenger.isActive = false
+                    leadingViewContentMessenger.isActive = false
+                    trailingViewContentMessenger.isActive = false
+                    topViewContentMessenger.isActive = false
+                    bottomViewContentMessenger.isActive = false
                     
                     imgAvatarCell.image = UIImage(named: "")
                 } else if (type == "text") {
@@ -121,11 +123,12 @@ class MessengerDetailCell: UITableViewCell {
                     trailingLabelMessenger.isActive = true
                     topLabelMessenger.isActive = true
                     bottomLabelMessenger.isActive = false
+                    topDateMessenger.isActive = true
                     
-//                    leadingViewContentMessenger.isActive = true
-//                    trailingViewContentMessenger.isActive = true
-//                    topViewContentMessenger.isActive = true
-//                    bottomViewContentMessenger.isActive = true
+                    leadingViewContentMessenger.isActive = true
+                    trailingViewContentMessenger.isActive = true
+                    topViewContentMessenger.isActive = true
+                    bottomViewContentMessenger.isActive = true
                     
                     leadingImgMessenger.isActive = false
                     trailingImgMessenger.isActive = false
@@ -193,28 +196,28 @@ class MessengerDetailCell: UITableViewCell {
         
         let activate = [
             
-            contentViews.topAnchor.constraint(equalTo: topAnchor, constant: 0),
+            contentViews.topAnchor.constraint(equalTo: topAnchor, constant: 20),
             contentViews.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 0),
             contentViews.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 0),
-            contentViews.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
+            contentViews.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -10),
             
             imgAvatarCell.topAnchor.constraint(equalTo: contentViews.topAnchor, constant: 12),
             imgAvatarCell.leadingAnchor.constraint(equalTo: contentViews.leadingAnchor, constant: 12),
             imgAvatarCell.heightAnchor.constraint(equalToConstant: 35),
             imgAvatarCell.widthAnchor.constraint(equalToConstant: 35),
             
-            viewContentMessenger.topAnchor.constraint(equalTo: lbContentMessenger.topAnchor, constant: -15),
-            viewContentMessenger.bottomAnchor.constraint(equalTo: lbContentMessenger.bottomAnchor, constant: 15),
-            viewContentMessenger.leadingAnchor.constraint(equalTo: lbContentMessenger.leadingAnchor, constant: -15),
-            viewContentMessenger.trailingAnchor.constraint(equalTo: lbContentMessenger.trailingAnchor, constant: 20),
+//            viewContentMessenger.topAnchor.constraint(equalTo: lbContentMessenger.topAnchor, constant: -15),
+//            viewContentMessenger.bottomAnchor.constraint(equalTo: lbContentMessenger.bottomAnchor, constant: 15),
+//            viewContentMessenger.leadingAnchor.constraint(equalTo: lbContentMessenger.leadingAnchor, constant: -15),
+//            viewContentMessenger.trailingAnchor.constraint(equalTo: lbContentMessenger.trailingAnchor, constant: 20),
 
 //            lbContentMessenger.topAnchor.constraint(equalTo: contentViews.topAnchor, constant: 30),
 //            lbContentMessenger.bottomAnchor.constraint(equalTo: contentViews.bottomAnchor, constant: -40),
 //            lbContentMessenger.widthAnchor.constraint(lessThanOrEqualToConstant: 285),
 
 
-            lbDateMessenger.topAnchor.constraint(equalTo: viewContentMessenger.bottomAnchor, constant: 5),
-            lbDateMessenger.bottomAnchor.constraint(equalTo: contentViews.bottomAnchor, constant: 0),
+            //lbDateMessenger.topAnchor.constraint(equalTo: viewContentMessenger.bottomAnchor, constant: 5),
+            lbDateMessenger.bottomAnchor.constraint(equalTo: contentViews.bottomAnchor, constant: -10),
             lbDateMessenger.heightAnchor.constraint(equalToConstant: 20),
 
             imgMessenger.topAnchor.constraint(equalTo: contentViews.topAnchor, constant: 15),
@@ -226,10 +229,10 @@ class MessengerDetailCell: UITableViewCell {
         ]
         NSLayoutConstraint.activate(activate)
         
-//        leadingViewContentMessenger = viewContentMessenger.leadingAnchor.constraint(equalTo: lbContentMessenger.leadingAnchor, constant: -15)
-//        trailingViewContentMessenger = viewContentMessenger.trailingAnchor.constraint(equalTo: lbContentMessenger.trailingAnchor, constant: 20)
-//        topViewContentMessenger = viewContentMessenger.topAnchor.constraint(equalTo: lbContentMessenger.topAnchor, constant: -15)
-//        bottomViewContentMessenger = viewContentMessenger.bottomAnchor.constraint(equalTo: lbContentMessenger.bottomAnchor, constant: 15)
+        leadingViewContentMessenger = viewContentMessenger.leadingAnchor.constraint(equalTo: lbContentMessenger.leadingAnchor, constant: -15)
+        trailingViewContentMessenger = viewContentMessenger.trailingAnchor.constraint(equalTo: lbContentMessenger.trailingAnchor, constant: 20)
+        topViewContentMessenger = viewContentMessenger.topAnchor.constraint(equalTo: lbContentMessenger.topAnchor, constant: -15)
+        bottomViewContentMessenger = viewContentMessenger.bottomAnchor.constraint(equalTo: lbContentMessenger.bottomAnchor, constant: 15)
         
         
         leadingLabelMessenger = lbContentMessenger.leadingAnchor.constraint(equalTo: contentViews.leadingAnchor, constant: 70)
@@ -240,9 +243,11 @@ class MessengerDetailCell: UITableViewCell {
 
         leadingDateMessenger = lbDateMessenger.leadingAnchor.constraint(equalTo: contentViews.leadingAnchor, constant: 56)
         trailingDateMessenger = lbDateMessenger.trailingAnchor.constraint(equalTo: contentViews.trailingAnchor, constant: -12)
+        topDateMessenger = lbDateMessenger.topAnchor.constraint(equalTo: viewContentMessenger.bottomAnchor, constant: 5)
 
         leadingDateImgMessenger = lbDateMessenger.leadingAnchor.constraint(equalTo: imgMessenger.trailingAnchor, constant: 20)
         trailingDateImgMessenger = lbDateMessenger.trailingAnchor.constraint(equalTo: imgMessenger.leadingAnchor, constant: -20)
+        
 
         leadingImgMessenger = imgMessenger.leadingAnchor.constraint(equalTo: contentViews.leadingAnchor, constant: 56)
         trailingImgMessenger = imgMessenger.trailingAnchor.constraint(equalTo: contentViews.trailingAnchor , constant: -12)
@@ -257,8 +262,7 @@ class MessengerDetailCell: UITableViewCell {
         imgMessenger.layer.cornerRadius = 20
         imgMessenger.clipsToBounds = true
         imgMessenger.contentMode = .scaleToFill
-//        contentView.backgroundColor = UIColor.yellow
-//        contentViews.backgroundColor = UIColor.blue
+        
     }
 }
 
