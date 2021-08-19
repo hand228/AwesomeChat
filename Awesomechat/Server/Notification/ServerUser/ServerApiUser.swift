@@ -24,7 +24,7 @@ class ServerApiUser {
             guard error == nil else {
                 return
             }
-            let listUser = (snapshot.children.allObjects as? [DataSnapshot])?.map {
+            let listUser = (dataSnapshot.children.allObjects as? [DataSnapshot])?.map {
                 DataUser(snapShot: $0)
 
             }

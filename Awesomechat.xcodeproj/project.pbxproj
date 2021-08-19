@@ -7,13 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-<<<<<<< HEAD
-=======
 		1809974426BB1B87003030B9 /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809974226BB1B87003030B9 /* RequestTableViewCell.swift */; };
 		1809974526BB1B87003030B9 /* RequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1809974326BB1B87003030B9 /* RequestTableViewCell.xib */; };
 		1809974C26BB1E40003030B9 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809974A26BB1E40003030B9 /* RequestViewController.swift */; };
 		1809974D26BB1E40003030B9 /* RequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1809974B26BB1E40003030B9 /* RequestViewController.xib */; };
->>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 		1835434226B0F2D400DA51ED /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835434026B0F2D400DA51ED /* TabBarViewController.xib */; };
 		1835434326B0F2D400DA51ED /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835434126B0F2D400DA51ED /* TabBarViewController.swift */; };
 		1835434E26B0F2F900DA51ED /* FriendsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835434626B0F2F900DA51ED /* FriendsListViewController.xib */; };
@@ -84,13 +81,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-<<<<<<< HEAD
-=======
 		1809974226BB1B87003030B9 /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		1809974326BB1B87003030B9 /* RequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestTableViewCell.xib; sourceTree = "<group>"; };
 		1809974A26BB1E40003030B9 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		1809974B26BB1E40003030B9 /* RequestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestViewController.xib; sourceTree = "<group>"; };
->>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 		1835434026B0F2D400DA51ED /* TabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		1835434126B0F2D400DA51ED /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1835434626B0F2F900DA51ED /* FriendsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsListViewController.xib; sourceTree = "<group>"; };
@@ -378,11 +372,8 @@
 			isa = PBXGroup;
 			children = (
 				D7A0BC38268D6AC700842C93 /* Assets.xcassets */,
-<<<<<<< HEAD
 				84C05ABA26C0E21C00751B3F /* GoogleService-Info.plist */,
-=======
 				18BC45AA26C0DE2A00B040BD /* GoogleService-Info.plist */,
->>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 				D7A0BC3D268D6AC700842C93 /* Info.plist */,
 				D7B0F17526A56C6C00D13C45 /* Library */,
 				D7B0F17326A56B6B00D13C45 /* Application */,
@@ -426,12 +417,9 @@
 				D78E610E269EEFA100D8FB96 /* Extension+Snapshot.swift */,
 				D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */,
 				AB9CA22E26A14287004AAA4D /* Extension+UIViewController.swift */,
-<<<<<<< HEAD
 				84CBE19726C6669E00332241 /* Extension+UIImageView.swift */,
-=======
 				1850C12C26C214B3007B012D /* EXtension+UISearchBar.swift */,
 				1850C13026C22EB3007B012D /* Extension+TableView.swift */,
->>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -575,11 +563,8 @@
 				AB78AA0126A6B4590024E439 /* PersonalController.xib in Resources */,
 				18BC45AB26C0DE2A00B040BD /* GoogleService-Info.plist in Resources */,
 				1835435526B0F2F900DA51ED /* FriendsController.xib in Resources */,
-<<<<<<< HEAD
 				1835434F26B0F2F900DA51ED /* RequestsViewController.xib in Resources */,
 				1835436A26B0FAA700DA51ED /* OFL.txt in Resources */,
-=======
->>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 				D7A0BC39268D6AC700842C93 /* Assets.xcassets in Resources */,
 				AB78AA1626A6B4590024E439 /* LoginController.xib in Resources */,
 				1835436B26B0FAA700DA51ED /* Lato-BoldItalic.ttf in Resources */,
@@ -603,13 +588,10 @@
 				1835436826B0FAA700DA51ED /* Lato-Regular.ttf in Resources */,
 				18E12E0E26C052FB0079DE4D /* AllTableViewCell.xib in Resources */,
 				AB78AA0D26A6B4590024E439 /* RegisterController.xib in Resources */,
-<<<<<<< HEAD
 				AB78AA1526A6B4590024E439 /* TableViewCell.xib in Resources */,
 				AB78AA1226A6B4590024E439 /* HomeViewController.xib in Resources */,
 				8403D3D726B797DD00609CB9 /* MessengerDetail.xib in Resources */,
 				8403D3DC26B7A6C600609CB9 /* MessengerDetailCell.xib in Resources */,
-=======
->>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 				1835436C26B0FAA700DA51ED /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
