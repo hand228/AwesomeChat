@@ -17,21 +17,21 @@ class ServerApiUser {
     func requestApiUser(completionHandle: @escaping ([DataUser]) -> Void) {
         let ref: DatabaseReference?
         ref = Database.database().reference()
+
         print(auth?.uid)
         
         ref?.child("users").getData(completion: { (error, dataSnapshot) in
             guard error == nil else {
                 return
-            }          
-            let listUser = (dataSnapshot.children.allObjects as? [DataSnapshot])?.map {
+            }
+            let listUser = (snapshot.children.allObjects as? [DataSnapshot])?.map {
                 DataUser(snapShot: $0)
-                
+
             }
             self.arrayLocalUser = listUser ?? []
             DispatchQueue.main.async {
                 completionHandle(self.arrayLocalUser)
             }
-            
         })
     }
 }

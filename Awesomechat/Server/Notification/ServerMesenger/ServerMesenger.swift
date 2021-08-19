@@ -23,21 +23,6 @@ class ServerMesenger {
                 completionHandle(chatRooms!)
             }
         })
-//        ref.child("chats").getData(completion: { (error, snapShot) in
-//
-//            guard error == nil else {
-//                return
-//            }
-//
-//            // khi gọi như này thì luồng code sẽ chạy vào messenge trước và set data cho nó rồi mới gọi đến chatRoom:
-//            let chatRooms = (snapShot.children.allObjects as? [DataSnapshot])?.map {
-//                ChatRoom(snapShot: $0)
-//
-//            }
-//            DispatchQueue.main.async {
-//                completionHandle(chatRooms!)
-//            }
-//        })
     }
 }
 

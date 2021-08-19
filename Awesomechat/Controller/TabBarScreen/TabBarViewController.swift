@@ -16,6 +16,7 @@ class TabBarViewController: UIViewController {
     let homeVC = PersonalController(nibName: "PersonalController", bundle: nil)
     
     // Outlets
+    @IBOutlet weak var layerOutside: UIView!
     @IBOutlet weak var layerInside: UIView!
     @IBOutlet weak var contentView: UIView!
     
@@ -26,34 +27,32 @@ class TabBarViewController: UIViewController {
     @IBOutlet weak var mesLbl: UILabel!
     @IBOutlet weak var groupLbl: UILabel!
     @IBOutlet weak var homeLbl: UILabel!
+    @IBOutlet weak var requestCounter: UILabel!
     
     @IBOutlet weak var mesDot: UIView!
     @IBOutlet weak var groupDot: UIView!
     @IBOutlet weak var homeDot: UIView!
     
-    var ref: DatabaseReference!
+    var requestGroup: [DataFriend] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ref = Database.database().reference()
-        let childRef = ref.child("friend")
-        childRef.observe(.value, with: { snapshot in
-            print(snapshot.value as Any)
-        })
-        
         // Do any additional setup after loading the view.
-        borderLayer()
+        customUI()
         
         mesImg.image = UIImage(named: "m")
         groupImg.image = UIImage(named: "g")
         homeImg.image = UIImage(named: "h")
         
         initScreen()
+        countFriendRequest()
     }
 
-    // Bo tròn tab bar và chấm
-    private func borderLayer() {
+    // MARK: - Custom UI Tabbar
+    private func customUI() {
+        layerOutside.backgroundColor = UIColor.myGray
+        
         layerInside.layer.cornerRadius = layerInside.frame.size.height / 5
         layerInside.clipsToBounds = true
         
@@ -64,9 +63,19 @@ class TabBarViewController: UIViewController {
         mesDot.clipsToBounds = true
         groupDot.clipsToBounds = true
         homeDot.clipsToBounds = true
+        
+        // Chỉnh sửa phần hiển thị số yêu cầu kết bạn
+        requestCounter.backgroundColor = UIColor.counterBackground
+        requestCounter.text = ""
+        requestCounter.isHidden = true
+        requestCounter.textColor = UIColor.white
+        requestCounter.textAlignment = .center
+        requestCounter.font = UIFont(name: "Lato-Bold", size: 10)
+        requestCounter.layer.cornerRadius = requestCounter.frame.size.width/2
+        requestCounter.clipsToBounds = true
     }
     
-    // Tab tin nhắn
+    // MARK: - Tab tin nhắn
     private func initScreen() {
         mesImg.image = UIImage(named: "m_selected")
         groupImg.image = UIImage(named: "g")
@@ -91,6 +100,26 @@ class TabBarViewController: UIViewController {
         homeVC.willMove(toParent: nil)
         homeVC.removeFromParent()
         homeVC.view.removeFromSuperview()
+    }
+    
+    // MARK: - Lấy dữ liệu tổng số friend request
+    private func countFriendRequest() {
+        ServerApiUser.shared.requestApiUser { _ in
+            FriendAPI().getMyFriends { friends in
+                self.requestGroup.removeAll()
+                for friend in friends {
+                    if friend.type == FriendType.friendRequest {
+                        self.requestGroup.append(friend)
+                    }
+                }
+                if self.requestGroup.isEmpty {
+                    self.requestCounter.isHidden = true
+                } else {
+                    self.requestCounter.isHidden = false
+                    self.requestCounter.text = String(self.requestGroup.count)
+                }
+            }
+        }
     }
     
     @IBAction func clickTabBar(_ sender: UIButton) {

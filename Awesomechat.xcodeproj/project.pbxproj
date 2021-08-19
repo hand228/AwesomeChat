@@ -7,14 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
+=======
+		1809974426BB1B87003030B9 /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809974226BB1B87003030B9 /* RequestTableViewCell.swift */; };
+		1809974526BB1B87003030B9 /* RequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1809974326BB1B87003030B9 /* RequestTableViewCell.xib */; };
+		1809974C26BB1E40003030B9 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809974A26BB1E40003030B9 /* RequestViewController.swift */; };
+		1809974D26BB1E40003030B9 /* RequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1809974B26BB1E40003030B9 /* RequestViewController.xib */; };
+>>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 		1835434226B0F2D400DA51ED /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835434026B0F2D400DA51ED /* TabBarViewController.xib */; };
 		1835434326B0F2D400DA51ED /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835434126B0F2D400DA51ED /* TabBarViewController.swift */; };
 		1835434E26B0F2F900DA51ED /* FriendsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835434626B0F2F900DA51ED /* FriendsListViewController.xib */; };
-		1835434F26B0F2F900DA51ED /* RequestsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835434726B0F2F900DA51ED /* RequestsViewController.xib */; };
 		1835435026B0F2F900DA51ED /* FriendsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835434826B0F2F900DA51ED /* FriendsListViewController.swift */; };
-		1835435126B0F2F900DA51ED /* AllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835434926B0F2F900DA51ED /* AllViewController.swift */; };
-		1835435226B0F2F900DA51ED /* RequestsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835434A26B0F2F900DA51ED /* RequestsViewController.swift */; };
-		1835435326B0F2F900DA51ED /* AllViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835434B26B0F2F900DA51ED /* AllViewController.xib */; };
 		1835435426B0F2F900DA51ED /* FriendsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835434C26B0F2F900DA51ED /* FriendsController.swift */; };
 		1835435526B0F2F900DA51ED /* FriendsController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835434D26B0F2F900DA51ED /* FriendsController.xib */; };
 		1835436326B0FAA700DA51ED /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835435826B0FAA700DA51ED /* Lato-Italic.ttf */; };
@@ -24,10 +27,18 @@
 		1835436726B0FAA700DA51ED /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835435C26B0FAA700DA51ED /* Lato-Black.ttf */; };
 		1835436826B0FAA700DA51ED /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835435D26B0FAA700DA51ED /* Lato-Regular.ttf */; };
 		1835436926B0FAA700DA51ED /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835435E26B0FAA700DA51ED /* Lato-BlackItalic.ttf */; };
-		1835436A26B0FAA700DA51ED /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1835435F26B0FAA700DA51ED /* OFL.txt */; };
 		1835436B26B0FAA700DA51ED /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835436026B0FAA700DA51ED /* Lato-BoldItalic.ttf */; };
 		1835436C26B0FAA700DA51ED /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835436126B0FAA700DA51ED /* Lato-Light.ttf */; };
 		1835436D26B0FAA700DA51ED /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835436226B0FAA700DA51ED /* Lato-ThinItalic.ttf */; };
+		1850C12D26C214B3007B012D /* EXtension+UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850C12C26C214B3007B012D /* EXtension+UISearchBar.swift */; };
+		1850C13126C22EB3007B012D /* Extension+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850C13026C22EB3007B012D /* Extension+TableView.swift */; };
+		18AB2A8926B802AF00FFB28D /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AB2A8726B802AF00FFB28D /* FriendsTableViewCell.swift */; };
+		18AB2A8A26B802AF00FFB28D /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18AB2A8826B802AF00FFB28D /* FriendsTableViewCell.xib */; };
+		18BC45AB26C0DE2A00B040BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18BC45AA26C0DE2A00B040BD /* GoogleService-Info.plist */; };
+		18E12E0726C0501D0079DE4D /* AllViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E12E0526C0501D0079DE4D /* AllViewController.swift */; };
+		18E12E0826C0501D0079DE4D /* AllViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E12E0626C0501D0079DE4D /* AllViewController.xib */; };
+		18E12E0D26C052FB0079DE4D /* AllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E12E0B26C052FB0079DE4D /* AllTableViewCell.swift */; };
+		18E12E0E26C052FB0079DE4D /* AllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E12E0C26C052FB0079DE4D /* AllTableViewCell.xib */; };
 		31BABDED4009E8DCE6ED715C /* Pods_Awesomechat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */; };
 		8403D3D626B797DD00609CB9 /* MessengerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403D3D426B797DD00609CB9 /* MessengerDetail.swift */; };
 		8403D3D726B797DD00609CB9 /* MessengerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403D3D526B797DD00609CB9 /* MessengerDetail.xib */; };
@@ -45,14 +56,8 @@
 		AB78AA0926A6B4590024E439 /* MessengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9E726A6B4590024E439 /* MessengerTableViewCell.swift */; };
 		AB78AA0C26A6B4590024E439 /* RegisterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9EB26A6B4590024E439 /* RegisterController.swift */; };
 		AB78AA0D26A6B4590024E439 /* RegisterController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9EC26A6B4590024E439 /* RegisterController.xib */; };
-		AB78AA1226A6B4590024E439 /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9F326A6B4590024E439 /* HomeViewController.xib */; };
-		AB78AA1326A6B4590024E439 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9F426A6B4590024E439 /* TableViewCell.swift */; };
-		AB78AA1426A6B4590024E439 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9F526A6B4590024E439 /* HomeViewController.swift */; };
-		AB78AA1526A6B4590024E439 /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9F626A6B4590024E439 /* TableViewCell.xib */; };
 		AB78AA1626A6B4590024E439 /* LoginController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9F826A6B4590024E439 /* LoginController.xib */; };
 		AB78AA1726A6B4590024E439 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9F926A6B4590024E439 /* LoginController.swift */; };
-		AB78AA1826A6B4590024E439 /* GroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9FB26A6B4590024E439 /* GroupViewController.swift */; };
-		AB78AA1926A6B4590024E439 /* GroupViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9FC26A6B4590024E439 /* GroupViewController.xib */; };
 		AB9CA22F26A14287004AAA4D /* Extension+UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9CA22E26A14287004AAA4D /* Extension+UIViewController.swift */; };
 		B210D3F726B599630083A6B8 /* FriendAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = B210D3F626B599630083A6B8 /* FriendAPI.swift */; };
 		B2C73F8426A114E700346314 /* ChatRoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2C73F8326A114E700346314 /* ChatRoom.swift */; };
@@ -79,14 +84,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
+=======
+		1809974226BB1B87003030B9 /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
+		1809974326BB1B87003030B9 /* RequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestTableViewCell.xib; sourceTree = "<group>"; };
+		1809974A26BB1E40003030B9 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
+		1809974B26BB1E40003030B9 /* RequestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestViewController.xib; sourceTree = "<group>"; };
+>>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 		1835434026B0F2D400DA51ED /* TabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		1835434126B0F2D400DA51ED /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1835434626B0F2F900DA51ED /* FriendsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsListViewController.xib; sourceTree = "<group>"; };
-		1835434726B0F2F900DA51ED /* RequestsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RequestsViewController.xib; sourceTree = "<group>"; };
 		1835434826B0F2F900DA51ED /* FriendsListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsListViewController.swift; sourceTree = "<group>"; };
-		1835434926B0F2F900DA51ED /* AllViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllViewController.swift; sourceTree = "<group>"; };
-		1835434A26B0F2F900DA51ED /* RequestsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsViewController.swift; sourceTree = "<group>"; };
-		1835434B26B0F2F900DA51ED /* AllViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AllViewController.xib; sourceTree = "<group>"; };
 		1835434C26B0F2F900DA51ED /* FriendsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsController.swift; sourceTree = "<group>"; };
 		1835434D26B0F2F900DA51ED /* FriendsController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsController.xib; sourceTree = "<group>"; };
 		1835435826B0FAA700DA51ED /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
@@ -96,10 +104,18 @@
 		1835435C26B0FAA700DA51ED /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
 		1835435D26B0FAA700DA51ED /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		1835435E26B0FAA700DA51ED /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
-		1835435F26B0FAA700DA51ED /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
 		1835436026B0FAA700DA51ED /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
 		1835436126B0FAA700DA51ED /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
 		1835436226B0FAA700DA51ED /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		1850C12C26C214B3007B012D /* EXtension+UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EXtension+UISearchBar.swift"; sourceTree = "<group>"; };
+		1850C13026C22EB3007B012D /* Extension+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TableView.swift"; sourceTree = "<group>"; };
+		18AB2A8726B802AF00FFB28D /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
+		18AB2A8826B802AF00FFB28D /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
+		18BC45AA26C0DE2A00B040BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		18E12E0526C0501D0079DE4D /* AllViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllViewController.swift; sourceTree = "<group>"; };
+		18E12E0626C0501D0079DE4D /* AllViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllViewController.xib; sourceTree = "<group>"; };
+		18E12E0B26C052FB0079DE4D /* AllTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllTableViewCell.swift; sourceTree = "<group>"; };
+		18E12E0C26C052FB0079DE4D /* AllTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllTableViewCell.xib; sourceTree = "<group>"; };
 		32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Awesomechat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462DAAE6D841AD1FC2EFFD40 /* Pods-Awesomechat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesomechat.release.xcconfig"; path = "Target Support Files/Pods-Awesomechat/Pods-Awesomechat.release.xcconfig"; sourceTree = "<group>"; };
 		8403D3D426B797DD00609CB9 /* MessengerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerDetail.swift; sourceTree = "<group>"; };
@@ -118,14 +134,8 @@
 		AB78A9E726A6B4590024E439 /* MessengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessengerTableViewCell.swift; sourceTree = "<group>"; };
 		AB78A9EB26A6B4590024E439 /* RegisterController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterController.swift; sourceTree = "<group>"; };
 		AB78A9EC26A6B4590024E439 /* RegisterController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterController.xib; sourceTree = "<group>"; };
-		AB78A9F326A6B4590024E439 /* HomeViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
-		AB78A9F426A6B4590024E439 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		AB78A9F526A6B4590024E439 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		AB78A9F626A6B4590024E439 /* TableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		AB78A9F826A6B4590024E439 /* LoginController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginController.xib; sourceTree = "<group>"; };
 		AB78A9F926A6B4590024E439 /* LoginController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
-		AB78A9FB26A6B4590024E439 /* GroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupViewController.swift; sourceTree = "<group>"; };
-		AB78A9FC26A6B4590024E439 /* GroupViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GroupViewController.xib; sourceTree = "<group>"; };
 		AB9CA22E26A14287004AAA4D /* Extension+UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIViewController.swift"; sourceTree = "<group>"; };
 		B210D3F626B599630083A6B8 /* FriendAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendAPI.swift; sourceTree = "<group>"; };
 		B2C73F8326A114E700346314 /* ChatRoom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoom.swift; sourceTree = "<group>"; };
@@ -166,6 +176,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1809973826BB1751003030B9 /* All */ = {
+			isa = PBXGroup;
+			children = (
+				18E12E0526C0501D0079DE4D /* AllViewController.swift */,
+				18E12E0626C0501D0079DE4D /* AllViewController.xib */,
+				18E12E0B26C052FB0079DE4D /* AllTableViewCell.swift */,
+				18E12E0C26C052FB0079DE4D /* AllTableViewCell.xib */,
+			);
+			path = All;
+			sourceTree = "<group>";
+		};
 		1835433F26B0F2D400DA51ED /* TabBarScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -188,12 +209,9 @@
 		1835434526B0F2F900DA51ED /* Tabs */ = {
 			isa = PBXGroup;
 			children = (
-				1835434626B0F2F900DA51ED /* FriendsListViewController.xib */,
-				1835434826B0F2F900DA51ED /* FriendsListViewController.swift */,
-				1835434726B0F2F900DA51ED /* RequestsViewController.xib */,
-				1835434A26B0F2F900DA51ED /* RequestsViewController.swift */,
-				1835434B26B0F2F900DA51ED /* AllViewController.xib */,
-				1835434926B0F2F900DA51ED /* AllViewController.swift */,
+				1809973826BB1751003030B9 /* All */,
+				18AB2A8426B8026500FFB28D /* Friend */,
+				18AB2A8526B8026C00FFB28D /* Request */,
 			);
 			path = Tabs;
 			sourceTree = "<group>";
@@ -216,12 +234,33 @@
 				1835435C26B0FAA700DA51ED /* Lato-Black.ttf */,
 				1835435D26B0FAA700DA51ED /* Lato-Regular.ttf */,
 				1835435E26B0FAA700DA51ED /* Lato-BlackItalic.ttf */,
-				1835435F26B0FAA700DA51ED /* OFL.txt */,
 				1835436026B0FAA700DA51ED /* Lato-BoldItalic.ttf */,
 				1835436126B0FAA700DA51ED /* Lato-Light.ttf */,
 				1835436226B0FAA700DA51ED /* Lato-ThinItalic.ttf */,
 			);
 			path = Lato;
+			sourceTree = "<group>";
+		};
+		18AB2A8426B8026500FFB28D /* Friend */ = {
+			isa = PBXGroup;
+			children = (
+				1835434626B0F2F900DA51ED /* FriendsListViewController.xib */,
+				1835434826B0F2F900DA51ED /* FriendsListViewController.swift */,
+				18AB2A8726B802AF00FFB28D /* FriendsTableViewCell.swift */,
+				18AB2A8826B802AF00FFB28D /* FriendsTableViewCell.xib */,
+			);
+			path = Friend;
+			sourceTree = "<group>";
+		};
+		18AB2A8526B8026C00FFB28D /* Request */ = {
+			isa = PBXGroup;
+			children = (
+				1809974226BB1B87003030B9 /* RequestTableViewCell.swift */,
+				1809974326BB1B87003030B9 /* RequestTableViewCell.xib */,
+				1809974A26BB1E40003030B9 /* RequestViewController.swift */,
+				1809974B26BB1E40003030B9 /* RequestViewController.xib */,
+			);
+			path = Request;
 			sourceTree = "<group>";
 		};
 		432B6E69D5096117F34603C4 /* Pods */ = {
@@ -308,17 +347,6 @@
 			path = RegisterScreen;
 			sourceTree = "<group>";
 		};
-		AB78A9F226A6B4590024E439 /* HomeScreen */ = {
-			isa = PBXGroup;
-			children = (
-				AB78A9F326A6B4590024E439 /* HomeViewController.xib */,
-				AB78A9F426A6B4590024E439 /* TableViewCell.swift */,
-				AB78A9F526A6B4590024E439 /* HomeViewController.swift */,
-				AB78A9F626A6B4590024E439 /* TableViewCell.xib */,
-			);
-			path = HomeScreen;
-			sourceTree = "<group>";
-		};
 		AB78A9F726A6B4590024E439 /* LoginScreen */ = {
 			isa = PBXGroup;
 			children = (
@@ -326,15 +354,6 @@
 				AB78A9F926A6B4590024E439 /* LoginController.swift */,
 			);
 			path = LoginScreen;
-			sourceTree = "<group>";
-		};
-		AB78A9FA26A6B4590024E439 /* GroupScreen */ = {
-			isa = PBXGroup;
-			children = (
-				AB78A9FB26A6B4590024E439 /* GroupViewController.swift */,
-				AB78A9FC26A6B4590024E439 /* GroupViewController.xib */,
-			);
-			path = GroupScreen;
 			sourceTree = "<group>";
 		};
 		D7A0BC23268D6AC500842C93 = {
@@ -359,7 +378,11 @@
 			isa = PBXGroup;
 			children = (
 				D7A0BC38268D6AC700842C93 /* Assets.xcassets */,
+<<<<<<< HEAD
 				84C05ABA26C0E21C00751B3F /* GoogleService-Info.plist */,
+=======
+				18BC45AA26C0DE2A00B040BD /* GoogleService-Info.plist */,
+>>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 				D7A0BC3D268D6AC700842C93 /* Info.plist */,
 				D7B0F17526A56C6C00D13C45 /* Library */,
 				D7B0F17326A56B6B00D13C45 /* Application */,
@@ -387,8 +410,6 @@
 			children = (
 				1835434426B0F2F900DA51ED /* FriendScreen */,
 				1835433F26B0F2D400DA51ED /* TabBarScreen */,
-				AB78A9FA26A6B4590024E439 /* GroupScreen */,
-				AB78A9F226A6B4590024E439 /* HomeScreen */,
 				AB78A9F726A6B4590024E439 /* LoginScreen */,
 				AB78A9E226A6B4590024E439 /* MessengerScreen */,
 				AB78A9D926A6B4580024E439 /* PersonalScreen */,
@@ -405,7 +426,12 @@
 				D78E610E269EEFA100D8FB96 /* Extension+Snapshot.swift */,
 				D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */,
 				AB9CA22E26A14287004AAA4D /* Extension+UIViewController.swift */,
+<<<<<<< HEAD
 				84CBE19726C6669E00332241 /* Extension+UIImageView.swift */,
+=======
+				1850C12C26C214B3007B012D /* EXtension+UISearchBar.swift */,
+				1850C13026C22EB3007B012D /* Extension+TableView.swift */,
+>>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -544,36 +570,46 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB78AA1926A6B4590024E439 /* GroupViewController.xib in Resources */,
 				1835434E26B0F2F900DA51ED /* FriendsListViewController.xib in Resources */,
 				D7A0BC3C268D6AC700842C93 /* LaunchScreen.storyboard in Resources */,
 				AB78AA0126A6B4590024E439 /* PersonalController.xib in Resources */,
+				18BC45AB26C0DE2A00B040BD /* GoogleService-Info.plist in Resources */,
 				1835435526B0F2F900DA51ED /* FriendsController.xib in Resources */,
+<<<<<<< HEAD
 				1835434F26B0F2F900DA51ED /* RequestsViewController.xib in Resources */,
 				1835436A26B0FAA700DA51ED /* OFL.txt in Resources */,
+=======
+>>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 				D7A0BC39268D6AC700842C93 /* Assets.xcassets in Resources */,
 				AB78AA1626A6B4590024E439 /* LoginController.xib in Resources */,
 				1835436B26B0FAA700DA51ED /* Lato-BoldItalic.ttf in Resources */,
 				1835436726B0FAA700DA51ED /* Lato-Black.ttf in Resources */,
 				84C05ABB26C0E21C00751B3F /* GoogleService-Info.plist in Resources */,
 				1835436926B0FAA700DA51ED /* Lato-BlackItalic.ttf in Resources */,
+				18AB2A8A26B802AF00FFB28D /* FriendsTableViewCell.xib in Resources */,
 				1835436626B0FAA700DA51ED /* Lato-Bold.ttf in Resources */,
 				1835436426B0FAA700DA51ED /* Lato-LightItalic.ttf in Resources */,
 				1835436D26B0FAA700DA51ED /* Lato-ThinItalic.ttf in Resources */,
 				1835436326B0FAA700DA51ED /* Lato-Italic.ttf in Resources */,
 				AB78AA0826A6B4590024E439 /* MessengerTableViewCell.xib in Resources */,
 				8480EF4726B404B300C51870 /* MessengerController.xib in Resources */,
+				1809974526BB1B87003030B9 /* RequestTableViewCell.xib in Resources */,
+				18E12E0826C0501D0079DE4D /* AllViewController.xib in Resources */,
+				1809974D26BB1E40003030B9 /* RequestViewController.xib in Resources */,
 				D7A0BC37268D6AC500842C93 /* Main.storyboard in Resources */,
 				1835434226B0F2D400DA51ED /* TabBarViewController.xib in Resources */,
 				1835436526B0FAA700DA51ED /* Lato-Thin.ttf in Resources */,
 				8480EF4B26B405A400C51870 /* MessengerHeader.xib in Resources */,
 				1835436826B0FAA700DA51ED /* Lato-Regular.ttf in Resources */,
-				1835435326B0F2F900DA51ED /* AllViewController.xib in Resources */,
+				18E12E0E26C052FB0079DE4D /* AllTableViewCell.xib in Resources */,
 				AB78AA0D26A6B4590024E439 /* RegisterController.xib in Resources */,
+<<<<<<< HEAD
 				AB78AA1526A6B4590024E439 /* TableViewCell.xib in Resources */,
 				AB78AA1226A6B4590024E439 /* HomeViewController.xib in Resources */,
 				8403D3D726B797DD00609CB9 /* MessengerDetail.xib in Resources */,
 				8403D3DC26B7A6C600609CB9 /* MessengerDetailCell.xib in Resources */,
+=======
+>>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 				1835436C26B0FAA700DA51ED /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -630,28 +666,31 @@
 				D7AC16A326A1913E0082FF94 /* CallMethodRequest.swift in Sources */,
 				AB78AA1726A6B4590024E439 /* LoginController.swift in Sources */,
 				D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */,
-				AB78AA1826A6B4590024E439 /* GroupViewController.swift in Sources */,
-				AB78AA1426A6B4590024E439 /* HomeViewController.swift in Sources */,
+				18AB2A8926B802AF00FFB28D /* FriendsTableViewCell.swift in Sources */,
 				D7A9F1A32692E4AA001AE5AB /* ServerLogin.swift in Sources */,
+				1809974426BB1B87003030B9 /* RequestTableViewCell.swift in Sources */,
 				D7A0BC5B268DB3F800842C93 /* DataUser.swift in Sources */,
 				AB9CA22F26A14287004AAA4D /* Extension+UIViewController.swift in Sources */,
+				1809974C26BB1E40003030B9 /* RequestViewController.swift in Sources */,
 				D7A0BC58268D7CA800842C93 /* Extension+Color.swift in Sources */,
 				D78E610D269ECCFA00D8FB96 /* PushDataMesenger.swift in Sources */,
 				B210D3F726B599630083A6B8 /* FriendAPI.swift in Sources */,
+				1850C12D26C214B3007B012D /* EXtension+UISearchBar.swift in Sources */,
 				D78E610F269EEFA100D8FB96 /* Extension+Snapshot.swift in Sources */,
 				D7A0BC30268D6AC500842C93 /* AppDelegate.swift in Sources */,
-				AB78AA1326A6B4590024E439 /* TableViewCell.swift in Sources */,
 				AB78AA0C26A6B4590024E439 /* RegisterController.swift in Sources */,
+				18E12E0726C0501D0079DE4D /* AllViewController.swift in Sources */,
 				D7A55E0D2696DE8E000767F8 /* ServerMesenger.swift in Sources */,
 				1835435426B0F2F900DA51ED /* FriendsController.swift in Sources */,
 				D7A155C7268F252E00A8E50B /* ServerRegister.swift in Sources */,
+				18E12E0D26C052FB0079DE4D /* AllTableViewCell.swift in Sources */,
 				B2C73F8426A114E700346314 /* ChatRoom.swift in Sources */,
-				1835435226B0F2F900DA51ED /* RequestsViewController.swift in Sources */,
 				B2C73F8626A1174700346314 /* ChatMessage.swift in Sources */,
 				8480EF4626B404B300C51870 /* MessengerController.swift in Sources */,
 				8480EF4926B4059500C51870 /* MessengerHeader.swift in Sources */,
 				D7A0BC5E268DBCC000842C93 /* ServerApiUser.swift in Sources */,
 				AB78AA0026A6B4590024E439 /* PersonalController.swift in Sources */,
+				1850C13126C22EB3007B012D /* Extension+TableView.swift in Sources */,
 				1835435026B0F2F900DA51ED /* FriendsListViewController.swift in Sources */,
 				D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */,
 				84CBE19826C6669E00332241 /* Extension+UIImageView.swift in Sources */,
@@ -660,7 +699,6 @@
 				D7A0BC32268D6AC500842C93 /* SceneDelegate.swift in Sources */,
 				8403D3D626B797DD00609CB9 /* MessengerDetail.swift in Sources */,
 				D78ECD6D269C330200ACF39D /* Extension+Date.swift in Sources */,
-				1835435126B0F2F900DA51ED /* AllViewController.swift in Sources */,
 				D7A155C0268ECEA000A8E50B /* DataFriend.swift in Sources */,
 				1835434326B0F2D400DA51ED /* TabBarViewController.swift in Sources */,
 				AB78AA0926A6B4590024E439 /* MessengerTableViewCell.swift in Sources */,

@@ -94,11 +94,12 @@ class LoginController: UIViewController, UITextFieldDelegate {
             guard let dataAuth = dataAuth else {
                 return
             }
-            
-            print(email + passWord )
-            print(dataAuth)
             self?.customPushSignIn()
         })
+    
+       // })
+        
+        
         
     }
     
@@ -108,13 +109,11 @@ class LoginController: UIViewController, UITextFieldDelegate {
         return emailPred.evaluate(with: email)
     }
     
-    func customPushSignIn() {
-        
-        let tabbarController = TabBarViewController()
-        tabbarController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        tabbarController.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        self.present(tabbarController, animated: true, completion: nil)
-        
+    @objc func customPushSignIn() {
+        let tabbar = TabBarViewController()
+        tabbar.modalPresentationStyle = .fullScreen
+        self.present(tabbar, animated: true, completion: nil)
+
     }
     
     func alertUserLoginError() {

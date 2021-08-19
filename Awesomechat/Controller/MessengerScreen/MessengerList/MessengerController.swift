@@ -16,9 +16,6 @@ class MessengerController: UIViewController {
     let serverApiUser = ServerApiUser.shared
     
     let pushDataMesenger = PushDataMesenger()
-    var arrayUser: [DataUser] = []
-    var arrayMessengerLast: [String] = []
-    var arrayChatMessenger: [[ChatMessage]] = []
     var arrayChatRoom: [ChatRoom] = []
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,16 +36,19 @@ class MessengerController: UIViewController {
     // MARK: REQUEST API MESSENGER
     func requestApiMesengerUser() {
         serverApiUser.requestApiUser(completionHandle: { (dataResuld) in
+
             self.servereMesenger.requestMesenger(completionHandle: {(arrayChatRoom)  in
                 self.arrayChatRoom = arrayChatRoom
                 
                 self.tableView.reloadData()
             })
+            
             self.tableView.reloadData()
         })
+        
     }
     
-//     // MARK: PUSH DATA FAKE:
+    
 //    func pushDataOnFirebase() {
 //        pushDataMesenger.pushDataChat(completion: { () in
 //
@@ -91,7 +91,7 @@ extension MessengerController: UITableViewDataSource {
                let dataImg = try Data(contentsOf: stringImg!)
                cell.imgAvatar.image = UIImage(data: dataImg)
            } catch {
-               cell.imgAvatar.image = UIImage(named: "defauld")
+               cell.imgAvatar.image = UIImage(named: "default")
            }
         
         return cell
