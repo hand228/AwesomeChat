@@ -25,6 +25,5 @@ struct ChatMessage {
         self.date = snapshot.childSnapshot(forPath: "date").value as? String ?? ""
         self.time = snapshot.childSnapshot(forPath: "time").value as? String ?? ""
         self.timeLong = snapshot.childSnapshot(forPath: "timeLong").value as? String ?? ""
-        
     }
 }

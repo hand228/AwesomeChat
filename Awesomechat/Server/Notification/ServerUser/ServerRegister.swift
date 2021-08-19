@@ -17,11 +17,11 @@ class ServerRegister {
         request = Database.database().reference()
         
         request?.observe(DataEventType.value, with: { dataSnapShot in
-            print(dataSnapShot.value ?? "")
+//            print(dataSnapShot.value ?? "")
         })
         
         request?.observe(.childAdded, with: { (dataSnapshotadd) in
-            print(dataSnapshotadd.value ?? "")
+//            print(dataSnapshotadd.value ?? "")
         })
     }
     

@@ -1,14 +1,17 @@
 //
-//  TableViewCell.swift
+//  FirendsTableViewCell.swift
 //  Awesomechat
 //
-//  Created by MaiNQ on 16/07/2021.
+//  Created by Apple on 2021/8/2.
 //
 
 import UIKit
 
-class TableViewCell: UITableViewCell {
+class FriendsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var img: UIImageView!
+    @IBOutlet weak var name: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
