@@ -15,6 +15,14 @@ extension UIView {
         mask.path = path.cgPath
         layer.mask = mask
     }
+    
+    
+//    func addBoder(widh: CGFloat) {
+//        let boderLine = CALayer()
+//        boderLine.frame = CGRect(x: 0, y: self.frame.size.height - widh, width: self.frame.width, height: widh)
+//        self.layer.addSublayer(boderLine)
+//
+//    }
 }
 
 extension UIView {

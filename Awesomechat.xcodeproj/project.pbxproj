@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+<<<<<<< HEAD
+=======
 		1809974426BB1B87003030B9 /* RequestTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809974226BB1B87003030B9 /* RequestTableViewCell.swift */; };
 		1809974526BB1B87003030B9 /* RequestTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1809974326BB1B87003030B9 /* RequestTableViewCell.xib */; };
 		1809974C26BB1E40003030B9 /* RequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1809974A26BB1E40003030B9 /* RequestViewController.swift */; };
 		1809974D26BB1E40003030B9 /* RequestViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1809974B26BB1E40003030B9 /* RequestViewController.xib */; };
+>>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 		1835434226B0F2D400DA51ED /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835434026B0F2D400DA51ED /* TabBarViewController.xib */; };
 		1835434326B0F2D400DA51ED /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1835434126B0F2D400DA51ED /* TabBarViewController.swift */; };
 		1835434E26B0F2F900DA51ED /* FriendsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1835434626B0F2F900DA51ED /* FriendsListViewController.xib */; };
@@ -37,10 +40,16 @@
 		18E12E0D26C052FB0079DE4D /* AllTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18E12E0B26C052FB0079DE4D /* AllTableViewCell.swift */; };
 		18E12E0E26C052FB0079DE4D /* AllTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18E12E0C26C052FB0079DE4D /* AllTableViewCell.xib */; };
 		31BABDED4009E8DCE6ED715C /* Pods_Awesomechat.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */; };
+		8403D3D626B797DD00609CB9 /* MessengerDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403D3D426B797DD00609CB9 /* MessengerDetail.swift */; };
+		8403D3D726B797DD00609CB9 /* MessengerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403D3D526B797DD00609CB9 /* MessengerDetail.xib */; };
+		8403D3DB26B7A6C600609CB9 /* MessengerDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403D3D926B7A6C600609CB9 /* MessengerDetailCell.swift */; };
+		8403D3DC26B7A6C600609CB9 /* MessengerDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403D3DA26B7A6C600609CB9 /* MessengerDetailCell.xib */; };
 		8480EF4626B404B300C51870 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480EF4426B404B300C51870 /* MessengerController.swift */; };
 		8480EF4726B404B300C51870 /* MessengerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8480EF4526B404B300C51870 /* MessengerController.xib */; };
 		8480EF4926B4059500C51870 /* MessengerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480EF4826B4059500C51870 /* MessengerHeader.swift */; };
 		8480EF4B26B405A400C51870 /* MessengerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8480EF4A26B405A400C51870 /* MessengerHeader.xib */; };
+		84C05ABB26C0E21C00751B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C05ABA26C0E21C00751B3F /* GoogleService-Info.plist */; };
+		84CBE19826C6669E00332241 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBE19726C6669E00332241 /* Extension+UIImageView.swift */; };
 		AB78AA0026A6B4590024E439 /* PersonalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9DA26A6B4580024E439 /* PersonalController.swift */; };
 		AB78AA0126A6B4590024E439 /* PersonalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9DB26A6B4580024E439 /* PersonalController.xib */; };
 		AB78AA0826A6B4590024E439 /* MessengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9E626A6B4590024E439 /* MessengerTableViewCell.xib */; };
@@ -75,10 +84,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
+=======
 		1809974226BB1B87003030B9 /* RequestTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTableViewCell.swift; sourceTree = "<group>"; };
 		1809974326BB1B87003030B9 /* RequestTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestTableViewCell.xib; sourceTree = "<group>"; };
 		1809974A26BB1E40003030B9 /* RequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestViewController.swift; sourceTree = "<group>"; };
 		1809974B26BB1E40003030B9 /* RequestViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RequestViewController.xib; sourceTree = "<group>"; };
+>>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 		1835434026B0F2D400DA51ED /* TabBarViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		1835434126B0F2D400DA51ED /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		1835434626B0F2F900DA51ED /* FriendsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsListViewController.xib; sourceTree = "<group>"; };
@@ -106,10 +118,16 @@
 		18E12E0C26C052FB0079DE4D /* AllTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AllTableViewCell.xib; sourceTree = "<group>"; };
 		32AD681C66E3D4310D3D0EA1 /* Pods_Awesomechat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Awesomechat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		462DAAE6D841AD1FC2EFFD40 /* Pods-Awesomechat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Awesomechat.release.xcconfig"; path = "Target Support Files/Pods-Awesomechat/Pods-Awesomechat.release.xcconfig"; sourceTree = "<group>"; };
+		8403D3D426B797DD00609CB9 /* MessengerDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerDetail.swift; sourceTree = "<group>"; };
+		8403D3D526B797DD00609CB9 /* MessengerDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerDetail.xib; sourceTree = "<group>"; };
+		8403D3D926B7A6C600609CB9 /* MessengerDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerDetailCell.swift; sourceTree = "<group>"; };
+		8403D3DA26B7A6C600609CB9 /* MessengerDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerDetailCell.xib; sourceTree = "<group>"; };
 		8480EF4426B404B300C51870 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
 		8480EF4526B404B300C51870 /* MessengerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerController.xib; sourceTree = "<group>"; };
 		8480EF4826B4059500C51870 /* MessengerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerHeader.swift; sourceTree = "<group>"; };
 		8480EF4A26B405A400C51870 /* MessengerHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerHeader.xib; sourceTree = "<group>"; };
+		84C05ABA26C0E21C00751B3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84CBE19726C6669E00332241 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		AB78A9DA26A6B4580024E439 /* PersonalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalController.swift; sourceTree = "<group>"; };
 		AB78A9DB26A6B4580024E439 /* PersonalController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalController.xib; sourceTree = "<group>"; };
 		AB78A9E626A6B4590024E439 /* MessengerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessengerTableViewCell.xib; sourceTree = "<group>"; };
@@ -254,6 +272,35 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		8403D3D326B797AE00609CB9 /* MessengerDetail */ = {
+			isa = PBXGroup;
+			children = (
+				8403D3D826B7A6A100609CB9 /* MessengerDetailCell */,
+				8403D3D426B797DD00609CB9 /* MessengerDetail.swift */,
+				8403D3D526B797DD00609CB9 /* MessengerDetail.xib */,
+			);
+			path = MessengerDetail;
+			sourceTree = "<group>";
+		};
+		8403D3D826B7A6A100609CB9 /* MessengerDetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				8403D3D926B7A6C600609CB9 /* MessengerDetailCell.swift */,
+				8403D3DA26B7A6C600609CB9 /* MessengerDetailCell.xib */,
+			);
+			path = MessengerDetailCell;
+			sourceTree = "<group>";
+		};
+		8403D3DD26B841F400609CB9 /* MessengerList */ = {
+			isa = PBXGroup;
+			children = (
+				AB78A9E526A6B4590024E439 /* MessengerTableCell */,
+				8480EF4426B404B300C51870 /* MessengerController.swift */,
+				8480EF4526B404B300C51870 /* MessengerController.xib */,
+			);
+			path = MessengerList;
+			sourceTree = "<group>";
+		};
 		9FB58D69EDA6780F9A8FCBD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -274,9 +321,8 @@
 		AB78A9E226A6B4590024E439 /* MessengerScreen */ = {
 			isa = PBXGroup;
 			children = (
-				AB78A9E526A6B4590024E439 /* MessengerTableCell */,
-				8480EF4426B404B300C51870 /* MessengerController.swift */,
-				8480EF4526B404B300C51870 /* MessengerController.xib */,
+				8403D3DD26B841F400609CB9 /* MessengerList */,
+				8403D3D326B797AE00609CB9 /* MessengerDetail */,
 			);
 			path = MessengerScreen;
 			sourceTree = "<group>";
@@ -332,7 +378,11 @@
 			isa = PBXGroup;
 			children = (
 				D7A0BC38268D6AC700842C93 /* Assets.xcassets */,
+<<<<<<< HEAD
+				84C05ABA26C0E21C00751B3F /* GoogleService-Info.plist */,
+=======
 				18BC45AA26C0DE2A00B040BD /* GoogleService-Info.plist */,
+>>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 				D7A0BC3D268D6AC700842C93 /* Info.plist */,
 				D7B0F17526A56C6C00D13C45 /* Library */,
 				D7B0F17326A56B6B00D13C45 /* Application */,
@@ -376,8 +426,12 @@
 				D78E610E269EEFA100D8FB96 /* Extension+Snapshot.swift */,
 				D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */,
 				AB9CA22E26A14287004AAA4D /* Extension+UIViewController.swift */,
+<<<<<<< HEAD
+				84CBE19726C6669E00332241 /* Extension+UIImageView.swift */,
+=======
 				1850C12C26C214B3007B012D /* EXtension+UISearchBar.swift */,
 				1850C13026C22EB3007B012D /* Extension+TableView.swift */,
+>>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -521,10 +575,16 @@
 				AB78AA0126A6B4590024E439 /* PersonalController.xib in Resources */,
 				18BC45AB26C0DE2A00B040BD /* GoogleService-Info.plist in Resources */,
 				1835435526B0F2F900DA51ED /* FriendsController.xib in Resources */,
+<<<<<<< HEAD
+				1835434F26B0F2F900DA51ED /* RequestsViewController.xib in Resources */,
+				1835436A26B0FAA700DA51ED /* OFL.txt in Resources */,
+=======
+>>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 				D7A0BC39268D6AC700842C93 /* Assets.xcassets in Resources */,
 				AB78AA1626A6B4590024E439 /* LoginController.xib in Resources */,
 				1835436B26B0FAA700DA51ED /* Lato-BoldItalic.ttf in Resources */,
 				1835436726B0FAA700DA51ED /* Lato-Black.ttf in Resources */,
+				84C05ABB26C0E21C00751B3F /* GoogleService-Info.plist in Resources */,
 				1835436926B0FAA700DA51ED /* Lato-BlackItalic.ttf in Resources */,
 				18AB2A8A26B802AF00FFB28D /* FriendsTableViewCell.xib in Resources */,
 				1835436626B0FAA700DA51ED /* Lato-Bold.ttf in Resources */,
@@ -543,6 +603,13 @@
 				1835436826B0FAA700DA51ED /* Lato-Regular.ttf in Resources */,
 				18E12E0E26C052FB0079DE4D /* AllTableViewCell.xib in Resources */,
 				AB78AA0D26A6B4590024E439 /* RegisterController.xib in Resources */,
+<<<<<<< HEAD
+				AB78AA1526A6B4590024E439 /* TableViewCell.xib in Resources */,
+				AB78AA1226A6B4590024E439 /* HomeViewController.xib in Resources */,
+				8403D3D726B797DD00609CB9 /* MessengerDetail.xib in Resources */,
+				8403D3DC26B7A6C600609CB9 /* MessengerDetailCell.xib in Resources */,
+=======
+>>>>>>> af7b531ca43789e9608ab0abe784cbe5764e8f63
 				1835436C26B0FAA700DA51ED /* Lato-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -626,8 +693,11 @@
 				1850C13126C22EB3007B012D /* Extension+TableView.swift in Sources */,
 				1835435026B0F2F900DA51ED /* FriendsListViewController.swift in Sources */,
 				D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */,
+				84CBE19826C6669E00332241 /* Extension+UIImageView.swift in Sources */,
 				D78ECD6F269C5B8F00ACF39D /* DataChats.swift in Sources */,
+				8403D3DB26B7A6C600609CB9 /* MessengerDetailCell.swift in Sources */,
 				D7A0BC32268D6AC500842C93 /* SceneDelegate.swift in Sources */,
+				8403D3D626B797DD00609CB9 /* MessengerDetail.swift in Sources */,
 				D78ECD6D269C330200ACF39D /* Extension+Date.swift in Sources */,
 				D7A155C0268ECEA000A8E50B /* DataFriend.swift in Sources */,
 				1835434326B0F2D400DA51ED /* TabBarViewController.swift in Sources */,

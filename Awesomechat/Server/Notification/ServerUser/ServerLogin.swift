@@ -25,13 +25,8 @@ class ServerLogin {
             guard let dataValue = dataSnapshot.value as? [String: Any] else {
                 return
             }
-//            print(dataValue)
-            
             for items in dataValue.keys {
-//                print(items)
                 dataDiction = dataValue[items] as? [String: Any] ?? [:]
-//                print(dataDiction["userEmail"] ?? "")
-//                print(dataDiction["userName"] ?? "")
                 if ((dataDiction["userEmail"] as? String == email) && dataDiction["userName"] as? String == passWord)  {
                     array.append(dataDiction["userEmail"] as! String )
                     array.append(dataDiction["userName"] as! String )
@@ -40,9 +35,7 @@ class ServerLogin {
                     
                     checkLogin = true
                 }
-//                print(array)
             }
-            
             DispatchQueue.main.async {
                 completionHandle(array, checkLogin)
             }

@@ -33,13 +33,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        Auth.auth().addStateDidChangeListener({ (auth , user) in
-            
-        })
         
-        Auth.auth().createUser(withEmail: "", password: "", completion: { (authData, error) in
-            
-        })
     }
     
     func customStoryboard() {
@@ -86,6 +80,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        print(Auth.auth().currentUser?.uid)
         // MARK: SET USERDEFAULD:
         UserDefaults.standard.set(email, forKey: "Email")
         UserDefaults.standard.set(passWord, forKey: "PassWord")
@@ -95,21 +90,16 @@ class LoginController: UIViewController, UITextFieldDelegate {
             guard error == nil else {
                 return
             }
+            
             guard let dataAuth = dataAuth else {
                 return
             }
-            
-//            print(email + passWord )
-//            print(dataAuth)
-            
+            self?.customPushSignIn()
         })
+    
+       // })
         
         
-//        DispatchQueue.main.async {
-//            self.customPushSignIn()
-//        }
-        
-        btDangNhap.addTarget(self, action: #selector(customPushSignIn), for: .touchUpInside)
         
     }
     
@@ -123,6 +113,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
         let tabbar = TabBarViewController()
         tabbar.modalPresentationStyle = .fullScreen
         self.present(tabbar, animated: true, completion: nil)
+
     }
     
     func alertUserLoginError() {
