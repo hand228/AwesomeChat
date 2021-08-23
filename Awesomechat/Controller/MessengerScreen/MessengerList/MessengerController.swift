@@ -19,10 +19,10 @@ class MessengerController: UIViewController {
     var arrayChatRoom: [ChatRoom] = []
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.register(UINib(nibName: "MessengerTableViewCell", bundle: nil), forCellReuseIdentifier: "MessengerTableViewCellID")
         tableView.layer.cornerRadius = CGFloat(30)
         requestApiMesengerUser()
+        
     }
     
     @objc func tapImageIcon() {
@@ -36,26 +36,14 @@ class MessengerController: UIViewController {
     // MARK: REQUEST API MESSENGER
     func requestApiMesengerUser() {
         serverApiUser.requestApiUser(completionHandle: { (dataResuld) in
-
             self.servereMesenger.requestMesenger(completionHandle: {(arrayChatRoom)  in
                 self.arrayChatRoom = arrayChatRoom
                 
                 self.tableView.reloadData()
             })
-            
-            self.tableView.reloadData()
         })
         
     }
-    
-    
-//    func pushDataOnFirebase() {
-//        pushDataMesenger.pushDataChat(completion: { () in
-//
-//        }, messenger: "")
-//
-//    }
-    
     
 }
 

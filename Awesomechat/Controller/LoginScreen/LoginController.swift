@@ -22,6 +22,7 @@ class LoginController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         customStoryboard()
+        scrollView.keyboardDismissMode = .onDrag
         scrollView.alwaysBounceVertical = true
         scrollView.clipsToBounds = true
         
@@ -96,11 +97,6 @@ class LoginController: UIViewController, UITextFieldDelegate {
             }
             self?.customPushSignIn()
         })
-    
-       // })
-        
-        
-        
     }
     
     func isValidEmail(_ email: String) -> Bool {

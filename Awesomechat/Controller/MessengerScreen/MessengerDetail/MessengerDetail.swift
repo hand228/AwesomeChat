@@ -25,6 +25,9 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     let storage = Storage.storage().reference()
     let pushDataMessenger = PushDataMesenger()
     var currentTime: Int = Int(Date().timeIntervalSince1970)
+    var roomId: String = ""
+    var roomIdToFriend = ""
+    var userToFriend: DataUser?
     
     var imgSelecter = UIImageView()
     let txtInputChat = UITextField()
@@ -44,7 +47,9 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
         tableView.register(MessengerDetailCell.self, forCellReuseIdentifier: "MessengerDetailCellID")
         setupInputComponents()
         setupKeyboardObserver()
+        checkRoomId()
         view.addConstraint(bottomContraintTable!)
+        
         
     }
     
@@ -58,6 +63,23 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
         //NotificationCenter.default.removeObserver(self)
     }
      
+    func checkRoomId() {
+        print(roomIdToFriend)
+        guard let roomId = dataChatRoom?.roomId else {
+            self.roomId = roomIdToFriend
+            return
+            // lấy ra cái idChatRoom truyền từ friend sang. lấy bằng cách cộng cái IDUID + USer.ID. và sau đó truyền sang nút push Data. Từ pushData sẽ push vào cái DataChatRoom, nếu mà có dữ liệu rồi chỉ cần lấy nó ra:
+            
+            
+        }
+        self.roomId = roomId
+        print(roomId)
+        
+        // cân truyền data User chỗ firend để lấy ra đc image... về màn này:
+        
+        
+        
+    }
     func setupKeyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -175,9 +197,11 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
         lbNameFriend.backgroundColor = UIColor(rgb: 0xffE5E5E5)
         
         //imgAvatarDetail.image = UIImage(named: "defauld")
-        let stringImg = URL(string: dataChatRoom?.participant?.userImgUrl ?? "")
+        guard let stringImg = URL(string: dataChatRoom?.participant?.userImgUrl ?? "") else {
+            return
+        }
         do {
-            let dataImg = try Data(contentsOf: stringImg!)
+            let dataImg = try Data(contentsOf: stringImg)
             imgAvatarDetail.image = UIImage(data: dataImg)
         } catch {
              imgAvatarDetail.image = UIImage(named: "defauld")
@@ -324,7 +348,14 @@ extension MessengerDetail: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let dataChatRow = dataChatRoom?.chatMessages[indexPath.row]
-        let stringImg = URL(string: dataChatRoom?.participant?.userImgUrl ?? "")
+        var stringImg: URL?
+        do {
+            let stringImgs = try URL(string: dataChatRoom?.participant?.userImgUrl ?? "")
+            stringImg = stringImgs
+        } catch {
+            print(error)
+        }
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerDetailCellID", for: indexPath) as! MessengerDetailCell
         cell.type = dataChatRow?.type ?? ""
         
@@ -332,27 +363,10 @@ extension MessengerDetail: UITableViewDataSource {
             cell.lbContentMessenger.text = dataChatRow?.messenger
         
         } else if (dataChatRow?.type == "image") {
-            let urlString = URL(string: dataChatRow?.messenger ?? "")
-            
-            let task = URLSession.shared.dataTask(with: urlString!, completionHandler: { (data, reponse, error) in
-                guard error == nil else {
-                    return
-                }
-                guard let dataResuld = data else {
-                    return
-                }
-                DispatchQueue.main.async {
-                    
-                    cell.imgMessenger.image = UIImage(data: dataResuld)
-                }
-                
-            })
-            task.resume()
-            
-//            cell.imgMessenger.loadImageWidthUrlString(completion: { (dataResuld) in
-//                cell.imgMessenger.image = UIImage(data: dataResuld)
-//
-//            }, url: dataChatRow?.messenger ?? "")
+            cell.imgMessenger.loadImageWidthUrlString(completion: { (dataResuld) in
+                cell.imgMessenger.image = UIImage(data: dataResuld)
+
+            }, url: dataChatRow?.messenger ?? "")
             
         }
         

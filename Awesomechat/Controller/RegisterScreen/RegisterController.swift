@@ -16,10 +16,12 @@ class RegisterController: UIViewController {
     @IBOutlet weak var txtEmail: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
     @IBOutlet weak var btDangKy: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var serverRegister = ServerRegister()
     override func viewDidLoad() {
         super.viewDidLoad()
+        scrollView.keyboardDismissMode = .onDrag
         customStoryboard()
         
     }
@@ -86,14 +88,18 @@ class RegisterController: UIViewController {
             let pushData: DatabaseReference?
             pushData = Database.database().reference()
             let currentUser = Auth.auth().currentUser
-            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["email": email])
-            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userName": name])
-            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userId": currentUser?.uid ?? ""])
-            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userStatus": "offline"])
-            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userPhone": currentUser?.phoneNumber ?? "defauld"])
-            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userImgUrl": currentUser?.photoURL ?? "defauld"])
-            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(["userDateOfBirth": "defauld"])
             
+            // cần check lại cái thằng status.
+            let post = [
+                "email": email,
+                "userName": name,
+                "userId": currentUser?.uid ?? "",
+                "userStatus": "offline",
+                "userPhone": "defauld",
+                "userImgUrl": "defauld.png",
+                "userDateOfBirth": "defauld"
+            ] as [String : Any]
+            pushData?.child("users").child(Auth.auth().currentUser?.uid ?? "").updateChildValues(post)
             self.customPushMesenger()
             
         })

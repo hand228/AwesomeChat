@@ -90,6 +90,7 @@ extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource 
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        //print(section)
         let friendKey = friendsSectionTitles[section]
         if let friendValues = friendDict[friendKey] {
             return friendValues.count
@@ -119,6 +120,23 @@ extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource 
         label.textColor = UIColor.black
         view.addSubview(label)
         return view
+    }
+    
+    // Lấy id và truyền về màn detailMessenger:
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let friendKey = friendsSectionTitles[indexPath.section]
+        guard let friendValues = friendDict[friendKey] else {
+            return
+        }
+        print(friendValues[indexPath.row])
+        let messengerDetail = MessengerDetail()
+        messengerDetail.userToFriend = friendValues[indexPath.row].info
+        messengerDetail.roomIdToFriend = friendValues[indexPath.row].friendId
+        messengerDetail.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        messengerDetail.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(messengerDetail, animated: true, completion: nil)
+        
+        
     }
 }
 
