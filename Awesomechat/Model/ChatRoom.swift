@@ -7,6 +7,7 @@
 
 import Foundation
 import Firebase
+import FirebaseAuth
 
 class ChatRoom {
     
@@ -21,10 +22,23 @@ class ChatRoom {
         self.chatMessages = (snapShot.children.allObjects as? [DataSnapshot])?.map { ChatMessage(snapshot: $0) } ?? []
         
         if let lastMessage = self.chatMessages.last {
-            guard let userReceiver = self.serverUser.arrayLocalUser.first(where: { $0.userId == lastMessage.idReceiver}) else {
-                return
+            // Khi IDReceiver trở thành IDSender. Check lại paticipant phù hợp:
+            if ( Auth.auth().currentUser?.uid == lastMessage.idSender) {
+                guard let userReceiver = self.serverUser.arrayLocalUser.first(where: { $0.userId == lastMessage.idReceiver}) else {
+                    return
+                }
+                self.participant = userReceiver
+                
+            } else if ( Auth.auth().currentUser?.uid == lastMessage.idReceiver) {
+                guard let userReceiver = self.serverUser.arrayLocalUser.first(where: { $0.userId == lastMessage.idSender}) else {
+                    return
+                }
+                self.participant = userReceiver
+                
             }
-            self.participant = userReceiver
+            
+            
+            
         }
     }
     

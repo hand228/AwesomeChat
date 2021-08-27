@@ -72,12 +72,13 @@ class MessengerDetailCell: UITableViewCell {
                     //imgAvatarCell.image = UIImage(named: "")
 
                 } else if (type == "text") {
+                    
                     leadingDateMessenger.isActive = true
                     leadingLabelMessenger.isActive = true
                     trailingDateMessenger.isActive = false
                     trailingLabelMessenger.isActive = false
-                    topLabelMessenger.isActive = false
-                    bottomLabelMessenger.isActive = true
+                    topLabelMessenger.isActive = true
+                    bottomLabelMessenger.isActive = false
                     topDateMessenger.isActive = true
                     
                     leadingViewContentMessenger.isActive = true
@@ -206,25 +207,13 @@ class MessengerDetailCell: UITableViewCell {
             imgAvatarCell.heightAnchor.constraint(equalToConstant: 35),
             imgAvatarCell.widthAnchor.constraint(equalToConstant: 35),
             
-//            viewContentMessenger.topAnchor.constraint(equalTo: lbContentMessenger.topAnchor, constant: -15),
-//            viewContentMessenger.bottomAnchor.constraint(equalTo: lbContentMessenger.bottomAnchor, constant: 15),
-//            viewContentMessenger.leadingAnchor.constraint(equalTo: lbContentMessenger.leadingAnchor, constant: -15),
-//            viewContentMessenger.trailingAnchor.constraint(equalTo: lbContentMessenger.trailingAnchor, constant: 20),
-
-//            lbContentMessenger.topAnchor.constraint(equalTo: contentViews.topAnchor, constant: 30),
-//            lbContentMessenger.bottomAnchor.constraint(equalTo: contentViews.bottomAnchor, constant: -40),
-//            lbContentMessenger.widthAnchor.constraint(lessThanOrEqualToConstant: 285),
-
-
-            //lbDateMessenger.topAnchor.constraint(equalTo: viewContentMessenger.bottomAnchor, constant: 5),
             lbDateMessenger.bottomAnchor.constraint(equalTo: contentViews.bottomAnchor, constant: -10),
             lbDateMessenger.heightAnchor.constraint(equalToConstant: 20),
 
-            imgMessenger.topAnchor.constraint(equalTo: contentViews.topAnchor, constant: 15),
+            imgMessenger.topAnchor.constraint(equalTo: contentViews.topAnchor, constant: 0),
             imgMessenger.widthAnchor.constraint(lessThanOrEqualToConstant: 200),
             imgMessenger.heightAnchor.constraint(lessThanOrEqualToConstant: 200),
             
-           //// imgMessenger.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -10),
             
         ]
         NSLayoutConstraint.activate(activate)

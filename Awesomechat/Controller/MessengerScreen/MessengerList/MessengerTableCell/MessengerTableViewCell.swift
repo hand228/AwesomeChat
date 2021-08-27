@@ -17,6 +17,7 @@ class MessengerTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        customMessengerTableViewCell()
         
     }
 
@@ -25,6 +26,14 @@ class MessengerTableViewCell: UITableViewCell {
         
     }
     
-    
+    func customMessengerTableViewCell() {
+        lbName.font = UIFont(name: "Lato", size: 22)
+        
+        // check tin nhắn đã đọc hoặc đọc rồi, sau đó hiển thị lại các label và hiện thông báo trên avartar:
+        
+        
+        
+        print("cccccccc")
+    }
     
 }

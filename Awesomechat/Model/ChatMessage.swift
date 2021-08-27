@@ -17,6 +17,7 @@ struct ChatMessage {
     var time: String
     var timeLong: Int
     var type: String
+    var isRead: String
     
     init(snapshot: DataSnapshot) {
         self.messageId = snapshot.key
@@ -27,9 +28,10 @@ struct ChatMessage {
         self.time = snapshot.childSnapshot(forPath: "time").value as? String ?? ""
         self.timeLong = snapshot.childSnapshot(forPath: "timeLong").value as? Int ?? 0
         self.type = snapshot.childSnapshot(forPath: "type").value as? String ?? ""
+        self.isRead = snapshot.childSnapshot(forPath: "isRead").value as? String ?? "false"
     }
     
-    init(messageId: String, idSender: String, idReceiver: String, messenger: String, date: String, time: String, timeLong: Int, type: String) {
+    init(messageId: String, idSender: String, idReceiver: String, messenger: String, date: String, time: String, timeLong: Int, type: String, isRead: String) {
         self.messageId = messageId
         self.idSender = idSender
         self.idReceiver = idReceiver
@@ -38,5 +40,6 @@ struct ChatMessage {
         self.time = time
         self.timeLong = timeLong
         self.type = type
+        self.isRead = isRead
     }
 }

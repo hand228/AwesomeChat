@@ -26,7 +26,7 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     let pushDataMessenger = PushDataMesenger()
     var currentTime: Int = Int(Date().timeIntervalSince1970)
     var roomId: String = ""
-    var roomIdToFriend = ""
+    var roomIdToFriend: String = ""
     var userToFriend: DataUser?
     
     var imgSelecter = UIImageView()
@@ -47,7 +47,7 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
         tableView.register(MessengerDetailCell.self, forCellReuseIdentifier: "MessengerDetailCellID")
         setupInputComponents()
         setupKeyboardObserver()
-        checkRoomId()
+        //checkRoomId()
         view.addConstraint(bottomContraintTable!)
         
         
@@ -62,24 +62,7 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
         super.viewDidDisappear(animated)
         //NotificationCenter.default.removeObserver(self)
     }
-     
-    func checkRoomId() {
-        print(roomIdToFriend)
-        guard let roomId = dataChatRoom?.roomId else {
-            self.roomId = roomIdToFriend
-            return
-            // lấy ra cái idChatRoom truyền từ friend sang. lấy bằng cách cộng cái IDUID + USer.ID. và sau đó truyền sang nút push Data. Từ pushData sẽ push vào cái DataChatRoom, nếu mà có dữ liệu rồi chỉ cần lấy nó ra:
-            
-            
-        }
-        self.roomId = roomId
-        print(roomId)
-        
-        // cân truyền data User chỗ firend để lấy ra đc image... về màn này:
-        
-        
-        
-    }
+    
     func setupKeyboardObserver() {
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
@@ -231,6 +214,7 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     // MARK: PUSH DATA MESSENGER:
     @objc func tapImgSenderMessenger() {
+        self.tableView.reloadData()
         guard let textInput = txtInputChat.text else {
             return
         }
@@ -238,22 +222,31 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
             return
         }
         print(self.dataChatRoom?.chatMessages.last?.timeLong)
-        pushDataMessenger.pushDataChat(completion: { (dataChatMessage) in
-            let inserIndexChatMessage = self.dataChatRoom?.chatMessages.count
-            self.dataChatRoom?.chatMessages.append(dataChatMessage)
-            
-            self.tableView.insertRows(at: [IndexPath(item: (inserIndexChatMessage)! - 1, section: 0)], with: .bottom)
-            self.tableView.scrollToRow(at: IndexPath(item: (inserIndexChatMessage)! , section: 0), at: .bottom, animated: true)
-            
-            self.txtInputChat.text = nil
-            self.tableView.reloadData()
-            
-            
-        }, messenger: textInput, idReceiver: dataChatRoom?.participant?.userId ?? "", idSender: Auth.auth().currentUser?.uid ?? "", idChatRoom: dataChatRoom?.roomId ?? "", type: "text")
-        tableView.reloadData()
-        
+        print(dataChatRoom?.participant?.userId)
+        print(roomId)
         print(dataChatRoom?.participant?.userId ?? "")
         
+        pushDataMessenger.pushDataChat(completion: { (dataChatMessage) in
+            //let inserIndexChatMessage = self.dataChatRoom?.chatMessages.count
+            self.dataChatRoom?.chatMessages.append(dataChatMessage)
+            
+            if let inserIndexChatMessage = self.dataChatRoom?.chatMessages.count {
+                self.tableView.insertRows(at: [IndexPath(item: (inserIndexChatMessage) - 1, section: 0)], with: .bottom)
+                self.tableView.scrollToRow(at: IndexPath(item: (inserIndexChatMessage) - 1, section: 0), at: .bottom, animated: true)
+            } else {
+                self.tableView.insertRows(at: [IndexPath(item: 1, section: 0)], with: .bottom)
+                self.tableView.scrollToRow(at: IndexPath(item: 1, section: 0), at: .bottom, animated: true)
+            }
+            
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+            self.txtInputChat.text = nil
+           
+            
+            
+        }, messenger: textInput, idReceiver: dataChatRoom?.participant?.userId ?? roomIdToFriend, idSender: Auth.auth().currentUser?.uid ?? "", idChatRoom: dataChatRoom?.roomId ?? roomId, type: "text")
         
     }
     
@@ -315,8 +308,8 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
                     DispatchQueue.main.async {
                         self.tableView.reloadData()
                     }
-                }, messenger: urlString, idReceiver: self.dataChatRoom?.participant?.userId ?? "", idSender: Auth.auth().currentUser?.uid ?? "", idChatRoom: self.dataChatRoom?.roomId ?? "", type: "image")
-               //  self.tableView.reloadData()
+                }, messenger: urlString, idReceiver: self.dataChatRoom?.participant?.userId ?? self.roomIdToFriend, idSender: Auth.auth().currentUser?.uid ?? "", idChatRoom: self.dataChatRoom?.roomId ?? self.roomId, type: "image")
+               self.tableView.reloadData()
                 
             }
         })
@@ -348,14 +341,6 @@ extension MessengerDetail: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let dataChatRow = dataChatRoom?.chatMessages[indexPath.row]
-        var stringImg: URL?
-        do {
-            let stringImgs = try URL(string: dataChatRoom?.participant?.userImgUrl ?? "")
-            stringImg = stringImgs
-        } catch {
-            print(error)
-        }
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerDetailCellID", for: indexPath) as! MessengerDetailCell
         cell.type = dataChatRow?.type ?? ""
         
@@ -371,26 +356,21 @@ extension MessengerDetail: UITableViewDataSource {
         }
         
         do {
-            let dataImg = try Data(contentsOf: stringImg!)
+            let dataImg = try Data(contentsOf: URL(string: String(dataChatRoom?.participant?.userImgUrl ?? "defauld.png"))!)
             cell.imgAvatarCell.image = UIImage(data: dataImg)
         } catch {
             cell.imgAvatarCell.image = UIImage(named: "defauld")
         }
         
-        if (currentTime - (dataChatRow?.timeLong)!) <= 86400 {
+        if (currentTime - ((dataChatRow?.timeLong ?? 0))) <= 86400 {
             cell.lbDateMessenger.text = dataChatRow?.time
            
         } else  {
-            cell.lbDateMessenger.text = (dataChatRow?.date)! + " " + (dataChatRow?.time)!
+            cell.lbDateMessenger.text = ((dataChatRow?.date) ?? "") + " " + ((dataChatRow?.time) ?? "")
            
         }
         cell.isInComing = dataChatRow?.idSender != Auth.auth().currentUser?.uid
         return cell
     }
     
-//    func handleReloadTable() {
-//        self.dataChatRoom?.chatMessages.sort(by: { (message1 , message2) in
-//            return message1.timeLong > message2.timeLong
-//        })
-//    }
 }

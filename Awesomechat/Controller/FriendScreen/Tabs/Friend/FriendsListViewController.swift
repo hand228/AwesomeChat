@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import Firebase
 
 class FriendsListViewController: UIViewController {
 
@@ -22,6 +24,10 @@ class FriendsListViewController: UIViewController {
     var friendsSectionTitles: [String] = []
 //    var filterFriends: [DataFriend] = []
     
+    var arrayChatRoom: [String: [ChatRoom]] = [:]
+    var chatRoomSection: [String] = []
+    var serverApiUser = ServerApiUser.shared
+    var servereMesenger = ServerMesenger()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +43,7 @@ class FriendsListViewController: UIViewController {
         // Hiển thị dữ liệu
         configureTable()
         initData()
+        requestApiMesengerUser()
     }
     
     private func configureTable() {
@@ -128,14 +135,53 @@ extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource 
         guard let friendValues = friendDict[friendKey] else {
             return
         }
-        print(friendValues[indexPath.row])
+        
+        
         let messengerDetail = MessengerDetail()
         messengerDetail.userToFriend = friendValues[indexPath.row].info
         messengerDetail.roomIdToFriend = friendValues[indexPath.row].friendId
+        
+        let chatRoomKey = chatRoomSection[indexPath.section]
+        guard let chatRoomValue = arrayChatRoom[chatRoomKey] else {
+            return
+        }
+        messengerDetail.dataChatRoom = chatRoomValue[indexPath.row]
+        
+//        print(friendValues[indexPath.row].friendId)
+//        print(friendValues[indexPath.row].info)
+//        print(indexPath.section)
+//        print(indexPath.row)
+        
+        messengerDetail.roomId = Auth.auth().currentUser!.uid + friendValues[indexPath.row].friendId
+        
+        
         messengerDetail.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         messengerDetail.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
         self.present(messengerDetail, animated: true, completion: nil)
         
+        
+    }
+    
+    // cần phải lấy hết data của ChatRoom khi bấm vào từng bạn bè cụ thể: làm tương tự như CellMessege
+    
+    // MARK: REQUEST API MESSENGER
+    func requestApiMesengerUser() {
+        serverApiUser.requestApiUser(completionHandle: { (dataResuld) in
+            self.servereMesenger.requestMesenger(completionHandle: {(arrayChatRooms)  in
+                var arrayChatRoomValue: [ChatRoom] = []
+                
+                for i in 0..<arrayChatRooms.count {
+                    if (Auth.auth().currentUser?.uid == arrayChatRooms[i].chatMessages[0].idSender  || Auth.auth().currentUser?.uid == arrayChatRooms[i].chatMessages[0].idReceiver) {
+                        arrayChatRoomValue.append(arrayChatRooms[i])
+                        
+                        
+                    }
+                }
+                //self.arrayChatRoom = arrayChatRoomValue
+                
+                
+            })
+        })
         
     }
 }
