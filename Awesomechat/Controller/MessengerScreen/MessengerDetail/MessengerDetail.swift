@@ -9,6 +9,11 @@ import UIKit
 import FirebaseAuth
 import FirebaseStorage
 
+
+protocol callCheckIsRead {
+    func setValueCounter(setCounter: Int)
+}
+
 class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -36,7 +41,8 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     var dataChatRoom: ChatRoom?
     var bottomContraintTable: NSLayoutConstraint?
     var trailingContraintInputChat: NSLayoutConstraint?
-    
+    var delegate: callCheckIsRead? = nil
+    var messengerController = MessengerController()
     override func viewDidLoad() {
         super.viewDidLoad()
         view.addSubview(viewContentChat)
@@ -121,7 +127,6 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     // MARK: HANDLE KEYBOARD HIDE
     @objc func handleKeyboardWillHide() {
-        //bottomContraint!.constant = 0
         bottomContraintTable?.constant = 75
     }
     
@@ -207,8 +212,15 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     }
     
     @IBAction func btBackToListMessenger(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
         
+        
+        // truyền giá trị là 0 về cái Messengerontroller để nó hiển thị lại giao diện của cái cell mà không cần load lại Data. truyền bằng delagate:
+        if (self.delegate != nil) {
+            self.delegate?.setValueCounter(setCounter: 0)
+            
+        }
+        // messengerController.requestApiMesengerUser()
+        self.dismiss(animated: true, completion: nil)
     }
     
     
