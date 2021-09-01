@@ -40,6 +40,7 @@ class MessengerController: UIViewController, callCheckIsRead {
         
     }
     
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         
@@ -148,9 +149,7 @@ extension MessengerController: UITableViewDataSource {
             cell.lbMesenger.textColor = UIColor.black
             cell.lbHours.text = arrayChatRoom[indexPath.row].chatMessages.last?.time
             cell.lbHours.textColor = UIColor.black
-            
-            // Custom Image Cycle:
-           // cell.customImgCycleIsRead(numberIsRead: checkIsRead[indexPath.row])
+            cell.customImgIsRead(numberIsRead: checkIsRead[indexPath.row])
 
             
         } else {
@@ -161,8 +160,7 @@ extension MessengerController: UITableViewDataSource {
             
             cell.lbHours.text = arrayChatRoom[indexPath.row].chatMessages.last?.time
             cell.lbHours.textColor = UIColor(rgb: 0xff999999)
-            
-            cell.customImgNoIsRead()
+            //cell.customImgNoIsRead()
         }
         
         do {

@@ -14,7 +14,7 @@ class MessengerTableViewCell: UITableViewCell {
     var lbHours = UILabel()
     var imgAvatar = UIImageView()
     var viewContent = UIView()
-    var strocke = UIView()
+    var lbNumber = UILabel()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,9 +26,39 @@ class MessengerTableViewCell: UITableViewCell {
         
     }
     
-    func customImgCycleIsRead(numberIsRead: Int) {
-        imgAvatar.clipsToBounds = true
-        viewContent.addSubview(imgAvatar)
+    func customImgIsRead(numberIsRead: Int) {
+        
+        viewContent.backgroundColor = UIColor(rgb: 0xff4356B4)
+        viewContent.clipsToBounds = false
+        
+        imgAvatar.backgroundColor = UIColor.white
+        imgAvatar.layer.borderWidth = 4
+        imgAvatar.layer.borderColor = UIColor.white.cgColor
+        imgAvatar.clipsToBounds = false
+        
+        viewContent.addSubview(lbNumber)
+        lbNumber.translatesAutoresizingMaskIntoConstraints = false
+        
+        
+        NSLayoutConstraint(item: lbNumber, attribute: .centerX, relatedBy: .equal, toItem: viewContent, attribute: .centerX, multiplier: 1.75, constant: 0).isActive = true
+        NSLayoutConstraint(item: lbNumber, attribute: .centerY, relatedBy: .equal, toItem: viewContent, attribute: .centerY, multiplier: 0.5, constant: 0).isActive = true
+        lbNumber.heightAnchor.constraint(equalToConstant: 25).isActive = true
+        lbNumber.widthAnchor.constraint(equalToConstant: 25).isActive = true
+        
+        lbNumber.backgroundColor = UIColor(rgb: 0xffC92323)
+        lbNumber.clipsToBounds = true
+        lbNumber.layer.cornerRadius = CGFloat(12)
+        lbNumber.layer.borderColor = UIColor.white.cgColor
+        lbNumber.layer.borderWidth = 2.5
+        lbNumber.text = String(numberIsRead)
+        lbNumber.textColor = UIColor.white
+        lbNumber.textAlignment = .center
+        lbNumber.font = UIFont(name: "Lato", size: 12)
+        
+        lbNumber.sizeToFit()
+        
+        
+        
         
     }
     
@@ -45,18 +75,20 @@ class MessengerTableViewCell: UITableViewCell {
         lbMesenger.translatesAutoresizingMaskIntoConstraints = false
         lbHours.translatesAutoresizingMaskIntoConstraints = false
         imgAvatar.translatesAutoresizingMaskIntoConstraints = false
-        // trong này sẽ contraint. Còn trong hàm kia sẽ dùng AddSubView()
         
         viewContent.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22).isActive = true
         viewContent.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 12).isActive = true
-        viewContent.heightAnchor.constraint(equalToConstant: 58).isActive = true
-        viewContent.widthAnchor.constraint(equalToConstant: 58).isActive = true
-        viewContent.backgroundColor = UIColor.cyan
+        viewContent.heightAnchor.constraint(equalToConstant: 56).isActive = true
+        viewContent.widthAnchor.constraint(equalToConstant: 56).isActive = true
+        viewContent.layer.cornerRadius = CGFloat(28)
         
-        imgAvatar.topAnchor.constraint(equalTo: viewContent.topAnchor, constant: 5).isActive = true
-        imgAvatar.leadingAnchor.constraint(equalTo: viewContent.leadingAnchor, constant: 5).isActive = true
-        imgAvatar.trailingAnchor.constraint(equalTo: viewContent.trailingAnchor, constant: -5).isActive = true
-        imgAvatar.bottomAnchor.constraint(equalTo: viewContent.bottomAnchor, constant: -5).isActive = true
+        
+        imgAvatar.topAnchor.constraint(equalTo: viewContent.topAnchor, constant: 3).isActive = true
+        imgAvatar.leadingAnchor.constraint(equalTo: viewContent.leadingAnchor, constant: 3).isActive = true
+        imgAvatar.trailingAnchor.constraint(equalTo: viewContent.trailingAnchor, constant: -3).isActive = true
+        imgAvatar.bottomAnchor.constraint(equalTo: viewContent.bottomAnchor, constant: -3).isActive = true
+        imgAvatar.layer.cornerRadius = CGFloat(24)
+        
         
         lbName.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22).isActive = true
         lbName.heightAnchor.constraint(equalToConstant: 21).isActive = true
@@ -74,16 +106,11 @@ class MessengerTableViewCell: UITableViewCell {
         lbHours.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12).isActive = true
         lbHours.heightAnchor.constraint(equalToConstant: 21).isActive = true
         
-        
-        
-        
-        
-        
     }
     
-    func customImgNoIsRead() {
-        //viewContent.addSubview(imgAvatar)
-        
-    }
+//    func customImgNoIsRead() {
+//        
+//        
+//    }
     
 }
