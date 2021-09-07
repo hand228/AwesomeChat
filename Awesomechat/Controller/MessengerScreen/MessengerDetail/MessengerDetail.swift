@@ -9,11 +9,6 @@ import UIKit
 import FirebaseAuth
 import FirebaseStorage
 
-
-protocol callCheckIsRead {
-    func setValueCounter(setCounter: Int)
-}
-
 class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var tableView: UITableView!
@@ -41,7 +36,6 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     var dataChatRoom: ChatRoom?
     var bottomContraintTable: NSLayoutConstraint?
     var trailingContraintInputChat: NSLayoutConstraint?
-    var delegate: callCheckIsRead? = nil
     var messengerController = MessengerController()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,7 +60,7 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
-        //NotificationCenter.default.removeObserver(self)
+        
     }
     
     func setupKeyboardObserver() {
@@ -75,7 +69,6 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardDidShow), name: UIResponder.keyboardDidShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(handleKeyboardDidHide), name: UIResponder.keyboardDidHideNotification, object: nil)
         
-//        bottomContraint = NSLayoutConstraint(item: viewContentChat!, attribute: .bottom, relatedBy: .equal, toItem: view, attribute: .bottom, multiplier: 1, constant: 0)
         bottomContraintTable = NSLayoutConstraint(item: tableView!, attribute: .bottom, relatedBy: .equal, toItem: view.safeAreaLayoutGuide, attribute: .bottom, multiplier: 1, constant: 75)
         
     }
@@ -90,7 +83,7 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
         guard let keyboardValue = (notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue else {
             return
         }
-        //bottomContraint?.constant = -keyboardValue.height
+        
         bottomContraintTable?.constant = -keyboardValue.height - 40
         UIView.animate(withDuration: 0, delay: 0, options: .curveEaseOut, animations: {
             self.view.layoutIfNeeded()
@@ -132,7 +125,7 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     @objc func handleKeyboardDidHide() {
         viewContentChat.translatesAutoresizingMaskIntoConstraints = false
-        viewContentChat.removeConstraint(trailingContraintInputChat!)
+        //viewContentChat.removeConstraint(trailingContraintInputChat!)
         imgSenderMessenger.removeFromSuperview()
     }
     
@@ -198,12 +191,11 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
         
         // MARK: CHECK CURRENT TIME
         
-        if (currentTime - (dataChatRoom?.chatMessages.last!.timeLong)!) > 86400 {
+        if ((currentTime - (dataChatRoom?.chatMessages.last!.timeLong)!) > 86400 && (currentTime - (dataChatRoom?.chatMessages.last!.timeLong)!) < 172800) {
             lbDateStarMessenger.text = "Hôm qua"
         } else if (currentTime - ((dataChatRoom?.chatMessages.last!.timeLong)!) <= 86400 ) {
             lbDateStarMessenger.text = "Hôm nay"
         } else {
-            print(dataChatRoom?.chatMessages.last?.date)
             lbDateStarMessenger.text = dataChatRoom?.chatMessages.last?.date
         }
         
@@ -214,11 +206,6 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     @IBAction func btBackToListMessenger(_ sender: Any) {
         
         
-        // truyền giá trị là 0 về cái Messengerontroller để nó hiển thị lại giao diện của cái cell mà không cần load lại Data. truyền bằng delagate:
-        if (self.delegate != nil) {
-            self.delegate?.setValueCounter(setCounter: 0)
-            
-        }
         // messengerController.requestApiMesengerUser()
         self.dismiss(animated: true, completion: nil)
     }

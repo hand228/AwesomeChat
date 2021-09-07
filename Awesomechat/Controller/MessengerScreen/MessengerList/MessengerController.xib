@@ -9,9 +9,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MessengerController" customModule="Awesomechat" customModuleProvider="target">
             <connections>
+                <outlet property="imgIconChat" destination="Z6c-qC-a4i" id="UXB-9M-6m5"/>
+                <outlet property="lbTitle" destination="pmn-ow-JBD" id="zQR-Ny-ysL"/>
+                <outlet property="searchBar" destination="8p9-lR-qJc" id="X6q-rf-PJq"/>
                 <outlet property="tableView" destination="ATN-pg-uS9" id="5ta-Bj-dlh"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
-                <outlet property="viewHeader" destination="9QZ-MV-DjQ" id="BBc-Vm-eEZ"/>
+                <outlet property="viewHeader" destination="4R3-8b-NjF" id="20N-JZ-1eX"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -27,24 +30,66 @@
                         <outlet property="delegate" destination="-1" id="9W3-iz-2yO"/>
                     </connections>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9QZ-MV-DjQ" customClass="MessengerHeader" customModule="Awesomechat" customModuleProvider="target">
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4R3-8b-NjF">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tin Nhắn" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pmn-ow-JBD">
+                            <rect key="frame" x="12" y="54" width="184" height="31"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="184" id="LSq-Tx-fJL"/>
+                                <constraint firstAttribute="height" constant="31" id="f58-vh-79k"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="create new message" translatesAutoresizingMaskIntoConstraints="NO" id="Z6c-qC-a4i">
+                            <rect key="frame" x="367" y="55" width="35" height="35"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="35" id="RNx-XI-0et"/>
+                                <constraint firstAttribute="height" constant="35" id="UvT-ph-ItF"/>
+                            </constraints>
+                        </imageView>
+                        <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="    Tìm kiếm tin nhắn..." showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8p9-lR-qJc">
+                            <rect key="frame" x="12" y="125" width="390" height="44"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="Wen-vk-mHv"/>
+                            </constraints>
+                            <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="-1" id="YYN-yW-00s"/>
+                            </connections>
+                        </searchBar>
+                    </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="8p9-lR-qJc" secondAttribute="trailing" constant="12" id="2gX-DQ-YfL"/>
+                        <constraint firstAttribute="trailing" secondItem="Z6c-qC-a4i" secondAttribute="trailing" constant="12" id="H8A-ug-EyK"/>
+                        <constraint firstItem="8p9-lR-qJc" firstAttribute="leading" secondItem="4R3-8b-NjF" secondAttribute="leading" constant="12" id="HgB-xo-lEL"/>
+                        <constraint firstItem="Z6c-qC-a4i" firstAttribute="top" secondItem="4R3-8b-NjF" secondAttribute="top" constant="55" id="Hn6-KC-bZ5"/>
+                        <constraint firstItem="pmn-ow-JBD" firstAttribute="top" secondItem="4R3-8b-NjF" secondAttribute="top" constant="54" id="ZSb-Zh-BrV"/>
+                        <constraint firstItem="8p9-lR-qJc" firstAttribute="top" secondItem="Z6c-qC-a4i" secondAttribute="bottom" constant="35" id="bYy-bu-7hp"/>
+                        <constraint firstItem="pmn-ow-JBD" firstAttribute="leading" secondItem="4R3-8b-NjF" secondAttribute="leading" constant="12" id="lXn-jk-0oB"/>
+                    </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="0.23921568627450979" green="0.81176470588235294" blue="0.81176470588235294" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ATN-pg-uS9" secondAttribute="trailing" id="HF1-4m-hVB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="9QZ-MV-DjQ" secondAttribute="trailing" id="KEP-6a-sHu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="4R3-8b-NjF" secondAttribute="trailing" id="MyQ-es-pIc"/>
                 <constraint firstItem="ATN-pg-uS9" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="180" id="NI6-n1-ESx"/>
-                <constraint firstItem="ATN-pg-uS9" firstAttribute="top" secondItem="9QZ-MV-DjQ" secondAttribute="bottom" id="VzH-8u-d8a"/>
-                <constraint firstItem="9QZ-MV-DjQ" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="g16-Oq-xuy"/>
+                <constraint firstItem="ATN-pg-uS9" firstAttribute="top" secondItem="4R3-8b-NjF" secondAttribute="bottom" id="VwE-9n-t2l"/>
+                <constraint firstItem="4R3-8b-NjF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="gJ8-It-fWc"/>
                 <constraint firstItem="ATN-pg-uS9" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="sT6-EJ-xbF"/>
+                <constraint firstItem="4R3-8b-NjF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="saT-eW-6jH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="ATN-pg-uS9" secondAttribute="bottom" id="u2U-vD-WiW"/>
-                <constraint firstItem="9QZ-MV-DjQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="zHq-xJ-Avs"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
         </view>
     </objects>
+    <resources>
+        <image name="create new message" width="35" height="35"/>
+    </resources>
 </document>

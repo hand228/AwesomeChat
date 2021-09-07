@@ -44,8 +44,6 @@
 		846FDAAD26CE68AF00D785C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846FDAAC26CE68AF00D785C7 /* GoogleService-Info.plist */; };
 		8480EF4626B404B300C51870 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480EF4426B404B300C51870 /* MessengerController.swift */; };
 		8480EF4726B404B300C51870 /* MessengerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8480EF4526B404B300C51870 /* MessengerController.xib */; };
-		8480EF4926B4059500C51870 /* MessengerHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480EF4826B4059500C51870 /* MessengerHeader.swift */; };
-		8480EF4B26B405A400C51870 /* MessengerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8480EF4A26B405A400C51870 /* MessengerHeader.xib */; };
 		84CBE19826C6669E00332241 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBE19726C6669E00332241 /* Extension+UIImageView.swift */; };
 		AB78AA0026A6B4590024E439 /* PersonalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9DA26A6B4580024E439 /* PersonalController.swift */; };
 		AB78AA0126A6B4590024E439 /* PersonalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9DB26A6B4580024E439 /* PersonalController.xib */; };
@@ -119,8 +117,6 @@
 		846FDAAC26CE68AF00D785C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8480EF4426B404B300C51870 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
 		8480EF4526B404B300C51870 /* MessengerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerController.xib; sourceTree = "<group>"; };
-		8480EF4826B4059500C51870 /* MessengerHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerHeader.swift; sourceTree = "<group>"; };
-		8480EF4A26B405A400C51870 /* MessengerHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerHeader.xib; sourceTree = "<group>"; };
 		84CBE19726C6669E00332241 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
 		AB78A9DA26A6B4580024E439 /* PersonalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalController.swift; sourceTree = "<group>"; };
 		AB78A9DB26A6B4580024E439 /* PersonalController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalController.xib; sourceTree = "<group>"; };
@@ -326,8 +322,6 @@
 			children = (
 				AB78A9E626A6B4590024E439 /* MessengerTableViewCell.xib */,
 				AB78A9E726A6B4590024E439 /* MessengerTableViewCell.swift */,
-				8480EF4826B4059500C51870 /* MessengerHeader.swift */,
-				8480EF4A26B405A400C51870 /* MessengerHeader.xib */,
 			);
 			path = MessengerTableCell;
 			sourceTree = "<group>";
@@ -582,7 +576,6 @@
 				D7A0BC37268D6AC500842C93 /* Main.storyboard in Resources */,
 				1835434226B0F2D400DA51ED /* TabBarViewController.xib in Resources */,
 				1835436526B0FAA700DA51ED /* Lato-Thin.ttf in Resources */,
-				8480EF4B26B405A400C51870 /* MessengerHeader.xib in Resources */,
 				1835436826B0FAA700DA51ED /* Lato-Regular.ttf in Resources */,
 				18E12E0E26C052FB0079DE4D /* AllTableViewCell.xib in Resources */,
 				AB78AA0D26A6B4590024E439 /* RegisterController.xib in Resources */,
@@ -665,7 +658,6 @@
 				B2C73F8426A114E700346314 /* ChatRoom.swift in Sources */,
 				B2C73F8626A1174700346314 /* ChatMessage.swift in Sources */,
 				8480EF4626B404B300C51870 /* MessengerController.swift in Sources */,
-				8480EF4926B4059500C51870 /* MessengerHeader.swift in Sources */,
 				D7A0BC5E268DBCC000842C93 /* ServerApiUser.swift in Sources */,
 				AB78AA0026A6B4590024E439 /* PersonalController.swift in Sources */,
 				1850C13126C22EB3007B012D /* Extension+TableView.swift in Sources */,

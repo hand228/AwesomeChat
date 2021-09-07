@@ -83,10 +83,10 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qys-5w-fPx">
-                    <rect key="frame" x="162" y="109" width="90" height="28"/>
+                    <rect key="frame" x="132" y="109" width="150" height="28"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N3i-Qu-cMP">
-                            <rect key="frame" x="8" y="8" width="74" height="12"/>
+                            <rect key="frame" x="8" y="8" width="134" height="12"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -94,7 +94,7 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="90" id="HdO-LA-7ao"/>
+                        <constraint firstAttribute="width" constant="150" id="HdO-LA-7ao"/>
                         <constraint firstAttribute="bottom" secondItem="N3i-Qu-cMP" secondAttribute="bottom" constant="8" id="HqX-61-OOa"/>
                         <constraint firstAttribute="height" constant="28" id="Jis-zz-hp8"/>
                         <constraint firstItem="N3i-Qu-cMP" firstAttribute="leading" secondItem="Qys-5w-fPx" secondAttribute="leading" constant="8" id="mUh-ev-K5h"/>
