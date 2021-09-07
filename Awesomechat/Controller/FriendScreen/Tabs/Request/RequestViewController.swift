@@ -119,7 +119,6 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         var swipeConfiguration = UISwipeActionsConfiguration()
         let person = group[indexPath.section][indexPath.row]
-        print("Position of tableview at section and row \(self.group[indexPath.section][indexPath.row])")
         if indexPath.section == 0 {
             let deleteAction = UIContextualAction(style: .destructive, title: "Từ chối") { (action, sourceView, completionHandler) in
                 FriendAPI.shared.unfriend(withID: person.friendId)
@@ -169,6 +168,14 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
             return 0
         }
         return 30
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        visitor = group[indexPath.section][indexPath.row].info
+        let vc = NewConversation()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
     }
     
     @objc func deleteRow(_ sender: UIButton) {

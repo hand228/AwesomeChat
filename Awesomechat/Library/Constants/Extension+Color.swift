@@ -32,6 +32,8 @@ extension UIColor {
     static var counterBackground = UIColor(red: 201.0/255.0, green: 35.0/255.0, blue: 35.0/255.0, alpha: 1)
     static var colorTop = UIColor(red: 67.0 / 255.0, green: 86.0 / 255.0, blue: 180.0 / 255.0, alpha: 1.0).cgColor
     static var colorBottom = UIColor(red: 61.0 / 255.0, green: 207.0 / 255.0, blue: 207.0 / 255.0, alpha: 1.0).cgColor
+//    #E5E5E5
+    static var colorBackgroundMessages = UIColor(red: 229.0/255.0, green: 229.0/255.0, blue: 229.0/255.0, alpha: 1)
 }
 
 class Colors {

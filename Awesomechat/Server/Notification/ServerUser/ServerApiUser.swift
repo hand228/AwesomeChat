@@ -24,9 +24,9 @@ class ServerApiUser {
             guard error == nil else {
                 return
             }
+            
             let listUser = (dataSnapshot.children.allObjects as? [DataSnapshot])?.map {
                 DataUser(snapShot: $0)
-
             }
             self.arrayLocalUser = listUser ?? []
             DispatchQueue.main.async {

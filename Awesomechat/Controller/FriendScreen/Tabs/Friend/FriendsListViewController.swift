@@ -20,6 +20,10 @@ class FriendsListViewController: UIViewController {
     
     var friendDict: [String: [DataFriend]] = [:]
     var friendsSectionTitles: [String] = []
+    let servereMesenger = ServerMesenger()
+    let serverApiUser = ServerApiUser.shared
+    let pushDataMesenger = PushDataMesenger()
+    var arrayChatRoom: [ChatRoom] = []
 //    var filterFriends: [DataFriend] = []
     
     
@@ -37,6 +41,7 @@ class FriendsListViewController: UIViewController {
         // Hiển thị dữ liệu
         configureTable()
         initData()
+        requestApiMesengerUser()
     }
     
     private func configureTable() {
@@ -81,6 +86,21 @@ class FriendsListViewController: UIViewController {
             }
         }
     }
+    
+    // MARK: REQUEST API MESSENGER
+    func requestApiMesengerUser() {
+        serverApiUser.requestApiUser(completionHandle: { (dataResult) in
+
+            self.servereMesenger.requestMesenger(completionHandle: {(arrayChatRoom)  in
+                self.arrayChatRoom = arrayChatRoom
+                
+                self.friendsList.reloadData()
+            })
+            
+            self.friendsList.reloadData()
+        })
+        
+    }
 }
 
 extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource {
@@ -119,6 +139,17 @@ extension FriendsListViewController: UITableViewDelegate, UITableViewDataSource 
         label.textColor = UIColor.black
         view.addSubview(label)
         return view
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let friendKey = friendsSectionTitles[indexPath.section]
+        if let friendValues = friendDict[friendKey] {
+            visitor = friendValues[indexPath.row].info
+        }
+        let vc = NewConversation()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
     }
 }
 

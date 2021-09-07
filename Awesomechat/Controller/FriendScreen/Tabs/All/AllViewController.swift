@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AllViewController: UIViewController {
 
@@ -18,18 +19,18 @@ class AllViewController: UIViewController {
         lbl.font = UIFont(name: "Lato-Bold", size: 17)
         return lbl
     }()
-    var allUsers: [DataUser] = []
     var allFriends: [DataFriend] = []
     var userDict: [String: [DataUser]] = [:]
     var userSectionTitles: [String] = []
+    var allUser: [DataUser] = []
+    let currentUserId = Auth.auth().currentUser?.uid
 
     override func viewDidLoad() {
         super.viewDidLoad()
-                
+        
         allTable.register(UINib(nibName: "AllTableViewCell", bundle: nil), forCellReuseIdentifier: "AllTableViewCellID")
         allTable.delegate = self
         allTable.dataSource = self
-//        allTable.scrollToBottom()
 
         // Thêm và ràng buộc label text khi dữ liệu rỗng
         view.addSubview(label)
@@ -46,8 +47,11 @@ class AllViewController: UIViewController {
 
     private func initData() {
         ServerApiUser.shared.requestApiUser { users in
-            for user in users {
-                self.allUsers = users
+            self.allUser = users
+            if let index = self.allUser.firstIndex( where: { $0.userId == self.currentUserId } ) {
+                self.allUser.remove(at: index)
+            }
+            for user in self.allUser {
                 var components = user.userName.components(separatedBy: " ")
                 let userKey = String(components.removeLast().prefix(1))
                 if var userValues = self.userDict[userKey] {
@@ -141,6 +145,10 @@ extension AllViewController: UITableViewDelegate, UITableViewDataSource {
         view.addSubview(label)
         return view
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//    }
 
     @objc func unfriend(_ sender: UIButton) {
         let point = sender.convert(CGPoint.zero, to: allTable)
@@ -190,6 +198,15 @@ extension AllViewController: UITableViewDelegate, UITableViewDataSource {
         FriendAPI().acceptFriendRequest(withID: userId.userId)
 
         sender.isHidden = true
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let userKey = userSectionTitles[indexPath.section]
+        visitor = userDict[userKey]![indexPath.row]
+        let vc = NewConversation()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
     }
 }
 

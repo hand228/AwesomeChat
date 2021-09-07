@@ -29,6 +29,7 @@
 		1835436D26B0FAA700DA51ED /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1835436226B0FAA700DA51ED /* Lato-ThinItalic.ttf */; };
 		1850C12D26C214B3007B012D /* EXtension+UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850C12C26C214B3007B012D /* EXtension+UISearchBar.swift */; };
 		1850C13126C22EB3007B012D /* Extension+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1850C13026C22EB3007B012D /* Extension+TableView.swift */; };
+		1860F1AC26DE2D03001BF31E /* NewConversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1860F1AA26DE2D03001BF31E /* NewConversation.swift */; };
 		18AB2A8926B802AF00FFB28D /* FriendsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18AB2A8726B802AF00FFB28D /* FriendsTableViewCell.swift */; };
 		18AB2A8A26B802AF00FFB28D /* FriendsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18AB2A8826B802AF00FFB28D /* FriendsTableViewCell.xib */; };
 		18BC45AB26C0DE2A00B040BD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 18BC45AA26C0DE2A00B040BD /* GoogleService-Info.plist */; };
@@ -103,6 +104,7 @@
 		1835436226B0FAA700DA51ED /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
 		1850C12C26C214B3007B012D /* EXtension+UISearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EXtension+UISearchBar.swift"; sourceTree = "<group>"; };
 		1850C13026C22EB3007B012D /* Extension+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+TableView.swift"; sourceTree = "<group>"; };
+		1860F1AA26DE2D03001BF31E /* NewConversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewConversation.swift; sourceTree = "<group>"; };
 		18AB2A8726B802AF00FFB28D /* FriendsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FriendsTableViewCell.swift; sourceTree = "<group>"; };
 		18AB2A8826B802AF00FFB28D /* FriendsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FriendsTableViewCell.xib; sourceTree = "<group>"; };
 		18BC45AA26C0DE2A00B040BD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 			children = (
 				8403D3DD26B841F400609CB9 /* MessengerList */,
 				8403D3D326B797AE00609CB9 /* MessengerDetail */,
+				1860F1AA26DE2D03001BF31E /* NewConversation.swift */,
 			);
 			path = MessengerScreen;
 			sourceTree = "<group>";
@@ -563,8 +566,6 @@
 				AB78AA0126A6B4590024E439 /* PersonalController.xib in Resources */,
 				18BC45AB26C0DE2A00B040BD /* GoogleService-Info.plist in Resources */,
 				1835435526B0F2F900DA51ED /* FriendsController.xib in Resources */,
-				1835434F26B0F2F900DA51ED /* RequestsViewController.xib in Resources */,
-				1835436A26B0FAA700DA51ED /* OFL.txt in Resources */,
 				D7A0BC39268D6AC700842C93 /* Assets.xcassets in Resources */,
 				AB78AA1626A6B4590024E439 /* LoginController.xib in Resources */,
 				1835436B26B0FAA700DA51ED /* Lato-BoldItalic.ttf in Resources */,
@@ -588,8 +589,6 @@
 				1835436826B0FAA700DA51ED /* Lato-Regular.ttf in Resources */,
 				18E12E0E26C052FB0079DE4D /* AllTableViewCell.xib in Resources */,
 				AB78AA0D26A6B4590024E439 /* RegisterController.xib in Resources */,
-				AB78AA1526A6B4590024E439 /* TableViewCell.xib in Resources */,
-				AB78AA1226A6B4590024E439 /* HomeViewController.xib in Resources */,
 				8403D3D726B797DD00609CB9 /* MessengerDetail.xib in Resources */,
 				8403D3DC26B7A6C600609CB9 /* MessengerDetailCell.xib in Resources */,
 				1835436C26B0FAA700DA51ED /* Lato-Light.ttf in Resources */,
@@ -650,6 +649,7 @@
 				D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */,
 				18AB2A8926B802AF00FFB28D /* FriendsTableViewCell.swift in Sources */,
 				D7A9F1A32692E4AA001AE5AB /* ServerLogin.swift in Sources */,
+				1860F1AC26DE2D03001BF31E /* NewConversation.swift in Sources */,
 				1809974426BB1B87003030B9 /* RequestTableViewCell.swift in Sources */,
 				D7A0BC5B268DB3F800842C93 /* DataUser.swift in Sources */,
 				AB9CA22F26A14287004AAA4D /* Extension+UIViewController.swift in Sources */,

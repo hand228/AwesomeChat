@@ -48,7 +48,13 @@ class MessengerController: UIViewController {
         
     }
     
-    
+    func showChatControllerForUser(_ user: DataUser) {
+        let newConversation = MessengerDetail()
+        newConversation.modalTransitionStyle = .crossDissolve
+        newConversation.modalPresentationStyle = .fullScreen
+        print("User: \(user)")
+        print("Hello")
+    }
 //    func pushDataOnFirebase() {
 //        pushDataMesenger.pushDataChat(completion: { () in
 //
@@ -88,12 +94,11 @@ extension MessengerController: UITableViewDataSource {
         cell.lbHours.text = arrayChatRoom[indexPath.row].chatMessages.last?.time
         //cell.textLabel?.text = arrayChatRoom[indexPath.row].chatMessages.last?.idReceiver
         do {
-               let dataImg = try Data(contentsOf: stringImg!)
-               cell.imgAvatar.image = UIImage(data: dataImg)
-           } catch {
-               cell.imgAvatar.image = UIImage(named: "default")
-           }
-        
+           let dataImg = try Data(contentsOf: stringImg!)
+           cell.imgAvatar.image = UIImage(data: dataImg)
+       } catch {
+           cell.imgAvatar.image = UIImage(named: "default")
+       }
         return cell
     }
     
@@ -103,5 +108,4 @@ extension MessengerController: UITableViewDataSource {
          }
          return 92
     }
-
 }

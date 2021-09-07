@@ -33,9 +33,7 @@ class FriendAPI {
 //    }
     func getMyFriends(completion: @escaping (([DataFriend]) -> Void)) {
         // currentUser đang bị trống. Sau này phải lấy thông tin từ đây
-//        let myId = Auth.auth().currentUser?.uid ?? ""
-        let myId = "zvFIO2osJJZhdcJtLd2kjyAHrfJ3"
-//        print("MyID: ===========\(myId)============")
+        let myId = Auth.auth().currentUser?.uid ?? ""
         ref.child("friend").observe(.value, with: { snapshot in
             let friends = (snapshot.childSnapshot(forPath: myId).children.allObjects as? [DataSnapshot])?.map {
                 DataFriend(snapshot: $0)
@@ -48,8 +46,7 @@ class FriendAPI {
     }
     
     public func unfriend(withID: String) {
-//        let myId = Auth.auth().currentUser?.uid ?? ""
-        let myId = "zvFIO2osJJZhdcJtLd2kjyAHrfJ3"
+        let myId = Auth.auth().currentUser?.uid ?? ""
         let ref = self.ref.child("friend").child(myId).child(withID)
         ref.removeValue() { error, _ in
             print(error?.localizedDescription ?? "Saved")
@@ -57,8 +54,7 @@ class FriendAPI {
     }
 
     public func acceptFriendRequest(withID: String) {
-//        let myId = Auth.auth().currentUser?.uid ?? ""
-        let myId = "zvFIO2osJJZhdcJtLd2kjyAHrfJ3"
+        let myId = Auth.auth().currentUser?.uid ?? ""
         let ref = self.ref.child("friend").child(myId).child(withID)
         ref.updateChildValues(["type": "friend"]) { error, _ in
             print(error?.localizedDescription ?? "Saved")
@@ -66,8 +62,7 @@ class FriendAPI {
     }
     
     public func addFriend(withID: String) {
-//        let myId = Auth.auth().currentUser?.uid ?? ""
-        let myId = "zvFIO2osJJZhdcJtLd2kjyAHrfJ3"
+        let myId = Auth.auth().currentUser?.uid ?? ""
         let value = ["friendId": withID, "type": "sendRequest"]
         let ref = self.ref.child("friend").child(myId).child(withID)
         ref.setValue(value) { error, _ in

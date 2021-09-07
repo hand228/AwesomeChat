@@ -7,9 +7,10 @@
 
 import UIKit
 
+var visitor: DataUser!
+
 class FriendsController: UIViewController {
     
-
     // Outlets
     @IBOutlet weak var headerLayer: UIView!
     @IBOutlet weak var bodyLayer: UIView!
@@ -17,7 +18,6 @@ class FriendsController: UIViewController {
     @IBOutlet weak var header: UIView!
     
     // Các button
-    
     @IBOutlet weak var friend: UILabel!
     @IBOutlet weak var all: UILabel!
     @IBOutlet weak var request: UILabel!
@@ -28,12 +28,12 @@ class FriendsController: UIViewController {
     @IBOutlet weak var requestView: UIView!
     @IBOutlet weak var separator: UIView!
 
-    
+    // UI Search
     @IBOutlet weak var searchText: UITextField!
-    
     @IBOutlet weak var requestsCounter: UILabel!
-    
     @IBOutlet weak var searchResultTable: UITableView!
+    @IBOutlet weak var nilSearchImg: UIImageView!
+    @IBOutlet weak var nilSearchTxt: UILabel!
     
     let gradient = CAGradientLayer()
     let friendsTab = FriendsListViewController(nibName: "FriendsListViewController", bundle: nil)
@@ -49,8 +49,12 @@ class FriendsController: UIViewController {
     var originalAllArr: [DataUser] = []
     var originalFriendsArr: [DataUser] = []
     var originalRequestsArr: [DataUser] = []
-
+    let servereMesenger = ServerMesenger()
+    let serverApiUser = ServerApiUser.shared
+    let pushDataMesenger = PushDataMesenger()
+    var arrayChatRoom: [ChatRoom] = []
     var searching: Bool = false
+    var messagesController: MessengerController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -63,7 +67,6 @@ class FriendsController: UIViewController {
         initTab()
         countFriendRequest()
         getData()
-        
 //        searchBar.setupSearchBar()
     }
     
@@ -98,15 +101,12 @@ class FriendsController: UIViewController {
         searchText.returnKeyType = .search
         searchText.font = UIFont(name: "Lato-Regular", size: 16)
         searchText.placeholder = "Tìm kiếm bạn bè..."
-//        let placeholder = searchText.placeholder ?? ""
-//        searchText.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.myGray])
         let iconView = UIImageView(frame:CGRect(x: 17, y: 5, width: 18, height: 18))
         iconView.image = UIImage(named: "search")
         let iconContainerView: UIView = UIView(frame:CGRect(x: 0, y: 0, width: 45, height: 30))
         iconContainerView.addSubview(iconView)
         searchText.leftView = iconContainerView
         searchText.leftViewMode = .always
-        
         searchResultTable.isHidden = true
         searchResultTable.separatorStyle = .none
     }
@@ -207,6 +207,21 @@ class FriendsController: UIViewController {
             self.searchResultTable.reloadData()
         }
     }
+    
+    // MARK: REQUEST API MESSENGER
+    func requestApiMesengerUser() {
+        serverApiUser.requestApiUser(completionHandle: { (dataResuld) in
+
+            self.servereMesenger.requestMesenger(completionHandle: {(arrayChatRoom)  in
+                self.arrayChatRoom = arrayChatRoom
+                
+                self.searchResultTable.reloadData()
+            })
+            
+            self.searchResultTable.reloadData()
+        })
+        
+    }
 
     // MARK: - Thêm action để di chuyển qua lại các tab
     @IBAction func clickBtn(_ sender: UIButton) {
@@ -266,14 +281,27 @@ class FriendsController: UIViewController {
     }
 }
 
+
 extension FriendsController: UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if searchText.text == "" {
             searchResultTable.isHidden = true
+            nilSearchImg.isHidden = true
+            nilSearchTxt.isHidden = true
             contentView.isHidden = false
             separator.isHidden = false
             header.isHidden = false
+        }
+        
+        if searchArrRes.isEmpty {
+            searchResultTable.isHidden = true
+            nilSearchImg.isHidden = false
+            nilSearchTxt.isHidden = false
+        } else {
+            searchResultTable.isHidden = false
+            nilSearchImg.isHidden = true
+            nilSearchTxt.isHidden = true
         }
         
         searchText.resignFirstResponder()
@@ -281,7 +309,6 @@ extension FriendsController: UITableViewDelegate, UITableViewDataSource, UITextF
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        
         searchResultTable.isHidden = false
         contentView.isHidden = true
         separator.isHidden = true
@@ -306,8 +333,8 @@ extension FriendsController: UITableViewDelegate, UITableViewDataSource, UITextF
         }
         
         self.searchResultTable.reloadData()
-        
         return true
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -349,7 +376,13 @@ extension FriendsController: UITableViewDelegate, UITableViewDataSource, UITextF
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
     }
-
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        visitor = searchArrRes[indexPath.row]
+        let vc = NewConversation()
+        vc.modalPresentationStyle = .fullScreen
+        vc.modalTransitionStyle = .crossDissolve
+        present(vc, animated: true, completion: nil)
+    }
     
 }

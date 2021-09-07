@@ -33,6 +33,7 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     var dataChatRoom: ChatRoom?
     var bottomContraintTable: NSLayoutConstraint?
     var trailingContraintInputChat: NSLayoutConstraint?
+    var user: DataUser?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,8 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
         setupInputComponents()
         setupKeyboardObserver()
         view.addConstraint(bottomContraintTable!)
+        
+        print("=========Visitor:\(visitor)")
         
     }
     
@@ -174,18 +177,18 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
         lbNameFriend.textColor = UIColor.black
         lbNameFriend.backgroundColor = UIColor(rgb: 0xffE5E5E5)
         
-        //imgAvatarDetail.image = UIImage(named: "defauld")
         let stringImg = URL(string: dataChatRoom?.participant?.userImgUrl ?? "")
+//        imgAvatarDetail.image = UIImage(named: "default")
         do {
             let dataImg = try Data(contentsOf: stringImg!)
             imgAvatarDetail.image = UIImage(data: dataImg)
         } catch {
-             imgAvatarDetail.image = UIImage(named: "defauld")
+             imgAvatarDetail.image = UIImage(named: "default")
         }
-        
+        lbDateStarMessenger.text = "Hôm nay"
+
         
         // MARK: CHECK CURRENT TIME
-        
         if (currentTime - (dataChatRoom?.chatMessages.last!.timeLong)!) > 86400 {
             lbDateStarMessenger.text = "Hôm qua"
         } else if (currentTime - ((dataChatRoom?.chatMessages.last!.timeLong)!) <= 86400 ) {
@@ -360,7 +363,7 @@ extension MessengerDetail: UITableViewDataSource {
             let dataImg = try Data(contentsOf: stringImg!)
             cell.imgAvatarCell.image = UIImage(data: dataImg)
         } catch {
-            cell.imgAvatarCell.image = UIImage(named: "defauld")
+            cell.imgAvatarCell.image = UIImage(named: "default")
         }
         
         if (currentTime - (dataChatRow?.timeLong)!) <= 86400 {
