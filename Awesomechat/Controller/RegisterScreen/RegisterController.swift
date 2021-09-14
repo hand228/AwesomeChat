@@ -18,7 +18,7 @@ class RegisterController: UIViewController {
     @IBOutlet weak var btDangKy: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     
-    var serverRegister = ServerRegister()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scrollView.keyboardDismissMode = .onDrag

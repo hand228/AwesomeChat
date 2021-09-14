@@ -41,6 +41,7 @@
 		8403D3D726B797DD00609CB9 /* MessengerDetail.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403D3D526B797DD00609CB9 /* MessengerDetail.xib */; };
 		8403D3DB26B7A6C600609CB9 /* MessengerDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8403D3D926B7A6C600609CB9 /* MessengerDetailCell.swift */; };
 		8403D3DC26B7A6C600609CB9 /* MessengerDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403D3DA26B7A6C600609CB9 /* MessengerDetailCell.xib */; };
+		842BB49F26F080670014733D /* ServerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BB49E26F080660014733D /* ServerLogin.swift */; };
 		846FDAAD26CE68AF00D785C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846FDAAC26CE68AF00D785C7 /* GoogleService-Info.plist */; };
 		8480EF4626B404B300C51870 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480EF4426B404B300C51870 /* MessengerController.swift */; };
 		8480EF4726B404B300C51870 /* MessengerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8480EF4526B404B300C51870 /* MessengerController.xib */; };
@@ -70,9 +71,7 @@
 		D7A0BC5B268DB3F800842C93 /* DataUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC5A268DB3F800842C93 /* DataUser.swift */; };
 		D7A0BC5E268DBCC000842C93 /* ServerApiUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A0BC5D268DBCC000842C93 /* ServerApiUser.swift */; };
 		D7A155C0268ECEA000A8E50B /* DataFriend.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A155BF268ECEA000A8E50B /* DataFriend.swift */; };
-		D7A155C7268F252E00A8E50B /* ServerRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A155C6268F252E00A8E50B /* ServerRegister.swift */; };
 		D7A55E0D2696DE8E000767F8 /* ServerMesenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A55E0C2696DE8E000767F8 /* ServerMesenger.swift */; };
-		D7A9F1A32692E4AA001AE5AB /* ServerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9F1A22692E4AA001AE5AB /* ServerLogin.swift */; };
 		D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A9F1A926931200001AE5AB /* Extension+UIView.swift */; };
 		D7AC16A326A1913E0082FF94 /* CallMethodRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */; };
 		D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7BA5CB026980C84001742DE /* ClassPushTabar.swift */; };
@@ -114,6 +113,7 @@
 		8403D3D526B797DD00609CB9 /* MessengerDetail.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerDetail.xib; sourceTree = "<group>"; };
 		8403D3D926B7A6C600609CB9 /* MessengerDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerDetailCell.swift; sourceTree = "<group>"; };
 		8403D3DA26B7A6C600609CB9 /* MessengerDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerDetailCell.xib; sourceTree = "<group>"; };
+		842BB49E26F080660014733D /* ServerLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerLogin.swift; sourceTree = "<group>"; };
 		846FDAAC26CE68AF00D785C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8480EF4426B404B300C51870 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
 		8480EF4526B404B300C51870 /* MessengerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerController.xib; sourceTree = "<group>"; };
@@ -146,9 +146,7 @@
 		D7A0BC5A268DB3F800842C93 /* DataUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataUser.swift; sourceTree = "<group>"; };
 		D7A0BC5D268DBCC000842C93 /* ServerApiUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerApiUser.swift; sourceTree = "<group>"; };
 		D7A155BF268ECEA000A8E50B /* DataFriend.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataFriend.swift; sourceTree = "<group>"; };
-		D7A155C6268F252E00A8E50B /* ServerRegister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerRegister.swift; sourceTree = "<group>"; };
 		D7A55E0C2696DE8E000767F8 /* ServerMesenger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerMesenger.swift; sourceTree = "<group>"; };
-		D7A9F1A22692E4AA001AE5AB /* ServerLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerLogin.swift; sourceTree = "<group>"; };
 		D7A9F1A926931200001AE5AB /* Extension+UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIView.swift"; sourceTree = "<group>"; };
 		D7AC16A226A1913E0082FF94 /* CallMethodRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallMethodRequest.swift; sourceTree = "<group>"; };
 		D7BA5CB026980C84001742DE /* ClassPushTabar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassPushTabar.swift; sourceTree = "<group>"; };
@@ -291,6 +289,13 @@
 			path = MessengerList;
 			sourceTree = "<group>";
 		};
+		8455A4A426E91DA10097F1B4 /* PersonalScreenCell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = PersonalScreenCell;
+			sourceTree = "<group>";
+		};
 		9FB58D69EDA6780F9A8FCBD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +307,7 @@
 		AB78A9D926A6B4580024E439 /* PersonalScreen */ = {
 			isa = PBXGroup;
 			children = (
+				8455A4A426E91DA10097F1B4 /* PersonalScreenCell */,
 				AB78A9DA26A6B4580024E439 /* PersonalController.swift */,
 				AB78A9DB26A6B4580024E439 /* PersonalController.xib */,
 			);
@@ -430,8 +436,7 @@
 			isa = PBXGroup;
 			children = (
 				D7A0BC5D268DBCC000842C93 /* ServerApiUser.swift */,
-				D7A155C6268F252E00A8E50B /* ServerRegister.swift */,
-				D7A9F1A22692E4AA001AE5AB /* ServerLogin.swift */,
+				842BB49E26F080660014733D /* ServerLogin.swift */,
 			);
 			path = ServerUser;
 			sourceTree = "<group>";
@@ -638,7 +643,6 @@
 				AB78AA1726A6B4590024E439 /* LoginController.swift in Sources */,
 				D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */,
 				18AB2A8926B802AF00FFB28D /* FriendsTableViewCell.swift in Sources */,
-				D7A9F1A32692E4AA001AE5AB /* ServerLogin.swift in Sources */,
 				1809974426BB1B87003030B9 /* RequestTableViewCell.swift in Sources */,
 				D7A0BC5B268DB3F800842C93 /* DataUser.swift in Sources */,
 				AB9CA22F26A14287004AAA4D /* Extension+UIViewController.swift in Sources */,
@@ -650,10 +654,10 @@
 				D78E610F269EEFA100D8FB96 /* Extension+Snapshot.swift in Sources */,
 				D7A0BC30268D6AC500842C93 /* AppDelegate.swift in Sources */,
 				AB78AA0C26A6B4590024E439 /* RegisterController.swift in Sources */,
+				842BB49F26F080670014733D /* ServerLogin.swift in Sources */,
 				18E12E0726C0501D0079DE4D /* AllViewController.swift in Sources */,
 				D7A55E0D2696DE8E000767F8 /* ServerMesenger.swift in Sources */,
 				1835435426B0F2F900DA51ED /* FriendsController.swift in Sources */,
-				D7A155C7268F252E00A8E50B /* ServerRegister.swift in Sources */,
 				18E12E0D26C052FB0079DE4D /* AllTableViewCell.swift in Sources */,
 				B2C73F8426A114E700346314 /* ChatRoom.swift in Sources */,
 				B2C73F8626A1174700346314 /* ChatMessage.swift in Sources */,
