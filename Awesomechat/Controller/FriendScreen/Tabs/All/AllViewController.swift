@@ -13,7 +13,7 @@ class AllViewController: UIViewController {
     
     let label: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Không có dữ liệu"
+        lbl.text = "Không có dữ liệu".localized()
         lbl.textColor = UIColor.headerText
         lbl.font = UIFont(name: "Lato-Bold", size: 17)
         return lbl
@@ -104,7 +104,7 @@ extension AllViewController: UITableViewDelegate, UITableViewDataSource {
                 return f.friendId == userValues[indexPath.row].userId
             })
             if friend == nil {
-                cell.btn.setTitle("Kết bạn", for: .normal)
+                cell.btn.setTitle("Kết bạn".localized(), for: .normal)
                 cell.btn.setTitleColor(UIColor.white, for: .normal)
                 cell.btn.backgroundColor = UIColor.myBlue
                 cell.btn.addTarget(self, action: #selector(addFriend), for: .touchUpInside)
@@ -112,12 +112,12 @@ extension AllViewController: UITableViewDelegate, UITableViewDataSource {
                 if friend?.type == FriendType.friend {
                     cell.btn.isHidden = true
                 } else if friend?.type == FriendType.sendRequest {
-                    cell.btn.setTitle("Huỷ", for: .normal)
+                    cell.btn.setTitle("Huỷ".localized(), for: .normal)
                     cell.btn.setTitleColor(UIColor.myBlue, for: .normal)
                     cell.btn.backgroundColor = .white
                     cell.btn.addTarget(self, action: #selector(unfriend), for: .touchUpInside)
                 } else if friend?.type == FriendType.friendRequest {
-                    cell.btn.setTitle("Đồng ý", for: .normal)
+                    cell.btn.setTitle("Đồng ý".localized(), for: .normal)
                     cell.btn.setTitleColor(UIColor.white, for: .normal)
                     cell.btn.backgroundColor = UIColor.myBlue
                     cell.btn.addTarget(self, action: #selector(acceptFriend), for: .touchUpInside)
@@ -153,7 +153,7 @@ extension AllViewController: UITableViewDelegate, UITableViewDataSource {
         let userId = userDict[userKey]![indexPath.row]
         FriendAPI().unfriend(withID: userId.userId)
 
-        sender.setTitle("Kết bạn", for: .normal)
+        sender.setTitle("Kết bạn".localized(), for: .normal)
         sender.setTitleColor(UIColor.white, for: .normal)
         sender.backgroundColor = UIColor.myBlue
     }
@@ -172,7 +172,7 @@ extension AllViewController: UITableViewDelegate, UITableViewDataSource {
         print("User: \(userId)")
         FriendAPI().addFriend(withID: userId.userId)
 
-        sender.setTitle("Huỷ", for: .normal)
+        sender.setTitle("Huỷ".localized(), for: .normal)
         sender.setTitleColor(UIColor.myBlue, for: .normal)
         sender.backgroundColor = .white
         sender.addTarget(self, action: #selector(unfriend), for: .touchUpInside)

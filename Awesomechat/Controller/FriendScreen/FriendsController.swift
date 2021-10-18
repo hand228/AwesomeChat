@@ -21,6 +21,7 @@ class FriendsController: UIViewController {
     @IBOutlet weak var friend: UILabel!
     @IBOutlet weak var all: UILabel!
     @IBOutlet weak var request: UILabel!
+    @IBOutlet weak var titleTab: UILabel!
     
     // Đường gạch chân
     @IBOutlet weak var friendView: UIView!
@@ -70,6 +71,12 @@ class FriendsController: UIViewController {
     // MARK: - Chỉnh sửa giao diện
     private func configureUI() {
         
+        // Title of Tab
+        titleTab.text = "Bạn bè".localized()
+        friend.text = "Bạn bè".localized().uppercased()
+        all.text = "Tất cả".localized().uppercased()
+        request.text = "Yêu cầu".localized().uppercased()
+        
         // Đổi màu cho header
         gradient.frame = headerLayer.bounds
         gradient.colors = [UIColor.colorTop, UIColor.colorBottom]
@@ -97,7 +104,7 @@ class FriendsController: UIViewController {
         searchText.clipsToBounds = true
         searchText.returnKeyType = .search
         searchText.font = UIFont(name: "Lato-Regular", size: 16)
-        searchText.placeholder = "Tìm kiếm bạn bè..."
+        searchText.placeholder = "Tìm kiếm bạn bè...".localized()
 //        let placeholder = searchText.placeholder ?? ""
 //        searchText.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.myGray])
         let iconView = UIImageView(frame:CGRect(x: 17, y: 5, width: 18, height: 18))
@@ -326,13 +333,13 @@ extension FriendsController: UITableViewDelegate, UITableViewDataSource, UITextF
         label.textColor = UIColor.headerText
         label.font = UIFont(name: "Lato-Bold", size: 16)
         if isFriendTab {
-            header = "Bạn bè"
+            header = "Bạn bè".localized()
             label.text = header.uppercased()
         } else if isAllTab == true {
-            header = "Tất cả"
+            header = "Tất cả".localized()
             label.text = header.uppercased()
         } else if isRequestTab == true {
-            header = "Yêu cầu"
+            header = "Yêu cầu".localized()
             label.text = header.uppercased()
         }
         view.addSubview(label)

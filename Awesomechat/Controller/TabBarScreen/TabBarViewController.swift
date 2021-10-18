@@ -51,6 +51,13 @@ class TabBarViewController: UIViewController {
 
     // MARK: - Custom UI Tabbar
     private func customUI() {
+        
+        // Title of children tab
+        mesLbl.text = "Tin nhắn".localized()
+        groupLbl.text = "Bạn bè".localized()
+        homeLbl.text = "Trang cá nhân".localized()
+        
+        // Config other UI
         layerOutside.backgroundColor = UIColor.myGray
         
         layerInside.layer.cornerRadius = layerInside.frame.size.height / 5

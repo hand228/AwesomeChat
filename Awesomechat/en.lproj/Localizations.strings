@@ -1,0 +1,29 @@
+/* 
+  Localizations.strings
+  Awesomechat
+
+  Created by MaiNQ on 18/10/2021.
+  
+*/
+
+"Tin nhắn" = "Message";
+"Bạn bè" = "Friend";
+"Trang cá nhân" = "Me";
+"Tìm kiếm bạn bè ..." = "Search ...";
+"Bạn bè" = "Friend";
+"Tất cả" = "All";
+"Yêu cầu" = "Request";
+"Kết bạn" = "Add";
+"Huỷ" = "Cancel";
+"Chấp nhận" = "Accepted";
+"Từ chối" = "Remove";
+"Không có dữ liệu" = "No data";
+"Nhập thêm thông tin" = "Plese enter information to log in";
+"  Nhập tin nhắn..." = "  Messaging...";
+"Hôm qua" = "Yesterday";
+"Hôm nay" = "Today";
+"Mật khẩu" = "Password";
+"Điền thông tin để tạo tài khoản" = "Plese enter information to creat a account";
+"Huỷ bỏ" = "Dismiss";
+"Đã gửi kết bạn" = "Add friends";
+"Lời mời kết bạn" = "Friend requests";
