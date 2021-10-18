@@ -12,7 +12,7 @@ class FriendsListViewController: UIViewController {
     @IBOutlet weak var friendsList: UITableView!
     let label: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Không có dữ liệu"
+        lbl.text = "Không có dữ liệu".localized()
         lbl.textColor = UIColor.headerText
         lbl.font = UIFont(name: "Lato-Bold", size: 17)
         return lbl

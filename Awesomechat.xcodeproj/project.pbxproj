@@ -47,6 +47,8 @@
 		8480EF4B26B405A400C51870 /* MessengerHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8480EF4A26B405A400C51870 /* MessengerHeader.xib */; };
 		84C05ABB26C0E21C00751B3F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 84C05ABA26C0E21C00751B3F /* GoogleService-Info.plist */; };
 		84CBE19826C6669E00332241 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBE19726C6669E00332241 /* Extension+UIImageView.swift */; };
+		AB010222271D643C00BEFB80 /* Localizations.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB010224271D643C00BEFB80 /* Localizations.strings */; };
+		AB010227271D64E100BEFB80 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB010226271D64E100BEFB80 /* Extension+String.swift */; };
 		AB78AA0026A6B4590024E439 /* PersonalController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB78A9DA26A6B4580024E439 /* PersonalController.swift */; };
 		AB78AA0126A6B4590024E439 /* PersonalController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9DB26A6B4580024E439 /* PersonalController.xib */; };
 		AB78AA0826A6B4590024E439 /* MessengerTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AB78A9E626A6B4590024E439 /* MessengerTableViewCell.xib */; };
@@ -122,6 +124,11 @@
 		8480EF4A26B405A400C51870 /* MessengerHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerHeader.xib; sourceTree = "<group>"; };
 		84C05ABA26C0E21C00751B3F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		84CBE19726C6669E00332241 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
+		AB010220271D642D00BEFB80 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Main.strings; sourceTree = "<group>"; };
+		AB010221271D642E00BEFB80 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		AB010223271D643C00BEFB80 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizations.strings; sourceTree = "<group>"; };
+		AB010225271D644100BEFB80 /* vi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = vi; path = vi.lproj/Localizations.strings; sourceTree = "<group>"; };
+		AB010226271D64E100BEFB80 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
 		AB78A9DA26A6B4580024E439 /* PersonalController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersonalController.swift; sourceTree = "<group>"; };
 		AB78A9DB26A6B4580024E439 /* PersonalController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PersonalController.xib; sourceTree = "<group>"; };
 		AB78A9E626A6B4590024E439 /* MessengerTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MessengerTableViewCell.xib; sourceTree = "<group>"; };
@@ -380,6 +387,7 @@
 				D7A0BC5C268DBCA200842C93 /* Server */,
 				D7A0BC45268D6AEA00842C93 /* Controller */,
 				D7A0BC43268D6AD600842C93 /* Model */,
+				AB010224271D643C00BEFB80 /* Localizations.strings */,
 			);
 			path = Awesomechat;
 			sourceTree = "<group>";
@@ -412,6 +420,7 @@
 		D7A0BC56268D7C9300842C93 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				AB010226271D64E100BEFB80 /* Extension+String.swift */,
 				D7A9F1A926931200001AE5AB /* Extension+UIView.swift */,
 				D7BA5CB026980C84001742DE /* ClassPushTabar.swift */,
 				D78E610E269EEFA100D8FB96 /* Extension+Snapshot.swift */,
@@ -542,6 +551,7 @@
 			knownRegions = (
 				en,
 				Base,
+				vi,
 			);
 			mainGroup = D7A0BC23268D6AC500842C93;
 			productRefGroup = D7A0BC2D268D6AC500842C93 /* Products */;
@@ -563,12 +573,11 @@
 				AB78AA0126A6B4590024E439 /* PersonalController.xib in Resources */,
 				18BC45AB26C0DE2A00B040BD /* GoogleService-Info.plist in Resources */,
 				1835435526B0F2F900DA51ED /* FriendsController.xib in Resources */,
-				1835434F26B0F2F900DA51ED /* RequestsViewController.xib in Resources */,
-				1835436A26B0FAA700DA51ED /* OFL.txt in Resources */,
 				D7A0BC39268D6AC700842C93 /* Assets.xcassets in Resources */,
 				AB78AA1626A6B4590024E439 /* LoginController.xib in Resources */,
 				1835436B26B0FAA700DA51ED /* Lato-BoldItalic.ttf in Resources */,
 				1835436726B0FAA700DA51ED /* Lato-Black.ttf in Resources */,
+				AB010222271D643C00BEFB80 /* Localizations.strings in Resources */,
 				84C05ABB26C0E21C00751B3F /* GoogleService-Info.plist in Resources */,
 				1835436926B0FAA700DA51ED /* Lato-BlackItalic.ttf in Resources */,
 				18AB2A8A26B802AF00FFB28D /* FriendsTableViewCell.xib in Resources */,
@@ -588,8 +597,6 @@
 				1835436826B0FAA700DA51ED /* Lato-Regular.ttf in Resources */,
 				18E12E0E26C052FB0079DE4D /* AllTableViewCell.xib in Resources */,
 				AB78AA0D26A6B4590024E439 /* RegisterController.xib in Resources */,
-				AB78AA1526A6B4590024E439 /* TableViewCell.xib in Resources */,
-				AB78AA1226A6B4590024E439 /* HomeViewController.xib in Resources */,
 				8403D3D726B797DD00609CB9 /* MessengerDetail.xib in Resources */,
 				8403D3DC26B7A6C600609CB9 /* MessengerDetailCell.xib in Resources */,
 				1835436C26B0FAA700DA51ED /* Lato-Light.ttf in Resources */,
@@ -645,6 +652,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB010227271D64E100BEFB80 /* Extension+String.swift in Sources */,
 				D7AC16A326A1913E0082FF94 /* CallMethodRequest.swift in Sources */,
 				AB78AA1726A6B4590024E439 /* LoginController.swift in Sources */,
 				D7A9F1AA26931200001AE5AB /* Extension+UIView.swift in Sources */,
@@ -690,10 +698,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		AB010224271D643C00BEFB80 /* Localizations.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB010223271D643C00BEFB80 /* en */,
+				AB010225271D644100BEFB80 /* vi */,
+			);
+			name = Localizations.strings;
+			sourceTree = "<group>";
+		};
 		D7A0BC35268D6AC500842C93 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				D7A0BC36268D6AC500842C93 /* Base */,
+				AB010220271D642D00BEFB80 /* vi */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -702,6 +720,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D7A0BC3B268D6AC700842C93 /* Base */,
+				AB010221271D642E00BEFB80 /* vi */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -713,6 +732,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -774,6 +794,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

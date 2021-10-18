@@ -13,7 +13,7 @@ class RequestViewController: UIViewController {
     @IBOutlet weak var requestTable: UITableView!
     let label: UILabel = {
         let lbl = UILabel()
-        lbl.text = "Không có dữ liệu"
+        lbl.text = "Không có dữ liệu".localized()
         lbl.textColor = UIColor.headerText
         lbl.font = UIFont(name: "Lato-Bold", size: 17)
         return lbl
@@ -95,10 +95,10 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
         label.textColor = UIColor.headerText
         label.font = UIFont(name: "Lato-Bold", size: 16)
         if section == 0 {
-            header = "lời mời kết bạn"
+            header = "lời mời kết bạn".localized()
             label.text = header.uppercased()
         } else {
-            header = "đã gửi kết bạn"
+            header = "đã gửi kết bạn".localized()
             label.text = header.uppercased()
         }
         view.addSubview(label)
@@ -121,7 +121,7 @@ extension RequestViewController: UITableViewDelegate, UITableViewDataSource {
         let person = group[indexPath.section][indexPath.row]
         print("Position of tableview at section and row \(self.group[indexPath.section][indexPath.row])")
         if indexPath.section == 0 {
-            let deleteAction = UIContextualAction(style: .destructive, title: "Từ chối") { (action, sourceView, completionHandler) in
+            let deleteAction = UIContextualAction(style: .destructive, title: "Từ chối".localized()) { (action, sourceView, completionHandler) in
                 FriendAPI.shared.unfriend(withID: person.friendId)
                 self.group[indexPath.section].remove(at: indexPath.row)
                 self.requestTable.deleteRows(at: [indexPath], with: .fade)
