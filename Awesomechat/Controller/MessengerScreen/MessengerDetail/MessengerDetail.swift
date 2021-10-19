@@ -228,7 +228,6 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
         pushDataMessenger.pushDataChat(completion: { (dataChatMessage) in
             //let inserIndexChatMessage = self.dataChatRoom?.chatMessages.count
             self.dataChatRoom?.chatMessages.append(dataChatMessage)
-            
             if let inserIndexChatMessage = self.dataChatRoom?.chatMessages.count {
                 self.tableView.insertRows(at: [IndexPath(item: (inserIndexChatMessage) - 1, section: 0)], with: .bottom)
                 self.tableView.scrollToRow(at: IndexPath(item: (inserIndexChatMessage) - 1, section: 0), at: .bottom, animated: true)
@@ -243,8 +242,6 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
             
             self.txtInputChat.text = nil
            
-            
-            
         }, messenger: textInput, idReceiver: dataChatRoom?.participant?.userId ?? roomIdToFriend, idSender: Auth.auth().currentUser?.uid ?? "", idChatRoom: dataChatRoom?.roomId ?? roomId, type: "text")
         
     }
@@ -266,6 +263,8 @@ class MessengerDetail: UIViewController, UIImagePickerControllerDelegate, UINavi
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         print("selected image ")
+       
+        
         var selectedImageFromPicker: UIImage?
         if let editingImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
             selectedImageFromPicker = editingImage

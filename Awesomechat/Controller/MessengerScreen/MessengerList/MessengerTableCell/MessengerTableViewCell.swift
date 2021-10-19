@@ -39,7 +39,6 @@ class MessengerTableViewCell: UITableViewCell {
         viewContent.addSubview(lbNumber)
         lbNumber.translatesAutoresizingMaskIntoConstraints = false
         
-        
         NSLayoutConstraint(item: lbNumber, attribute: .centerX, relatedBy: .equal, toItem: viewContent, attribute: .centerX, multiplier: 1.75, constant: 0).isActive = true
         NSLayoutConstraint(item: lbNumber, attribute: .centerY, relatedBy: .equal, toItem: viewContent, attribute: .centerY, multiplier: 0.5, constant: 0).isActive = true
         lbNumber.heightAnchor.constraint(equalToConstant: 25).isActive = true
@@ -54,11 +53,7 @@ class MessengerTableViewCell: UITableViewCell {
         lbNumber.textColor = UIColor.white
         lbNumber.textAlignment = .center
         lbNumber.font = UIFont(name: "Lato", size: 12)
-        
         lbNumber.sizeToFit()
-        
-        
-        
         
     }
     
@@ -101,16 +96,11 @@ class MessengerTableViewCell: UITableViewCell {
         lbMesenger.heightAnchor.constraint(equalToConstant: 19).isActive = true
        
         
-        
         lbHours.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 22).isActive = true
         lbHours.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -12).isActive = true
         lbHours.heightAnchor.constraint(equalToConstant: 21).isActive = true
         
     }
     
-//    func customImgNoIsRead() {
-//        
-//        
-//    }
     
 }

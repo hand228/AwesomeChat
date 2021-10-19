@@ -35,6 +35,8 @@ class MessengerController: UIViewController {
         tableView.separatorStyle = .none
         requestApiMesengerUser()
         customGradients()
+        
+        print(Auth.auth().currentUser?.uid)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +90,7 @@ class MessengerController: UIViewController {
             if (arrayChatRoom[i].chatMessages.last?.idSender != Auth.auth().currentUser?.uid) {
                 for j in 0..<arrayChatRoom[i].chatMessages.count {
                     if(arrayChatRoom[i].chatMessages[j].isRead == "true") {
+                        // check tin nhăn trên firebase xem người dùng đã bấm vào và đọc chưa: true la người dùng đọc rồi:
                         counter = 0
                     } else if (arrayChatRoom[i].chatMessages[j].isRead == "false") {
                         counter += 1
@@ -200,7 +203,7 @@ extension MessengerController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MessengerTableViewCellID", for: indexPath) as! MessengerTableViewCell
 
         if searching {
-            
+            // dùng để check tin nhắn khi mà nó search thì hiển thi như này:
             if (checkIsRead[indexPath.row] != 0) {
                 cell.lbName.text = arrayChatRoomSearch[indexPath.row].participant?.userName
                 cell.lbMesenger.text = "\(arrayChatRoomSearch[indexPath.row].chatMessages.count) tin nhắn phù hợp"

@@ -43,6 +43,8 @@
 		8403D3DC26B7A6C600609CB9 /* MessengerDetailCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8403D3DA26B7A6C600609CB9 /* MessengerDetailCell.xib */; };
 		842BB49F26F080670014733D /* ServerLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 842BB49E26F080660014733D /* ServerLogin.swift */; };
 		846FDAAD26CE68AF00D785C7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 846FDAAC26CE68AF00D785C7 /* GoogleService-Info.plist */; };
+		84763EA226F89AFB000DDB41 /* PersonalProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84763EA026F89AFB000DDB41 /* PersonalProfile.swift */; };
+		84763EA326F89AFB000DDB41 /* PersonalProfile.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84763EA126F89AFB000DDB41 /* PersonalProfile.xib */; };
 		8480EF4626B404B300C51870 /* MessengerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8480EF4426B404B300C51870 /* MessengerController.swift */; };
 		8480EF4726B404B300C51870 /* MessengerController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8480EF4526B404B300C51870 /* MessengerController.xib */; };
 		84CBE19826C6669E00332241 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CBE19726C6669E00332241 /* Extension+UIImageView.swift */; };
@@ -115,6 +117,8 @@
 		8403D3DA26B7A6C600609CB9 /* MessengerDetailCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerDetailCell.xib; sourceTree = "<group>"; };
 		842BB49E26F080660014733D /* ServerLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerLogin.swift; sourceTree = "<group>"; };
 		846FDAAC26CE68AF00D785C7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84763EA026F89AFB000DDB41 /* PersonalProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalProfile.swift; sourceTree = "<group>"; };
+		84763EA126F89AFB000DDB41 /* PersonalProfile.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PersonalProfile.xib; sourceTree = "<group>"; };
 		8480EF4426B404B300C51870 /* MessengerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerController.swift; sourceTree = "<group>"; };
 		8480EF4526B404B300C51870 /* MessengerController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessengerController.xib; sourceTree = "<group>"; };
 		84CBE19726C6669E00332241 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
@@ -289,13 +293,6 @@
 			path = MessengerList;
 			sourceTree = "<group>";
 		};
-		8455A4A426E91DA10097F1B4 /* PersonalScreenCell */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = PersonalScreenCell;
-			sourceTree = "<group>";
-		};
 		9FB58D69EDA6780F9A8FCBD6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,9 +304,10 @@
 		AB78A9D926A6B4580024E439 /* PersonalScreen */ = {
 			isa = PBXGroup;
 			children = (
-				8455A4A426E91DA10097F1B4 /* PersonalScreenCell */,
 				AB78A9DA26A6B4580024E439 /* PersonalController.swift */,
 				AB78A9DB26A6B4580024E439 /* PersonalController.xib */,
+				84763EA026F89AFB000DDB41 /* PersonalProfile.swift */,
+				84763EA126F89AFB000DDB41 /* PersonalProfile.xib */,
 			);
 			path = PersonalScreen;
 			sourceTree = "<group>";
@@ -566,6 +564,7 @@
 				AB78AA1626A6B4590024E439 /* LoginController.xib in Resources */,
 				1835436B26B0FAA700DA51ED /* Lato-BoldItalic.ttf in Resources */,
 				1835436726B0FAA700DA51ED /* Lato-Black.ttf in Resources */,
+				84763EA326F89AFB000DDB41 /* PersonalProfile.xib in Resources */,
 				1835436926B0FAA700DA51ED /* Lato-BlackItalic.ttf in Resources */,
 				18AB2A8A26B802AF00FFB28D /* FriendsTableViewCell.xib in Resources */,
 				1835436626B0FAA700DA51ED /* Lato-Bold.ttf in Resources */,
@@ -668,6 +667,7 @@
 				1835435026B0F2F900DA51ED /* FriendsListViewController.swift in Sources */,
 				D7BA5CB126980C84001742DE /* ClassPushTabar.swift in Sources */,
 				84CBE19826C6669E00332241 /* Extension+UIImageView.swift in Sources */,
+				84763EA226F89AFB000DDB41 /* PersonalProfile.swift in Sources */,
 				D78ECD6F269C5B8F00ACF39D /* DataChats.swift in Sources */,
 				8403D3DB26B7A6C600609CB9 /* MessengerDetailCell.swift in Sources */,
 				D7A0BC32268D6AC500842C93 /* SceneDelegate.swift in Sources */,

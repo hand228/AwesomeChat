@@ -8,10 +8,10 @@
 import UIKit
 import FirebaseAuth
 import Firebase
+import FirebaseStorage
 
 class PersonalController: UIViewController {
     @IBOutlet weak var imgBackground: UIImageView!
-    
     @IBOutlet weak var contentInfoView: UIView!
     @IBOutlet weak var imgAvartar: UIImageView!
     @IBOutlet weak var lbName: UILabel!
@@ -19,54 +19,74 @@ class PersonalController: UIViewController {
     @IBOutlet weak var lbLanguage: UILabel!
     @IBOutlet weak var lbVersionApp: UILabel!
     @IBOutlet weak var lbDangXuat: UILabel!
-    let auth = Auth.auth().currentUser?.uid
-    
+   // var dataUser: DataUser?
+    let storage = Storage.storage().reference()
     let serverUser = ServerApiUser.shared
+    let nsObject: AnyObject? = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as AnyObject?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         contentInfoView.layer.cornerRadius = CGFloat(20)
-        handleImgBackground()
-        setupInputComponents()
+        
         lbDangXuat.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(actionLogout))
         lbDangXuat.addGestureRecognizer(tapGesture)
-        
-        
-        
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        self.reloadInputViews()
+        setupInputComponents()
     }
     
     func setupInputComponents() {
         
-//        let ref: DatabaseReference?
-//        ref = Database.database().reference()
-//
-//
-//        ref?.child("users/\(auth)").getData(completion: {(error, dataSnapshot) in
-//            guard error == nil else {
-//                return
-//            }
-//            print(dataSnapshot)
-//
-//            let dataUser = dataSnapshot.children.allObjects as? DataUser
-//
-//            print(dataUser?.userEmail)
-//            print(dataUser?.userName)
-//
-//        })
-        print(auth)
-        for  i in 0..<serverUser.arrayLocalUser.count {
-            if (auth == serverUser.arrayLocalUser[i].userId) {
-                lbName.text = serverUser.arrayLocalUser[i].userName
-                lbEmail.text = serverUser.arrayLocalUser[i].userEmail
-                
-                print(serverUser.arrayLocalUser[i].userName)
-                
-                
-            }
-        }
+        lbName.font = UIFont(name: "Lato", size: CGFloat(22))
+        lbEmail.textColor = UIColor(rgb: 0xff999999)
+        let version: String = nsObject as! String
+        lbLanguage.textColor = UIColor(rgb: 0xff4356B4)
+        lbVersionApp.text = version
         
+        
+        imgAvartar.layer.cornerRadius = imgAvartar.frame.height/2
+        imgAvartar.clipsToBounds = true
+        imgAvartar.layer.borderWidth = 2
+        imgAvartar.layer.borderColor = UIColor(rgb: 0xff3DCFCF).cgColor
+        
+        imgBackground.sizeToFit()
+        imgBackground.contentMode = .scaleToFill
+        imgBackground.highlightedImage = .add
+        
+        let ref: DatabaseReference?
+        ref = Database.database().reference()
+        
+        ref?.child("users/\(Auth.auth().currentUser!.uid)").getData(completion: {(error, dataSnapshot) in
+            guard error == nil else {
+                return
+            }
+            
+            let dataUser = DataUser(snapShot: dataSnapshot)
+            
+            print(dataUser.userEmail)
+            DispatchQueue.main.async {
+                self.lbName.text = dataUser.userName
+                self.lbEmail.text = dataUser.userEmail
+                
+                do {
+                    let dataImg = try Data(contentsOf: URL(string: dataUser.userImgUrl) ?? URL(string: "defauld.png")!)
+                    self.imgAvartar.image = UIImage(data: dataImg)
+                } catch {
+                    self.imgAvartar.image = UIImage(named: "default")
+                }
+                
+                do {
+                    let dataImg = try Data(contentsOf: URL(string: dataUser.userImgUrl) ?? URL(string: "defauld.png")!)
+                    self.imgBackground.image = UIImage(data: dataImg)
+                } catch {
+                    self.imgBackground.image = UIImage(named: "default")
+                }
+            }
+        })
         
         
     }
@@ -92,16 +112,13 @@ class PersonalController: UIViewController {
         }
     }
     
-    func handleImgBackground() {
-        imgBackground.image = UIImage(named: "6744109_preview 1")
-        imgBackground.sizeToFit()
-        imgBackground.contentMode = .scaleToFill
-        imgBackground.highlightedImage = .add
-        
-    }
-    
     
     @IBAction func btEditProfile(_ sender: Any) {
+        
+        let personalProfile = PersonalProfile()
+        personalProfile.modalPresentationStyle = UIModalPresentationStyle.fullScreen
+        personalProfile.modalTransitionStyle = UIModalTransitionStyle.crossDissolve
+        self.present(personalProfile, animated: true, completion: nil)
         
     }
     
